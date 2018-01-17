@@ -6,3 +6,6 @@
 ? force win/ren functions to be const
 ? remove RectXY
 ? add not-graphics sdl features
+
+PixelFmt
+  ? better order + layout api
