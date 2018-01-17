@@ -120,8 +120,8 @@ namespace rolmodl {
       void setViewport(const geom::RectWH r);
 
 
-      Color color();
-      void setColor(const Color c);
+      RGBA color();
+      void setColor(const RGBA c);
 
     private:
       Ren() noexcept;
