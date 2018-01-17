@@ -132,7 +132,7 @@ namespace rolmodl {
     };
   }
 
-  struct Color {
+  struct RGBA {
     public:
       uint8_t r, g, b, a = 255;
 

@@ -152,13 +152,13 @@ namespace rolmodl {
   }
 
 
-  Color Ren::color() {
-    Color res{};
+  RGBA Ren::color() {
+    RGBA res{};
     throwOnErr(SDL_GetRenderDrawColor(unsafeRaw(), &res.r, &res.g, &res.b, &res.a));
     return res;
   }
 
-  void Ren::setColor(const Color c) {
+  void Ren::setColor(const RGBA c) {
     throwOnErr(SDL_SetRenderDrawColor(unsafeRaw(), c.r, c.g, c.b, c.a));
   }
 }
