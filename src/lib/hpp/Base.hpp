@@ -1,0 +1,157 @@
+#pragma once
+
+#include <exception>
+#include <optional>
+
+#include <SDL.h>
+
+#include "Geom.hpp"
+
+namespace rolmodl {
+  namespace sys {
+    // data from SDL.c
+    enum class Id {
+      AIX,
+      Android,
+      BSDI,
+      Dreamcast,
+      Emscripten,
+      FreeBSD,
+      Haiku,
+      HPUX,
+      Irix,
+      Linux,
+      MiNT,
+      MacOSClassic,
+      MacOSX,
+      NaCl,
+      NetBSD,
+      OpenBSD,
+      OS2,
+      OSF,
+      QNXNeutrino,
+      RISCOS,
+      Solaris,
+      Windows,
+      WinRT,
+      tvOS,
+      iOS,
+      PSP,
+      Unknown
+    };
+
+    const char* name() noexcept;
+    Id id() noexcept;
+
+    unsigned int ram() noexcept;
+    unsigned int logicalCores() noexcept;
+    namespace cpu {
+      unsigned int l1Size() noexcept;
+
+      // todo: put in a namespace/rename?
+      bool has3DNow() noexcept;
+      bool hasAVX() noexcept;
+      bool hasAVX2() noexcept;
+      bool hasAltiVec() noexcept;
+      bool hasMMX() noexcept;
+      bool hasRDTSC() noexcept;
+      bool hasSSE() noexcept;
+      bool hasSSE2() noexcept;
+      bool hasSSE3() noexcept;
+      bool hasSSE41() noexcept;
+      bool hasSSE42() noexcept;
+    }
+
+    namespace pwr {
+      enum class State {
+        OnBattery,
+        NoBattery,
+        Charging,
+        Charged,
+        Unknown
+      };
+
+      struct Status {
+        public:
+          Status() noexcept;
+
+          State state() const noexcept;
+          std::optional<int> time() const noexcept;
+          std::optional<int> percentage() const noexcept;
+
+        private:
+          State state_;
+          std::optional<int> time_, percentage_;
+      };
+      Status status() noexcept;
+    }
+
+    namespace screensaver {
+      void enable() noexcept;
+      void disable() noexcept;
+      bool enabled() noexcept;
+    }
+
+    namespace driver {
+      unsigned int count();
+      const char* name(const unsigned int i);
+      std::optional<const char*> current() noexcept;
+    }
+
+    struct Display;
+    namespace display::unsafe {
+      Display byIndex(unsigned int i);
+
+      unsigned int count();
+      const char* name(const unsigned int i);
+
+      geom::RectWH bounds(const unsigned int i);
+      geom::RectWH usableBounds(const unsigned int i);
+    }
+
+    struct Display {
+      public:
+        const char* name() const noexcept;
+
+        geom::RectWH bounds() const noexcept;
+        geom::RectWH usableBounds() const noexcept;
+
+        float ddpi() const noexcept;
+        float hdpi() const noexcept;
+        float vdpi() const noexcept;
+
+      private:
+        explicit Display(const unsigned int i);
+
+        const char* name_;
+        geom::RectWH bounds_, usableBounds_;
+
+        float ddpi_, hdpi_, vdpi_;
+
+        friend Display display::unsafe::byIndex(unsigned int i);
+    };
+  }
+
+  struct Color {
+    public:
+      uint8_t r, g, b, a = 255;
+
+    private:
+  };
+
+  struct sdlexception : public std::exception {
+    public:
+      explicit sdlexception(const int code) noexcept;
+      sdlexception() noexcept;
+      int code() const noexcept;
+      const char* what() const noexcept override;
+
+    private:
+      int code_;
+      const char* msg_;
+  };
+
+  namespace detail {
+    int throwOnErr(const int code);
+  }
+}

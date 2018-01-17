@@ -1,0 +1,8 @@
+- flag classes should allow for testing
+- some stuff may be flag dependent
+  e.g. should setTitle be available for non-decorated and fullscreen Wins
+
+? sdlexception : runtime_error
+? force win/ren functions to be const
+? remove RectXY
+? add not-graphics sdl features
