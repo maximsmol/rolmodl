@@ -39,5 +39,6 @@ namespace rolmodl::pixelfmt {
 
       delete[] data_;
     }
+    data_ = nullptr;
   }
 }
