@@ -97,9 +97,9 @@ int main() {
     titleI %= sizeof(titles)/sizeof(titles[0]);
     SDL_Delay(50);
 
-    r.setColor(Color{0, 0, 0});
+    r.setColor(RGBA{0, 0, 0});
     r.clear();
-    r.setColor(Color{255, 255, 255});
+    r.setColor(RGBA{255, 255, 255});
     r.drawLine(Pos{10, 10}, Pos{100, 100});
     r.drawRect(RectXY{110, 110, 200, 110});
     r.present();

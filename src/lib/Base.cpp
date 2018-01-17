@@ -17,35 +17,35 @@ namespace rolmodl {
       if (strcmp(str, "AIX") == 0)
         return Id::AIX;
       if (strcmp(str, "Android") == 0)
-        return Id::Android;
+        return Id::android;
       if (strcmp(str, "BSDI") == 0)
         return Id::BSDI;
       if (strcmp(str, "Dreamcast") == 0)
-        return Id::Dreamcast;
+        return Id::dreamcast;
       if (strcmp(str, "Emscripten") == 0)
-        return Id::Emscripten;
+        return Id::emscripten;
       if (strcmp(str, "FreeBSD") == 0)
-        return Id::FreeBSD;
+        return Id::freeBSD;
       if (strcmp(str, "Haiku") == 0)
-        return Id::Haiku;
+        return Id::haiku;
       if (strcmp(str, "HP-UX") == 0)
         return Id::HPUX;
       if (strcmp(str, "Irix") == 0)
-        return Id::Irix;
+        return Id::irix;
       if (strcmp(str, "Linux") == 0)
-        return Id::Linux;
+        return Id::linux;
       if (strcmp(str, "Atari MiNT") == 0)
         return Id::MiNT;
       if (strcmp(str, "MacOS Classic") == 0)
-        return Id::MacOSClassic;
+        return Id::macOSClassic;
       if (strcmp(str, "Mac OS X") == 0)
-        return Id::MacOSX;
+        return Id::macOSX;
       if (strcmp(str, "NaCl") == 0)
         return Id::NaCl;
       if (strcmp(str, "NetBSD") == 0)
-        return Id::NetBSD;
+        return Id::netBSD;
       if (strcmp(str, "OpenBSD") == 0)
-        return Id::OpenBSD;
+        return Id::openBSD;
       if (strcmp(str, "OS/2") == 0)
         return Id::OS2;
       if (strcmp(str, "OSF/1") == 0)
@@ -55,18 +55,18 @@ namespace rolmodl {
       if (strcmp(str, "RISC OS") == 0)
         return Id::RISCOS;
       if (strcmp(str, "Solaris") == 0)
-        return Id::Solaris;
+        return Id::solaris;
       if (strcmp(str, "Windows") == 0)
-        return Id::Windows;
+        return Id::windows;
       if (strcmp(str, "WinRT") == 0)
-        return Id::WinRT;
+        return Id::winRT;
       if (strcmp(str, "tvOS") == 0)
         return Id::tvOS;
       if (strcmp(str, "iOS") == 0)
         return Id::iOS;
       if (strcmp(str, "PlayStation Portable") == 0)
         return Id::PSP;
-      return Id::Unknown;
+      return Id::unknown;
     }
 
 
@@ -119,7 +119,7 @@ namespace rolmodl {
 
     namespace pwr {
       Status::Status() noexcept :
-        state_(State::Unknown),
+        state_(State::unknown),
         time_(),
         percentage_()
       {
@@ -131,15 +131,15 @@ namespace rolmodl {
           percentage_ = p;
 
         if (state == SDL_POWERSTATE_ON_BATTERY)
-          state_ = State::OnBattery;
+          state_ = State::onBattery;
         else if (state == SDL_POWERSTATE_NO_BATTERY)
-          state_ = State::NoBattery;
+          state_ = State::noBattery;
         else if (state == SDL_POWERSTATE_CHARGING)
-          state_ = State::Charging;
+          state_ = State::charging;
         else if (state == SDL_POWERSTATE_CHARGED)
-          state_ = State::Charged;
+          state_ = State::charged;
         else if (state == SDL_POWERSTATE_UNKNOWN)
-          state_ = State::Unknown;
+          state_ = State::unknown;
       }
 
       State Status::state() const noexcept {
