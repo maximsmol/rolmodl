@@ -12,32 +12,32 @@ namespace rolmodl {
     // data from SDL.c
     enum class Id {
       AIX,
-      Android,
+      android,
       BSDI,
-      Dreamcast,
-      Emscripten,
-      FreeBSD,
-      Haiku,
+      dreamcast,
+      emscripten,
+      freeBSD,
+      haiku,
       HPUX,
-      Irix,
-      Linux,
+      irix,
+      linux,
       MiNT,
-      MacOSClassic,
-      MacOSX,
+      macOSClassic,
+      macOSX,
       NaCl,
-      NetBSD,
-      OpenBSD,
+      netBSD,
+      openBSD,
       OS2,
       OSF,
       QNXNeutrino,
       RISCOS,
-      Solaris,
-      Windows,
-      WinRT,
+      solaris,
+      windows,
+      winRT,
       tvOS,
       iOS,
       PSP,
-      Unknown
+      unknown
     };
 
     const char* name() noexcept;
@@ -64,11 +64,11 @@ namespace rolmodl {
 
     namespace pwr {
       enum class State {
-        OnBattery,
-        NoBattery,
-        Charging,
-        Charged,
-        Unknown
+        onBattery,
+        noBattery,
+        charging,
+        charged,
+        unknown
       };
 
       struct Status {
