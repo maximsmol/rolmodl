@@ -4,6 +4,10 @@
 
 #include <SDL.h>
 
+namespace rolmodl {
+  class Win;
+}
+
 #include "Base.hpp"
 #include "Geom.hpp"
 
