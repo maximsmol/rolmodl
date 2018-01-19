@@ -57,6 +57,7 @@ main = shakeArgs shakeOptions' $ do
           path_libout</>"Ren"<.>"o",
           path_libout</>"Base"<.>"o",
           path_libout</>"PixelFmt"<.>"o",
+          path_libout</>"Tex"<.>"o",
           path_tstout</>"main"<.>"o"
           ]
     need srcs

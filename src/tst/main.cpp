@@ -82,7 +82,13 @@ int main() {
   };
   int titleI = 0;
 
+  LockTex t(r, pixelfmt::Id::rgba32, Size{800, 600});
+
   bool running = true;
+
+  int col_r = 255;
+  int col_g = 0;
+  int col_b = 255;
   while (running) {
     SDL_Event e;
     while (SDL_PollEvent(&e) != 0) {
@@ -99,9 +105,31 @@ int main() {
 
     r.setColor(RGBA{0, 0, 0});
     r.clear();
-    r.setColor(RGBA{255, 255, 255});
-    r.drawLine(Pos{10, 10}, Pos{100, 100});
-    r.drawRect(RectXY{110, 110, 200, 110});
+    // r.setColor(RGBA{255, 255, 255});
+    // r.drawLine(Pos{10, 10}, Pos{100, 100});
+    // r.drawRect(RectXY{110, 110, 200, 110});
+
+    {
+      TexLock l(t);
+      // for (int x = 300; x < 500; ++x)
+      //   for (int y = 200; y < 500; ++y)
+      //     l.drawPoint(
+      //       RGBA{
+      //         static_cast<uint8_t>((col_r -= 3)%255),
+      //         static_cast<uint8_t>((col_g -= 7)%255),
+      //         static_cast<uint8_t>((col_b -= 5)%255)
+      //       },
+      //       Pos{x, y});
+      l.drawPoint(
+        RGBA{
+          static_cast<uint8_t>(rand()%255),
+          static_cast<uint8_t>(rand()%255),
+          static_cast<uint8_t>(rand()%255)
+        },
+        Pos{395+rand()%10,295+rand()%10});
+    }
+    r.drawTex(t);
+
     r.present();
   }
 

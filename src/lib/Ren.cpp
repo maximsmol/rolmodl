@@ -68,6 +68,41 @@ namespace rolmodl {
     SDL_RenderPresent(unsafeRaw());
   }
 
+  void Ren::drawTex(Tex& tex) {
+    throwOnErr(SDL_RenderCopy(unsafeRaw(), tex.unsafeRaw(), nullptr, nullptr));
+  }
+
+  void Ren::drawTex(Tex& tex, const SrcRectWH src) {
+    SDL_Rect tmp = src.sdl();
+    throwOnErr(SDL_RenderCopy(unsafeRaw(), tex.unsafeRaw(), &tmp, nullptr));
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src) {
+    drawTex(tex, src.wh());
+  }
+
+  void Ren::drawTex(Tex& tex, const DstRectWH dst) {
+    SDL_Rect tmp = dst.sdl();
+    throwOnErr(SDL_RenderCopy(unsafeRaw(), tex.unsafeRaw(), nullptr, &tmp));
+  }
+  void Ren::drawTex(Tex& tex, const DstRectXY dst) {
+    drawTex(tex, dst.wh());
+  }
+
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst) {
+    SDL_Rect srcTmp = src.sdl();
+    SDL_Rect dstTmp = dst.sdl();
+    throwOnErr(SDL_RenderCopy(unsafeRaw(), tex.unsafeRaw(), &srcTmp, &dstTmp));
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst) {
+    drawTex(tex, src, dst.wh());
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst) {
+    drawTex(tex, src.wh(), dst);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst) {
+    drawTex(tex, src.wh(), dst.wh());
+  }
+
   void Ren::drawLine(const geom::Pos a, const geom::Pos b) {
     throwOnErr(SDL_RenderDrawLine(unsafeRaw(), a.x, a.y, b.x, b.y));
   }

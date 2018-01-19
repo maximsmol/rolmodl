@@ -1,8 +1,6 @@
 SDL_CreateSoftwareRenderer
 
-SDL_CreateTexture
 SDL_CreateTextureFromSurface
-SDL_DestroyTexture
 
 SDL_GL_BindTexture
 SDL_GL_UnbindTexture
@@ -17,10 +15,8 @@ SDL_GetRendererOutputSize
 SDL_GetTextureAlphaMod
 SDL_GetTextureBlendMode
 SDL_GetTextureColorMod
-SDL_LockTexture
 SDL_QueryTexture
 
-SDL_RenderCopy
 SDL_RenderCopyEx
 
 SDL_RenderDrawLines
@@ -41,6 +37,5 @@ SDL_SetRenderTarget
 SDL_SetTextureAlphaMod
 SDL_SetTextureBlendMode
 SDL_SetTextureColorMod
-SDL_UnlockTexture
 SDL_UpdateTexture
 SDL_UpdateYUVTexture

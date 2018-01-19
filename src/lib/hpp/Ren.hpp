@@ -5,9 +5,25 @@
 
 #include <SDL.h>
 
+namespace rolmodl {
+  class Ren;
+  struct RenScale;
+
+  struct SrcRectWH;
+  struct SrcRectXY;
+
+  struct DstRectWH;
+  struct DstRectXY;
+
+  namespace ren {
+    struct Flags;
+  }
+}
+
 #include "Base.hpp"
 #include "Geom.hpp"
 #include "Win.hpp"
+#include "Tex.hpp"
 
 namespace rolmodl {
   namespace ren {
@@ -65,6 +81,41 @@ namespace rolmodl {
 
     private:
   };
+
+  struct SrcRectWH : public geom::RectWH {
+    using geom::RectWH::RectWH;
+    constexpr SrcRectXY xy() const noexcept;
+  };
+  struct SrcRectXY : public geom::RectXY {
+    using geom::RectXY::RectXY;
+    constexpr SrcRectWH wh() const noexcept;
+  };
+  constexpr SrcRectXY SrcRectWH::xy() const noexcept {
+    geom::RectXY tmp = geom::RectWH::xy();
+    return SrcRectXY(tmp.x, tmp.y, tmp.x1, tmp.y1);
+  }
+  constexpr SrcRectWH SrcRectXY::wh() const noexcept {
+    geom::RectWH tmp = geom::RectXY::wh();
+    return SrcRectWH(tmp.x, tmp.y, tmp.w, tmp.h);
+  }
+
+  struct DstRectWH : public geom::RectWH {
+    using geom::RectWH::RectWH;
+    constexpr DstRectXY xy() const noexcept;
+  };
+  struct DstRectXY : public geom::RectXY {
+    using geom::RectXY::RectXY;
+    constexpr DstRectWH wh() const noexcept;
+  };
+  constexpr DstRectXY DstRectWH::xy() const noexcept {
+    geom::RectXY tmp = geom::RectWH::xy();
+    return DstRectXY(tmp.x, tmp.y, tmp.x1, tmp.y1);
+  }
+  constexpr DstRectWH DstRectXY::wh() const noexcept {
+    geom::RectWH tmp = geom::RectXY::wh();
+    return DstRectWH(tmp.x, tmp.y, tmp.w, tmp.h);
+  }
+
   class Ren {
     public:
       Ren(Win& win, int i, ren::Flags flags);
@@ -87,6 +138,19 @@ namespace rolmodl {
 
       void clear();
       void present() noexcept;
+
+      void drawTex(Tex& tex);
+
+      void drawTex(Tex& tex, const SrcRectWH src);
+      void drawTex(Tex& tex, const SrcRectXY src);
+
+      void drawTex(Tex& tex, const DstRectWH dst);
+      void drawTex(Tex& tex, const DstRectXY dst);
+
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst);
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst);
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst);
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst);
 
       void drawLine(const geom::Pos a, const geom::Pos b);
       // void drawLines(?); // fixme: implement this generically

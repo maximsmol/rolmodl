@@ -9,3 +9,11 @@
 
 PixelFmt
   ? better order + layout api
+
+- Win may not live less than Ren
+- Ren may not live less than Tex
+
+TexLock
+  - make full-texture lock unambigious
+  ? get the format mask in a different way
+    - SDL_PixelFormatEnumToMasks
