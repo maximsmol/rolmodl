@@ -63,10 +63,10 @@ namespace rolmodl::pixelfmt {
     constexpr uint32_t toSDLEnum(const Id i) noexcept;
   }
 
-  constexpr unsigned int bitsPerPixelOf(const Id id) noexcept {
+  constexpr unsigned int bitSizeOf(const Id id) noexcept {
     return SDL_BITSPERPIXEL(id::unsafe::toSDLEnum(id));
   }
-  constexpr unsigned int bytesPerPixelOf(const Id id) noexcept {
+  constexpr unsigned int byteSizeOf(const Id id) noexcept {
     return SDL_BYTESPERPIXEL(id::unsafe::toSDLEnum(id));
   }
 
