@@ -12,6 +12,7 @@ SDL_GetRenderTarget
 SDL_GetRenderer
 SDL_GetRendererInfo
 SDL_GetRendererOutputSize
+
 SDL_GetTextureAlphaMod
 SDL_GetTextureBlendMode
 SDL_GetTextureColorMod
@@ -19,6 +20,7 @@ SDL_QueryTexture
 
 SDL_RenderCopyEx
 
+// wontfix
 SDL_RenderDrawLines
 SDL_RenderDrawPoints
 SDL_RenderDrawRects
@@ -34,6 +36,7 @@ SDL_RenderTargetSupported
 
 SDL_SetRenderDrawBlendMode
 SDL_SetRenderTarget
+
 SDL_SetTextureAlphaMod
 SDL_SetTextureBlendMode
 SDL_SetTextureColorMod

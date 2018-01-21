@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <optional>
+#include <iterator>
 
 #include <SDL.h>
 
@@ -152,19 +153,23 @@ namespace rolmodl {
       void drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst);
       void drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst);
 
+      // todo:
+      // needs ContigousIterators, for which no check can be done at compile-time
+      // also needs SDL_Point structs, or equivalen
+      //   reinterpret_cast geom::Point?
       void drawLine(const geom::Pos a, const geom::Pos b);
-      // void drawLines(?); // fixme: implement this generically
+      // void drawLines(?) noexcept;  // todo: implement this generically
 
       void drawPoint(const geom::Pos p);
-      // void drawPoints(?) noexcept;  // fixme: implement this generically
+      // void drawPoints(?) noexcept;  // todo: implement this generically
 
       void drawRect(const geom::RectWH r);
       void drawRect(const geom::RectXY r);
-      // void drawRects(?) noexcept;  // fixme: implement this generically
+      // void drawRects(?) noexcept;  // todo: implement this generically
 
       void fillRect(const geom::RectWH r);
       void fillRect(const geom::RectXY r);
-      // void fillRects(?);  // fixme: implement this generically
+      // void fillRects(?);  // todo: implement this generically
 
       void outlineScreen();
       void fillScreen();
