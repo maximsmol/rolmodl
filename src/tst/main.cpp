@@ -96,6 +96,10 @@ int main() {
         case SDL_QUIT:
           running = false;
           break;
+        case SDL_KEYDOWN:
+          kb::key::Name::query(kb::key::unsafe::fromSDLEnum(e.key.keysym.sym));
+          printf("%s\n", kb::key::Name::lastQueryRes());
+          break;
       }
     }
 
