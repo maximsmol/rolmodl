@@ -66,7 +66,6 @@ namespace rolmodl::kb {
         Name& operator=(Name&& that) = delete;
 
         static void query(const Key k) noexcept;
-        static void query(const Scancode s) noexcept;
         static const char* lastQueryRes() noexcept;
 
         static Name& instance() noexcept;
