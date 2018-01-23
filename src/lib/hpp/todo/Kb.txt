@@ -1,0 +1,11 @@
+SDL_GetKeyFromName
+SDL_GetKeyboardFocus
+SDL_GetModState
+SDL_GetScancodeFromName
+SDL_HasScreenKeyboardSupport
+SDL_IsScreenKeyboardShown
+SDL_IsTextInputActive
+SDL_SetModState
+SDL_SetTextInputRect
+SDL_StartTextInput
+SDL_StopTextInput
