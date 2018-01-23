@@ -3,18 +3,18 @@
 #include "hpp/Base.hpp"
 
 namespace rolmodl::pixelfmt {
-  const SDL_PixelFormat& PixelFmtStorage::get(const Id id) const {
+  /*static*/ const SDL_PixelFormat& PixelFmtStorage::get(const Id id) {
     const size_t i = static_cast<size_t>(id);
 
-    if (data_[i] == nullptr) {
+    if (unsafeRaw()[i] == nullptr) {
       SDL_PixelFormat* tmp = SDL_AllocFormat(id::unsafe::toSDLEnum(id));
       if (tmp == nullptr)
         throw sdlexception();
 
-      data_[i] = tmp;
+      unsafeRaw()[i] = tmp;
     }
 
-    return *data_[i];
+    return *unsafeRaw()[i];
   }
 
   #pragma clang diagnostic push
@@ -24,6 +24,9 @@ namespace rolmodl::pixelfmt {
     return res;
   }
   #pragma clang diagnostic pop
+  /*static*/ SDL_PixelFormat** PixelFmtStorage::unsafeRaw() noexcept {
+    return instance().data_;
+  }
 
   PixelFmtStorage::PixelFmtStorage() noexcept :
     data_(new SDL_PixelFormat*[unique_count])

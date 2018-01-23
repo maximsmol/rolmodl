@@ -163,9 +163,10 @@ namespace rolmodl::pixelfmt {
       PixelFmtStorage& operator=(const PixelFmtStorage& that) = delete;
       PixelFmtStorage& operator=(PixelFmtStorage&& that) = delete;
 
-      const SDL_PixelFormat& get(const Id id) const;
-
+      static const SDL_PixelFormat& get(const Id id);
       static PixelFmtStorage& instance() noexcept;
+
+      static SDL_PixelFormat** unsafeRaw() noexcept;
 
     private:
       PixelFmtStorage() noexcept;
