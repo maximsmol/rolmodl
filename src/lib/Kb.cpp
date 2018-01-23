@@ -8,7 +8,7 @@ namespace rolmodl::kb {
       instance().data_ = SDL_GetKeyName(key::unsafe::toSDLEnum(k));
     }
     /*static*/ void Name::query(const Scancode s) noexcept {
-      query(scancode::key(s));
+      instance().data_ = SDL_GetScancodeName(key::unsafe::toSDLEnum(k));
     }
     /*static*/ const char* Name::lastQueryRes() noexcept {
       return instance().data_;
