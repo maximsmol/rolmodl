@@ -2,6 +2,7 @@ SDL_GetKeyFromName
 SDL_GetKeyboardFocus
 SDL_GetModState
 SDL_GetScancodeFromName
+SDL_GetScancodeName
 SDL_HasScreenKeyboardSupport
 SDL_IsScreenKeyboardShown
 SDL_IsTextInputActive
