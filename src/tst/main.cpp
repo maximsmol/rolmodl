@@ -103,6 +103,13 @@ int main() {
       }
     }
 
+    if (kb::State::down(kb::Key::r))
+      col_r += 4;
+    if (kb::State::down(kb::Key::g))
+      col_g += 4;
+    if (kb::State::down(kb::Key::b))
+      col_b += 4;
+
     w.setTitle(titles[titleI++]);
     titleI %= sizeof(titles)/sizeof(titles[0]);
     SDL_Delay(50);
@@ -119,18 +126,19 @@ int main() {
       //   for (int y = 200; y < 500; ++y)
       //     l.drawPoint(
       //       RGBA{
-      //         static_cast<uint8_t>((col_r -= 3)%255),
-      //         static_cast<uint8_t>((col_g -= 7)%255),
-      //         static_cast<uint8_t>((col_b -= 5)%255)
+      //         static_cast<uint8_t>((col_r -= 3)%256),
+      //         static_cast<uint8_t>((col_g -= 7)%256),
+      //         static_cast<uint8_t>((col_b -= 5)%256)
       //       },
       //       Pos{x, y});
-      l.drawPoint(
-        RGBA{
-          static_cast<uint8_t>(rand()%255),
-          static_cast<uint8_t>(rand()%255),
-          static_cast<uint8_t>(rand()%255)
-        },
-        Pos{395+rand()%10,295+rand()%10});
+      for (int x = 0; x < 100; ++x)
+        l.drawPoint(
+          RGBA{
+            static_cast<uint8_t>(col_r%256),
+            static_cast<uint8_t>(col_g%256),
+            static_cast<uint8_t>(col_b%256)
+          },
+          Pos{300+5*(x%10), 300+5*(x/10)});
     }
     r.drawTex(t);
 
