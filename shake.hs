@@ -49,23 +49,36 @@ main = shakeArgs shakeOptions' $ do
   liftIO $ createDirectoryIfMissing True (path_out</>"rep")
 
   let exec = "dst"</>"dbg"</>"exec"
+  -- let static_lib = "dst"</>"dbg"</>"rolmodl.so" -- no support on macos
+  let dynamic_lib = "dst"</>"dbg"</>"librolmodl.dylib"
   want [exec]
 
-  exec %> \out -> do
+  dynamic_lib %> \out -> do
     let srcs = [
           path_libout</>"Win"<.>"o",
           path_libout</>"Ren"<.>"o",
           path_libout</>"Base"<.>"o",
           path_libout</>"Kb"<.>"o",
           path_libout</>"PixelFmt"<.>"o",
-          path_libout</>"Tex"<.>"o",
-          path_tstout</>"main"<.>"o"
+          path_libout</>"Tex"<.>"o"
           ]
     need srcs
 
     let libFlags = ("-l"++) <$> ["sdl2"]
 
-    () <- cmd "clang++" "-O0" "-o" [out] libFlags "-L/usr/local/opt/llvm/lib" srcs
+    () <- cmd "clang++" "-shared" "-install_name" "@rpath/librolmodl.dylib" "-O0" "-o" [out] libFlags "-L/usr/local/opt/llvm/lib" srcs
+    return ()
+
+  exec %> \out -> do
+    let srcs = [
+          path_tstout</>"main"<.>"o"
+          ]
+    need srcs
+    need [dynamic_lib]
+
+    let libFlags = ("-l"++) <$> ["sdl2", "rolmodl"]
+
+    () <- cmd "clang++" "-rpath" "@executable_path" "-O0" "-o" [out] libFlags ("-L"++takeDirectory dynamic_lib) "-L/usr/local/opt/llvm/lib" srcs
     return ()
 
   [path_libout<//>"*"<.>"o", path_libdep<//>"*"<.>"dep"] &%> \[out, dep] -> do
