@@ -87,6 +87,13 @@ namespace rolmodl {
     return h_;
   }
 
+  pixelfmt::Id Win::pixelFmt() {
+    const uint32_t f = SDL_GetWindowPixelFormat(unsafeRaw());
+    if (f == SDL_PIXELFORMAT_UNKNOWN)
+      throw sdlexception();
+    return pixelfmt::id::unsafe::fromSDLEnum(f);
+  }
+
 
   void Win::hide() noexcept {
     SDL_HideWindow(unsafeRaw());

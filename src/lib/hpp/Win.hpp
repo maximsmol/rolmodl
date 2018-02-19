@@ -10,6 +10,7 @@ namespace rolmodl {
 
 #include "Base.hpp"
 #include "Geom.hpp"
+#include "PixelFmt.hpp"
 
 namespace rolmodl {
   namespace win {
@@ -134,6 +135,8 @@ namespace rolmodl {
 
       SDL_Window* unsafeRaw() noexcept;
       const SDL_Window* unsafeRaw() const noexcept;
+
+      pixelfmt::Id pixelFmt();
 
 
       void hide() noexcept;
