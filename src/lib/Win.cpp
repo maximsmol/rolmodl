@@ -99,6 +99,9 @@ namespace rolmodl {
       throw sdlexception();
     return pixelfmt::id::unsafe::fromSDLEnum(f);
   }
+  void Win::moveMouseIn(const geom::Pos p) noexcept {
+    SDL_WarpMouseInWindow(unsafeRaw(), p.x, p.y);
+  }
 
 
   void Win::hide() noexcept {

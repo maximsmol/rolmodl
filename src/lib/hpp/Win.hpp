@@ -142,6 +142,7 @@ namespace rolmodl {
 
       uint32_t unsafeId();
       pixelfmt::Id pixelFmt();
+      void moveMouseIn(const geom::Pos p) noexcept;
 
 
       void hide() noexcept;
