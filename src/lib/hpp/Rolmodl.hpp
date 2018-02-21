@@ -5,6 +5,7 @@
 #include "PixelFmt.hpp"
 
 #include "Kb.hpp"
+#include "Mouse.hpp"
 
 #include "Win.hpp"
 #include "Ren.hpp"

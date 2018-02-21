@@ -120,6 +120,8 @@ int main() {
     // r.drawLine(Pos{10, 10}, Pos{100, 100});
     // r.drawRect(RectXY{110, 110, 200, 110});
 
+    mouse::State ms{};
+    geom::Pos mp = ms.pos();
     {
       TexLock l(t);
       // for (int x = 300; x < 500; ++x)
@@ -138,7 +140,7 @@ int main() {
             static_cast<uint8_t>(col_g%256),
             static_cast<uint8_t>(col_b%256)
           },
-          Pos{300+5*(x%10), 300+5*(x/10)});
+          Pos{mp.x+5*(x%10), mp.y+5*(x/10)});
     }
     r.drawTex(t);
 
