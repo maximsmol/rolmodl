@@ -59,6 +59,7 @@ main = shakeArgs shakeOptions' $ do
           path_libout</>"Ren"<.>"o",
           path_libout</>"Base"<.>"o",
           path_libout</>"Kb"<.>"o",
+          path_libout</>"Mouse"<.>"o",
           path_libout</>"PixelFmt"<.>"o",
           path_libout</>"Tex"<.>"o"
           ]
