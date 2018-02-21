@@ -101,6 +101,10 @@ namespace rolmodl {
 
         uint32_t data_;
     };
+
+    namespace unsafe {
+      // Win fromId();
+    }
   }
 
   class Win;
@@ -136,6 +140,7 @@ namespace rolmodl {
       SDL_Window* unsafeRaw() noexcept;
       const SDL_Window* unsafeRaw() const noexcept;
 
+      uint32_t unsafeId();
       pixelfmt::Id pixelFmt();
 
 
