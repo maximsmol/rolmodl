@@ -120,7 +120,7 @@ int main() {
     // r.drawLine(Pos{10, 10}, Pos{100, 100});
     // r.drawRect(RectXY{110, 110, 200, 110});
 
-    mouse::State ms{};
+    mouse::GlobalState ms{};
     geom::Pos mp = ms.pos();
     {
       TexLock l(t);

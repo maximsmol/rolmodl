@@ -86,16 +86,32 @@ namespace rolmodl::mouse {
       uint32_t raw_;
   };
 
-  class State {
+  namespace detail {
+    class BaseState {
+      public:
+        const geom::Pos& pos() const noexcept;
+        const BtnState& btnState() const noexcept;
+
+      protected:
+        explicit BaseState(const uint32_t b) noexcept;
+
+        geom::Pos p_;
+        BtnState btnState_;
+    };
+  }
+  class State : public detail::BaseState {
     public:
       // fixme: SDL_PumpEvents required before calls
       State() noexcept;
-
-      const geom::Pos& pos() const noexcept;
-      const BtnState& btnState() const noexcept;
-
-    private:
-      geom::Pos p_;
-      BtnState btnState_;
   };
+  class GlobalState : public detail::BaseState {
+    public:
+      // fixme: SDL_PumpEvents required before calls
+      GlobalState() noexcept;
+  };
+
+  void capture();
+  void release();
+
+  void move(const geom::Pos p);
 }
