@@ -95,17 +95,18 @@ namespace rolmodl {
   }
 
   TexLock& TexLock::drawPoint(const RGBA c, const geom::Pos p) noexcept {
-    SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_.format());
+    const SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_.format());
 
-    uint32_t mask = static_cast<unsigned int>((~0 >> (32 - f.BitsPerPixel)));
+    // fixme: assumes little endian
+    const uint32_t mask = static_cast<uint32_t>((~0 << f.BitsPerPixel));
 
     uint32_t& val = unsafePoint(p);
-    val = (val & ~mask) | SDL_MapRGBA(&f, c.r, c.g, c.b, c.a);
+    val = (val & mask) | SDL_MapRGBA(&f, c.r, c.g, c.b, c.a);
 
     return *this;
   }
   RGBA TexLock::getPoint(const geom::Pos p) const noexcept {
-    SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_.format());
+    const SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_.format());
 
     RGBA c{};
     SDL_GetRGBA(unsafePoint(p), &f, &c.r, &c.g, &c.b, &c.a);
