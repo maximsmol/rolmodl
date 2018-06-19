@@ -36,31 +36,45 @@ namespace rolmodl {
           data_(0)
         {}
 
-        // set
-        constexpr Flags software() const noexcept {
+        // test
+        constexpr Flags isSoftware() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_SOFTWARE));
         }
-        constexpr Flags accelerated() const noexcept {
+        constexpr Flags isAccelerated() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_ACCELERATED));
         }
-        constexpr Flags vsync() const noexcept {
+        constexpr Flags isVsync() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_PRESENTVSYNC));
         }
-        constexpr Flags toTexture() const noexcept {
+        constexpr Flags isToTexture() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_TARGETTEXTURE));
+        }
+
+        // set
+        constexpr Flags withSoftware() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_SOFTWARE));
+        }
+        constexpr Flags withAccelerated() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_ACCELERATED));
+        }
+        constexpr Flags withVsync() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_PRESENTVSYNC));
+        }
+        constexpr Flags withToTexture() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_TARGETTEXTURE));
         }
 
         // unset
-        constexpr Flags unSoftware() const noexcept {
+        constexpr Flags withoutSoftware() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_RENDERER_SOFTWARE));
         }
-        constexpr Flags unAccelerated() const noexcept {
+        constexpr Flags withoutAccelerated() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_RENDERER_ACCELERATED));
         }
-        constexpr Flags unVsync() const noexcept {
+        constexpr Flags withoutVsync() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_RENDERER_PRESENTVSYNC));
         }
-        constexpr Flags unToTexture() const noexcept {
+        constexpr Flags withoutToTexture() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_RENDERER_TARGETTEXTURE));
         }
 
