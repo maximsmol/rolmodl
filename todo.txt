@@ -1,4 +1,3 @@
-- flag classes should allow for testing
 - some stuff may be flag dependent
   e.g. should setTitle be available for non-decorated and fullscreen Wins
 

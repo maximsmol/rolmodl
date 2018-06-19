@@ -23,71 +23,105 @@ namespace rolmodl {
           data_(0)
         {}
 
-        // set
-        constexpr Flags fullscreen() const noexcept {
+        // test
+        constexpr Flags isFullscreen() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN));
         }
-        constexpr Flags fullscreenDesktop() const noexcept {
+        constexpr Flags isFullscreenDesktop() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN_DESKTOP));
         }
 
-        constexpr Flags minimized() const noexcept {
+        constexpr Flags isMinimized() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_MINIMIZED));
         }
-        constexpr Flags maximized() const noexcept {
+        constexpr Flags isMaximized() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_MAXIMIZED));
         }
 
-        constexpr Flags opengl() const noexcept {
+        constexpr Flags isOpengl() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_OPENGL));
         }
-        constexpr Flags hidden() const noexcept {
+        constexpr Flags isHidden() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_HIDDEN));
         }
-        constexpr Flags borderless() const noexcept {
+        constexpr Flags isBorderless() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_BORDERLESS));
         }
-        constexpr Flags resizable() const noexcept {
+        constexpr Flags isResizable() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_RESIZABLE));
         }
-        constexpr Flags inputGrabbed() const noexcept {
+        constexpr Flags isInputGrabbed() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_INPUT_GRABBED));
         }
-        constexpr Flags highDPI() const noexcept {
+        constexpr Flags isHighDPI() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_ALLOW_HIGHDPI));
+        }
+
+        // set
+        constexpr Flags withFullscreen() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN));
+        }
+        constexpr Flags withFullscreenDesktop() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN_DESKTOP));
+        }
+
+        constexpr Flags withMinimized() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_MINIMIZED));
+        }
+        constexpr Flags withMaximized() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_MAXIMIZED));
+        }
+
+        constexpr Flags withOpengl() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_OPENGL));
+        }
+        constexpr Flags withHidden() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_HIDDEN));
+        }
+        constexpr Flags withBorderless() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_BORDERLESS));
+        }
+        constexpr Flags withResizable() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_RESIZABLE));
+        }
+        constexpr Flags withInputGrabbed() const noexcept {
+          return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_INPUT_GRABBED));
+        }
+        constexpr Flags withHighDPI() const noexcept {
           return Flags(data_ | static_cast<uint32_t>(SDL_WINDOW_ALLOW_HIGHDPI));
         }
 
         // unset
-        constexpr Flags unFullscreen() const noexcept {
+        constexpr Flags withoutFullscreen() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN));
         }
-        constexpr Flags unFullscreenDesktop() const noexcept {
+        constexpr Flags withoutFullscreenDesktop() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN_DESKTOP));
         }
 
-        constexpr Flags unMinimized() const noexcept {
+        constexpr Flags withoutMinimized() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_MINIMIZED));
         }
-        constexpr Flags unMaximized() const noexcept {
+        constexpr Flags withoutMaximized() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_MAXIMIZED));
         }
 
-        constexpr Flags unOpengl() const noexcept {
+        constexpr Flags withoutOpengl() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_OPENGL));
         }
-        constexpr Flags unHidden() const noexcept {
+        constexpr Flags withoutHidden() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_HIDDEN));
         }
-        constexpr Flags unBorderless() const noexcept {
+        constexpr Flags withoutBorderless() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_BORDERLESS));
         }
-        constexpr Flags unResizable() const noexcept {
+        constexpr Flags withoutResizable() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_RESIZABLE));
         }
-        constexpr Flags unInputGrabbed() const noexcept {
+        constexpr Flags withoutInputGrabbed() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_INPUT_GRABBED));
         }
-        constexpr Flags unHighDPI() const noexcept {
+        constexpr Flags withoutHighDPI() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_ALLOW_HIGHDPI));
         }
 
