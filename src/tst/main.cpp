@@ -7,8 +7,55 @@ using namespace std;
 using namespace rolmodl;
 using namespace geom;
 
+static mouse::Cursor* hand = nullptr;
+struct Button {
+  public:
+    Button(const Pos p, const Size s) :
+      pos(p), size(s),
+      col_(RGBA{100, 100, 100})
+    {}
+
+    void render(Ren& r) {
+      RGBA oldC = r.color();
+
+      r.setColor(col_);
+      r.drawLine(pos, Pos{pos.x+size.w, pos.y});
+      r.drawLine(pos, Pos{pos.x,        pos.y+size.h});
+
+      r.setColor(RGBA{static_cast<uint8_t>(col_.r+100), static_cast<uint8_t>(col_.g+100), static_cast<uint8_t>(col_.b+100)});
+      r.drawLine(Pos{pos.x+size.w, pos.y+size.h}, Pos{pos.x+size.w, pos.y});
+      r.drawLine(Pos{pos.x+size.w, pos.y+size.h}, Pos{pos.x,        pos.y+size.h});
+
+      r.setColor(oldC);
+    }
+    void tick(mouse::State ms) {
+      Pos mp = ms.pos();
+
+      if (mp.x < pos.x        || mp.y < pos.y ||
+          mp.x > pos.x+size.w || mp.y > pos.y+size.h) {
+        col_ = RGBA{100, 100, 100};
+        mouse::cursor::useDefault();
+        return;
+      }
+
+      hand->use();
+      if (ms.btnState().l())
+        col_ = RGBA{100, 200, 100};
+      else
+        col_ = RGBA{200, 100, 100};
+    }
+
+    Pos pos;
+    Size size;
+  private:
+    RGBA col_;
+};
+
 int main() {
   SDL_Init(SDL_INIT_EVERYTHING);
+
+  mouse::Cursor hand1 = mouse::cursor::system::hand();
+  hand = &hand1;
 
   printf("sys info\n");
   printf("name: %s\n", sys::name());
@@ -73,22 +120,11 @@ int main() {
   Win w("test", Size{800, 600});
   Ren r(w);
 
-  const char* titles[] = {
-    "title title title title title title title ",
-    "itle title title title title title title t",
-    "tle title title title title title title ti",
-    "le title title title title title title tit",
-    "e title title title title title title titl"
-  };
-  int titleI = 0;
-
-  LockTex t(r, pixelfmt::Id::rgba32, Size{800, 600});
-
   bool running = true;
 
-  int col_r = 255;
-  int col_g = 0;
-  int col_b = 255;
+  Button b(Pos{100, 100}, Size{10, 10});
+  Button b1(Pos{120, 100}, Size{10, 10});
+  Button b2(Pos{140, 100}, Size{10, 10});
   while (running) {
     SDL_Event e;
     while (SDL_PollEvent(&e) != 0) {
@@ -96,53 +132,20 @@ int main() {
         case SDL_QUIT:
           running = false;
           break;
-        case SDL_KEYDOWN:
-          kb::key::Name::query(kb::key::unsafe::fromSDLEnum(e.key.keysym.sym));
-          printf("%s\n", kb::key::Name::lastQueryRes());
-          break;
       }
     }
 
-    if (kb::State::down(kb::Key::r))
-      col_r += 4;
-    if (kb::State::down(kb::Key::g))
-      col_g += 4;
-    if (kb::State::down(kb::Key::b))
-      col_b += 4;
-
-    w.setTitle(titles[titleI++]);
-    titleI %= sizeof(titles)/sizeof(titles[0]);
-    SDL_Delay(50);
-
     r.setColor(RGBA{0, 0, 0});
     r.clear();
-    // r.setColor(RGBA{255, 255, 255});
-    // r.drawLine(Pos{10, 10}, Pos{100, 100});
-    // r.drawRect(RectXY{110, 110, 200, 110});
 
     mouse::State ms{};
-    geom::Pos mp = ms.pos();
-    {
-      TexLock l(t);
-      // for (int x = 300; x < 500; ++x)
-      //   for (int y = 200; y < 500; ++y)
-      //     l.drawPoint(
-      //       RGBA{
-      //         static_cast<uint8_t>((col_r -= 3)%256),
-      //         static_cast<uint8_t>((col_g -= 7)%256),
-      //         static_cast<uint8_t>((col_b -= 5)%256)
-      //       },
-      //       Pos{x, y});
-      for (int x = 0; x < 100; ++x)
-        l.drawPoint(
-          RGBA{
-            static_cast<uint8_t>(col_r%256),
-            static_cast<uint8_t>(col_g%256),
-            static_cast<uint8_t>(col_b%256)
-          },
-          Pos{mp.x+5*(x%10), mp.y+5*(x/10)});
-    }
-    r.drawTex(t);
+    b.tick(ms);
+    b1.tick(ms);
+    b2.tick(ms);
+
+    b.render(r);
+    b1.render(r);
+    b2.render(r);
 
     r.present();
   }

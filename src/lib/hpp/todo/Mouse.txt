@@ -1,10 +1,9 @@
-SDL_CreateColorCursor
+// needs collections
 SDL_CreateCursor
-SDL_CreateSystemCursor
-SDL_FreeCursor
+
+SDL_CreateColorCursor
 SDL_GetCursor
 SDL_GetDefaultCursor
-SDL_SetCursor
 SDL_ShowCursor
 
 // fixme: won't support without copyable windows
