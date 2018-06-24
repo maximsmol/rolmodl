@@ -1,6 +1,4 @@
 #pragma once
-
-#include <utility>
 #include <cstdint>
 
 #include <SDL.h>
@@ -67,6 +65,14 @@ namespace rolmodl {
       TexLock(LockTex& tex, const geom::RectXY r);
       ~TexLock() noexcept;
 
+      TexLock(const TexLock& that) = delete;
+      TexLock(TexLock&& that) noexcept;
+
+      TexLock& operator=(const TexLock& that) = delete;
+      TexLock& operator=(TexLock&& that) noexcept;
+
+      friend void swap(TexLock& a, TexLock& b) noexcept;
+
       TexLock& drawPoint(const RGBA c, const geom::Pos p) noexcept;
       RGBA getPoint(const geom::Pos p) const noexcept;
 
@@ -77,10 +83,11 @@ namespace rolmodl {
       const void* unsafeRaw() const noexcept;
 
     private:
+      TexLock() noexcept;
       TexLock(LockTex& tex, const SDL_Rect* r);
       TexLock(LockTex& tex, const SDL_Rect r);
 
-      LockTex& t_;
+      LockTex* t_;
       void* h_;
       unsigned int pitch_;
   };
