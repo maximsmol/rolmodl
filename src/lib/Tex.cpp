@@ -1,5 +1,8 @@
 #include "hpp/Tex.hpp"
 
+#include <utility>
+#include <cassert>
+
 namespace rolmodl {
   using detail::throwOnErr;
 
@@ -67,8 +70,13 @@ namespace rolmodl {
     Tex(r, fmt, SDL_TEXTUREACCESS_TARGET, s) {}
 
 
+  TexLock::TexLock() noexcept :
+    t_(nullptr),
+    h_(nullptr),
+    pitch_(0)
+  {}
   TexLock::TexLock(LockTex& tex, const SDL_Rect* r) :
-    t_(tex),
+    t_(&tex),
     h_(nullptr),
     pitch_(0)
   {
@@ -87,15 +95,35 @@ namespace rolmodl {
     TexLock(tex, r.wh()) {}
 
   TexLock::~TexLock() noexcept {
-    if (h_ != nullptr)
-      SDL_UnlockTexture(t_.unsafeRaw());
+    if (h_ != nullptr) {
+      assert(t_ != nullptr);
+      SDL_UnlockTexture(t_->unsafeRaw());
+    }
 
+    t_ = nullptr;
     h_ = nullptr;
     pitch_ = 0;
   }
 
+  TexLock::TexLock(TexLock&& that) noexcept :
+    TexLock()
+  {
+    std::swap(*this, that);
+  }
+  TexLock& TexLock::operator=(TexLock&& that) noexcept {
+    std::swap(*this, that);
+    return *this;
+  }
+
+  void swap(TexLock& a, TexLock& b) noexcept {
+    using std::swap;
+    swap(a.t_, b.t_);
+    swap(a.h_, b.h_);
+    swap(a.pitch_, b.pitch_);
+  }
+
   TexLock& TexLock::drawPoint(const RGBA c, const geom::Pos p) noexcept {
-    const SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_.format());
+    const SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_->format());
 
     // fixme: assumes little endian
     const uint32_t mask = static_cast<uint32_t>((~0 << f.BitsPerPixel));
@@ -106,7 +134,7 @@ namespace rolmodl {
     return *this;
   }
   RGBA TexLock::getPoint(const geom::Pos p) const noexcept {
-    const SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_.format());
+    const SDL_PixelFormat f = pixelfmt::PixelFmtStorage::instance().get(t_->format());
 
     RGBA c{};
     SDL_GetRGBA(unsafePoint(p), &f, &c.r, &c.g, &c.b, &c.a);
@@ -118,7 +146,7 @@ namespace rolmodl {
     return *reinterpret_cast<uint32_t*>(
       static_cast<char*>(unsafeRaw()) +
         static_cast<unsigned int>(p.y)*pitch_ +
-        static_cast<unsigned int>(p.x)*pixelfmt::byteSizeOf(t_.format())
+        static_cast<unsigned int>(p.x)*pixelfmt::byteSizeOf(t_->format())
     );
   }
   const uint32_t& TexLock::unsafePoint(const geom::Pos p) const noexcept {
