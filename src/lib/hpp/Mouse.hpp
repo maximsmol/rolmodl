@@ -7,6 +7,38 @@
 #include "Geom.hpp"
 
 namespace rolmodl::mouse {
+  class Cursor;
+  namespace cursor {
+    // namespace detail {
+    //   static Cursor* active_cursor;
+    // }
+    namespace unsafe {
+      void useRaw(Cursor* c) noexcept;
+    }
+
+    namespace system {
+      enum class Type;
+
+      Cursor create(const Type t);
+
+      Cursor arrow();
+      Cursor iBeam();
+      Cursor wait();
+      Cursor crosshair();
+      Cursor waitArrow();
+      Cursor forbidden();
+      Cursor hand();
+
+      namespace resize {
+        Cursor nw_se();
+        Cursor ne_sw();
+        Cursor we();
+        Cursor ns();
+        Cursor all();
+      }
+    }
+  }
+
   enum class Btn;
 
   namespace btn::unsafe {
@@ -19,6 +51,124 @@ namespace rolmodl::mouse {
 }
 
 namespace rolmodl::mouse {
+  class Cursor {
+    public:
+      Cursor(const Cursor& that) = delete;
+      Cursor(Cursor&& that) noexcept;
+      ~Cursor();
+
+      Cursor& operator=(const Cursor& that) = delete;
+      Cursor& operator=(Cursor&& that) noexcept;
+
+      friend void swap(Cursor& a, Cursor& b) noexcept;
+
+      void use() noexcept;
+      SDL_Cursor* unsafeRaw() noexcept;
+
+    private:
+      Cursor() noexcept;
+      explicit Cursor(SDL_Cursor* data) noexcept;
+
+      friend Cursor cursor::system::create(const cursor::system::Type t);
+      friend void cursor::unsafe::useRaw(Cursor* c) noexcept;
+
+      void unused() noexcept;
+      void free() noexcept;
+
+      SDL_Cursor* data_;
+      bool destructed_;
+  };
+  namespace cursor {
+    namespace detail {
+      static Cursor* active_cursor = nullptr; // todo: use optional?
+    }
+    namespace unsafe {
+      void useRaw(Cursor* c) noexcept;
+    }
+
+    void useDefault() noexcept;
+    namespace system {
+      enum class Type {
+        arrow, iBeam, wait, crosshair, waitArrow, forbidden, hand,
+        resize_nw_se, resize_ne_sw, resize_we, resize_ns, resize_all
+      };
+
+      namespace type::unsafe {
+        constexpr SDL_SystemCursor toSDLEnum(const Type t) noexcept {
+          if (t == Type::arrow)
+            return SDL_SYSTEM_CURSOR_ARROW;
+          else if (t == Type::iBeam)
+            return SDL_SYSTEM_CURSOR_IBEAM;
+          else if (t == Type::wait)
+            return SDL_SYSTEM_CURSOR_WAIT;
+          else if (t == Type::crosshair)
+            return SDL_SYSTEM_CURSOR_CROSSHAIR;
+          else if (t == Type::waitArrow)
+            return SDL_SYSTEM_CURSOR_WAITARROW;
+          else if (t == Type::resize_nw_se)
+            return SDL_SYSTEM_CURSOR_SIZENWSE;
+          else if (t == Type::resize_ne_sw)
+            return SDL_SYSTEM_CURSOR_SIZENESW;
+          else if (t == Type::resize_we)
+            return SDL_SYSTEM_CURSOR_SIZEWE;
+          else if (t == Type::resize_ns)
+            return SDL_SYSTEM_CURSOR_SIZENS;
+          else if (t == Type::resize_all)
+            return SDL_SYSTEM_CURSOR_SIZEALL;
+          else if (t == Type::forbidden)
+            return SDL_SYSTEM_CURSOR_NO;
+          // else if (t == Type::hand)
+            return SDL_SYSTEM_CURSOR_HAND;
+        }
+
+        constexpr Type fromSDLEnum(const SDL_SystemCursor t) noexcept {
+          if (t == SDL_SYSTEM_CURSOR_ARROW)
+            return Type::arrow;
+          else if (t == SDL_SYSTEM_CURSOR_IBEAM)
+            return Type::iBeam;
+          else if (t == SDL_SYSTEM_CURSOR_WAIT)
+            return Type::wait;
+          else if (t == SDL_SYSTEM_CURSOR_CROSSHAIR)
+            return Type::crosshair;
+          else if (t == SDL_SYSTEM_CURSOR_WAITARROW)
+            return Type::waitArrow;
+          else if (t == SDL_SYSTEM_CURSOR_SIZENWSE)
+            return Type::resize_nw_se;
+          else if (t == SDL_SYSTEM_CURSOR_SIZENESW)
+            return Type::resize_ne_sw;
+          else if (t == SDL_SYSTEM_CURSOR_SIZEWE)
+            return Type::resize_we;
+          else if (t == SDL_SYSTEM_CURSOR_SIZENS)
+            return Type::resize_ns;
+          else if (t == SDL_SYSTEM_CURSOR_SIZEALL)
+            return Type::resize_all;
+          else if (t == SDL_SYSTEM_CURSOR_NO)
+            return Type::forbidden;
+          // else if (t == SDL_SYSTEM_CURSOR_HAND)
+            return Type::hand;
+        }
+      }
+
+      Cursor create(const Type t);
+
+      Cursor arrow();
+      Cursor iBeam();
+      Cursor wait();
+      Cursor crosshair();
+      Cursor waitArrow();
+      Cursor forbidden();
+      Cursor hand();
+
+      namespace resize {
+        Cursor nw_se();
+        Cursor ne_sw();
+        Cursor we();
+        Cursor ns();
+        Cursor all();
+      }
+    }
+  }
+
   enum class Btn {
     left, right, middle, x1, x2,
     l = left, r = right, m = middle
