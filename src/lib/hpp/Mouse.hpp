@@ -16,6 +16,7 @@ namespace rolmodl::mouse {
       void useRaw(Cursor* c) noexcept;
     }
 
+    void useDefault() noexcept;
     namespace system {
       enum class Type;
 
