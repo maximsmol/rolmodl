@@ -12,7 +12,8 @@ struct Button {
   public:
     Button(const Pos p, const Size s) :
       pos(p), size(s),
-      col_(RGBA{100, 100, 100})
+      col_(RGBA{100, 100, 100}),
+      state_(0)
     {}
 
     void render(Ren& r) {
@@ -33,22 +34,35 @@ struct Button {
 
       if (mp.x < pos.x        || mp.y < pos.y ||
           mp.x > pos.x+size.w || mp.y > pos.y+size.h) {
+        if (state_ == 0)
+          return;
+
         col_ = RGBA{100, 100, 100};
         mouse::cursor::useDefault();
+        state_ = 0;
         return;
       }
 
       hand->use();
-      if (ms.btnState().l())
+      if (ms.btnState().l()) {
+        if (state_ == 2)
+          return;
         col_ = RGBA{100, 200, 100};
-      else
+        state_ = 2;
+      }
+      else {
+        if (state_ == 1)
+          return;
         col_ = RGBA{200, 100, 100};
+        state_ = 1;
+      }
     }
 
     Pos pos;
     Size size;
   private:
     RGBA col_;
+    int state_; // 0 - def, 1 - hover, 2 - click
 };
 
 int main() {
@@ -122,9 +136,10 @@ int main() {
 
   bool running = true;
 
-  Button b(Pos{100, 100}, Size{10, 10});
-  Button b1(Pos{120, 100}, Size{10, 10});
-  Button b2(Pos{140, 100}, Size{10, 10});
+  const int btnDim = 30;
+  Button b(Pos{100, 100}, Size{btnDim, btnDim});
+  Button b1(Pos{100+2*btnDim, 100}, Size{btnDim, btnDim});
+  Button b2(Pos{100+4*btnDim, 100}, Size{btnDim, btnDim});
   while (running) {
     SDL_Event e;
     while (SDL_PollEvent(&e) != 0) {

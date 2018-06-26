@@ -9,12 +9,12 @@ using rolmodl::detail::throwOnErr;
 namespace rolmodl::mouse {
   namespace cursor {
     namespace unsafe {
-      void useRaw(Cursor* c) noexcept {
+      void useRaw(Cursor* c) noexcept { // todo: weird API
         using detail::active_cursor;
 
         if (active_cursor != nullptr)
           active_cursor->unused();
-        SDL_SetCursor(c == nullptr ? nullptr : c->unsafeRaw());
+        SDL_SetCursor(c == nullptr ? SDL_GetDefaultCursor() : c->unsafeRaw());
       }
     }
 
