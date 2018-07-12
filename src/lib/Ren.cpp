@@ -143,7 +143,7 @@ namespace rolmodl {
     SDL_RenderGetClipRect(unsafeRaw(), &tmp);
     if (tmp.w != 0 || tmp.h != 0) // todo: what is an empty rectangle?
       return geom::RectWH(tmp);
-    return {};
+    return std::nullopt;
   }
   void Ren::setClipRect(const geom::RectWH r) {
     SDL_Rect tmp = r.sdl();
@@ -161,7 +161,7 @@ namespace rolmodl {
     SDL_RenderGetLogicalSize(unsafeRaw(), &tmp.w, &tmp.h);
     if (tmp.w != 0 || tmp.h != 0)
       return tmp;
-    return {};
+    return std::nullopt;
   }
   void Ren::setLogicalSize(const geom::Size s) {
     throwOnErr(SDL_RenderSetLogicalSize(unsafeRaw(), s.w, s.h));
