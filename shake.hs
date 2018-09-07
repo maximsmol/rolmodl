@@ -89,7 +89,7 @@ main = shakeArgs shakeOptions' $ do
     let warnFlags = ["-Weverything", "-Wno-c++98-compat", "-Wno-c++98-c++11-compat", "-Wno-c++98-c++11-compat-pedantic", "-Wno-c99-extensions", "-Wno-c++98-c++11-c++14-compat", "-Wno-padded"]
     let outputFlags = ["-o", out]
     let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
-    let otherFlags = ["-std=c++17"]
+    let otherFlags = ["-std=c++1z"]
     let command = ["clang++", "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
 
     () <- cmd command "-M" "-MF" [dep] [src]
@@ -105,7 +105,7 @@ main = shakeArgs shakeOptions' $ do
     let warnFlags = ["-Weverything", "-Wno-c++98-compat", "-Wno-c++98-c++11-compat", "-Wno-c++98-c++11-compat-pedantic", "-Wno-c99-extensions", "-Wno-c++98-c++11-c++14-compat", "-Wno-padded"]
     let outputFlags = ["-o", out]
     let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
-    let otherFlags = ["-std=c++17"]
+    let otherFlags = ["-std=c++1z"]
     let command = ["clang++", "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
 
     () <- cmd command "-M" "-MF" [dep] [src]
