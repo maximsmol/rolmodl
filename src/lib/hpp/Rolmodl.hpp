@@ -6,6 +6,7 @@
 
 #include "Kb.hpp"
 #include "Mouse.hpp"
+#include "Event.hpp"
 
 #include "Win.hpp"
 #include "Ren.hpp"

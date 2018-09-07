@@ -61,7 +61,8 @@ main = shakeArgs shakeOptions' $ do
           path_libout</>"Kb"<.>"o",
           path_libout</>"Mouse"<.>"o",
           path_libout</>"PixelFmt"<.>"o",
-          path_libout</>"Tex"<.>"o"
+          path_libout</>"Tex"<.>"o",
+          path_libout</>"Event"<.>"o"
           ]
     need srcs
 
