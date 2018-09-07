@@ -5,6 +5,7 @@ import Development.Shake.Util
 
 import Data.List
 import System.Directory
+import System.Environment
 import Control.Monad
 import System.IO
 import Control.Monad.State
@@ -47,6 +48,12 @@ main = shakeArgs shakeOptions' $ do
   let path_tstdep = path_dep</>"tst"
 
   liftIO $ createDirectoryIfMissing True (path_out</>"rep")
+
+  compilerFromEnv <- liftIO $ lookupEnv "CXX"
+  let compiler =
+        case compilerFromEnv of
+          Just x -> if null x then "clang++" else x
+          Nothing -> "clang++"
 
   let exec = "dst"</>"dbg"</>"exec"
   -- let static_lib = "dst"</>"dbg"</>"rolmodl.so" -- no support on macos
@@ -91,7 +98,7 @@ main = shakeArgs shakeOptions' $ do
     let outputFlags = ["-o", out]
     let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
     let otherFlags = ["-std=c++1z"]
-    let command = ["clang++", "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
+    let command = [compiler, "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
 
     () <- cmd command "-M" "-MF" [dep] [src]
     needMakefileDependencies dep
@@ -107,7 +114,7 @@ main = shakeArgs shakeOptions' $ do
     let outputFlags = ["-o", out]
     let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
     let otherFlags = ["-std=c++1z"]
-    let command = ["clang++", "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
+    let command = [compiler, "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
 
     () <- cmd command "-M" "-MF" [dep] [src]
     needMakefileDependencies dep
