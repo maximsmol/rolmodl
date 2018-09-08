@@ -5,6 +5,7 @@ import Development.Shake.Util
 
 import Data.List
 import System.Directory
+import qualified System.Directory as D
 import System.Environment
 import Control.Monad
 import System.IO
@@ -22,6 +23,14 @@ dropDir x base = joinPath $ dropDir' (splitPath x) (splitPath base)
         else
           error $ "could not drop '"++(joinPath (b:bs))++"' from '"++(joinPath (x:xs))++"'"
 
+listDirRec :: FilePath -> IO [FilePath]
+listDirRec path = do
+  isDir <- D.doesDirectoryExist path
+  if isDir then do
+    files <- ((path </>) <$>) <$> listDirectory path
+    concat <$> traverse listDirRec files
+  else
+    return [path]
 
 shakeOptions' :: ShakeOptions
 shakeOptions' = shakeOptions{
@@ -38,14 +47,17 @@ main = shakeArgs shakeOptions' $ do
   let path_in = "src"
   let path_out = "bld"
   let path_dep = path_out</>"dep"
+  let path_compdb = path_out</>"compdb"
 
-  let path_libin  = path_in </>"lib"
-  let path_libout = path_out</>"lib"
-  let path_libdep = path_dep</>"lib"
+  let path_libin     = path_in    </>"lib"
+  let path_libout    = path_out   </>"lib"
+  let path_libdep    = path_dep   </>"lib"
+  let path_libcompdb = path_compdb</>"lib"
 
-  let path_tstin  = path_in </>"tst"
-  let path_tstout = path_out</>"tst"
-  let path_tstdep = path_dep</>"tst"
+  let path_tstin     = path_in    </>"tst"
+  let path_tstout    = path_out   </>"tst"
+  let path_tstdep    = path_dep   </>"tst"
+  let path_tstcompdb = path_compdb</>"tst"
 
   liftIO $ createDirectoryIfMissing True (path_out</>"rep")
 
@@ -58,7 +70,9 @@ main = shakeArgs shakeOptions' $ do
   let exec = "dst"</>"dbg"</>"exec"
   -- let static_lib = "dst"</>"dbg"</>"rolmodl.so" -- no support on macos
   let dynamic_lib = "dst"</>"dbg"</>"librolmodl.dylib"
-  want [exec]
+  let compdb = path_out</>"compile_commands.json"
+
+  want [exec, compdb]
 
   dynamic_lib %> \out -> do
     let srcs = [
@@ -90,37 +104,33 @@ main = shakeArgs shakeOptions' $ do
     () <- cmd "clang++" "-rpath" "@executable_path" "-O0" "-o" [out] libFlags ("-L"++takeDirectory dynamic_lib) "-L/usr/local/opt/llvm/lib" srcs
     return ()
 
-  [path_libout<//>"*"<.>"o", path_libdep<//>"*"<.>"dep"] &%> \[out, dep] -> do
+  compdb %> \out -> do
+    files <- liftIO $ listDirRec path_compdb
+    () <- cmd Shell ["sed", "-e", "'1s/^/[\\\n/'", "-e", "'$s/,$/\\\n]/'"] files [">", out]
+    return ()
+
+  let cppRoutine = \src dep out compdb -> do
+      --  "-Ofast"
+      let diagFlags = ["-fcolor-diagnostics"]
+      let warnFlags = ["-Weverything", "-Wno-c++98-compat", "-Wno-c++98-c++11-compat", "-Wno-c++98-c++11-compat-pedantic", "-Wno-c99-extensions", "-Wno-c++98-c++11-c++14-compat", "-Wno-padded"]
+      let outputFlags = ["-o", out]
+      let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
+      let otherFlags = ["-std=c++1z"]
+      let command = [compiler, "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
+
+      () <- cmd command "-M" "-MF" [dep] [src]
+      needMakefileDependencies dep
+
+      () <- cmd command "-MJ" [compdb] "-c" [src]
+      return ()
+
+  [path_libout<//>"*"<.>"o", path_libdep<//>"*"<.>"dep", path_libcompdb<//>"*"<.>"json"] &%> \[out, dep, compdb] -> do
     let src = path_libin</>(dropDir out path_libout)-<.>"cpp"
-    --  "-Ofast"
-    let diagFlags = ["-fcolor-diagnostics"]
-    let warnFlags = ["-Weverything", "-Wno-c++98-compat", "-Wno-c++98-c++11-compat", "-Wno-c++98-c++11-compat-pedantic", "-Wno-c99-extensions", "-Wno-c++98-c++11-c++14-compat", "-Wno-padded"]
-    let outputFlags = ["-o", out]
-    let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
-    let otherFlags = ["-std=c++1z"]
-    let command = [compiler, "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
+    cppRoutine src dep out compdb
 
-    () <- cmd command "-M" "-MF" [dep] [src]
-    needMakefileDependencies dep
-
-    () <- cmd command "-c" [src]
-    return ()
-
-  [path_tstout<//>"*"<.>"o", path_tstdep<//>"*"<.>"dep"] &%> \[out, dep] -> do
+  [path_tstout<//>"*"<.>"o", path_tstdep<//>"*"<.>"dep", path_tstcompdb<//>"*"<.>"json"] &%> \[out, dep, compdb] -> do
     let src = path_tstin</>(dropDir out path_tstout)-<.>"cpp"
-    --  "-Ofast"
-    let diagFlags = ["-fcolor-diagnostics"]
-    let warnFlags = ["-Weverything", "-Wno-c++98-compat", "-Wno-c++98-c++11-compat", "-Wno-c++98-c++11-compat-pedantic", "-Wno-c99-extensions", "-Wno-c++98-c++11-c++14-compat", "-Wno-padded"]
-    let outputFlags = ["-o", out]
-    let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
-    let otherFlags = ["-std=c++1z"]
-    let command = [compiler, "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
-
-    () <- cmd command "-M" "-MF" [dep] [src]
-    needMakefileDependencies dep
-
-    () <- cmd command "-c" [src]
-    return ()
+    cppRoutine src dep out compdb
 
   phony "dbg" $ do
     return ()
