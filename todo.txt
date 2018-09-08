@@ -4,7 +4,7 @@
 ? sdlexception : runtime_error
 ? force win/ren functions to be const
 ? remove RectXY
-? add not-graphics sdl features
+- add not-graphics sdl features
 
 PixelFmt
   ? better order + layout api
