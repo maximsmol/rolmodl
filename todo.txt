@@ -5,6 +5,10 @@
 ? force win/ren functions to be const
 ? remove RectXY
 - add not-graphics sdl features
+- won't support documentation for window ids
+
+- string representations of enums
+- enum-like classes are mostly unsafe because they rely on the SDL enum being valid
 
 PixelFmt
   ? better order + layout api

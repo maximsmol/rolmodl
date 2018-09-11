@@ -1,5 +1,11 @@
 user events
-
 rename events according to a consistent scheme
-
 support interactive resizing?
+SDL_TouchMouseID distinction
+SDL_JoystickID
+SDL_TouchID
+SDL_GestureID
+SYSWM events
+audio device index
+drag_n_drop resource management
+SDL_FingerID

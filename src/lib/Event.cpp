@@ -61,8 +61,8 @@ namespace rolmodl::event {
         .touchId = e.tfinger.touchId,
         .fingerId = e.tfinger.fingerId,
 
-        .x = e.tfinger.x, .y = e.tfinger
-        .dx = e.tfinger.dx, .dy = e.tfinger.dy,
+        .pos = geom::XYFloats{e.tfinger.x, e.tfinger.y},
+        .dpos = geom::XYFloats{e.tfinger.dx, e.tfinger.dy},
         .pressure = e.tfinger.pressure
       };
     if (e.type == SDL_FINGERUP)
@@ -71,8 +71,7 @@ namespace rolmodl::event {
         .touchId = e.tfinger.touchId,
         .fingerId = e.tfinger.fingerId,
 
-        .x = e.tfinger.x, .y = e.tfinger
-        .dx = e.tfinger.dx, .dy = e.tfinger.dy,
+        .pos = geom::XYFloats{e.tfinger.x, e.tfinger.y},
         .pressure = e.tfinger.pressure
       };
     if (e.type == SDL_FINGERDOWN)
@@ -81,8 +80,7 @@ namespace rolmodl::event {
         .touchId = e.tfinger.touchId,
         .fingerId = e.tfinger.fingerId,
 
-        .x = e.tfinger.x, .y = e.tfinger
-        .dx = e.tfinger.dx, .dy = e.tfinger.dy,
+        .pos = geom::XYFloats{e.tfinger.x, e.tfinger.y},
         .pressure = e.tfinger.pressure
       };
 
@@ -90,7 +88,7 @@ namespace rolmodl::event {
       return key::Up{
         {e.key.timestamp},
         {e.key.windowID},
-        .state = e.key.state,
+        .state = button_state::unsafe::fromSDLEnum(e.key.state),
         .repeat = e.key.repeat != 0,
         .sym = e.key.keysym
       };
@@ -98,7 +96,7 @@ namespace rolmodl::event {
       return key::Down{
         {e.key.timestamp},
         {e.key.windowID},
-        .state = e.key.state,
+        .state = button_state::unsafe::fromSDLEnum(e.key.state),
         .repeat = e.key.repeat != 0,
         .sym = e.key.keysym
       };
@@ -108,37 +106,37 @@ namespace rolmodl::event {
         {e.button.timestamp},
         {e.button.windowID},
         .mouseId = e.button.which,
-        .button = e.button.button,
-        .state = e.button.state,
+        .button = ::rolmodl::mouse::btn::unsafe::fromSDLEnum(e.button.button),
+        .state = button_state::unsafe::fromSDLEnum(e.button.state),
         .clicks = e.button.clicks,
-        .x = e.button.x, .y = e.button.y
+        .pos = geom::XYInt32{e.button.x, e.button.y}
       };
     if (e.type == SDL_MOUSEBUTTONDOWN)
       return mouse::button::Down{
         {e.button.timestamp},
         {e.button.windowID},
         .mouseId = e.button.which,
-        .button = e.button.button,
-        .state = e.button.state,
+        .button = ::rolmodl::mouse::btn::unsafe::fromSDLEnum(e.button.button),
+        .state = button_state::unsafe::fromSDLEnum(e.button.state),
         .clicks = e.button.clicks,
-        .x = e.button.x, .y = e.button.y
+        .pos = geom::XYInt32{e.button.x, e.button.y}
       };
     if (e.type == SDL_MOUSEMOTION)
       return mouse::Motion{
         {e.motion.timestamp},
         {e.motion.windowID},
         .mouseId = e.motion.which,
-        .state = e.motion.state,
-        .x = e.motion.x, .y = e.motion.y,
-        .dx = e.motion.xrel, .dy = e.motion.yrel
+        .state = ::rolmodl::mouse::BtnState(e.motion.state),
+        .pos = geom::XYInt32{e.motion.x, e.motion.y},
+        .dpos = geom::XYInt32{e.motion.xrel, e.motion.yrel}
       };
     if (e.type == SDL_MOUSEWHEEL)
       return mouse::Wheel{
         {e.wheel.timestamp},
         {e.wheel.windowID},
         .mouseId = e.wheel.which,
-        .dx = e.wheel.x, .dy = e.wheel.y,
-        .direction = e.wheel.direction
+        .dpos = geom::XYInt32{e.wheel.x, e.wheel.y},
+        .direction = mouse::wheel_direction::unsafe::fromSDLEnum(e.wheel.direction)
       };
 
     if (e.type == SDL_JOYAXISMOTION)
@@ -160,21 +158,21 @@ namespace rolmodl::event {
         {e.jhat.timestamp},
         .joystickId = e.jhat.which,
         .hatN = e.jhat.hat,
-        .x = e.jhat.value
+        .x = HatState(e.jhat.value)
       };
     if (e.type == SDL_JOYBUTTONUP)
       return joystick::button::Up{
         {e.jbutton.timestamp},
         .joystickId = e.jbutton.which,
         .buttonN = e.jbutton.button,
-        .state = e.jbutton.state
+        .state = button_state::unsafe::fromSDLEnum(e.jbutton.state)
       };
     if (e.type == SDL_JOYBUTTONDOWN)
       return joystick::button::Down{
         {e.jbutton.timestamp},
         .joystickId = e.jbutton.which,
         .buttonN = e.jbutton.button,
-        .state = e.jbutton.state
+        .state = button_state::unsafe::fromSDLEnum(e.jbutton.state)
       };
     if (e.type == SDL_JOYDEVICEADDED)
       return joystick::device::Added{
@@ -199,14 +197,14 @@ namespace rolmodl::event {
         {e.cbutton.timestamp},
         .controllerId = e.cbutton.which,
         .buttonN = e.cbutton.button,
-        .state = e.cbutton.state
+        .state = button_state::unsafe::fromSDLEnum(e.cbutton.state)
       };
     if (e.type == SDL_CONTROLLERBUTTONDOWN)
       return controller::button::Down{
         {e.cbutton.timestamp},
         .controllerId = e.cbutton.which,
         .buttonN = e.cbutton.button,
-        .state = e.cbutton.state
+        .state = button_state::unsafe::fromSDLEnum(e.cbutton.state)
       };
     if (e.type == SDL_CONTROLLERDEVICEADDED)
       return controller::device::Added{
@@ -232,8 +230,8 @@ namespace rolmodl::event {
         .dRotation = e.mgesture.dTheta,
         .dPinch = e.mgesture.dDist,
 
-        .x = e.mgesture.x, .y = e.mgesture.y,
-        .nFingers = e.mgesture.numFingers
+        .nFingers = e.mgesture.numFingers,
+        .pos = geom::XYFloats{e.mgesture.x, e.mgesture.y}
       };
     if (e.type == SDL_DOLLARRECORD)
       return gesture::custom::Recorded{
@@ -243,7 +241,7 @@ namespace rolmodl::event {
 
         .nFingers = e.dgesture.numFingers,
         .error = e.dgesture.error,
-        .x = e.dgesture.x, .y = e.dgesture.y
+        .pos = geom::XYFloats{e.mgesture.x, e.mgesture.y}
       };
     if (e.type == SDL_DOLLARGESTURE)
       return gesture::custom::Detected{
@@ -253,7 +251,7 @@ namespace rolmodl::event {
 
         .nFingers = e.dgesture.numFingers,
         .error = e.dgesture.error,
-        .x = e.dgesture.x, .y = e.dgesture.y
+        .pos = geom::XYFloats{e.mgesture.x, e.mgesture.y}
       };
 
     if (e.type == SDL_WINDOWEVENT) {
