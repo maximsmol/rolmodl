@@ -178,13 +178,13 @@ int main() {
       }, e);
 
       varact<event::touch::Motion>([&](event::touch::Motion x) {
-        printf("%6d: Touch.motion\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tdx: %f dy: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.x), static_cast<double>(x.y), static_cast<double>(x.dx), static_cast<double>(x.dy), static_cast<double>(x.pressure));
+        // printf("%6d: Touch.motion\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tdx: %f dy: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.x), static_cast<double>(x.y), static_cast<double>(x.dx), static_cast<double>(x.dy), static_cast<double>(x.pressure));
       }, e);
       varact<event::touch::Up>([&](event::touch::Up x) {
-        printf("%6d: Touch.up\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tdx: %f dy: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.x), static_cast<double>(x.y), static_cast<double>(x.dx), static_cast<double>(x.dy), static_cast<double>(x.pressure));
+        printf("%6d: Touch.up\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.pos.x), static_cast<double>(x.pos.y), static_cast<double>(x.pressure));
       }, e);
       varact<event::touch::Down>([&](event::touch::Down x) {
-        printf("%6d: Touch.up\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tdx: %f dy: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.x), static_cast<double>(x.y), static_cast<double>(x.dx), static_cast<double>(x.dy), static_cast<double>(x.pressure));
+        printf("%6d: Touch.down\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.pos.x), static_cast<double>(x.pos.y), static_cast<double>(x.pressure));
       }, e);
 
       varact<event::key::Up>([&](event::key::Up x) {
@@ -195,16 +195,16 @@ int main() {
       }, e);
 
       varact<event::mouse::button::Up>([&](event::mouse::button::Up x) {
-        printf("%6d: Mouse.button.up\n\tunsafe_winId: %d\n\tmouseId: %d\n\tbutton: %d state: %d clicks: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.button, x.state, x.clicks, x.x, x.y);
+        printf("%6d: Mouse.button.up\n\tunsafe_winId: %d\n\tmouseId: %d\n\tbutton: %d state: %d clicks: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.button, x.state, x.clicks, x.pos.x, x.pos.y);
       }, e);
       varact<event::mouse::button::Down>([&](event::mouse::button::Down x) {
-        printf("%6d: Mouse.button.down\n\tunsafe_winId: %d\n\tmouseId: %d\n\tbutton: %d state: %d clicks: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.button, x.state, x.clicks, x.x, x.y);
+        printf("%6d: Mouse.button.down\n\tunsafe_winId: %d\n\tmouseId: %d\n\tbutton: %d state: %d clicks: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.button, x.state, x.clicks, x.pos.x, x.pos.y);
       }, e);
       varact<event::mouse::Motion>([&](event::mouse::Motion x) {
-        // printf("%6d: Mouse.motion\n\tunsafe_winId: %d\n\tmouseId: %d\n\tstate: %d\n\tx: %d y: %d\n\tdx: %d dy: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.state, x.x, x.y, x.dx, x.dy);
+        // printf("%6d: Mouse.motion\n\tunsafe_winId: %d\n\tmouseId: %d\n\tstate: %d\n\tx: %d y: %d\n\tdx: %d dy: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.state, x.pos.x, x.pos.y, x.dpos.x, x.dpos.y);
       }, e);
       varact<event::mouse::Wheel>([&](event::mouse::Wheel x) {
-        printf("%6d: Mouse.wheel\n\tunsafe_winId: %d\n\tmouseId: %d\n\tdx: %d dy: %d\n\tdirection: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.dx, x.dy, x.direction);
+        printf("%6d: Mouse.wheel\n\tunsafe_winId: %d\n\tmouseId: %d\n\tdx: %d dy: %d\n\tdirection: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.dpos.x, x.dpos.y, x.direction);
       }, e);
 
       varact<event::joystick::Axis>([&](event::joystick::Axis x) {
@@ -251,13 +251,13 @@ int main() {
       }, e);
 
       varact<event::gesture::Builtin>([&](event::gesture::Builtin x) {
-        printf("%6d: Gesture.builtin\n\ttouchId: %lld\n\tnFingers: %d dRotation: %f dPinch: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.nFingers, static_cast<double>(x.dRotation), static_cast<double>(x.dPinch), static_cast<double>(x.x), static_cast<double>(x.y));
+        printf("%6d: Gesture.builtin\n\ttouchId: %lld\n\tnFingers: %d dRotation: %f dPinch: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.nFingers, static_cast<double>(x.dRotation), static_cast<double>(x.dPinch), static_cast<double>(x.pos.x), static_cast<double>(x.pos.y));
       }, e);
       varact<event::gesture::custom::Recorded>([&](event::gesture::custom::Recorded x) {
-        printf("%6d: Gesture.custom.recorded\n\ttouchId: %lld gestureId: %lld\n\tnFingers: %d error: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.gestureId, x.nFingers, static_cast<double>(x.error), static_cast<double>(x.x), static_cast<double>(x.y));
+        printf("%6d: Gesture.custom.recorded\n\ttouchId: %lld gestureId: %lld\n\tnFingers: %d error: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.gestureId, x.nFingers, static_cast<double>(x.error), static_cast<double>(x.pos.x), static_cast<double>(x.pos.y));
       }, e);
       varact<event::gesture::custom::Detected>([&](event::gesture::custom::Detected x) {
-        printf("%6d: Gesture.custom.detected\n\ttouchId: %lld gestureId: %lld\n\tnFingers: %d error: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.gestureId, x.nFingers, static_cast<double>(x.error), static_cast<double>(x.x), static_cast<double>(x.y));
+        printf("%6d: Gesture.custom.detected\n\ttouchId: %lld gestureId: %lld\n\tnFingers: %d error: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.gestureId, x.nFingers, static_cast<double>(x.error), static_cast<double>(x.pos.x), static_cast<double>(x.pos.y));
       }, e);
 
       varact<event::window::Close>([&](event::window::Close x) {

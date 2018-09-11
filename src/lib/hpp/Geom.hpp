@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include <SDL.h>
 
 namespace rolmodl::geom {
@@ -12,6 +14,19 @@ namespace rolmodl::geom {
   struct Size {
     public:
       int w, h;
+
+    private:
+  };
+
+  struct XYFloats {
+    public:
+      float x, y;
+
+    private:
+  };
+  struct XYInt32 {
+    public:
+      int32_t x, y;
 
     private:
   };

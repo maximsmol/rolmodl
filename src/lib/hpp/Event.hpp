@@ -8,8 +8,17 @@
 
 #include "Geom.hpp"
 #include "Kb.hpp"
+#include "Mouse.hpp"
 
 namespace rolmodl {
+  enum class ButtonState;
+  namespace button_state::unsafe {
+    constexpr ButtonState fromSDLEnum(const uint8_t s) noexcept;
+    constexpr uint8_t toSDLEnum(const ButtonState s) noexcept;
+  }
+
+  struct HatState;
+
   namespace event {
     struct Timestamped;
     struct WindowSpecific;
@@ -32,6 +41,12 @@ namespace rolmodl {
     }
 
     namespace mouse {
+      enum class WheelDirection;
+      namespace wheel_direction::unsafe {
+        constexpr WheelDirection fromSDLEnum(const uint32_t v) noexcept;
+        constexpr uint32_t toSDLEnum(const WheelDirection v) noexcept;
+      }
+
       namespace button {
         struct Up;
         struct Down;
@@ -194,73 +209,165 @@ namespace rolmodl {
 }
 
 namespace rolmodl {
+  enum class ButtonState {
+    Up, Down
+  };
+  namespace button_state::unsafe {
+    constexpr ButtonState fromSDLEnum(const uint8_t s) noexcept {
+      if (s == SDL_RELEASED)
+        return ButtonState::Up;
+      // if (s == SDL_PRESSED) // unsafe for a reason
+        return ButtonState::Down;
+    }
+    constexpr uint8_t toSDLEnum(const ButtonState s) noexcept {
+      if (s == ButtonState::Up)
+        return SDL_RELEASED;
+      // if (s == ButtonState::Down)
+        return SDL_PRESSED;
+    }
+  }
+
+  struct HatState {
+    public:
+      enum class Position {
+         TopLeft,    Top,    TopRight,
+           Left,    Center,    Right,
+        BottomLeft, Bottom, BottomRight
+      };
+
+      constexpr explicit HatState(const uint8_t v) noexcept : // fixme:: unsafe! arbitrary default if the SDL enum is invalid
+        data_(unsafe_fromSDLEnum_(v))
+      {}
+      constexpr uint8_t unsafe_toSDLEnum() const {
+        if (data_ == Position::TopLeft)
+          return SDL_HAT_LEFTUP;
+        if (data_ == Position::Top)
+          return SDL_HAT_UP;
+        if (data_ == Position::TopRight)
+          return SDL_HAT_RIGHTUP;
+
+        if (data_ == Position::Left)
+          return SDL_HAT_LEFT;
+        if (data_ == Position::Center)
+          return SDL_HAT_CENTERED;
+        if (data_ == Position::Right)
+          return SDL_HAT_RIGHTUP;
+
+        if (data_ == Position::BottomLeft)
+          return SDL_HAT_LEFTDOWN;
+        if (data_ == Position::Bottom)
+          return SDL_HAT_DOWN;
+        // if (data_ == Position::BottomRight)
+          return SDL_HAT_RIGHTDOWN;
+      }
+
+      constexpr bool pointsLeft() const {
+        return data_ == Position::TopLeft || data_ == Position::Left || data_ == Position::BottomLeft;
+      }
+      constexpr bool pointsRight() const {
+        return data_ == Position::TopRight || data_ == Position::Right || data_ == Position::BottomRight;
+      }
+
+      constexpr bool pointsUp() const {
+        return data_ == Position::TopLeft || data_ == Position::Top || data_ == Position::TopRight;
+      }
+      constexpr bool pointsDown() const {
+        return data_ == Position::BottomLeft || data_ == Position::Bottom || data_ == Position::BottomRight;
+      }
+
+      constexpr Position pos() const {
+        return data_;
+      }
+
+    private:
+      Position data_;
+
+      constexpr Position unsafe_fromSDLEnum_(const uint8_t v) noexcept {
+        if (v == SDL_HAT_LEFTUP)
+          return Position::TopLeft;
+        else if (v == SDL_HAT_UP)
+          return Position::Top;
+        else if (v == SDL_HAT_RIGHTUP)
+          return Position::TopRight;
+
+        else if (v == SDL_HAT_LEFT)
+          return Position::Left;
+        else if (v == SDL_HAT_CENTERED)
+          return Position::Center;
+        else if (v == SDL_HAT_RIGHT)
+          return Position::Right;
+
+        else if (v == SDL_HAT_LEFTDOWN)
+          return Position::BottomLeft;
+        else if (v == SDL_HAT_DOWN)
+          return Position::Bottom;
+        // else if (v == SDL_HAT_RIGHTDOWN)
+          return Position::BottomRight;
+      }
+  };
+
   namespace event {
-    // struct Typed {
-    //   uint32_t sdl_type;
-    // };
     struct Timestamped {
       uint32_t timestamp;
     };
-    using Base = Timestamped;
-    // struct Base : public Timestamped {};
 
     struct WindowSpecific {
-      uint32_t unsafe_winId; // todo
+      uint32_t unsafe_winId;
     };
 
-    struct Quit : public Base {};
+    struct Quit : public Timestamped {};
 
     // todo: type from SDL_RegisterEvents()
-    struct User : public Base, WindowSpecific {
+    struct User : public Timestamped, WindowSpecific {
       int32_t code;
       void* data1;
       void* data2;
     };
 
-    struct Edit : public Base, WindowSpecific {
+    struct Edit : public Timestamped, WindowSpecific {
       char text[32];
       int32_t start, len;
     };
-    struct Text : public Base, WindowSpecific {
+    struct Text : public Timestamped, WindowSpecific {
       char text[32];
     };
 
     namespace touch {
-      struct Motion : public Base {
+      struct Motion : public Timestamped {
         SDL_TouchID touchId; // todo
         SDL_FingerID fingerId; // todo
 
-        float x, y; // todo: add geom:: type
-        float dx, dy; // todo: add geom:: type
+        geom::XYFloats pos;
+        geom::XYFloats dpos;
         float pressure;
       };
-      struct Up : public Base {
+      struct Up : public Timestamped {
         SDL_TouchID touchId; // todo
         SDL_FingerID fingerId; // todo
 
-        float x, y; // todo: add geom:: type
-        float dx, dy; // todo: add geom:: type
+        geom::XYFloats pos;
+        // geom::XYFloats dpos; // todo: is this always (0, 0)?
         float pressure;
       };
-      struct Down : public Base {
+      struct Down : public Timestamped {
         SDL_TouchID touchId; // todo
         SDL_FingerID fingerId; // todo
 
-        float x, y; // todo: add geom:: type
-        float dx, dy; // todo: add geom:: type
+        geom::XYFloats pos;
+        // geom::XYFloats dpos; // todo: is this always (0, 0)?
         float pressure;
       };
     }
 
     namespace key {
-      struct Up : public Base, WindowSpecific {
-        uint8_t state; // todo: should be enum
+      struct Up : public Timestamped, WindowSpecific {
+        ButtonState state;
         bool repeat;
 
         SDL_Keysym sym; // todo: support in Kb.hpp
       };
-      struct Down : public Base, WindowSpecific {
-        uint8_t state; // todo: should be enum
+      struct Down : public Timestamped, WindowSpecific {
+        ButtonState state;
         bool repeat;
 
         SDL_Keysym sym; // todo: support in Kb.hpp
@@ -268,191 +375,210 @@ namespace rolmodl {
     }
 
     namespace mouse {
+      enum class WheelDirection {
+        Normal, Reverse
+      };
+      namespace wheel_direction::unsafe {
+        constexpr WheelDirection fromSDLEnum(const uint32_t v) noexcept {
+          if (v == SDL_MOUSEWHEEL_NORMAL)
+            return WheelDirection::Normal;
+          // if (v == SDL_MOUSEWHEEL_FLIPPED) // unsafe for a reason
+            return WheelDirection::Reverse;
+        }
+        constexpr uint32_t toSDLEnum(const WheelDirection v) noexcept {
+          if (v == WheelDirection::Normal)
+            return SDL_MOUSEWHEEL_NORMAL;
+          // if (v == WheelDirection::Reverse)
+            return SDL_MOUSEWHEEL_FLIPPED;
+        }
+      }
+
       namespace button {
-        struct Up : public Base, WindowSpecific {
+        struct Up : public Timestamped, WindowSpecific {
           uint32_t mouseId; // todo: support SDL_TouchMouseID elegantly
-          uint8_t button; // todo: should be enum
-          uint8_t state; // todo: should be enum
+          ::rolmodl::mouse::Btn button;
+          ButtonState state;
           uint8_t clicks;
 
-          int32_t x, y; // todo: add geom:: type
+          geom::XYInt32 pos;
         };
-        struct Down : public Base, WindowSpecific {
+        struct Down : public Timestamped, WindowSpecific {
           uint32_t mouseId; // todo: support SDL_TouchMouseID elegantly
-          uint8_t button; // todo: should be enum
-          uint8_t state; // todo: should be enum
+          ::rolmodl::mouse::Btn button;
+          ButtonState state;
           uint8_t clicks;
 
-          int32_t x, y; // todo: add geom:: type
+          geom::XYInt32 pos;
         };
       }
-      struct Motion : public Base, WindowSpecific {
+      struct Motion : public Timestamped, WindowSpecific {
         uint32_t mouseId; // todo: support SDL_TouchMouseID elegantly
-        uint32_t state; // todo: support state elegantly
+        ::rolmodl::mouse::BtnState state;
 
-        int32_t x, y; // todo: add geom:: type
-        int32_t dx, dy; // todo: add geom:: type
+        geom::XYInt32 pos;
+        geom::XYInt32 dpos;
       };
-      struct Wheel : public Base, WindowSpecific {
+      struct Wheel : public Timestamped, WindowSpecific {
         uint32_t mouseId; // todo: support SDL_TouchMouseID elegantly
 
-        int32_t dx, dy; // todo: add geom:: type
-        uint32_t direction; // todo: support direction elegantly
+        geom::XYInt32 dpos;
+        WheelDirection direction;
       };
     }
 
     namespace joystick {
-      struct Axis : public Base {
-        SDL_JoystickID joystickId;
+      struct Axis : public Timestamped {
+        SDL_JoystickID joystickId; // todo
         uint8_t axisN;
         int16_t x;
       };
-      struct Ball : public Base {
-        SDL_JoystickID joystickId;
+      struct Ball : public Timestamped {
+        SDL_JoystickID joystickId; // todo
         uint8_t ballN;
         int16_t dx, dy;
       };
-      struct Hat : public Base {
-        SDL_JoystickID joystickId;
+      struct Hat : public Timestamped {
+        SDL_JoystickID joystickId; // todo
         uint8_t hatN;
-        uint8_t x; // todo: should be enum
+        HatState x;
       };
       namespace button {
-        struct Up : public Base {
-          SDL_JoystickID joystickId;
+        struct Up : public Timestamped {
+          SDL_JoystickID joystickId; // todo
           uint8_t buttonN;
-          uint8_t state; // todo: should be enum
+          ButtonState state;
         };
-        struct Down : public Base {
-          SDL_JoystickID joystickId;
+        struct Down : public Timestamped {
+          SDL_JoystickID joystickId; // todo
           uint8_t buttonN;
-          uint8_t state; // todo: should be enum
+          ButtonState state;
         };
       }
       namespace device {
-        struct Added : public Base {
-          int32_t joystickId;
+        struct Added : public Timestamped {
+          int32_t joystickId; // todo
         };
-        struct Removed : public Base {
-          int32_t joystickId;
+        struct Removed : public Timestamped {
+          int32_t joystickId; // todo
         };
       }
     }
 
     namespace controller {
-      struct Axis : public Base {
-        SDL_JoystickID controllerId;
+      struct Axis : public Timestamped {
+        SDL_JoystickID controllerId; // todo
         uint8_t axisN; // todo: should be enum
         int16_t x;
       };
       namespace button {
-        struct Up : public Base {
-          SDL_JoystickID controllerId;
+        struct Up : public Timestamped {
+          SDL_JoystickID controllerId; // todo
           uint8_t buttonN; // todo: should be enum
-          int16_t state; // todo: should be enum
+          ButtonState state;
         };
-        struct Down : public Base {
-          SDL_JoystickID controllerId;
+        struct Down : public Timestamped {
+          SDL_JoystickID controllerId; // todo
           uint8_t buttonN; // todo: should be enum
-          int16_t state; // todo: should be enum
+          ButtonState state;
         };
       }
       namespace device {
-        struct Added : public Base {
-          SDL_JoystickID controllerId;
+        struct Added : public Timestamped {
+          SDL_JoystickID controllerId; // todo
         };
-        struct Removed : public Base {
-          SDL_JoystickID controllerId;
+        struct Removed : public Timestamped {
+          SDL_JoystickID controllerId; // todo
         };
-        struct Remapped : public Base {
-          SDL_JoystickID controllerId;
+        struct Remapped : public Timestamped {
+          SDL_JoystickID controllerId; // todo
         };
       }
     }
 
     namespace gesture {
-      struct Builtin : public Base {
+      struct Builtin : public Timestamped {
         SDL_TouchID touchId; // todo
 
         float dRotation;
         float dPinch;
-        float x, y; // todo: add geom:: type
+
         uint16_t nFingers;
+        geom::XYFloats pos;
       };
       namespace custom {
-        struct Recorded : public Base {
+        struct Recorded : public Timestamped {
           SDL_TouchID touchId; // todo
           SDL_GestureID gestureId; // todo
 
           uint32_t nFingers;
           float error;
-          float x, y; // todo: add geom:: type
+          geom::XYFloats pos;
         };
-        struct Detected : public Base {
+        struct Detected : public Timestamped {
           SDL_TouchID touchId; // todo
           SDL_GestureID gestureId; // todo
 
           uint32_t nFingers;
           float error;
-          float x, y; // todo: add geom:: type
+          geom::XYFloats pos;
         };
       }
     }
 
     namespace window {
-      struct Close : public Base, WindowSpecific {};
-      struct HitTest : public Base, WindowSpecific {};
+      struct Close : public Timestamped, WindowSpecific {};
+      struct HitTest : public Timestamped, WindowSpecific {};
 
-      struct Shown : public Base, WindowSpecific {};
-      struct Hidden : public Base, WindowSpecific {};
-      struct Exposed : public Base, WindowSpecific {};
+      struct Shown : public Timestamped, WindowSpecific {};
+      struct Hidden : public Timestamped, WindowSpecific {};
+      struct Exposed : public Timestamped, WindowSpecific {};
 
-      struct Moved : public Base, WindowSpecific {
+      struct Moved : public Timestamped, WindowSpecific {
         geom::Pos loc;
       };
-      struct Resized : public Base, WindowSpecific {
+      struct Resized : public Timestamped, WindowSpecific {
         geom::Size size;
       };
-      struct SizeChanged : public Base, WindowSpecific {
+      struct SizeChanged : public Timestamped, WindowSpecific {
         geom::Size size;
       };
 
-      struct Minimized : public Base, WindowSpecific {};
-      struct Maximized : public Base, WindowSpecific {};
-      struct Restored : public Base, WindowSpecific {};
+      struct Minimized : public Timestamped, WindowSpecific {};
+      struct Maximized : public Timestamped, WindowSpecific {};
+      struct Restored : public Timestamped, WindowSpecific {};
 
       namespace mouse {
-        struct Entered : public Base, WindowSpecific {};
-        struct Left : public Base, WindowSpecific {};
+        struct Entered : public Timestamped, WindowSpecific {};
+        struct Left : public Timestamped, WindowSpecific {};
       }
 
       namespace focus {
-        struct Gained : public Base, WindowSpecific {};
-        struct Lost : public Base, WindowSpecific {};
-        struct Offered : public Base, WindowSpecific {};
+        struct Gained : public Timestamped, WindowSpecific {};
+        struct Lost : public Timestamped, WindowSpecific {};
+        struct Offered : public Timestamped, WindowSpecific {};
       }
     }
-    struct SystemWindow : public Base {
+    struct SystemWindow : public Timestamped {
       SDL_SysWMmsg* msg; // todo?
     };
 
     namespace drag_n_drop {
-      struct File : public Base, WindowSpecific {
+      struct File : public Timestamped, WindowSpecific {
         char* path; // todo: manage the resource. free with SDL_Free()
       };
-      struct Text : public Base, WindowSpecific {
+      struct Text : public Timestamped, WindowSpecific {
         char* x; // todo: manage the resource. free with SDL_Free()
       };
-      struct Begin : public Base, WindowSpecific {};
-      struct Complete : public Base, WindowSpecific {};
+      struct Begin : public Timestamped, WindowSpecific {};
+      struct Complete : public Timestamped, WindowSpecific {};
     }
 
     namespace audio_device {
-      struct Added : public Base {
+      struct Added : public Timestamped {
         uint32_t index; // todo
         bool isCapture;
       };
-      struct Removed : public Base {
+      struct Removed : public Timestamped {
         uint32_t id; // todo
         bool isCapture;
       };
