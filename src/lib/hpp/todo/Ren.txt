@@ -20,7 +20,7 @@ SDL_QueryTexture
 
 SDL_RenderCopyEx
 
-// wontfix
+// need collections
 SDL_RenderDrawLines
 SDL_RenderDrawPoints
 SDL_RenderDrawRects
