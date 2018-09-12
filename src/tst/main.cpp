@@ -154,6 +154,20 @@ int main() {
 
   bool running = true;
 
+  SDL_AddEventWatch([](void* ren, SDL_Event* e) {
+    Ren* r = reinterpret_cast<Ren*>(ren);
+
+    if (e->type == SDL_WINDOWEVENT)
+      if (e->window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
+        r->setColor(RGBA{0, 0, 0});
+        r->clear();
+        r->setColor(RGBA{255, 0, 0});
+        r->drawLine(Pos{0, 0}, Pos{100, 100});
+        r->present();
+      }
+    return 1;
+  }, &r);
+
   const int btnDim = 30;
   Button b(Pos{100, 100}, Size{btnDim, btnDim});
   Button b1(Pos{100+2*btnDim, 100}, Size{btnDim, btnDim});
