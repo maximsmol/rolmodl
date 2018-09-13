@@ -3,7 +3,7 @@
 #include <variant>
 #include <functional>
 
-#include "../lib/hpp/Rolmodl.hpp"
+#include "Rolmodl.hpp"
 
 using namespace std;
 using namespace rolmodl;

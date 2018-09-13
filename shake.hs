@@ -45,21 +45,12 @@ shakeOptions' = shakeOptions{
 main :: IO ()
 main = shakeArgs shakeOptions' $ do
   let path_in = "src"
-  let path_out = "bld"
-  let path_dep = path_out</>"dep"
-  let path_compdb = path_out</>"compdb"
+  let path_bld = "bld"
+  let path_dist = "dist"
+  let path_dep = path_bld</>"dep"
+  let path_compdb = path_bld</>"compdb"
 
-  let path_libin     = path_in    </>"lib"
-  let path_libout    = path_out   </>"lib"
-  let path_libdep    = path_dep   </>"lib"
-  let path_libcompdb = path_compdb</>"lib"
-
-  let path_tstin     = path_in    </>"tst"
-  let path_tstout    = path_out   </>"tst"
-  let path_tstdep    = path_dep   </>"tst"
-  let path_tstcompdb = path_compdb</>"tst"
-
-  liftIO $ createDirectoryIfMissing True (path_out</>"rep")
+  liftIO $ createDirectoryIfMissing True (path_bld</>"rep")
 
   compilerFromEnv <- liftIO $ lookupEnv "CXX"
   let compiler =
@@ -67,70 +58,61 @@ main = shakeArgs shakeOptions' $ do
           Just x -> if null x then "clang++" else x
           Nothing -> "clang++"
 
-  let exec = "dst"</>"dbg"</>"exec"
-  -- let static_lib = "dst"</>"dbg"</>"rolmodl.so" -- no support on macos
-  let dynamic_lib = "dst"</>"dbg"</>"librolmodl.dylib"
-  let compdb = path_out</>"compile_commands.json"
-
-  want [exec, compdb]
-
-  dynamic_lib %> \out -> do
-    let srcs = [
-          path_libout</>"Win"<.>"o",
-          path_libout</>"Ren"<.>"o",
-          path_libout</>"Base"<.>"o",
-          path_libout</>"Kb"<.>"o",
-          path_libout</>"Mouse"<.>"o",
-          path_libout</>"PixelFmt"<.>"o",
-          path_libout</>"Tex"<.>"o",
-          path_libout</>"Event"<.>"o"
-          ]
-    need srcs
-
-    let libFlags = ("-l"++) <$> ["sdl2"]
-
-    () <- cmd "clang++" "-shared" "-install_name" "@rpath/librolmodl.dylib" "-O0" "-o" [out] libFlags "-L/usr/local/opt/llvm/lib" srcs
-    return ()
-
-  exec %> \out -> do
-    let srcs = [
-          path_tstout</>"main"<.>"o"
-          ]
-    need srcs
-    need [dynamic_lib]
-
-    let libFlags = ("-l"++) <$> ["sdl2", "rolmodl"]
-
-    () <- cmd "clang++" "-rpath" "@executable_path" "-O0" "-o" [out] libFlags ("-L"++takeDirectory dynamic_lib) "-L/usr/local/opt/llvm/lib" srcs
-    return ()
+  let compdb = path_bld</>"compile_commands.json"
 
   compdb %> \out -> do
     files <- liftIO $ listDirRec path_compdb
     () <- cmd Shell ["sed", "-e", "'1s/^/[\\\n/'", "-e", "'$s/,$/\\\n]/'"] files [">", out]
     return ()
 
-  let cppRoutine = \src dep out compdb -> do
-      --  "-Ofast"
-      let diagFlags = ["-fcolor-diagnostics"]
-      let warnFlags = ["-Weverything", "-Wno-c++98-compat", "-Wno-c++98-c++11-compat", "-Wno-c++98-c++11-compat-pedantic", "-Wno-c99-extensions", "-Wno-c++98-c++11-c++14-compat", "-Wno-padded"]
-      let outputFlags = ["-o", out]
-      let includeFlags = ("-isystem"++) <$> ["/usr/local/include/SDL2", "/usr/local/opt/llvm/include"]
-      let otherFlags = ["-std=c++1z"]
-      let command = [compiler, "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
+  let cppObjectPathFor name src = path_bld<//>name<//>src<.>"o"
+  let cppObjectDepPathFor name src = path_dep<//>name<//>src<.>"dep"
+  let cppObjectCompdbPathFor name src = path_compdb<//>name<//>src<.>"json"
+  let cppObjectsRuleFor name systemIncludes =
+        [cppObjectPathFor name "*", cppObjectDepPathFor name "*", cppObjectCompdbPathFor name "*"] &%> \[out, dep, compdb] -> do
+          let src = path_in</>(dropDir out path_bld)-<.>"cpp"
+          --  "-Ofast"
+          let diagFlags = ["-fcolor-diagnostics"]
+          let warnFlags = ["-Weverything", "-Wno-c++98-compat", "-Wno-c++98-c++11-compat", "-Wno-c++98-c++11-compat-pedantic", "-Wno-c99-extensions", "-Wno-c++98-c++11-c++14-compat", "-Wno-padded"]
+          let outputFlags = ["-o", out]
+          let includeFlags = ("-isystem"++) <$> ["/usr/local/opt/llvm/include"]++systemIncludes
+          let otherFlags = ["-std=c++1z"]
+          let command = [compiler, "-O0"] ++ diagFlags ++ warnFlags ++ outputFlags ++ includeFlags ++ otherFlags
 
-      () <- cmd command "-M" "-MF" [dep] [src]
-      needMakefileDependencies dep
+          () <- cmd command "-M" "-MF" [dep] [src]
+          needMakefileDependencies dep
 
-      () <- cmd command "-MJ" [compdb] "-c" [src]
-      return ()
+          () <- cmd command "-MJ" [compdb] "-c" [src]
+          return ()
 
-  [path_libout<//>"*"<.>"o", path_libdep<//>"*"<.>"dep", path_libcompdb<//>"*"<.>"json"] &%> \[out, dep, compdb] -> do
-    let src = path_libin</>(dropDir out path_libout)-<.>"cpp"
-    cppRoutine src dep out compdb
+  let localLibNameToPath name = path_dist<//>"dbg"<//>"lib"++name<.>"dylib"
+  let cppDynamicLibRule name linkDeps srcs =
+        localLibNameToPath name %> \out -> do
+          let srcs' = cppObjectPathFor name <$> srcs
+          need srcs'
 
-  [path_tstout<//>"*"<.>"o", path_tstdep<//>"*"<.>"dep", path_tstcompdb<//>"*"<.>"json"] &%> \[out, dep, compdb] -> do
-    let src = path_tstin</>(dropDir out path_tstout)-<.>"cpp"
-    cppRoutine src dep out compdb
+          let libFlags = ("-l"++) <$> []++linkDeps
+          () <- cmd "clang++" "-shared" "-install_name" ("@rpath/lib"++name++".dylib") "-O0" "-o" [out] libFlags "-L/usr/local/opt/llvm/lib" srcs'
 
-  phony "dbg" $ do
-    return ()
+          return ()
+
+  let localExecNameToPath name = path_dist<//>"dbg"<//>name
+  let cppExecRule name systemLinkDeps localLinkDeps srcs =
+        localExecNameToPath name %> \out -> do
+          need $ localLibNameToPath <$> localLinkDeps
+
+          let srcs' = cppObjectPathFor name <$> srcs
+          need srcs'
+
+          let libFlags = ("-l"++) <$> []++systemLinkDeps++localLinkDeps
+          let libSearchFlags = ("-L"++) <$> takeDirectory <$> localLibNameToPath <$> []++localLinkDeps
+
+          () <- cmd "clang++" "-rpath" "@executable_path" "-O0" "-o" [out] libFlags libSearchFlags "-L/usr/local/opt/llvm/lib" srcs'
+          return ()
+
+  cppObjectsRuleFor "rolmodl" ["/usr/local/include/SDL2"]
+  cppObjectsRuleFor "tst" ["/usr/local/include/SDL2", path_in<//>"rolmodl"<//>"hpp"]
+  cppDynamicLibRule "rolmodl" ["sdl2"] $ ["Win", "Ren", "Base", "Kb", "Mouse", "PixelFmt", "Tex", "Event"]
+  cppExecRule "tst" ["sdl2"] ["rolmodl"] $ ["main"]
+
+  want [localExecNameToPath "tst"]
