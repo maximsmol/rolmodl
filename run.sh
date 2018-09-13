@@ -1,2 +1,2 @@
 #!/bin/bash
-./dst/dbg/exec
+./dist/dbg/tst
