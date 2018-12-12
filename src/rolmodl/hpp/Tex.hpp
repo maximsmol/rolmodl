@@ -30,6 +30,14 @@ namespace rolmodl {
       friend void swap(Tex& a, Tex& b) noexcept;
 
       pixelfmt::Id format() const noexcept;
+      BlendMode getBlendMode();
+      void setBlendMode(const BlendMode m);
+
+      uint8_t getAlphaMod();
+      void setAlphaMod(const uint8_t i);
+
+      RGB getRGBMod();
+      void setRGBMod(const RGB i);
 
       SDL_Texture* unsafeRaw() noexcept;
       const SDL_Texture* unsafeRaw() const noexcept;

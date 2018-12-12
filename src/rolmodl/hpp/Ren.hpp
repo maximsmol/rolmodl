@@ -10,11 +10,19 @@ namespace rolmodl {
   class Ren;
   struct RenScale;
 
+  enum class BlendMode;
+  namespace blendMode::unsafe {
+    constexpr BlendMode fromSDLEnum(const SDL_BlendMode m) noexcept;
+    constexpr SDL_BlendMode toSDLEnum(const BlendMode m) noexcept;
+  }
+
   struct SrcRectWH;
   struct SrcRectXY;
 
   struct DstRectWH;
   struct DstRectXY;
+
+  struct Flip;
 
   namespace ren {
     struct Flags;
@@ -27,6 +35,76 @@ namespace rolmodl {
 #include "Tex.hpp"
 
 namespace rolmodl {
+  enum class BlendMode {
+    None, Blend, Add, Mod
+  };
+  namespace blendMode::unsafe {
+    constexpr BlendMode fromSDLEnum(const SDL_BlendMode m) noexcept {
+      if (m == SDL_BLENDMODE_NONE)
+        return BlendMode::None;
+      if (m == SDL_BLENDMODE_BLEND)
+        return BlendMode::Blend;
+      if (m == SDL_BLENDMODE_ADD)
+        return BlendMode::Add;
+      // if (m == SDL_BLENDMODE_MOD)
+        return BlendMode::Mod;
+    }
+    constexpr SDL_BlendMode toSDLEnum(const BlendMode m) noexcept {
+      if (m == BlendMode::None)
+        return SDL_BLENDMODE_NONE;
+      if (m == BlendMode::Blend)
+        return SDL_BLENDMODE_BLEND;
+      if (m == BlendMode::Add)
+        return SDL_BLENDMODE_ADD;
+      // if (m == BlendMode::Mod)
+        return SDL_BLENDMODE_MOD;
+    }
+  }
+
+  struct Flip {
+    public:
+      constexpr Flip() noexcept :
+        data_(0)
+      {}
+
+      // test
+      constexpr Flip isHorizontal() const noexcept {
+        return Flip(data_ | static_cast<uint32_t>(SDL_FLIP_HORIZONTAL));
+      }
+      constexpr Flip isVertical() const noexcept {
+        return Flip(data_ | static_cast<uint32_t>(SDL_FLIP_VERTICAL));
+      }
+
+      // set
+      constexpr Flip withHorizontal() const noexcept {
+        return Flip(data_ | static_cast<uint32_t>(SDL_FLIP_HORIZONTAL));
+      }
+      constexpr Flip withVertical() const noexcept {
+        return Flip(data_ | static_cast<uint32_t>(SDL_FLIP_VERTICAL));
+      }
+
+      // unset
+      constexpr Flip withoutHorizontal() const noexcept {
+        return Flip(data_ & ~static_cast<uint32_t>(SDL_FLIP_HORIZONTAL));
+      }
+      constexpr Flip withoutVertical() const noexcept {
+        return Flip(data_ & ~static_cast<uint32_t>(SDL_FLIP_VERTICAL));
+      }
+
+      constexpr SDL_RendererFlip toSDLEnum() const noexcept {
+        return static_cast<SDL_RendererFlip>(data_);
+      }
+      constexpr uint32_t raw() const noexcept {
+        return data_;
+      }
+    private:
+      explicit constexpr Flip(const uint32_t data) noexcept :
+        data_(data)
+      {}
+
+      uint32_t data_;
+  };
+
   namespace ren {
     // todo: some flags might be mutually exclusive
     // fixme: how does CreateSoftwareRenderer relate
@@ -154,6 +232,7 @@ namespace rolmodl {
       void clear();
       void present() noexcept;
 
+      // copy
       void drawTex(Tex& tex);
 
       void drawTex(Tex& tex, const SrcRectWH src);
@@ -166,6 +245,38 @@ namespace rolmodl {
       void drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst);
       void drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst);
       void drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst);
+
+      // copyEx
+      void drawTex(Tex& tex, const Flip flip);
+      void drawTex(Tex& tex, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+
+      void drawTex(Tex& tex, const SrcRectWH src, const Flip flip);
+      void drawTex(Tex& tex, const SrcRectXY src, const Flip flip);
+      void drawTex(Tex& tex, const SrcRectWH src, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectXY src, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectWH src, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectXY src, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+
+      void drawTex(Tex& tex, const DstRectWH dst, const Flip flip);
+      void drawTex(Tex& tex, const DstRectXY dst, const Flip flip);
+      void drawTex(Tex& tex, const DstRectWH dst, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const DstRectXY dst, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const DstRectWH dst, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+      void drawTex(Tex& tex, const DstRectXY dst, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst, const Flip flip);
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst, const Flip flip);
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst, const Flip flip);
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst, const Flip flip);
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst, const double rot, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
+      void drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst, const double rot, const geom::Pos rotCenter, const Flip flip = Flip());
 
       // todo:
       // needs ContigousIterators, for which no check can be done at compile-time
@@ -192,9 +303,14 @@ namespace rolmodl {
       void setClipRect(const geom::RectWH r);
       void setClipRect(const geom::RectXY r);
       void disableClip();
+      bool isClipOn() noexcept; // todo: not clear if false is an error state
 
       std::optional<geom::Size> logicalSize() noexcept;
       void setLogicalSize(const geom::Size s);
+
+      // void setIntegralLogicalScale();
+
+      geom::Size getRealSize();
 
       RenScale scale() noexcept;
       void setScale(const RenScale s);
@@ -202,6 +318,8 @@ namespace rolmodl {
       geom::RectWH viewport() noexcept;
       void setViewport(const geom::RectWH r);
 
+      BlendMode getBlendMode();
+      void setBlendMode(const BlendMode m);
 
       RGBA color();
       void setColor(const RGBA c);
@@ -210,5 +328,20 @@ namespace rolmodl {
       Ren() noexcept;
 
       SDL_Renderer* h_;
+  };
+
+  class TexRen : public Ren { // todo: not all target-supporting renderers are TexRen
+    public:
+      TexRen(Win& win, int i, ren::Flags flags);
+      TexRen(Win& win,        ren::Flags flags);
+      TexRen(Win& win, int i);
+      explicit TexRen(Win& win);
+
+      void setTarget(RenTex& tex);
+      void setDefaultTarget();
+
+      SDL_Texture* unsafeGetTarget() noexcept;
+
+    private:
   };
 }

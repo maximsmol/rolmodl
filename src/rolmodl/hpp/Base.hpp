@@ -132,9 +132,33 @@ namespace rolmodl {
     };
   }
 
-  struct RGBA {
+  struct RGB {
     public:
-      uint8_t r, g, b, a = 255;
+      uint8_t r, g, b;
+
+      constexpr RGB() :
+        r(0), g(0), b(0)
+      {}
+      constexpr RGB(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b) :
+        r(arg_r), g(arg_g), b(arg_b)
+      {}
+
+    private:
+  };
+
+  struct RGBA : public RGB {
+    public:
+      uint8_t a;
+
+      constexpr RGBA() :
+        RGB(), a(255)
+      {}
+      constexpr RGBA(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b) :
+        RGB(arg_r, arg_g, arg_b), a(255)
+      {}
+      constexpr RGBA(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b, const uint8_t arg_a) :
+        RGB(arg_r, arg_g, arg_b), a(arg_a)
+      {}
 
     private:
   };

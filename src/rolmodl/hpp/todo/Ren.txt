@@ -1,24 +1,17 @@
+// not now. surface support
 SDL_CreateSoftwareRenderer
-
 SDL_CreateTextureFromSurface
 
+// not now. (useless) ogl support
 SDL_GL_BindTexture
 SDL_GL_UnbindTexture
 
 SDL_GetNumRenderDrivers
-SDL_GetRenderDrawBlendMode
 SDL_GetRenderDriverInfo
-SDL_GetRenderTarget
 SDL_GetRenderer
 SDL_GetRendererInfo
-SDL_GetRendererOutputSize
 
-SDL_GetTextureAlphaMod
-SDL_GetTextureBlendMode
-SDL_GetTextureColorMod
 SDL_QueryTexture
-
-SDL_RenderCopyEx
 
 // need collections
 SDL_RenderDrawLines
@@ -26,19 +19,15 @@ SDL_RenderDrawPoints
 SDL_RenderDrawRects
 SDL_RenderFillRects
 
-SDL_RenderGetIntegerScale
-
-SDL_RenderIsClipEnabled
-SDL_RenderReadPixels
-
+SDL_RenderGetIntegerScale // could not figure out
 SDL_RenderSetIntegerScale
-SDL_RenderTargetSupported
 
-SDL_SetRenderDrawBlendMode
-SDL_SetRenderTarget
+SDL_RenderTargetSupported // how is this different from checking the flag?
 
-SDL_SetTextureAlphaMod
-SDL_SetTextureBlendMode
-SDL_SetTextureColorMod
+// unsafe? wont support?
+SDL_RenderReadPixels
 SDL_UpdateTexture
 SDL_UpdateYUVTexture
+
+// done, but unsafe. wont support?
+SDL_GetRenderTarget
