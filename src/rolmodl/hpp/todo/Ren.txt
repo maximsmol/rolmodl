@@ -8,10 +8,10 @@ SDL_GL_UnbindTexture
 
 SDL_GetNumRenderDrivers
 SDL_GetRenderDriverInfo
-SDL_GetRenderer
 SDL_GetRendererInfo
 
-SDL_QueryTexture
+// wont support
+SDL_GetRenderer
 
 // need collections
 SDL_RenderDrawLines

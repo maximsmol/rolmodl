@@ -4,6 +4,15 @@
 #include <SDL.h>
 
 namespace rolmodl {
+  enum class TextureType;
+
+  namespace textureType::unsafe {
+    constexpr TextureType fromSDLEnum(const int a) noexcept;
+    constexpr int toSDLEnum(const TextureType a) noexcept;
+  }
+
+  struct TextureInfo;
+
   class Tex;
   class StaticTex;
   class LockTex;
@@ -17,6 +26,35 @@ namespace rolmodl {
 #include "Ren.hpp"
 
 namespace rolmodl {
+  enum class TextureType {
+    Static, Lock, Ren
+  };
+  namespace textureType::unsafe {
+    constexpr TextureType fromSDLEnum(const int a) noexcept {
+      if (a == SDL_TEXTUREACCESS_STATIC)
+        return TextureType::Static;
+      if (a == SDL_TEXTUREACCESS_STREAMING)
+        return TextureType::Lock;
+      // if (a == SDL_TEXTUREACCESS_TARGET)
+        return TextureType::Ren;
+    }
+    constexpr int toSDLEnum(const TextureType a) noexcept {
+      if (a == TextureType::Static)
+        return SDL_TEXTUREACCESS_STATIC;
+      if (a == TextureType::Lock)
+        return SDL_TEXTUREACCESS_STREAMING;
+      // if (a == TextureType::Ren)
+        return SDL_TEXTUREACCESS_TARGET;
+    }
+  }
+
+  struct TextureInfo {
+    public:
+      pixelfmt::Id fmt;
+      TextureType type;
+      geom::Size size;
+  };
+
   class Tex {
     public:
       ~Tex() noexcept;
@@ -37,6 +75,8 @@ namespace rolmodl {
 
       RGB getRGBMod();
       void setRGBMod(const RGB i);
+
+      TextureInfo query();
 
       SDL_Texture* unsafeRaw() noexcept;
       const SDL_Texture* unsafeRaw() const noexcept;

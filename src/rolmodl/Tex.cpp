@@ -64,6 +64,18 @@ namespace rolmodl {
     throwOnErr(SDL_SetTextureColorMod(unsafeRaw(), i.r, i.g, i.b));
   }
 
+  TextureInfo Tex::query() {
+    uint32_t format = 0;
+    int access = 0;
+
+    TextureInfo res{};
+    throwOnErr(SDL_QueryTexture(unsafeRaw(), &format, &access, &res.size.w, &res.size.h));
+
+    res.fmt = pixelfmt::id::unsafe::fromSDLEnum(format);
+    res.type = textureType::unsafe::fromSDLEnum(access);
+    return res;
+  }
+
   // h_ can be nullptr from
   //   the private default constructor
   //     => its a rolmodl bug
