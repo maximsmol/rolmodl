@@ -29,7 +29,6 @@ namespace rolmodl {
 
       friend void swap(Tex& a, Tex& b) noexcept;
 
-      pixelfmt::Id format() const noexcept;
       BlendMode getBlendMode();
       void setBlendMode(const BlendMode m);
 
@@ -47,7 +46,6 @@ namespace rolmodl {
       Tex(Ren& r, const pixelfmt::Id fmt, const int access, const geom::Size s);
 
       SDL_Texture* h_;
-      pixelfmt::Id format_;
   };
 
   class StaticTex : public Tex {
@@ -58,6 +56,13 @@ namespace rolmodl {
   class LockTex : public Tex {
     public:
       LockTex(Ren& r, const pixelfmt::Id fmt, const geom::Size s);
+
+      pixelfmt::Id format() const noexcept;
+
+    private:
+      LockTex() noexcept;
+
+      pixelfmt::Id format_;
   };
 
   class RenTex : public Tex {

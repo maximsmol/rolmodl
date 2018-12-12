@@ -7,12 +7,10 @@ namespace rolmodl {
   using detail::throwOnErr;
 
   Tex::Tex() noexcept :
-    h_(nullptr),
-    format_(pixelfmt::Id::unknown)
+    h_(nullptr)
   {}
   Tex::Tex(Ren& r, const pixelfmt::Id fmt, const int access, const geom::Size s) :
-    h_(SDL_CreateTexture(r.unsafeRaw(), pixelfmt::id::unsafe::toSDLEnum(fmt), access, s.w, s.h)),
-    format_(fmt)
+    h_(SDL_CreateTexture(r.unsafeRaw(), pixelfmt::id::unsafe::toSDLEnum(fmt), access, s.w, s.h))
   {
     if (h_ == nullptr)
       throw sdlexception();
@@ -39,9 +37,6 @@ namespace rolmodl {
     swap(a.h_, b.h_);
   }
 
-  pixelfmt::Id Tex::format() const noexcept {
-    assert(h_ != nullptr); // catch errors early
-    return format_;
   BlendMode Tex::getBlendMode() {
     SDL_BlendMode tmp = SDL_BLENDMODE_NONE;
     throwOnErr(SDL_GetTextureBlendMode(unsafeRaw(), &tmp));
@@ -87,8 +82,19 @@ namespace rolmodl {
     Tex(r, fmt, SDL_TEXTUREACCESS_STATIC, s) {}
 
 
+  LockTex::LockTex() noexcept :
+    Tex(),
+    format_(pixelfmt::Id::unknown)
+  {}
   LockTex::LockTex(Ren& r, const pixelfmt::Id fmt, const geom::Size s) :
-    Tex(r, fmt, SDL_TEXTUREACCESS_STREAMING, s) {}
+    Tex(r, fmt, SDL_TEXTUREACCESS_STREAMING, s),
+    format_(fmt)
+  {}
+
+  pixelfmt::Id LockTex::format() const noexcept {
+    assert(h_ != nullptr); // catch errors early
+    return format_;
+  }
 
 
   RenTex::RenTex(Ren& r, const pixelfmt::Id fmt, const geom::Size s) :
