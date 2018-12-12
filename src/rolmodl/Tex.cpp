@@ -42,6 +42,31 @@ namespace rolmodl {
   pixelfmt::Id Tex::format() const noexcept {
     assert(h_ != nullptr); // catch errors early
     return format_;
+  BlendMode Tex::getBlendMode() {
+    SDL_BlendMode tmp = SDL_BLENDMODE_NONE;
+    throwOnErr(SDL_GetTextureBlendMode(unsafeRaw(), &tmp));
+    return blendMode::unsafe::fromSDLEnum(tmp);
+  }
+  void Tex::setBlendMode(const BlendMode m) {
+    throwOnErr(SDL_SetTextureBlendMode(unsafeRaw(), blendMode::unsafe::toSDLEnum(m)));
+  }
+
+  uint8_t Tex::getAlphaMod() {
+    uint8_t res = 0;
+    throwOnErr(SDL_GetTextureAlphaMod(unsafeRaw(), &res));
+    return res;
+  }
+  void Tex::setAlphaMod(const uint8_t i) {
+    throwOnErr(SDL_SetTextureAlphaMod(unsafeRaw(), i));
+  }
+
+  RGB Tex::getRGBMod() {
+    RGB res{};
+    throwOnErr(SDL_GetTextureColorMod(unsafeRaw(), &res.r, &res.g, &res.b));
+    return res;
+  }
+  void Tex::setRGBMod(const RGB i) {
+    throwOnErr(SDL_SetTextureColorMod(unsafeRaw(), i.r, i.g, i.b));
   }
 
   // h_ can be nullptr from

@@ -68,6 +68,7 @@ namespace rolmodl {
     SDL_RenderPresent(unsafeRaw());
   }
 
+  // copy
   void Ren::drawTex(Tex& tex) {
     throwOnErr(SDL_RenderCopy(unsafeRaw(), tex.unsafeRaw(), nullptr, nullptr));
   }
@@ -101,6 +102,104 @@ namespace rolmodl {
   }
   void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst) {
     drawTex(tex, src.wh(), dst.wh());
+  }
+
+  // copyEx
+  void Ren::drawTex(Tex& tex, const Flip flip) {
+    drawTex(tex, 0, flip);
+  }
+  void Ren::drawTex(Tex& tex, const double rot, const Flip flip/* = Flip()*/) {
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), nullptr, nullptr, rot, nullptr, flip.toSDLEnum()));
+  }
+  void Ren::drawTex(Tex& tex, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    SDL_Point p{rotCenter.x, rotCenter.y};
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), nullptr, nullptr, rot, &p, flip.toSDLEnum()));
+  }
+
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const Flip flip) {
+    drawTex(tex, src, 0, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const Flip flip) {
+    drawTex(tex, src.wh(), flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const double rot, const Flip flip/* = Flip()*/) {
+    SDL_Rect srcTmp = src.sdl();
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), &srcTmp, nullptr, rot, nullptr, flip.toSDLEnum()));
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const double rot, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src.wh(), rot, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    SDL_Rect srcTmp = src.sdl();
+    SDL_Point p{rotCenter.x, rotCenter.y};
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), &srcTmp, nullptr, rot, &p, flip.toSDLEnum()));
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src.wh(), rot, rotCenter, flip);
+  }
+
+  void Ren::drawTex(Tex& tex, const DstRectWH dst, const Flip flip) {
+    drawTex(tex, dst, 0, flip);
+  }
+  void Ren::drawTex(Tex& tex, const DstRectXY dst, const Flip flip) {
+    drawTex(tex, dst.wh(), flip);
+  }
+  void Ren::drawTex(Tex& tex, const DstRectWH dst, const double rot, const Flip flip/* = Flip()*/) {
+    SDL_Rect dstTmp = dst.sdl();
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), nullptr, &dstTmp, rot, nullptr, flip.toSDLEnum()));
+  }
+  void Ren::drawTex(Tex& tex, const DstRectXY dst, const double rot, const Flip flip/* = Flip()*/) {
+    drawTex(tex, dst.wh(), rot, flip);
+  }
+  void Ren::drawTex(Tex& tex, const DstRectWH dst, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    SDL_Rect dstTmp = dst.sdl();
+    SDL_Point p{rotCenter.x, rotCenter.y};
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), nullptr, &dstTmp, rot, &p, flip.toSDLEnum()));
+  }
+  void Ren::drawTex(Tex& tex, const DstRectXY dst, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    drawTex(tex, dst.wh(), rot, rotCenter, flip);
+  }
+
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst, const Flip flip) {
+    drawTex(tex, src, dst, 0, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst, const Flip flip) {
+    drawTex(tex, src, dst.wh(), flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst, const Flip flip) {
+    drawTex(tex, src.wh(), dst, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst, const Flip flip) {
+    drawTex(tex, src.wh(), dst.wh(), flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst, const double rot, const Flip flip/* = Flip()*/) {
+    SDL_Rect srcTmp = src.sdl();
+    SDL_Rect dstTmp = dst.sdl();
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), &srcTmp, &dstTmp, rot, nullptr, flip.toSDLEnum()));
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst, const double rot, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src, dst.wh(), rot, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst, const double rot, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src.wh(), dst, rot, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst, const double rot, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src.wh(), dst.wh(), rot, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectWH dst, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    SDL_Rect srcTmp = src.sdl();
+    SDL_Rect dstTmp = dst.sdl();
+    SDL_Point p{rotCenter.x, rotCenter.y};
+    throwOnErr(SDL_RenderCopyEx(unsafeRaw(), tex.unsafeRaw(), &srcTmp, &dstTmp, rot, &p, flip.toSDLEnum()));
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectWH src, const DstRectXY dst, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src, dst.wh(), rot, rotCenter, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectWH dst, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src.wh(), dst, rot, rotCenter, flip);
+  }
+  void Ren::drawTex(Tex& tex, const SrcRectXY src, const DstRectXY dst, const double rot, const geom::Pos rotCenter, const Flip flip/* = Flip()*/) {
+    drawTex(tex, src.wh(), dst.wh(), rot, rotCenter, flip);
   }
 
   void Ren::drawLine(const geom::Pos a, const geom::Pos b) {
@@ -155,6 +254,9 @@ namespace rolmodl {
   void Ren::disableClip() {
     throwOnErr(SDL_RenderSetClipRect(unsafeRaw(), nullptr));
   }
+  bool Ren::isClipOn() noexcept {
+    return SDL_RenderIsClipEnabled(unsafeRaw()) == SDL_TRUE;
+  }
 
   std::optional<geom::Size> Ren::logicalSize() noexcept {
     geom::Size tmp{};
@@ -165,6 +267,12 @@ namespace rolmodl {
   }
   void Ren::setLogicalSize(const geom::Size s) {
     throwOnErr(SDL_RenderSetLogicalSize(unsafeRaw(), s.w, s.h));
+  }
+
+  geom::Size Ren::getRealSize() {
+    geom::Size res{};
+    throwOnErr(SDL_GetRendererOutputSize(unsafeRaw(), &res.w, &res.h));
+    return res;
   }
 
   RenScale Ren::scale() noexcept {
@@ -186,6 +294,15 @@ namespace rolmodl {
     throwOnErr(SDL_RenderSetViewport(unsafeRaw(), &tmp));
   }
 
+  BlendMode Ren::getBlendMode() {
+    SDL_BlendMode tmp = SDL_BLENDMODE_NONE;
+    throwOnErr(SDL_GetRenderDrawBlendMode(unsafeRaw(), &tmp));
+    return blendMode::unsafe::fromSDLEnum(tmp);
+  }
+  void Ren::setBlendMode(const BlendMode m) {
+    throwOnErr(SDL_SetRenderDrawBlendMode(unsafeRaw(), blendMode::unsafe::toSDLEnum(m)));
+  }
+
 
   RGBA Ren::color() {
     RGBA res{};
@@ -195,5 +312,27 @@ namespace rolmodl {
 
   void Ren::setColor(const RGBA c) {
     throwOnErr(SDL_SetRenderDrawColor(unsafeRaw(), c.r, c.g, c.b, c.a));
+  }
+
+
+
+  TexRen::TexRen(Win& win, int i, ren::Flags flags) :
+    Ren(win, i, flags.withToTexture()) {}
+  TexRen::TexRen(Win& win,        ren::Flags flags) :
+    Ren(win, flags.withToTexture()) {}
+  TexRen::TexRen(Win& win, int i) :
+    Ren(win, i, ren::Flags().withToTexture()) {}
+  /*explicit*/ TexRen::TexRen(Win& win) :
+    Ren(win, ren::Flags().withToTexture()) {}
+
+  void TexRen::setTarget(RenTex& tex) {
+    throwOnErr(SDL_SetRenderTarget(unsafeRaw(), tex.unsafeRaw()));
+  }
+  void TexRen::setDefaultTarget() {
+    throwOnErr(SDL_SetRenderTarget(unsafeRaw(), nullptr));
+  }
+
+  SDL_Texture* TexRen::unsafeGetTarget() noexcept {
+    return SDL_GetRenderTarget(unsafeRaw());
   }
 }

@@ -149,24 +149,33 @@ int main() {
     printf("na\n");
   printf("state id: %d\n", pwrStatus.state());
 
-  Win w("test", Size{800, 600}, win::Flags{}.withResizable());
+  Size size{800, 600};
+  Win w("test", size, win::Flags{}.withResizable());
   Ren r(w);
 
   bool running = true;
 
-  SDL_AddEventWatch([](void* ren, SDL_Event* e) {
-    Ren* r = reinterpret_cast<Ren*>(ren);
+  struct Stuff {
+    Ren* r; Size* size;
+  };
+
+  Stuff stuff = Stuff{&r, &size};
+  SDL_AddEventWatch([](void* stuff, SDL_Event* e) {
+    Stuff* s = reinterpret_cast<Stuff*>(s);
 
     if (e->type == SDL_WINDOWEVENT)
       if (e->window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
-        r->setColor(RGBA{0, 0, 0});
-        r->clear();
-        r->setColor(RGBA{255, 0, 0});
-        r->drawLine(Pos{0, 0}, Pos{100, 100});
-        r->present();
+        s->size->w = e->window.data1;
+        s->size->h = e->window.data2;
+
+        s->r->setColor(RGBA{0, 0, 0});
+        s->r->clear();
+        s->r->setColor(RGBA{255, 0, 0});
+        s->r->drawLine(Pos{0, 0}, Pos{100, 100});
+        s->r->present();
       }
     return 1;
-  }, &r);
+  }, &stuff);
 
   const int btnDim = 30;
   Button b(Pos{100, 100}, Size{btnDim, btnDim});
@@ -362,6 +371,7 @@ int main() {
     b2.render(r);
 
     r.present();
+    SDL_Delay(1000/24);
   }
 
   return 0;
