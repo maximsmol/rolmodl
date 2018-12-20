@@ -44,27 +44,27 @@ namespace rolmodl {
 
 namespace rolmodl {
   enum class BlendMode {
-    None, Blend, Add, Mod
+    none, blend, add, mod
   };
   namespace blendMode::unsafe {
     constexpr BlendMode fromSDLEnum(const SDL_BlendMode m) noexcept {
       if (m == SDL_BLENDMODE_NONE)
-        return BlendMode::None;
+        return BlendMode::none;
       if (m == SDL_BLENDMODE_BLEND)
-        return BlendMode::Blend;
+        return BlendMode::blend;
       if (m == SDL_BLENDMODE_ADD)
-        return BlendMode::Add;
+        return BlendMode::add;
       // if (m == SDL_BLENDMODE_MOD)
-        return BlendMode::Mod;
+        return BlendMode::mod;
     }
     constexpr SDL_BlendMode toSDLEnum(const BlendMode m) noexcept {
-      if (m == BlendMode::None)
+      if (m == BlendMode::none)
         return SDL_BLENDMODE_NONE;
-      if (m == BlendMode::Blend)
+      if (m == BlendMode::blend)
         return SDL_BLENDMODE_BLEND;
-      if (m == BlendMode::Add)
+      if (m == BlendMode::add)
         return SDL_BLENDMODE_ADD;
-      // if (m == BlendMode::Mod)
+      // if (m == BlendMode::mod)
         return SDL_BLENDMODE_MOD;
     }
   }
