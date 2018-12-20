@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <optional>
 #include <iterator>
+#include <vector>
 
 #include <SDL.h>
 
@@ -38,6 +39,7 @@ namespace rolmodl {
 #include "Base.hpp"
 #include "Geom.hpp"
 #include "Win.hpp"
+#include "PixelFmt.hpp"
 #include "Tex.hpp"
 
 namespace rolmodl {
@@ -179,9 +181,7 @@ namespace rolmodl {
     struct Info {
       const char* name;
       Flags flags;
-
-      uint32_t texFormatsN;
-      uint32_t texFormats[16];
+      std::vector<pixelfmt::Id> pixelFmts;
       geom::Size maxTexSize;
     };
 
