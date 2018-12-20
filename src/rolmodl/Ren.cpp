@@ -1,5 +1,6 @@
 #include "hpp/Ren.hpp"
 
+#include <algorithm>
 #include <utility>
 #include <cassert>
 
@@ -23,8 +24,10 @@ namespace rolmodl {
       res.name = tmp.name;
       res.flags = Flags::unsafeFromRaw(tmp.flags);
 
-      res.texFormatsN = tmp.num_texture_formats;
-      memcpy(&res.texFormats, &tmp.texture_formats, sizeof(uint32_t)*res.texFormatsN);
+      res.pixelFmts = std::vector<pixelfmt::Id>(tmp.num_texture_formats);
+      for (unsigned int j = 0; j < tmp.num_texture_formats; ++j)
+        res.pixelFmts[j] = pixelfmt::id::unsafe::fromSDLEnum(tmp.texture_formats[j]);
+
       res.maxTexSize = geom::Size{tmp.max_texture_width, tmp.max_texture_height};
 
       return res;
