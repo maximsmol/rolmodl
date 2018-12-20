@@ -8,17 +8,17 @@ namespace rolmodl {
   using detail::throwOnErr;
 
   namespace ren::driver {
-    int count() {
+    unsigned int count() {
       int res = SDL_GetNumRenderDrivers();
       throwOnErr(res);
-      return res;
+      return static_cast<unsigned int>(res);
     }
 
     Info info(const unsigned int i) {
       if (i >= count())
         throw std::out_of_range("rolmodl::ren::driver::info");
       SDL_RendererInfo tmp{};
-      throwOnErr(SDL_GetRenderDriverInfo(i, &tmp));
+      throwOnErr(SDL_GetRenderDriverInfo(static_cast<int>(i), &tmp));
 
       Info res{};
       res.name = tmp.name;
