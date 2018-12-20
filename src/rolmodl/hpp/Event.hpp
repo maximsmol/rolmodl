@@ -17,6 +17,8 @@ namespace rolmodl {
     constexpr uint8_t toSDLEnum(const ButtonState s) noexcept;
   }
 
+  struct Keysym;
+
   struct HatState;
 
   namespace event {
@@ -227,6 +229,14 @@ namespace rolmodl {
     }
   }
 
+  struct Keysym {
+    public:
+      kb::Key key;
+      kb::Scancode scancode;
+      uint16_t mod; // todo
+    private:
+  };
+
   struct HatState {
     public:
       enum class Position {
@@ -364,13 +374,13 @@ namespace rolmodl {
         ButtonState state;
         bool repeat;
 
-        SDL_Keysym sym; // todo: support in Kb.hpp
+        Keysym sym;
       };
       struct Down : public Timestamped, WindowSpecific {
         ButtonState state;
         bool repeat;
 
-        SDL_Keysym sym; // todo: support in Kb.hpp
+        Keysym sym;
       };
     }
 

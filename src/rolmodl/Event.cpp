@@ -90,7 +90,11 @@ namespace rolmodl::event {
         {e.key.windowID},
         .state = button_state::unsafe::fromSDLEnum(e.key.state),
         .repeat = e.key.repeat != 0,
-        .sym = e.key.keysym
+        .sym = Keysym{
+          .key = kb::key::unsafe::fromSDLEnum(e.key.keysym.sym),
+          .scancode = kb::scancode::unsafe::fromSDLEnum(e.key.keysym.scancode),
+          .mod = e.key.keysym.mod
+        }
       };
     if (e.type == SDL_KEYDOWN)
       return key::Down{
@@ -98,7 +102,11 @@ namespace rolmodl::event {
         {e.key.windowID},
         .state = button_state::unsafe::fromSDLEnum(e.key.state),
         .repeat = e.key.repeat != 0,
-        .sym = e.key.keysym
+        .sym = Keysym{
+          .key = kb::key::unsafe::fromSDLEnum(e.key.keysym.sym),
+          .scancode = kb::scancode::unsafe::fromSDLEnum(e.key.keysym.scancode),
+          .mod = e.key.keysym.mod
+        }
       };
 
     if (e.type == SDL_MOUSEBUTTONUP)
