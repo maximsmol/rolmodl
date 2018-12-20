@@ -30,7 +30,7 @@ namespace rolmodl {
     struct Info;
 
     namespace driver {
-      int amount();
+      unsigned int count();
       Info info(const unsigned int i);
     }
   }
@@ -186,7 +186,7 @@ namespace rolmodl {
     };
 
     namespace driver {
-      int count();
+      unsigned int count();
       Info info(const unsigned int i);
     }
   }
