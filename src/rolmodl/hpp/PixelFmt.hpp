@@ -63,6 +63,60 @@ namespace rolmodl::pixelfmt {
     constexpr uint32_t toSDLEnum(const Id i) noexcept;
   }
 
+  namespace id {
+    constexpr const char* toString(const Id id) noexcept {
+      if (id == Id::unknown) return "unknown";
+      if (id == Id::index1lsb) return "index1lsb";
+      if (id == Id::index1msb) return "index1msb";
+      if (id == Id::index4lsb) return "index4lsb";
+      if (id == Id::index4msb) return "index4msb";
+      if (id == Id::index8) return "index8";
+      if (id == Id::rgb332) return "rgb332";
+      if (id == Id::rgb444) return "rgb444";
+      if (id == Id::rgb555) return "rgb555";
+      if (id == Id::bgr555) return "bgr555";
+      if (id == Id::argb4444) return "argb4444";
+      if (id == Id::rgba4444) return "rgba4444";
+      if (id == Id::abgr4444) return "abgr4444";
+      if (id == Id::bgra4444) return "bgra4444";
+      if (id == Id::argb1555) return "argb1555";
+      if (id == Id::rgba5551) return "rgba5551";
+      if (id == Id::abgr1555) return "abgr1555";
+      if (id == Id::bgra5551) return "bgra5551";
+      if (id == Id::rgb565) return "rgb565";
+      if (id == Id::bgr565) return "bgr565";
+      if (id == Id::rgb24) return "rgb24";
+      if (id == Id::bgr24) return "bgr24";
+      if (id == Id::rgb888) return "rgb888";
+      if (id == Id::rgbx8888) return "rgbx8888";
+      if (id == Id::bgr888) return "bgr888";
+      if (id == Id::bgrx8888) return "bgrx8888";
+      if (id == Id::argb8888) return "argb8888";
+      if (id == Id::rgba8888) return "rgba8888";
+      if (id == Id::abgr8888) return "abgr8888";
+      if (id == Id::bgra8888) return "bgra8888";
+      if (id == Id::argb2101010) return "argb2101010";
+      // 31 lines
+
+      if (id == Id::yv12) return "yv12";
+      if (id == Id::iyuv) return "iyuv";
+      if (id == Id::yuy2) return "yuy2";
+      if (id == Id::uyvy) return "uyvy";
+      if (id == Id::yvyu) return "yvyu";
+      if (id == Id::nv12) return "nv12";
+      if (id == Id::nv21) return "nv21";
+      // 7 lines
+
+      // = 48 total
+
+      // aliases
+      if (id == Id::rgba32) return "rgba32";
+      if (id == Id::argb32) return "argb32";
+      if (id == Id::bgra32) return "bgra32";
+      /*if (id == Id::abgr32) */return "abgr32";
+    }
+  }
+
   constexpr unsigned int bitSizeOf(const Id id) noexcept {
     return SDL_BITSPERPIXEL(id::unsafe::toSDLEnum(id));
   }

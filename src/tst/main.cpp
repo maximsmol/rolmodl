@@ -130,9 +130,9 @@ int main() {
     printf("      soft: %d, accel: %d, vsync: %d, toTex: %d\n", i.flags.isSoftware(), i.flags.isAccelerated(), i.flags.isVsync(), i.flags.isToTexture());
     printf("      maxTexSize: %d x %d\n", i.maxTexSize.w, i.maxTexSize.h);
     printf("      formats:\n");
-    printf("        num: %d\n", i.pixelFmts.size());
+    printf("        num: %lu\n", i.pixelFmts.size());
     for (pixelfmt::Id f : i.pixelFmts)
-      printf("        %d\n", f);
+      printf("        %s\n", pixelfmt::id::toString(f));
   }
   printf("\n");
 
