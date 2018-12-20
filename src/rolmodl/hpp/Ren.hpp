@@ -121,17 +121,17 @@ namespace rolmodl {
         {}
 
         // test
-        constexpr Flags isSoftware() const noexcept {
-          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_SOFTWARE));
+        constexpr bool isSoftware() const noexcept {
+          return (data_ & static_cast<uint32_t>(SDL_RENDERER_SOFTWARE)) != 0;
         }
-        constexpr Flags isAccelerated() const noexcept {
-          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_ACCELERATED));
+        constexpr bool isAccelerated() const noexcept {
+          return (data_ & static_cast<uint32_t>(SDL_RENDERER_ACCELERATED)) != 0;
         }
-        constexpr Flags isVsync() const noexcept {
-          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_PRESENTVSYNC));
+        constexpr bool isVsync() const noexcept {
+          return (data_ & static_cast<uint32_t>(SDL_RENDERER_PRESENTVSYNC)) != 0;
         }
-        constexpr Flags isToTexture() const noexcept {
-          return Flags(data_ | static_cast<uint32_t>(SDL_RENDERER_TARGETTEXTURE));
+        constexpr bool isToTexture() const noexcept {
+          return (data_ & static_cast<uint32_t>(SDL_RENDERER_TARGETTEXTURE)) != 0;
         }
 
         // set
