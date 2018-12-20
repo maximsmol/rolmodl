@@ -195,6 +195,7 @@ int main() {
   Button b(Pos{100, 100}, Size{btnDim, btnDim});
   Button b1(Pos{100+2*btnDim, 100}, Size{btnDim, btnDim});
   Button b2(Pos{100+4*btnDim, 100}, Size{btnDim, btnDim});
+
   while (running) {
     while (true) {
       optional polled = event::poll();
@@ -225,10 +226,12 @@ int main() {
       }, e);
 
       varact<event::key::Up>([&](event::key::Up x) {
-        printf("%6d: Key.up\n\tunsafe_winId: %d\n\tstate: %d repeat: %s\n\tsym: %d\n", x.timestamp, x.unsafe_winId, x.state, x.repeat ? "true" : "false", x.sym.sym);
+        kb::key::Name::query(x.sym.key);
+        printf("%6d: Key.up\n\tunsafe_winId: %d\n\tstate: %d repeat: %s\n\tsym: %s\n", x.timestamp, x.unsafe_winId, x.state, x.repeat ? "true" : "false", kb::key::Name::lastQueryRes());
       }, e);
       varact<event::key::Down>([&](event::key::Down x) {
-        printf("%6d: Key.down\n\tunsafe_winId: %d\n\tstate: %d repeat: %s\n\tsym: %d\n", x.timestamp, x.unsafe_winId, x.state, x.repeat ? "true" : "false", x.sym.sym);
+        kb::key::Name::query(x.sym.key);
+        printf("%6d: Key.down\n\tunsafe_winId: %d\n\tstate: %d repeat: %s\n\tsym: %s\n", x.timestamp, x.unsafe_winId, x.state, x.repeat ? "true" : "false", kb::key::Name::lastQueryRes());
       }, e);
 
       varact<event::mouse::button::Up>([&](event::mouse::button::Up x) {
