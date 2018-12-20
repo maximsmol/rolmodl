@@ -122,6 +122,20 @@ int main() {
     printf("    %s\n", sys::driver::name(i));
   printf("\n");
 
+  printf("render drivers:\n");
+  printf("  num: %d\n", ren::driver::count());
+  for (unsigned int n = 0; n < ren::driver::count(); ++n) {
+    ren::Info i = ren::driver::info(n);
+    printf("    %s\n", i.name);
+    printf("      soft: %d, accel: %d, vsync: %d, toTex: %d\n", i.flags.isSoftware(), i.flags.isAccelerated(), i.flags.isVsync(), i.flags.isToTexture());
+    printf("      maxTexSize: %d x %d\n", i.maxTexSize.w, i.maxTexSize.h);
+    printf("      formats:\n");
+    printf("        num: %d\n", i.texFormatsN);
+    for (unsigned int j = 0; j < i.texFormatsN; ++j)
+      printf("        %d\n", i.texFormats[j]);
+  }
+  printf("\n");
+
   printf("displays:\n");
   printf("  num: %d\n", sys::display::unsafe::count());
   for (unsigned int i = 0; i < sys::display::unsafe::count(); ++i) {
