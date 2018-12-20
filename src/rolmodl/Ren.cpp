@@ -6,6 +6,31 @@
 namespace rolmodl {
   using detail::throwOnErr;
 
+  namespace ren::driver {
+    int count() {
+      int res = SDL_GetNumRenderDrivers();
+      throwOnErr(res);
+      return res;
+    }
+
+    Info info(const unsigned int i) {
+      if (i >= count())
+        throw std::out_of_range("rolmodl::ren::driver::info");
+      SDL_RendererInfo tmp{};
+      throwOnErr(SDL_GetRenderDriverInfo(i, &tmp));
+
+      Info res{};
+      res.name = tmp.name;
+      res.flags = Flags::unsafeFromRaw(tmp.flags);
+
+      res.texFormatsN = tmp.num_texture_formats;
+      memcpy(&res.texFormats, &tmp.texture_formats, sizeof(uint32_t)*res.texFormatsN);
+      res.maxTexSize = geom::Size{tmp.max_texture_width, tmp.max_texture_height};
+
+      return res;
+    }
+  }
+
   Ren::Ren() noexcept :
     h_(nullptr)
   {}

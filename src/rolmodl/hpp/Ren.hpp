@@ -26,6 +26,12 @@ namespace rolmodl {
 
   namespace ren {
     struct Flags;
+    struct Info;
+
+    namespace driver {
+      int amount();
+      Info info(const unsigned int i);
+    }
   }
 }
 
@@ -159,6 +165,9 @@ namespace rolmodl {
         constexpr uint32_t raw() const noexcept {
           return data_;
         }
+        constexpr static Flags unsafeFromRaw(const uint32_t data) noexcept {
+          return Flags(data);
+        }
       private:
         explicit constexpr Flags(const uint32_t data) noexcept :
           data_(data)
@@ -166,6 +175,20 @@ namespace rolmodl {
 
         uint32_t data_;
     };
+
+    struct Info {
+      const char* name;
+      Flags flags;
+
+      uint32_t texFormatsN;
+      uint32_t texFormats[16];
+      geom::Size maxTexSize;
+    };
+
+    namespace driver {
+      int count();
+      Info info(const unsigned int i);
+    }
   }
 
   struct RenScale {
