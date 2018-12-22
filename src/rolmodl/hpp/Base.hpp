@@ -6,6 +6,7 @@
 #include <SDL.h>
 
 #include "Geom.hpp"
+#include "PixelFmt.hpp"
 
 namespace rolmodl {
   namespace sys {
@@ -129,6 +130,25 @@ namespace rolmodl {
         float ddpi_, hdpi_, vdpi_;
 
         friend Display display::unsafe::byIndex(unsigned int i);
+    };
+
+    struct DisplayMode;
+    namespace display::mode::unsafe {
+      unsigned int countForDisplayN(unsigned int n);
+      DisplayMode desktopForDisplayN(unsigned int n);
+      DisplayMode currentForDisplayN(unsigned int n);
+      DisplayMode forDisplayNByIndexI(unsigned int n, unsigned int i);
+
+      DisplayMode closestForDisplayN(unsigned int n, const DisplayMode ideal);
+    }
+
+    struct DisplayMode {
+      public:
+        pixelfmt::Id fmt;
+        geom::Size size;
+        std::optional<unsigned int> refreshRate = std::nullopt;
+        void* unsafeDriverData = nullptr;
+      private:
     };
   }
 

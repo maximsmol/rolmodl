@@ -1,3 +1,4 @@
+// too many preconditions, also unsafe because DestroyWindow might also kill the underlying native window
 SDL_CreateWindowFrom
 
 SDL_GL_CreateContext
@@ -17,16 +18,9 @@ SDL_GL_SetSwapInterval
 SDL_GL_SwapWindow
 SDL_GL_UnloadLibrary
 
-SDL_GetClosestDisplayMode
-SDL_GetCurrentDisplayMode
-SDL_GetDesktopDisplayMode
-SDL_GetDisplayMode
-SDL_GetNumDisplayModes
-
-SDL_GetGrabbedWindow
-
 // fixme: won't support until copyable windows are allowed
 SDL_GetWindowFromID
+SDL_GetGrabbedWindow
 
 SDL_GetWindowBrightness
 SDL_GetWindowData
@@ -57,5 +51,5 @@ SDL_ShowSimpleMessageBox
 SDL_UpdateWindowSurface
 SDL_UpdateWindowSurfaceRects
 
-SDL_VideoInit
-SDL_VideoQuit
+SDL_VideoInit // confirmed happens in SDL_CreateWindow if needed
+SDL_VideoQuit // You can use this function with atexit() to ensure that it is run when your application is shutdown, but it is not wise to do this from a library or other dynamically loaded code.
