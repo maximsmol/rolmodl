@@ -6,8 +6,6 @@ SDL_CreateTextureFromSurface
 SDL_GL_BindTexture
 SDL_GL_UnbindTexture
 
-SDL_GetNumRenderDrivers
-SDL_GetRenderDriverInfo
 SDL_GetRendererInfo
 
 // wont support
