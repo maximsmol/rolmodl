@@ -289,7 +289,7 @@ int main() {
         printf("%6d: Joystick.ball\n\tjoystickId: %d\n\tballN: %d\n\tdx: %d dy: %d\n", x.timestamp, x.joystickId, x.ballN, x.dx, x.dy);
       }, e);
       varact<event::joystick::Hat>([&](event::joystick::Hat x) {
-        printf("%6d: Joystick.hat\n\tjoystickId: %d\n\thatN: %d x: %d\n", x.timestamp, x.joystickId, x.hatN, x.x);
+        printf("%6d: Joystick.hat\n\tjoystickId: %d\n\thatN: %d x: %s\n", x.timestamp, x.joystickId, x.hatN, hatState::position::toString(x.x.pos()));
       }, e);
       varact<event::joystick::button::Up>([&](event::joystick::button::Up x) {
         printf("%6d: Joystick.button.up\n\tjoystickId: %d\n\tbuttonN: %d state: %d\n", x.timestamp, x.joystickId, x.buttonN, x.state);
