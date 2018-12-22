@@ -262,6 +262,78 @@ namespace rolmodl {
     float Display::vdpi() const noexcept {
       return vdpi_;
     }
+
+
+    namespace display::mode::unsafe {
+      unsigned int countForDisplayN(unsigned int n) {
+        if (n >= display::unsafe::count())
+          throw std::out_of_range("rolmodl::sys::display::mode::unsafe::countForDisplayN");
+
+        int res = SDL_GetNumDisplayModes(static_cast<int>(n));
+        if (res < 1)
+          throw sdlexception(res);
+        return static_cast<unsigned int>(res);
+      }
+
+      DisplayMode fromSDL_DisplayMode(const SDL_DisplayMode x);
+      DisplayMode fromSDL_DisplayMode(const SDL_DisplayMode x) {
+        return DisplayMode{
+          .fmt = pixelfmt::id::unsafe::fromSDLEnum(x.format),
+          .size = geom::Size{x.w, x.h},
+          .refreshRate = x.refresh_rate == 0 ? std::nullopt : std::optional<unsigned int>(static_cast<unsigned int>(x.refresh_rate)),
+          .unsafeDriverData = x.driverdata
+        };
+      }
+
+      DisplayMode desktopForDisplayN(unsigned int n) {
+        if (n >= display::unsafe::count())
+          throw std::out_of_range("rolmodl::sys::display::mode::unsafe::desktopForDisplayN");
+
+        SDL_DisplayMode tmp{};
+        detail::throwOnErr(SDL_GetDesktopDisplayMode(static_cast<int>(n), &tmp));
+
+        return fromSDL_DisplayMode(tmp);
+      }
+      DisplayMode currentForDisplayN(unsigned int n) {
+        if (n >= display::unsafe::count())
+          throw std::out_of_range("rolmodl::sys::display::mode::unsafe::currentForDisplayN");
+
+        SDL_DisplayMode tmp{};
+        detail::throwOnErr(SDL_GetCurrentDisplayMode(static_cast<int>(n), &tmp));
+
+        return fromSDL_DisplayMode(tmp);
+      }
+      DisplayMode forDisplayNByIndexI(unsigned int n, unsigned int i) {
+        if (n >= display::unsafe::count())
+          throw std::out_of_range("rolmodl::sys::display::mode::unsafe::forDisplayNByIndexI");
+
+        if (i >= countForDisplayN(n))
+          throw std::out_of_range("rolmodl::sys::display::mode::unsafe::forDisplayNByIndexI");
+
+        SDL_DisplayMode tmp{};
+        detail::throwOnErr(SDL_GetDisplayMode(static_cast<int>(n), static_cast<int>(i), &tmp));
+
+        return fromSDL_DisplayMode(tmp);
+      }
+
+      DisplayMode closestForDisplayN(unsigned int n, const DisplayMode ideal) {
+        if (n >= display::unsafe::count())
+          throw std::out_of_range("rolmodl::sys::display::mode::unsafe::closestForDisplayN");
+
+        const SDL_DisplayMode sdl_ideal{
+          .format = pixelfmt::id::unsafe::toSDLEnum(ideal.fmt),
+          .w = ideal.size.w, .h = ideal.size.h,
+          .refresh_rate = ideal.refreshRate.has_value() ? static_cast<int>(*ideal.refreshRate) : 0,
+          .driverdata = ideal.unsafeDriverData
+        };
+
+        SDL_DisplayMode tmp{};
+        if (SDL_GetClosestDisplayMode(static_cast<int>(n), &sdl_ideal, &tmp) == nullptr)
+          throw sdlexception();
+
+        return fromSDL_DisplayMode(tmp);
+      }
+    }
   }
 
   /*explicit*/ sdlexception::sdlexception(const int code) noexcept :

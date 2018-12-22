@@ -83,6 +83,17 @@ struct Button {
     int state_; // 0 - def, 1 - hover, 2 - click
 };
 
+void printDisplayMode(const sys::DisplayMode m);
+void printDisplayMode(const sys::DisplayMode m) {
+  printf("      fmt: %s\n", pixelfmt::id::toString(m.fmt));
+  printf("      size: %d x %d\n", m.size.w, m.size.h);
+  if (auto rate = m.refreshRate; rate.has_value())
+    printf("      refresh rate: %d\n", *rate);
+  else
+    printf("      refresh rate: na\n");
+  printf("      unsafeDriverData: %p\n", m.unsafeDriverData);
+}
+
 int main() {
   SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -146,6 +157,22 @@ int main() {
     printf("    all   : at (%d,%d), %d x %d\n", r.x, r.y, r.w, r.h);
     printf("    usable: at (%d,%d), %d x %d\n", rUsable.x, rUsable.y, rUsable.w, rUsable.h);
     printf("    %f ddpi, %f hdpi, %f vdpi\n", static_cast<double>(d.ddpi()), static_cast<double>(d.hdpi()), static_cast<double>(d.vdpi()));
+
+    printf("    cur mode:\n");
+    printDisplayMode(sys::display::mode::unsafe::currentForDisplayN(i));
+
+    printf("    desktop mode:\n");
+    printDisplayMode(sys::display::mode::unsafe::desktopForDisplayN(i));
+
+    printf("    all modes:\n");
+    unsigned int l = sys::display::mode::unsafe::countForDisplayN(i);
+    printf("      num: %d\n", l);
+    for (unsigned int j = 0; j < l; ++j) {
+      printDisplayMode(sys::display::mode::unsafe::forDisplayNByIndexI(i, j));
+      if (j != l-1) printf("\n");
+    }
+    if (l == 0)
+      printf("      ERROR: none\n");
   }
   printf("\n");
 
@@ -163,6 +190,14 @@ int main() {
     printf("na\n");
   printf("state id: %d\n", pwrStatus.state());
 
+  printf("closest display mode to rgb888 803x599 70hz on display #0:\n");
+  sys::DisplayMode ideal{
+    .fmt = pixelfmt::Id::rgb888,
+    .size = Size{803, 599},
+    .refreshRate = 70
+  };
+  printDisplayMode(sys::display::mode::unsafe::closestForDisplayN(0, ideal));
+
   Size size{800, 600};
   Win w("test", size, win::Flags{}.withResizable());
   Ren r(w);
@@ -173,9 +208,9 @@ int main() {
     Ren* r; Size* size;
   };
 
-  Stuff stuff = Stuff{&r, &size};
+  Stuff stuffLocal = Stuff{&r, &size};
   SDL_AddEventWatch([](void* stuff, SDL_Event* e) {
-    Stuff* s = reinterpret_cast<Stuff*>(s);
+    Stuff* s = reinterpret_cast<Stuff*>(stuff);
 
     if (e->type == SDL_WINDOWEVENT)
       if (e->window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
@@ -189,7 +224,7 @@ int main() {
         s->r->present();
       }
     return 1;
-  }, &stuff);
+  }, &stuffLocal);
 
   const int btnDim = 30;
   Button b(Pos{100, 100}, Size{btnDim, btnDim});
@@ -215,7 +250,7 @@ int main() {
         printf("%6d: Text\n\tunsafe_winId: %d\n\ttext: %s\n", x.timestamp, x.unsafe_winId, x.text);
       }, e);
 
-      varact<event::touch::Motion>([&](event::touch::Motion x) {
+      varact<event::touch::Motion>([&](event::touch::Motion /*x*/) {
         // printf("%6d: Touch.motion\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tdx: %f dy: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.x), static_cast<double>(x.y), static_cast<double>(x.dx), static_cast<double>(x.dy), static_cast<double>(x.pressure));
       }, e);
       varact<event::touch::Up>([&](event::touch::Up x) {
@@ -240,14 +275,14 @@ int main() {
       varact<event::mouse::button::Down>([&](event::mouse::button::Down x) {
         printf("%6d: Mouse.button.down\n\tunsafe_winId: %d\n\tmouseId: %d\n\tbutton: %d state: %d clicks: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.button, x.state, x.clicks, x.pos.x, x.pos.y);
       }, e);
-      varact<event::mouse::Motion>([&](event::mouse::Motion x) {
+      varact<event::mouse::Motion>([&](event::mouse::Motion /*x*/) {
         // printf("%6d: Mouse.motion\n\tunsafe_winId: %d\n\tmouseId: %d\n\tstate: %d\n\tx: %d y: %d\n\tdx: %d dy: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.state, x.pos.x, x.pos.y, x.dpos.x, x.dpos.y);
       }, e);
       varact<event::mouse::Wheel>([&](event::mouse::Wheel x) {
         printf("%6d: Mouse.wheel\n\tunsafe_winId: %d\n\tmouseId: %d\n\tdx: %d dy: %d\n\tdirection: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.dpos.x, x.dpos.y, x.direction);
       }, e);
 
-      varact<event::joystick::Axis>([&](event::joystick::Axis x) {
+      varact<event::joystick::Axis>([&](event::joystick::Axis /*x*/) {
         // printf("%6d: Joystick.axis\n\tjoystickId: %d\n\taxisN: %d x: %d\n", x.timestamp, x.joystickId, x.axisN, x.x);
       }, e);
       varact<event::joystick::Ball>([&](event::joystick::Ball x) {
@@ -270,7 +305,7 @@ int main() {
         printf("%6d: Joystick.device.removed\n\tjoystickId: %d\n", x.timestamp, x.joystickId);
       }, e);
 
-      varact<event::controller::Axis>([&](event::controller::Axis x) {
+      varact<event::controller::Axis>([&](event::controller::Axis /*x*/) {
         // printf("%6d: Controller.axis\n\tcontrollerId: %d\n\taxisN: %d x: %d\n", x.timestamp, x.controllerId, x.axisN, x.x);
       }, e);
       varact<event::controller::button::Up>([&](event::controller::button::Up x) {
