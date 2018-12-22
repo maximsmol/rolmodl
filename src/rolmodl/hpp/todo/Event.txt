@@ -9,3 +9,4 @@ SYSWM events
 audio device index
 drag_n_drop resource management
 SDL_FingerID
+checkout the unsafe_ prefix in HatState
