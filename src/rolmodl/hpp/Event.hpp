@@ -20,6 +20,9 @@ namespace rolmodl {
   struct Keysym;
 
   struct HatState;
+  // namespace hatState::position { // todo?
+  //   constexpr const char* toString(const HatState::Position p);
+  // }
 
   namespace event {
     struct Timestamped;
@@ -315,6 +318,30 @@ namespace rolmodl {
           return Position::BottomRight;
       }
   };
+  namespace hatState::position {
+    constexpr const char* toString(const HatState::Position p) {
+      if (p == HatState::Position::TopLeft)
+        return "top-left";
+      if (p == HatState::Position::Top)
+        return "top";
+      if (p == HatState::Position::TopRight)
+        return "top-right";
+
+      if (p == HatState::Position::Left)
+        return "left";
+      if (p == HatState::Position::Center)
+        return "center";
+      if (p == HatState::Position::Right)
+        return "right";
+
+      if (p == HatState::Position::BottomLeft)
+        return "bottom-left";
+      if (p == HatState::Position::Bottom)
+        return "bottom";
+      // if (p == HatState::Position::BottomRight)
+        return "bottom-right";
+    }
+  }
 
   namespace event {
     struct Timestamped {
