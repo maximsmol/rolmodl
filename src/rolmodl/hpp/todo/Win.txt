@@ -44,7 +44,6 @@ SDL_SetWindowInputFocus
 SDL_SetWindowModalFor
 SDL_SetWindowResizable
 
-SDL_GetWindowSurface
 SDL_GetWindowWMInfo
 
 SDL_ShowMessageBox

@@ -1,0 +1,44 @@
+// ?
+// fixme: idk if we need to support arbitrary color depth here, or if it should come from the format
+SDL_CreateRGBSurfaceWithFormat
+SDL_CreateRGBSurface // fixme: shouldn't all of this come from the pixel format?
+
+// todo: could implement not thread-safe refcounting using the `refcount` field of SDL_Surface, but I can't make it atomic (thus thread-safe) using stdlib/SDL_atomic because it is a normal int
+
+// todo:
+SDL_BlitSurface
+
+SDL_ConvertPixels
+SDL_ConvertSurface
+SDL_ConvertSurfaceFormat
+
+SDL_GetClipRect
+SDL_SetClipRect
+
+SDL_FillRect
+SDL_FillRects
+
+SDL_BlitScaled
+SDL_LowerBlit
+SDL_LowerBlitScaled
+
+SDL_SaveBMP
+SDL_LoadBMP
+SDL_SaveBMP_RW
+SDL_LoadBMP_RW
+
+SDL_GetColorKey
+SDL_SetColorKey
+SDL_SetSurfacePalette
+
+SDL_GetSurfaceAlphaMod
+SDL_GetSurfaceBlendMode
+SDL_GetSurfaceColorMod
+
+SDL_SetSurfaceAlphaMod
+SDL_SetSurfaceBlendMode
+SDL_SetSurfaceColorMod
+
+// fixme: won't support without proper arrays
+SDL_CreateRGBSurfaceFrom
+SDL_CreateRGBSurfaceWithFormatFrom

@@ -20,3 +20,7 @@ TexLock
   - make full-texture lock unambigious
   ? get the format mask in a different way
     - SDL_PixelFormatEnumToMasks
+
+Tex locks don't check that the texture handle isnt null when accessing it
+
+geom::Size has signed dimensions
