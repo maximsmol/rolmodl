@@ -1,0 +1,68 @@
+\hypertarget{_ren_8hpp}{}\section{src/rolmodl/hpp/\+Ren.hpp File Reference}
+\label{_ren_8hpp}\index{src/rolmodl/hpp/Ren.hpp@{src/rolmodl/hpp/Ren.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Base.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Geom.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Win.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pixel\+Fmt.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tex.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1_flip}{rolmodl\+::blend\+Mode\+::\+Flip}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1ren_1_1_flags}{rolmodl\+::blend\+Mode\+::ren\+::\+Flags}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1ren_1_1_info}{rolmodl\+::blend\+Mode\+::ren\+::\+Info}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1_ren_scale}{rolmodl\+::blend\+Mode\+::\+Ren\+Scale}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1_src_rect_w_h}{rolmodl\+::blend\+Mode\+::\+Src\+Rect\+WH}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1_src_rect_x_y}{rolmodl\+::blend\+Mode\+::\+Src\+Rect\+XY}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1_dst_rect_w_h}{rolmodl\+::blend\+Mode\+::\+Dst\+Rect\+WH}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1blend_mode_1_1_dst_rect_x_y}{rolmodl\+::blend\+Mode\+::\+Dst\+Rect\+XY}}
+\item 
+class \mbox{\hyperlink{classrolmodl_1_1blend_mode_1_1_ren}{rolmodl\+::blend\+Mode\+::\+Ren}}
+\item 
+class \mbox{\hyperlink{classrolmodl_1_1blend_mode_1_1_tex_ren}{rolmodl\+::blend\+Mode\+::\+Tex\+Ren}}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerolmodl}{rolmodl}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1blend_mode}{rolmodl\+::blend\+Mode}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1blend_mode_1_1unsafe}{rolmodl\+::blend\+Mode\+::unsafe}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1blend_mode_1_1ren}{rolmodl\+::blend\+Mode\+::ren}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1blend_mode_1_1ren_1_1driver}{rolmodl\+::blend\+Mode\+::ren\+::driver}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacerolmodl_a642c095a75ddf840ce3484384ee5c822}{rolmodl\+::\+Blend\+Mode}} \{ \mbox{\hyperlink{namespacerolmodl_a642c095a75ddf840ce3484384ee5c822a334c4a4c42fdb79d7ebc3e73b517e6f8}{rolmodl\+::\+Blend\+Mode\+::none}}, 
+\mbox{\hyperlink{namespacerolmodl_a642c095a75ddf840ce3484384ee5c822ac195f144a8d768f2bb87f155ed2117a4}{rolmodl\+::\+Blend\+Mode\+::blend}}, 
+\mbox{\hyperlink{namespacerolmodl_a642c095a75ddf840ce3484384ee5c822a34ec78fcc91ffb1e54cd85e4a0924332}{rolmodl\+::\+Blend\+Mode\+::add}}, 
+\mbox{\hyperlink{namespacerolmodl_a642c095a75ddf840ce3484384ee5c822aad148a3ca8bd0ef3b48c52454c493ec5}{rolmodl\+::\+Blend\+Mode\+::mod}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr Blend\+Mode \mbox{\hyperlink{namespacerolmodl_1_1blend_mode_1_1unsafe_a4a5c763a271500b6974ca9eada7f1da6}{rolmodl\+::blend\+Mode\+::unsafe\+::from\+S\+D\+L\+Enum}} (const S\+D\+L\+\_\+\+Blend\+Mode m) noexcept
+\item 
+constexpr S\+D\+L\+\_\+\+Blend\+Mode \mbox{\hyperlink{namespacerolmodl_1_1blend_mode_1_1unsafe_a5d76c1a5d06e0e7088a9fcfe4eeea59e}{rolmodl\+::blend\+Mode\+::unsafe\+::to\+S\+D\+L\+Enum}} (const Blend\+Mode m) noexcept
+\item 
+unsigned int \mbox{\hyperlink{namespacerolmodl_1_1blend_mode_1_1ren_1_1driver_a876e0464f4dcc864e44d74519ce641fd}{rolmodl\+::blend\+Mode\+::ren\+::driver\+::count}} ()
+\item 
+Info \mbox{\hyperlink{namespacerolmodl_1_1blend_mode_1_1ren_1_1driver_a0e09f0313c7480405e7da8e2806a48f2}{rolmodl\+::blend\+Mode\+::ren\+::driver\+::info}} (const unsigned int i)
+\end{DoxyCompactItemize}
