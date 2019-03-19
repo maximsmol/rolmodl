@@ -11,3 +11,4 @@
 #include "Win.hpp"
 #include "Ren.hpp"
 #include "Tex.hpp"
+#include "SWTex.hpp"

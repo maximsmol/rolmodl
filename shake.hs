@@ -36,6 +36,7 @@ main = shakeArgs (shakeOptions' (def :: DirCfg)) $ do
   let rolmodlDistPath = dircfg^.field @"dist"
   let rolmodlLibPath = rolmodlDistPath</>"librolmodl.dylib"
   let rolmodlTestPath = rolmodlDistPath</>"test"
+  let rolmodlTestSWTexPath = rolmodlDistPath</>"test_swtex"
 
   -- rolmodl
   let rolmodlLibCPPTargetCfg =
@@ -45,7 +46,7 @@ main = shakeArgs (shakeOptions' (def :: DirCfg)) $ do
           & field @"publicIncludeDirs" .~ ["hpp"]
   let rolmodlLibCPPSourceCfg =
         (def :: CPPSourceCfg)
-          & field @"fromInTarget" .~ ((<.> "cpp") <$> ["Base", "Event", "Kb", "Mouse", "PixelFmt", "Ren", "Tex", "Win"])
+          & field @"fromInTarget" .~ ((<.> "cpp") <$> ["Base", "Event", "Kb", "Mouse", "PixelFmt", "Ren", "Tex", "Win", "SWTex"])
   let rolmodlLibCPPIncludeListing =
         (def :: CPPIncludeListing)
           & field @"fromInTarget" .~ ["."]
@@ -121,11 +122,42 @@ main = shakeArgs (shakeOptions' (def :: DirCfg)) $ do
           & field @"flags" .~ rolmodlTestCPPLinkBuildFlagCfg
   genCPPLinkBuildRules rolmodlTestCPPLinkBuildCfg
 
+
+  let rolmodlTestSWTexCPPTargetCfg =
+        (def :: CPPTargetCfg)
+          & field @"name" .~ "test"
+  let rolmodlTestSWTexCPPSourceCfg =
+        rolmodlTestCPPSourceCfg
+          & field @"fromInTarget" .~ ((<.> "cpp") <$> ["main_swtex"])
+  let rolmodlTestSWTexCPPObjBuildCfg =
+        (def :: CPPObjBuildCfg)
+          & field @"target" .~ rolmodlTestSWTexCPPTargetCfg
+          & field @"srcs" .~ rolmodlTestSWTexCPPSourceCfg
+          & field @"includes" .~ rolmodlTestCPPIncludeCfg
+  genCPPObjBuildRules rolmodlTestSWTexCPPObjBuildCfg
+
+  let rolmodlTestSWTexCPPObjSourceCfg =
+        (def :: CPPObjSourceCfg)
+          & field @"fromCPPObjBuild" .~ [rolmodlTestSWTexCPPObjBuildCfg]
+          & field @"fromCPPLinkBuild" .~ [rolmodlLibCPPLinkBuildCfg]
+          & field @"fromWorld" .~ ["libSDL2.dylib"]
+  let rolmodlTestSWTexCPPLinkBuildCfg =
+        (def :: CPPLinkBuildCfg)
+          & field @"name" .~ "test_swtex"
+          & field @"target" .~ rolmodlTestSWTexCPPTargetCfg
+          & field @"objs" .~ rolmodlTestSWTexCPPObjSourceCfg
+          & field @"flags" .~ rolmodlTestCPPLinkBuildFlagCfg
+  genCPPLinkBuildRules rolmodlTestSWTexCPPLinkBuildCfg
+
   linkToDistRules' (getCPPLinkPrimaryBuildOut rolmodlTestCPPLinkBuildCfg) rolmodlTestPath $ \out -> do
     cmd_ "install_name_tool" "-add_rpath" [rolmodlDistPath] [out] -- changes the value of the dependency here because the changed file is actually just a link to the dep
     return ()
 
-  want [rolmodlLibPath, rolmodlTestPath]
+  linkToDistRules' (getCPPLinkPrimaryBuildOut rolmodlTestSWTexCPPLinkBuildCfg) rolmodlTestSWTexPath $ \out -> do
+    cmd_ "install_name_tool" "-add_rpath" [rolmodlDistPath] [out] -- changes the value of the dependency here because the changed file is actually just a link to the dep
+    return ()
+
+  want [rolmodlLibPath, rolmodlTestPath, rolmodlTestSWTexPath]
 
   return ()
 

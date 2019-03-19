@@ -5,7 +5,9 @@
 #include <SDL.h>
 
 namespace rolmodl {
+  class Win_Base;
   class Win;
+  class Win_SW;
 }
 
 #include "Base.hpp"
@@ -137,14 +139,14 @@ namespace rolmodl {
     };
 
     namespace unsafe {
-      // Win fromId();
+      // Win_Base fromId();
     }
   }
 
-  class Win;
+  class Win_Base;
   struct BorderSizes {
     public:
-      explicit BorderSizes(Win& w);
+      explicit BorderSizes(Win_Base& w);
 
       int top() const noexcept;
       int l() const noexcept;
@@ -155,21 +157,21 @@ namespace rolmodl {
       int top_, l_, bot_, r_;
   };
 
-  class Win {
+  class Win_Base {
     public:
-      Win(const char* title, const geom::Pos p, const geom::Size s, const win::Flags flags);
-      Win(const char* title,                    const geom::Size s, const win::Flags flags);
-      Win(const char* title, const geom::Pos p, const geom::Size s);
-      Win(const char* title,                    const geom::Size s);
-      ~Win() noexcept;
+      Win_Base(const char* title, const geom::Pos p, const geom::Size s, const win::Flags flags);
+      Win_Base(const char* title,                    const geom::Size s, const win::Flags flags);
+      Win_Base(const char* title, const geom::Pos p, const geom::Size s);
+      Win_Base(const char* title,                    const geom::Size s);
+      ~Win_Base() noexcept;
 
-      Win(const Win& that) = delete;
-      Win(Win&& that) noexcept;
+      Win_Base(const Win_Base& that) = delete;
+      Win_Base(Win_Base&& that) noexcept;
 
-      Win& operator=(const Win& that) = delete;
-      Win& operator=(Win&& that) noexcept;
+      Win_Base& operator=(const Win_Base& that) = delete;
+      Win_Base& operator=(Win_Base&& that) noexcept;
 
-      friend void swap(Win& a, Win& b) noexcept;
+      friend void swap(Win_Base& a, Win_Base& b) noexcept;
 
       SDL_Window* unsafeRaw() noexcept;
       const SDL_Window* unsafeRaw() const noexcept;
@@ -210,8 +212,13 @@ namespace rolmodl {
       void setMinSize(const geom::Size s) noexcept;
 
     private:
-      Win() noexcept;
+      Win_Base() noexcept;
 
       SDL_Window* h_;
+  };
+
+  class Win : public Win_Base {
+    public:
+      using Win_Base::Win_Base;
   };
 }
