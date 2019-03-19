@@ -1,0 +1,168 @@
+\hypertarget{_base_8hpp}{}\section{src/rolmodl/hpp/\+Base.hpp File Reference}
+\label{_base_8hpp}\index{src/rolmodl/hpp/Base.hpp@{src/rolmodl/hpp/Base.hpp}}
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Geom.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pixel\+Fmt.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1sys_1_1pwr_1_1_status}{rolmodl\+::sys\+::pwr\+::\+Status}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1sys_1_1display_1_1_display}{rolmodl\+::sys\+::display\+::\+Display}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1_display_mode}{rolmodl\+::sys\+::display\+::display\+::mode\+::\+Display\+Mode}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1_r_g_b}{rolmodl\+::\+R\+GB}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1_r_g_b_a}{rolmodl\+::\+R\+G\+BA}}
+\item 
+struct \mbox{\hyperlink{structrolmodl_1_1sdlexception}{rolmodl\+::sdlexception}}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerolmodl}{rolmodl}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys}{rolmodl\+::sys}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu}{rolmodl\+::sys\+::cpu}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr}{rolmodl\+::sys\+::pwr}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1screensaver}{rolmodl\+::sys\+::screensaver}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1driver}{rolmodl\+::sys\+::driver}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display}{rolmodl\+::sys\+::display}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1unsafe}{rolmodl\+::sys\+::display\+::unsafe}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display}{rolmodl\+::sys\+::display\+::display}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display_1_1mode}{rolmodl\+::sys\+::display\+::display\+::mode}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1unsafe}{rolmodl\+::sys\+::display\+::display\+::mode\+::unsafe}}
+\item 
+ \mbox{\hyperlink{namespacerolmodl_1_1detail}{rolmodl\+::detail}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5ae}{rolmodl\+::sys\+::\+Id}} \{ \newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea7e6bb0931a72759d39514aa924b420bc}{rolmodl\+::sys\+::\+Id\+::\+A\+IX}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeac31b32364ce19ca8fcd150a417ecce58}{rolmodl\+::sys\+::\+Id\+::android}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea25405ba986481b3da1e3d965023b3983}{rolmodl\+::sys\+::\+Id\+::\+B\+S\+DI}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea682a9e5ff604016b7c78d6f68e76cd6f}{rolmodl\+::sys\+::\+Id\+::dreamcast}}, 
+\newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeaf16e4e54e2cb1d2c47c71df1e652dc54}{rolmodl\+::sys\+::\+Id\+::emscripten}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea4f0e1eb3c5357512f6a0b84ce7c64184}{rolmodl\+::sys\+::\+Id\+::free\+B\+SD}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea7e568fa3b73f720b15c2ed416e8b9db4}{rolmodl\+::sys\+::\+Id\+::haiku}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeae6fc180eebf641103d74be5255f95d72}{rolmodl\+::sys\+::\+Id\+::\+H\+P\+UX}}, 
+\newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea6a28f510701d7b3d5f62880302a14303}{rolmodl\+::sys\+::\+Id\+::irix}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeae206a54e97690cce50cc872dd70ee896}{rolmodl\+::sys\+::\+Id\+::linux}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea3fd91d2bdf3216a5bafa305070d88c80}{rolmodl\+::sys\+::\+Id\+::\+Mi\+NT}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeaa0c5a997f916cda7771e370e137175f4}{rolmodl\+::sys\+::\+Id\+::mac\+O\+S\+Classic}}, 
+\newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeaab9fc36c65df85f18b0d58415aa5017b}{rolmodl\+::sys\+::\+Id\+::mac\+O\+SX}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea4643d082402ba04afaf0e2d82452ac69}{rolmodl\+::sys\+::\+Id\+::\+Na\+Cl}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea47a17417f07dd90991e25431d44fba9e}{rolmodl\+::sys\+::\+Id\+::net\+B\+SD}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea3d0edc4d83e04b1c69cf48ba4ef9cf49}{rolmodl\+::sys\+::\+Id\+::open\+B\+SD}}, 
+\newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea7ae7a9e16a999bf8956f5d09dd6c67f8}{rolmodl\+::sys\+::\+Id\+::\+O\+S2}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea6f0c7a01492e8abb69844cc2e23d110d}{rolmodl\+::sys\+::\+Id\+::\+O\+SF}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea3a5d58bef2a729a90070c849b8a0010d}{rolmodl\+::sys\+::\+Id\+::\+Q\+N\+X\+Neutrino}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeaff15cfd9a5168d9aa07b7d80d40014c5}{rolmodl\+::sys\+::\+Id\+::\+R\+I\+S\+C\+OS}}, 
+\newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea7bee0477f82303aa43de5d78f7b9cb05}{rolmodl\+::sys\+::\+Id\+::solaris}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea0f4137ed1502b5045d6083aa258b5c42}{rolmodl\+::sys\+::\+Id\+::windows}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea4452b2d89e56662b194bab70acbd258f}{rolmodl\+::sys\+::\+Id\+::win\+RT}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea6dc9155e5a34c48d7c1ef154c368c18d}{rolmodl\+::sys\+::\+Id\+::tv\+OS}}, 
+\newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea1bdf605991920db11cbdf8508204c4eb}{rolmodl\+::sys\+::\+Id\+::i\+OS}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aea0e9c9bb3639ba35c67b2492f04a34d99}{rolmodl\+::sys\+::\+Id\+::\+P\+SP}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_ae00db9e1ee9231659b4d1bce9b1de5aeaad921d60486366258809553a3db49a4a}{rolmodl\+::sys\+::\+Id\+::unknown}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr_ae84fe28ac28fdac077ff5363a4fc0dfb}{rolmodl\+::sys\+::pwr\+::\+State}} \{ \newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr_ae84fe28ac28fdac077ff5363a4fc0dfba22ae590543cf682ca4396b82e8b7bb66}{rolmodl\+::sys\+::pwr\+::\+State\+::on\+Battery}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr_ae84fe28ac28fdac077ff5363a4fc0dfba67ab8d3a2e4450771265ffcc3a21a45f}{rolmodl\+::sys\+::pwr\+::\+State\+::no\+Battery}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr_ae84fe28ac28fdac077ff5363a4fc0dfba05a0c26d8e746429c786c8e53378b9c9}{rolmodl\+::sys\+::pwr\+::\+State\+::charging}}, 
+\mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr_ae84fe28ac28fdac077ff5363a4fc0dfba48aee20d947736a18c6e9d09b526f75a}{rolmodl\+::sys\+::pwr\+::\+State\+::charged}}, 
+\newline
+\mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr_ae84fe28ac28fdac077ff5363a4fc0dfbaad921d60486366258809553a3db49a4a}{rolmodl\+::sys\+::pwr\+::\+State\+::unknown}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{namespacerolmodl_1_1sys_a45b4fd534a68706be049e76057b5d944}{rolmodl\+::sys\+::name}} () noexcept
+\item 
+Id \mbox{\hyperlink{namespacerolmodl_1_1sys_ace55dea56d71ff5082e051ccbd370971}{rolmodl\+::sys\+::id}} () noexcept
+\item 
+unsigned int \mbox{\hyperlink{namespacerolmodl_1_1sys_a70ff276777bab09843e24810c773e7cf}{rolmodl\+::sys\+::ram}} () noexcept
+\item 
+unsigned int \mbox{\hyperlink{namespacerolmodl_1_1sys_ad5852b03388e82203ee1637aec25d6ad}{rolmodl\+::sys\+::logical\+Cores}} () noexcept
+\item 
+unsigned int \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_ad98e620f999f2f80c6eda9f191d3453e}{rolmodl\+::sys\+::cpu\+::l1\+Size}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_aff7e256df3cbeae474e4c64893544afb}{rolmodl\+::sys\+::cpu\+::has3\+D\+Now}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a872c2351d54168bee9e7fbd649915546}{rolmodl\+::sys\+::cpu\+::has\+A\+VX}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a1eabddb9c18dd8feff43773589cf4fcb}{rolmodl\+::sys\+::cpu\+::has\+A\+V\+X2}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a314ab3cc20eb23538ccb57c4d0589beb}{rolmodl\+::sys\+::cpu\+::has\+Alti\+Vec}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a3dab852b21f17995c8e1c3f9b5a56dfa}{rolmodl\+::sys\+::cpu\+::has\+M\+MX}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a87cea05fb8dec9396eee8147e1cd239b}{rolmodl\+::sys\+::cpu\+::has\+R\+D\+T\+SC}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a4486fdd3d0f3e4a8e7be04a630bcb244}{rolmodl\+::sys\+::cpu\+::has\+S\+SE}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a9924bd370ff28059cce71ae90ac116fd}{rolmodl\+::sys\+::cpu\+::has\+S\+S\+E2}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a8c1b85a95b0e010ed12e98385e66daa4}{rolmodl\+::sys\+::cpu\+::has\+S\+S\+E3}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a4ff9c70551b00e25009df29293b1a730}{rolmodl\+::sys\+::cpu\+::has\+S\+S\+E41}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1cpu_a65d1da04b578f34d55ec5470d315bce3}{rolmodl\+::sys\+::cpu\+::has\+S\+S\+E42}} () noexcept
+\item 
+Status \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1pwr_a5ba7d55c19eebf0f8c3deb904d814249}{rolmodl\+::sys\+::pwr\+::status}} () noexcept
+\item 
+void \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1screensaver_ad15aee532dd048bea8a49642e6b36834}{rolmodl\+::sys\+::screensaver\+::enable}} () noexcept
+\item 
+void \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1screensaver_a477fb240aa93290ce1b0fd9bdceac0fd}{rolmodl\+::sys\+::screensaver\+::disable}} () noexcept
+\item 
+bool \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1screensaver_ab06a4017c36e60e6d3f00647b9c797c7}{rolmodl\+::sys\+::screensaver\+::enabled}} () noexcept
+\item 
+unsigned int \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1driver_a865ed7f0572917341f90cb9c02a13e2f}{rolmodl\+::sys\+::driver\+::count}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1driver_a694e500336cf0a5371776be6f2054db5}{rolmodl\+::sys\+::driver\+::name}} (const unsigned int i)
+\item 
+std\+::optional$<$ const char $\ast$ $>$ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1driver_a23be225fc51a690fe8d72b86afef5fc8}{rolmodl\+::sys\+::driver\+::current}} () noexcept
+\item 
+Display \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1unsafe_a6821da893c862b8a0f3ac7e8a5a19010}{rolmodl\+::sys\+::display\+::unsafe\+::by\+Index}} (unsigned int i)
+\item 
+unsigned int \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1unsafe_a9f4b025c26e8e10d6e8256b40c69d173}{rolmodl\+::sys\+::display\+::unsafe\+::count}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1unsafe_aed743db5c17811ec45e1212f729a4405}{rolmodl\+::sys\+::display\+::unsafe\+::name}} (const unsigned int i)
+\item 
+geom\+::\+Rect\+WH \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1unsafe_a4a18b557573bfa7924e8c11122d0301f}{rolmodl\+::sys\+::display\+::unsafe\+::bounds}} (const unsigned int i)
+\item 
+geom\+::\+Rect\+WH \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1unsafe_ad298fc79a292b5f66a81a818a38d2766}{rolmodl\+::sys\+::display\+::unsafe\+::usable\+Bounds}} (const unsigned int i)
+\item 
+unsigned int \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1unsafe_a44b5325fbd365260f9ad80c6131887b1}{rolmodl\+::sys\+::display\+::display\+::mode\+::unsafe\+::count\+For\+DisplayN}} (unsigned int n)
+\item 
+Display\+Mode \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1unsafe_ac28160e54f640dba87cb719ea71d759a}{rolmodl\+::sys\+::display\+::display\+::mode\+::unsafe\+::desktop\+For\+DisplayN}} (unsigned int n)
+\item 
+Display\+Mode \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1unsafe_a0bd35b1e877e5f2eceb677bc07347829}{rolmodl\+::sys\+::display\+::display\+::mode\+::unsafe\+::current\+For\+DisplayN}} (unsigned int n)
+\item 
+Display\+Mode \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1unsafe_ac971adb48d9bffe0e2a9f8ef270e3364}{rolmodl\+::sys\+::display\+::display\+::mode\+::unsafe\+::for\+Display\+N\+By\+IndexI}} (unsigned int n, unsigned int i)
+\item 
+Display\+Mode \mbox{\hyperlink{namespacerolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1unsafe_afccdeb045344d9ceda8ae0233aa36598}{rolmodl\+::sys\+::display\+::display\+::mode\+::unsafe\+::closest\+For\+DisplayN}} (unsigned int n, const Display\+Mode ideal)
+\item 
+int \mbox{\hyperlink{namespacerolmodl_1_1detail_a53099c89cc48f439defa581cc114fb97}{rolmodl\+::detail\+::throw\+On\+Err}} (const int code)
+\end{DoxyCompactItemize}
