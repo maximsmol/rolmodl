@@ -15,5 +15,6 @@ var searchData=
   ['hatstate',['HatState',['../structrolmodl_1_1button__state_1_1_hat_state.html',1,'rolmodl::button_state']]],
   ['hdpi',['hdpi',['../structrolmodl_1_1sys_1_1display_1_1_display.html#af1a4c7b5dbffe44b6d2c00af2146247f',1,'rolmodl::sys::display::Display']]],
   ['hidden',['Hidden',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_hidden.html',1,'rolmodl::button_state::hatState::event::window']]],
+  ['hide',['hide',['../classrolmodl_1_1_win___base.html#a65c3f53e955261a2d7a864e9295b2375',1,'rolmodl::Win_Base']]],
   ['hittest',['HitTest',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_hit_test.html',1,'rolmodl::button_state::hatState::event::window']]]
 ];

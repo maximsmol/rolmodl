@@ -1,7 +1,7 @@
 #pragma once
 
 /// \file Base.hpp
-/// Support for base SDL features. `rolmodl` utilities.
+/// Support for base SDL features. rolmodl utilities.
 ///
 /// \sa https://wiki.libsdl.org/CategoryPower
 /// \sa https://wiki.libsdl.org/CategoryPlatform
@@ -161,6 +161,7 @@ namespace rolmodl {
       /// \sa https://wiki.libsdl.org/SDL_GetPowerInfo
       struct Status {
         public:
+          /// \brief Initialize from the current system power status.
           Status() noexcept;
 
           /// \brief Get the recorded battery status/power state.

@@ -24,7 +24,6 @@ SDL_GetGrabbedWindow
 
 SDL_GetWindowDisplayMode
 SDL_SetWindowDisplayMode
-SDL_GetWindowDisplayIndex
 
 SDL_GetWindowBrightness
 SDL_SetWindowBrightness
