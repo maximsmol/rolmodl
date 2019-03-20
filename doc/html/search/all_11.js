@@ -1,8 +1,9 @@
 var searchData=
 [
+  ['sdl',['sdl',['../structrolmodl_1_1rolmodl_1_1geom_1_1_rect_w_h.html#a251e71a4fd693b667a059da5a4cb0e36',1,'rolmodl::rolmodl::geom::RectWH::sdl()'],['../structrolmodl_1_1rolmodl_1_1geom_1_1_rect_x_y.html#a811e9601b6986cbda020b0ec5b094295',1,'rolmodl::rolmodl::geom::RectXY::sdl()']]],
   ['sdlexception',['sdlexception',['../structrolmodl_1_1sdlexception.html',1,'rolmodl::sdlexception'],['../structrolmodl_1_1sdlexception.html#a9709d0cd85bc197058deeb3e720ca6f1',1,'rolmodl::sdlexception::sdlexception(const int code) noexcept'],['../structrolmodl_1_1sdlexception.html#a8c25ca2298c2d8becc22c6f67f1b63e9',1,'rolmodl::sdlexception::sdlexception() noexcept']]],
   ['shown',['Shown',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_shown.html',1,'rolmodl::button_state::hatState::event::window']]],
-  ['size',['Size',['../structrolmodl_1_1geom_1_1_size.html',1,'rolmodl::geom::Size'],['../structrolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1_display_mode.html#a99daf2477e4973cc72e59b5c4929ee6f',1,'rolmodl::sys::display::display::mode::DisplayMode::size()']]],
+  ['size',['Size',['../structrolmodl_1_1rolmodl_1_1geom_1_1_size.html',1,'rolmodl::rolmodl::geom::Size'],['../structrolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1_display_mode.html#a99daf2477e4973cc72e59b5c4929ee6f',1,'rolmodl::sys::display::display::mode::DisplayMode::size()']]],
   ['sizechanged',['SizeChanged',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_size_changed.html',1,'rolmodl::button_state::hatState::event::window']]],
   ['srcrectwh',['SrcRectWH',['../structrolmodl_1_1blend_mode_1_1_src_rect_w_h.html',1,'rolmodl::blendMode']]],
   ['srcrectxy',['SrcRectXY',['../structrolmodl_1_1blend_mode_1_1_src_rect_x_y.html',1,'rolmodl::blendMode']]],

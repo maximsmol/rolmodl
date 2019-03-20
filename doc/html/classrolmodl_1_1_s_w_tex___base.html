@@ -90,7 +90,7 @@ Inheritance diagram for rolmodl::SWTex_Base:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5143f1794e13d2fd117536ac8e731268"><td class="memItemLeft" align="right" valign="top"><a id="a5143f1794e13d2fd117536ac8e731268"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SWTex_Base</b> (const <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> s, const pixelfmt::Id fmt)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SWTex_Base</b> (const geom::Size s, const pixelfmt::Id fmt)</td></tr>
 <tr class="separator:a5143f1794e13d2fd117536ac8e731268"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18b96903a2b22c5864f4d312b70eef03"><td class="memItemLeft" align="right" valign="top"><a id="a18b96903a2b22c5864f4d312b70eef03"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SWTex_Base</b> (const <a class="el" href="classrolmodl_1_1_s_w_tex___base.html">SWTex_Base</a> &amp;that)=delete</td></tr>
@@ -147,10 +147,10 @@ SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><b>unsafeRaw</b
 const SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><b>unsafeRaw</b> () const noexcept</td></tr>
 <tr class="separator:ab2cbce25dc39e7d154ca5233e0c77f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae3590e9417d9ddb63ab13b755719040"><td class="memItemLeft" align="right" valign="top"><a id="aae3590e9417d9ddb63ab13b755719040"></a>
-uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>unsafePoint</b> (const <a class="el" href="structrolmodl_1_1geom_1_1_pos.html">geom::Pos</a> p) noexcept</td></tr>
+uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>unsafePoint</b> (const geom::Pos p) noexcept</td></tr>
 <tr class="separator:aae3590e9417d9ddb63ab13b755719040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07d225a78883cf2f3cce266915a8fa17"><td class="memItemLeft" align="right" valign="top"><a id="a07d225a78883cf2f3cce266915a8fa17"></a>
-const uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>unsafePoint</b> (const <a class="el" href="structrolmodl_1_1geom_1_1_pos.html">geom::Pos</a> p) const noexcept</td></tr>
+const uint32_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>unsafePoint</b> (const geom::Pos p) const noexcept</td></tr>
 <tr class="separator:a07d225a78883cf2f3cce266915a8fa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c6af1d160da28ced8dfe1972524264a"><td class="memItemLeft" align="right" valign="top"><a id="a3c6af1d160da28ced8dfe1972524264a"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>unsafeRawPixels</b> () noexcept</td></tr>
@@ -162,10 +162,10 @@ const void *&#160;</td><td class="memItemRight" valign="bottom"><b>unsafeRawPixe
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aae650be8ee63af4efac4780f0025a1d8"><td class="memItemLeft" align="right" valign="top"><a id="aae650be8ee63af4efac4780f0025a1d8"></a>
-<a class="el" href="classrolmodl_1_1_s_w_tex___base.html">SWTex_Base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>drawPoint</b> (const <a class="el" href="structrolmodl_1_1_r_g_b_a.html">RGBA</a> c, const <a class="el" href="structrolmodl_1_1geom_1_1_pos.html">geom::Pos</a> p) noexcept</td></tr>
+<a class="el" href="classrolmodl_1_1_s_w_tex___base.html">SWTex_Base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>drawPoint</b> (const <a class="el" href="structrolmodl_1_1_r_g_b_a.html">RGBA</a> c, const geom::Pos p) noexcept</td></tr>
 <tr class="separator:aae650be8ee63af4efac4780f0025a1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86408f0070ab0703c06825ace24ac883"><td class="memItemLeft" align="right" valign="top"><a id="a86408f0070ab0703c06825ace24ac883"></a>
-<a class="el" href="structrolmodl_1_1_r_g_b_a.html">RGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getPoint</b> (const <a class="el" href="structrolmodl_1_1geom_1_1_pos.html">geom::Pos</a> p) const noexcept</td></tr>
+<a class="el" href="structrolmodl_1_1_r_g_b_a.html">RGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getPoint</b> (const geom::Pos p) const noexcept</td></tr>
 <tr class="separator:a86408f0070ab0703c06825ace24ac883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
