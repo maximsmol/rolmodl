@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xy',['xy',['../structrolmodl_1_1rolmodl_1_1geom_1_1_rect_w_h.html#aa78d85546f41a066fdf00821ec5aeda8',1,'rolmodl::rolmodl::geom::RectWH']]]
+  ['vdpi',['vdpi',['../structrolmodl_1_1sys_1_1display_1_1_display.html#a91fdfe8231caad1801caf59b0d15594a',1,'rolmodl::sys::display::Display']]]
 ];

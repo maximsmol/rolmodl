@@ -24,3 +24,5 @@ TexLock
 Tex locks don't check that the texture handle isnt null when accessing it
 
 geom::Size has signed dimensions
+
+flag structures cannot be cloned
