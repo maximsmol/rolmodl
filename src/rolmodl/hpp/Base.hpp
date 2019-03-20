@@ -91,12 +91,12 @@ namespace rolmodl {
       /// \sa https://wiki.libsdl.org/SDL_Has3DNow
       /// \sa https://en.wikipedia.org/wiki/3DNow!
       bool has3DNow() noexcept;
-      /// \brief Query whether the CPU supports the AVX1 (Advanced Vector Extensions/Sandy Bridge New Extensions) extension.
+      /// \brief Query whether the CPU supports the AVX1 extension.
       ///
       /// \sa https://wiki.libsdl.org/SDL_HasAVX
       /// \sa https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#AVX1
       bool hasAVX() noexcept;
-      /// \brief Query whether the CPU supports the AVX2 (Advanced Vector Extensions/Sandy Bridge New Extensions) extension.
+      /// \brief Query whether the CPU supports the AVX2 extension.
       ///
       /// \sa https://wiki.libsdl.org/SDL_HasAVX2
       /// \sa https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#AVX2
@@ -116,22 +116,22 @@ namespace rolmodl {
       /// \sa https://wiki.libsdl.org/SDL_HasRDTSC
       /// \sa https://en.wikipedia.org/wiki/Time_Stamp_Counter
       bool hasRDTSC() noexcept;
-      /// \brief Query whether the CPU supports the SSE1 (Streaming SIMD Extensions) extenstion.
+      /// \brief Query whether the CPU supports the SSE1 extenstion.
       ///
       /// \sa https://wiki.libsdl.org/SDL_HasSSE
       /// \sa https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions
       bool hasSSE() noexcept;
-      /// \brief Query whether the CPU supports the SSE2 (Streaming SIMD Extensions) extenstion.
+      /// \brief Query whether the CPU supports the SSE2 extenstion.
       ///
       /// \sa https://wiki.libsdl.org/SDL_HasSSE2
       /// \sa https://en.wikipedia.org/wiki/SSE2
       bool hasSSE2() noexcept;
-      /// \brief Query whether the CPU supports the SSE3 (Streaming SIMD Extensions/Prescott New Instructions/PNI) extenstion.
+      /// \brief Query whether the CPU supports the SSE3 extenstion.
       ///
       /// \sa https://wiki.libsdl.org/SDL_HasSSE3
       /// \sa https://en.wikipedia.org/wiki/SSE3
       bool hasSSE3() noexcept;
-      /// \brief Query whether the CPU supports the SSE4.1 (Streaming SIMD Extensions) extenstion.
+      /// \brief Query whether the CPU supports the SSE4.1 extenstion.
       ///
       /// \sa https://wiki.libsdl.org/SDL_HasSSE41
       /// \sa https://en.wikipedia.org/wiki/SSE4#SSE4.1
@@ -326,14 +326,19 @@ namespace rolmodl {
   }
 
   /// \brief RGB color type. No alpha component.
+  ///
+  /// The default color is pure black: `RGB(0, 0, 0)` = `#000000`.
+  ///
   /// \sa https://wiki.libsdl.org/SDL_Color
   struct RGB {
     public:
       uint8_t r, g, b;
 
+      /// \brief Initialize as the default pure black color: `RGB(0, 0, 0)` = `#000000`.
       constexpr RGB() :
         r(0), g(0), b(0)
       {}
+      /// \brief Initialize with the given red, green, and blue values
       constexpr RGB(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b) :
         r(arg_r), g(arg_g), b(arg_b)
       {}
@@ -343,19 +348,23 @@ namespace rolmodl {
 
   /// \brief RGBA color type. Has an alpha component.
   ///
-  /// Default alpha value is `255`.
+  /// The default color is pure opaque black: `RGBA(0, 0, 0, 255)` = `#000000ff`.
+  /// The default alpha value is `255`.
   ///
   /// \sa https://wiki.libsdl.org/SDL_Color
   struct RGBA : public RGB {
     public:
       uint8_t a;
 
+      /// \brief Initialize as the default pure opaque black color: `RGBA(0, 0, 0, 255)` = `#000000ff`.
       constexpr RGBA() :
         RGB(), a(255)
       {}
+      /// \brief Initialize with the given red, green, blue values and the default alpha of `255`.
       constexpr RGBA(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b) :
         RGB(arg_r, arg_g, arg_b), a(255)
       {}
+      /// \brief Initialize with the given red, green, blue, and alpha values.
       constexpr RGBA(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b, const uint8_t arg_a) :
         RGB(arg_r, arg_g, arg_b), a(arg_a)
       {}
@@ -367,9 +376,16 @@ namespace rolmodl {
   /// \sa https://wiki.libsdl.org/SDL_GetError
   struct sdlexception : public std::exception {
     public:
+      /// \brief Initialize with the given error code and the last SDL error message.
+      /// \sa https://wiki.libsdl.org/SDL_GetError
       explicit sdlexception(const int code) noexcept;
+      /// \brief Initialize with the error code arbitrarily set to `0` if one isn't available and the last SDL error message.
+      /// \sa https://wiki.libsdl.org/SDL_GetError
       sdlexception() noexcept;
+      /// \brief Get the recorded error code.
       int code() const noexcept;
+      /// \brief Get the recorded error message.
+      /// \sa https://wiki.libsdl.org/SDL_GetError
       const char* what() const noexcept override;
 
     private:
@@ -378,7 +394,7 @@ namespace rolmodl {
   };
 
   namespace detail {
-    /// \brief Throw an \link rolmodl::sdlexception \endlink if `code < 0`.
+    /// \brief Throw a \link rolmodl::sdlexception \endlink if `code < 0`.
     int throwOnErr(const int code);
   }
 }
