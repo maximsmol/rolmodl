@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['enable',['enable',['../namespacerolmodl_1_1sys_1_1screensaver.html#ad15aee532dd048bea8a49642e6b36834',1,'rolmodl::sys::screensaver']]],
-  ['enabled',['enabled',['../namespacerolmodl_1_1sys_1_1screensaver.html#ab06a4017c36e60e6d3f00647b9c797c7',1,'rolmodl::sys::screensaver']]]
+  ['fordisplaynbyindexi',['forDisplayNByIndexI',['../_base_8hpp.html#ac971adb48d9bffe0e2a9f8ef270e3364',1,'rolmodl::sys::display::display::mode::unsafe']]]
 ];
