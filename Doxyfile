@@ -4,8 +4,8 @@ PROJECT_NUMBER =
 PROJECT_BRIEF = "C++ API for the Simple Directmedia Library 2 (SDL2)"
 PROJECT_LOGO =
 OUTPUT_DIRECTORY = doc
-CREATE_SUBDIRS = NO
-ALLOW_UNICODE_NAMES = NO
+CREATE_SUBDIRS = NO # support for legacy filesystem issues that could not handle a lot of files
+ALLOW_UNICODE_NAMES = NO # escape unicode in output file paths just in case somebody uses IE6 or something equally antiquated
 OUTPUT_LANGUAGE = English
 OUTPUT_TEXT_DIRECTION = None
 

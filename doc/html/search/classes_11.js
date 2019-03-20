@@ -2,7 +2,7 @@ var searchData=
 [
   ['sdlexception',['sdlexception',['../structrolmodl_1_1sdlexception.html',1,'rolmodl']]],
   ['shown',['Shown',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_shown.html',1,'rolmodl::button_state::hatState::event::window']]],
-  ['size',['Size',['../structrolmodl_1_1geom_1_1_size.html',1,'rolmodl::geom']]],
+  ['size',['Size',['../structrolmodl_1_1rolmodl_1_1geom_1_1_size.html',1,'rolmodl::rolmodl::geom']]],
   ['sizechanged',['SizeChanged',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_size_changed.html',1,'rolmodl::button_state::hatState::event::window']]],
   ['srcrectwh',['SrcRectWH',['../structrolmodl_1_1blend_mode_1_1_src_rect_w_h.html',1,'rolmodl::blendMode']]],
   ['srcrectxy',['SrcRectXY',['../structrolmodl_1_1blend_mode_1_1_src_rect_x_y.html',1,'rolmodl::blendMode']]],
