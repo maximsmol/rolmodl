@@ -87,22 +87,113 @@ Inheritance diagram for rolmodl::sdlexception:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9709d0cd85bc197058deeb3e720ca6f1"><td class="memItemLeft" align="right" valign="top"><a id="a9709d0cd85bc197058deeb3e720ca6f1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>sdlexception</b> (const int code) noexcept</td></tr>
+<tr class="memitem:a9709d0cd85bc197058deeb3e720ca6f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a9709d0cd85bc197058deeb3e720ca6f1">sdlexception</a> (const int <a class="el" href="structrolmodl_1_1sdlexception.html#a930d081c76f0d191ea13b86755416db1">code</a>) noexcept</td></tr>
+<tr class="memdesc:a9709d0cd85bc197058deeb3e720ca6f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize with the given error code and the last SDL error message.  <a href="#a9709d0cd85bc197058deeb3e720ca6f1">More...</a><br /></td></tr>
 <tr class="separator:a9709d0cd85bc197058deeb3e720ca6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c25ca2298c2d8becc22c6f67f1b63e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a8c25ca2298c2d8becc22c6f67f1b63e9">sdlexception</a> () noexcept</td></tr>
+<tr class="memdesc:a8c25ca2298c2d8becc22c6f67f1b63e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize with the error code arbitrarily set to <code>0</code> if one isn't available and the last SDL error message.  <a href="#a8c25ca2298c2d8becc22c6f67f1b63e9">More...</a><br /></td></tr>
+<tr class="separator:a8c25ca2298c2d8becc22c6f67f1b63e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a930d081c76f0d191ea13b86755416db1"><td class="memItemLeft" align="right" valign="top"><a id="a930d081c76f0d191ea13b86755416db1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>code</b> () const noexcept</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a930d081c76f0d191ea13b86755416db1">code</a> () const noexcept</td></tr>
+<tr class="memdesc:a930d081c76f0d191ea13b86755416db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recorded error code. <br /></td></tr>
 <tr class="separator:a930d081c76f0d191ea13b86755416db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec0c26839e56cf24159f2b9c4f8d1176"><td class="memItemLeft" align="right" valign="top"><a id="aec0c26839e56cf24159f2b9c4f8d1176"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () const noexcept override</td></tr>
+<tr class="memitem:aec0c26839e56cf24159f2b9c4f8d1176"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#aec0c26839e56cf24159f2b9c4f8d1176">what</a> () const noexcept override</td></tr>
+<tr class="memdesc:aec0c26839e56cf24159f2b9c4f8d1176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recorded error message.  <a href="#aec0c26839e56cf24159f2b9c4f8d1176">More...</a><br /></td></tr>
 <tr class="separator:aec0c26839e56cf24159f2b9c4f8d1176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Exception type containing an error code and the last SDL error at the moment of creation. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00368">368</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00377">377</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9709d0cd85bc197058deeb3e720ca6f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9709d0cd85bc197058deeb3e720ca6f1">&#9670;&nbsp;</a></span>sdlexception() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rolmodl::sdlexception::sdlexception </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize with the given error code and the last SDL error message. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8c25ca2298c2d8becc22c6f67f1b63e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c25ca2298c2d8becc22c6f67f1b63e9">&#9670;&nbsp;</a></span>sdlexception() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rolmodl::sdlexception::sdlexception </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize with the error code arbitrarily set to <code>0</code> if one isn't available and the last SDL error message. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aec0c26839e56cf24159f2b9c4f8d1176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec0c26839e56cf24159f2b9c4f8d1176">&#9670;&nbsp;</a></span>what()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* rolmodl::sdlexception::what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the recorded error message. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/rolmodl/hpp/<a class="el" href="_base_8hpp_source.html">Base.hpp</a></li>
 </ul>
 </div><!-- contents -->

@@ -12,6 +12,6 @@ var searchData=
   ['rentex',['RenTex',['../classrolmodl_1_1texture_type_1_1_ren_tex.html',1,'rolmodl::textureType']]],
   ['resized',['Resized',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_resized.html',1,'rolmodl::button_state::hatState::event::window']]],
   ['restored',['Restored',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_restored.html',1,'rolmodl::button_state::hatState::event::window']]],
-  ['rgb',['RGB',['../structrolmodl_1_1_r_g_b.html',1,'rolmodl']]],
-  ['rgba',['RGBA',['../structrolmodl_1_1_r_g_b_a.html',1,'rolmodl']]]
+  ['rgb',['RGB',['../structrolmodl_1_1_r_g_b.html',1,'rolmodl::RGB'],['../structrolmodl_1_1_r_g_b.html#a8bb4c60c447cdf7bbac5c6379ec54359',1,'rolmodl::RGB::RGB()'],['../structrolmodl_1_1_r_g_b.html#a9f2fdf965d5e0a9a720babd959cd5c25',1,'rolmodl::RGB::RGB(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b)']]],
+  ['rgba',['RGBA',['../structrolmodl_1_1_r_g_b_a.html',1,'rolmodl::RGBA'],['../structrolmodl_1_1_r_g_b_a.html#a1c5b50256730c9573d3e0a3deb6f6bd9',1,'rolmodl::RGBA::RGBA()'],['../structrolmodl_1_1_r_g_b_a.html#aff6e831cd7ef85dccb5a56dde36b835e',1,'rolmodl::RGBA::RGBA(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b)'],['../structrolmodl_1_1_r_g_b_a.html#adda91fdd4ee346dcc19019c2ebdcf325',1,'rolmodl::RGBA::RGBA(const uint8_t arg_r, const uint8_t arg_g, const uint8_t arg_b, const uint8_t arg_a)']]]
 ];

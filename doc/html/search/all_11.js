@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sdlexception',['sdlexception',['../structrolmodl_1_1sdlexception.html',1,'rolmodl']]],
+  ['sdlexception',['sdlexception',['../structrolmodl_1_1sdlexception.html',1,'rolmodl::sdlexception'],['../structrolmodl_1_1sdlexception.html#a9709d0cd85bc197058deeb3e720ca6f1',1,'rolmodl::sdlexception::sdlexception(const int code) noexcept'],['../structrolmodl_1_1sdlexception.html#a8c25ca2298c2d8becc22c6f67f1b63e9',1,'rolmodl::sdlexception::sdlexception() noexcept']]],
   ['shown',['Shown',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_shown.html',1,'rolmodl::button_state::hatState::event::window']]],
   ['size',['Size',['../structrolmodl_1_1geom_1_1_size.html',1,'rolmodl::geom::Size'],['../structrolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1_display_mode.html#a99daf2477e4973cc72e59b5c4929ee6f',1,'rolmodl::sys::display::display::mode::DisplayMode::size()']]],
   ['sizechanged',['SizeChanged',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_size_changed.html',1,'rolmodl::button_state::hatState::event::window']]],
