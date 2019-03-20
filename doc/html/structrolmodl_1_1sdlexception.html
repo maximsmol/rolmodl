@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacerolmodl.html">rolmodl</a></li><li class="navelem"><a class="el" href="structrolmodl_1_1sdlexception.html">sdlexception</a></li>  </ul>
+<li class="navelem"><b>rolmodl</b></li><li class="navelem"><a class="el" href="structrolmodl_1_1sdlexception.html">sdlexception</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,6 +74,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Exception type containing an error code and the last SDL error at the moment of creation.  
+ <a href="structrolmodl_1_1sdlexception.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_base_8hpp_source.html">Base.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for rolmodl::sdlexception:</div>
@@ -84,132 +87,23 @@ Inheritance diagram for rolmodl::sdlexception:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9709d0cd85bc197058deeb3e720ca6f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a9709d0cd85bc197058deeb3e720ca6f1">sdlexception</a> (const int <a class="el" href="structrolmodl_1_1sdlexception.html#a930d081c76f0d191ea13b86755416db1">code</a>) noexcept</td></tr>
+<tr class="memitem:a9709d0cd85bc197058deeb3e720ca6f1"><td class="memItemLeft" align="right" valign="top"><a id="a9709d0cd85bc197058deeb3e720ca6f1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>sdlexception</b> (const int code) noexcept</td></tr>
 <tr class="separator:a9709d0cd85bc197058deeb3e720ca6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c25ca2298c2d8becc22c6f67f1b63e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a8c25ca2298c2d8becc22c6f67f1b63e9">sdlexception</a> () noexcept</td></tr>
-<tr class="separator:a8c25ca2298c2d8becc22c6f67f1b63e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a930d081c76f0d191ea13b86755416db1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a930d081c76f0d191ea13b86755416db1">code</a> () const noexcept</td></tr>
+<tr class="memitem:a930d081c76f0d191ea13b86755416db1"><td class="memItemLeft" align="right" valign="top"><a id="a930d081c76f0d191ea13b86755416db1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>code</b> () const noexcept</td></tr>
 <tr class="separator:a930d081c76f0d191ea13b86755416db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c2efc9d1fefa9e8829688063641541c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a5c2efc9d1fefa9e8829688063641541c">what</a> () const noexcept override</td></tr>
-<tr class="separator:a5c2efc9d1fefa9e8829688063641541c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0c26839e56cf24159f2b9c4f8d1176"><td class="memItemLeft" align="right" valign="top"><a id="aec0c26839e56cf24159f2b9c4f8d1176"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () const noexcept override</td></tr>
+<tr class="separator:aec0c26839e56cf24159f2b9c4f8d1176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00186">186</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9709d0cd85bc197058deeb3e720ca6f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9709d0cd85bc197058deeb3e720ca6f1">&#9670;&nbsp;</a></span>sdlexception() <span class="overload">[1/2]</span></h2>
+<div class="textblock"><p>Exception type containing an error code and the last SDL error at the moment of creation. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rolmodl::sdlexception::sdlexception </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>code</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_base_8cpp_source.html#l00339">339</a> of file <a class="el" href="_base_8cpp_source.html">Base.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a8c25ca2298c2d8becc22c6f67f1b63e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c25ca2298c2d8becc22c6f67f1b63e9">&#9670;&nbsp;</a></span>sdlexception() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">rolmodl::sdlexception::sdlexception </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_base_8cpp_source.html#l00343">343</a> of file <a class="el" href="_base_8cpp_source.html">Base.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a930d081c76f0d191ea13b86755416db1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a930d081c76f0d191ea13b86755416db1">&#9670;&nbsp;</a></span>code()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rolmodl::sdlexception::code </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_base_8cpp_source.html#l00347">347</a> of file <a class="el" href="_base_8cpp_source.html">Base.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a5c2efc9d1fefa9e8829688063641541c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c2efc9d1fefa9e8829688063641541c">&#9670;&nbsp;</a></span>what()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * rolmodl::sdlexception::what </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_base_8cpp_source.html#l00350">350</a> of file <a class="el" href="_base_8cpp_source.html">Base.cpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00368">368</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/rolmodl/hpp/<a class="el" href="_base_8hpp_source.html">Base.hpp</a></li>
-<li>src/rolmodl/<a class="el" href="_base_8cpp_source.html">Base.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

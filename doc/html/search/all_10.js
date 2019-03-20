@@ -1,9 +1,17 @@
 var searchData=
 [
-  ['q',['q',['../namespacerolmodl_1_1rolmodl_1_1kb.html#a188e00b289aeb95ae45fb6bf2923e7e2a7694f4a66316e53c8cdd9d9954bd611d',1,'rolmodl::rolmodl::kb::q()'],['../namespacerolmodl_1_1rolmodl_1_1kb_1_1key.html#af2e2c19a7e4c7347383cae496d850490a7694f4a66316e53c8cdd9d9954bd611d',1,'rolmodl::rolmodl::kb::key::q()']]],
-  ['qnxneutrino',['QNXNeutrino',['../namespacerolmodl_1_1sys.html#ae00db9e1ee9231659b4d1bce9b1de5aea3a5d58bef2a729a90070c849b8a0010d',1,'rolmodl::sys']]],
-  ['query',['query',['../structrolmodl_1_1rolmodl_1_1kb_1_1key_1_1_name.html#a0fb871693550e5d51a67980a49d4568f',1,'rolmodl::rolmodl::kb::key::Name::query()'],['../classrolmodl_1_1texture_type_1_1_tex.html#a4b12de78def157d698d6476d7bbff97c',1,'rolmodl::textureType::Tex::query()']]],
-  ['questionmark',['questionMark',['../namespacerolmodl_1_1rolmodl_1_1kb.html#a188e00b289aeb95ae45fb6bf2923e7e2ae74cb12e5379c7272a2c177ba198a950',1,'rolmodl::rolmodl::kb::questionMark()'],['../namespacerolmodl_1_1rolmodl_1_1kb_1_1key.html#af2e2c19a7e4c7347383cae496d850490ae74cb12e5379c7272a2c177ba198a950',1,'rolmodl::rolmodl::kb::key::questionMark()']]],
-  ['quit',['Quit',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1_quit.html',1,'rolmodl::button_state::hatState::event']]],
-  ['quote',['quote',['../namespacerolmodl_1_1rolmodl_1_1kb.html#a188e00b289aeb95ae45fb6bf2923e7e2a7a674c327bfa07f7c1204fb38ca6ef3b',1,'rolmodl::rolmodl::kb::quote()'],['../namespacerolmodl_1_1rolmodl_1_1kb_1_1key.html#af2e2c19a7e4c7347383cae496d850490a7a674c327bfa07f7c1204fb38ca6ef3b',1,'rolmodl::rolmodl::kb::key::quote()']]]
+  ['ram',['ram',['../_base_8hpp.html#a70ff276777bab09843e24810c773e7cf',1,'rolmodl::sys']]],
+  ['recorded',['Recorded',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1gesture_1_1custom_1_1_recorded.html',1,'rolmodl::button_state::hatState::event::gesture::custom']]],
+  ['rectwh',['RectWH',['../structrolmodl_1_1geom_1_1_rect_w_h.html',1,'rolmodl::geom']]],
+  ['rectxy',['RectXY',['../structrolmodl_1_1geom_1_1_rect_x_y.html',1,'rolmodl::geom']]],
+  ['refreshrate',['refreshRate',['../structrolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1_display_mode.html#a627d32b64165d8264767e9a7e7f9dcc7',1,'rolmodl::sys::display::display::mode::DisplayMode']]],
+  ['remapped',['Remapped',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1controller_1_1device_1_1_remapped.html',1,'rolmodl::button_state::hatState::event::controller::device']]],
+  ['removed',['Removed',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1controller_1_1device_1_1_removed.html',1,'rolmodl::button_state::hatState::event::controller::device::Removed'],['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1audio__device_1_1_removed.html',1,'rolmodl::button_state::hatState::event::audio_device::Removed'],['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1joystick_1_1device_1_1_removed.html',1,'rolmodl::button_state::hatState::event::joystick::device::Removed']]],
+  ['ren',['Ren',['../classrolmodl_1_1blend_mode_1_1_ren.html',1,'rolmodl::blendMode']]],
+  ['renscale',['RenScale',['../structrolmodl_1_1blend_mode_1_1_ren_scale.html',1,'rolmodl::blendMode']]],
+  ['rentex',['RenTex',['../classrolmodl_1_1texture_type_1_1_ren_tex.html',1,'rolmodl::textureType']]],
+  ['resized',['Resized',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_resized.html',1,'rolmodl::button_state::hatState::event::window']]],
+  ['restored',['Restored',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_restored.html',1,'rolmodl::button_state::hatState::event::window']]],
+  ['rgb',['RGB',['../structrolmodl_1_1_r_g_b.html',1,'rolmodl']]],
+  ['rgba',['RGBA',['../structrolmodl_1_1_r_g_b_a.html',1,'rolmodl']]]
 ];

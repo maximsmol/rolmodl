@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['all',['all',['../namespacerolmodl_1_1mouse_1_1cursor_1_1system_1_1resize.html#a16fe1d8868e6a9df366888cf46baf3b9',1,'rolmodl::mouse::cursor::system::resize::all()'],['../namespacerolmodl_1_1rolmodl_1_1mouse_1_1cursor_1_1system_1_1type_1_1resize.html#ac137ffd798d3a64ea6d173778f5a980d',1,'rolmodl::rolmodl::mouse::cursor::system::type::resize::all()']]],
-  ['arrow',['arrow',['../namespacerolmodl_1_1mouse_1_1cursor_1_1system.html#a21505c870c0ba20951aac9ccc03d1636',1,'rolmodl::mouse::cursor::system::arrow()'],['../namespacerolmodl_1_1rolmodl_1_1mouse_1_1cursor_1_1system_1_1type.html#ac38dd0dde44463e53d6cdab6104d2c35',1,'rolmodl::rolmodl::mouse::cursor::system::type::arrow()']]]
+  ['bounds',['bounds',['../structrolmodl_1_1sys_1_1display_1_1_display.html#a51baa2e22efec2aff450a1062b1dbba6',1,'rolmodl::sys::display::Display::bounds()'],['../_base_8hpp.html#a4a18b557573bfa7924e8c11122d0301f',1,'rolmodl::sys::display::unsafe::bounds()']]],
+  ['byindex',['byIndex',['../_base_8hpp.html#a6821da893c862b8a0f3ac7e8a5a19010',1,'rolmodl::sys::display::unsafe']]]
 ];
