@@ -10,7 +10,7 @@ rolmodl is a C++ API for the [Simple Directmedia Library 2 (SDL2)](https://www.l
 
 ## Status
 
-The [header files](src/rolmodl/hpp) serve as a reference and an ad-hoc documentation.
+The doxygen documentation is available at https://maximsmol.github.io/rolmodl/. Sadly, doxygen messes up the generation of docs for some C++17 features, so it's broken in places.
 
 An [example program](src/tst/main.cpp) is available that showcases some of the features and their inteded use.
 
