@@ -21,10 +21,6 @@ namespace rolmodl {
 
 namespace rolmodl {
   namespace win {
-    // fixme: no support for some window flags i dont understand
-    // https://wiki.libsdl.org/SDL_WindowFlags
-    // todo: some flags are mutually exclusive
-
     /// \brief Window configuration (flags) container.
     ///
     /// \todo
@@ -40,7 +36,6 @@ namespace rolmodl {
         {}
 
         // test
-        // todo: redo phrasing in the docs
         /// \brief Test whether this configuration corresponds to a fullscreen window. The SDL flag equivalent is `SDL_WINDOW_FULLSCREEN`.
         constexpr bool isFullscreen() const noexcept {
           return (data_ & static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN)) != 0;
@@ -131,45 +126,45 @@ namespace rolmodl {
         }
 
         // unset
-        /// \brief Create a version of this configuration that corresponds to a window that is not fullscreen. The SDL flag equivalent is `SDL_WINDOW_FULLSCREEN`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not fullscreen. The SDL flag equivalent is `~SDL_WINDOW_FULLSCREEN`.
         constexpr Flags withoutFullscreen() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN));
         }
-        /// \brief Create a version of this configuration that corresponds to a window that is not display-resolution fullscreen. The SDL flag equivalent is `SDL_WINDOW_FULLSCREEN_DESKTOP`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not display-resolution fullscreen. The SDL flag equivalent is `~SDL_WINDOW_FULLSCREEN_DESKTOP`.
         constexpr Flags withoutFullscreenDesktop() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_FULLSCREEN_DESKTOP));
         }
 
-        /// \brief Create a version of this configuration that corresponds to a window that is not minimized. The SDL flag equivalent is `SDL_WINDOW_MINIMIZED`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not minimized. The SDL flag equivalent is `~SDL_WINDOW_MINIMIZED`.
         constexpr Flags withoutMinimized() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_MINIMIZED));
         }
-        /// \brief Create a version of this configuration that corresponds to a window that is not maximized. The SDL flag equivalent is `SDL_WINDOW_MAXIMIZED`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not maximized. The SDL flag equivalent is `~SDL_WINDOW_MAXIMIZED`.
         constexpr Flags withoutMaximized() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_MAXIMIZED));
         }
 
-        /// \brief Create a version of this configuration that corresponds to a window that is not usable with OpenGL. The SDL flag equivalent is `SDL_WINDOW_OPENGL`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not usable with OpenGL. The SDL flag equivalent is `~SDL_WINDOW_OPENGL`.
         constexpr Flags withoutOpengl() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_OPENGL));
         }
-        /// \brief Create a version of this configuration that corresponds to a window that is not hidden. The SDL flag equivalent is `SDL_WINDOW_HIDDEN`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not hidden. The SDL flag equivalent is `~SDL_WINDOW_HIDDEN`.
         constexpr Flags withoutHidden() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_HIDDEN));
         }
-        /// \brief Create a version of this configuration that corresponds to a window that is not borderless. The SDL flag equivalent is `SDL_WINDOW_BORDERLESS`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not borderless. The SDL flag equivalent is `~SDL_WINDOW_BORDERLESS`.
         constexpr Flags withoutBorderless() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_BORDERLESS));
         }
-        /// \brief Create a version of this configuration that corresponds to a window that is not resizable. The SDL flag equivalent is `SDL_WINDOW_RESIZABLE`.
+        /// \brief Create a version of this configuration that corresponds to a window that is not resizable. The SDL flag equivalent is `~SDL_WINDOW_RESIZABLE`.
         constexpr Flags withoutResizable() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_RESIZABLE));
         }
-        /// \brief Create a version of this configuration that corresponds to a window that has not grabbed input focus. The SDL flag equivalent is `SDL_WINDOW_INPUT_GRABBED`.
+        /// \brief Create a version of this configuration that corresponds to a window that has not grabbed input focus. The SDL flag equivalent is `~SDL_WINDOW_INPUT_GRABBED`.
         constexpr Flags withoutInputGrabbed() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_INPUT_GRABBED));
         }
-        /// \brief Create a version of this configuration that corresponds to a window with no preference for high DPI display. The SDL flag equivalent is `SDL_WINDOW_ALLOW_HIGHDPI`.
+        /// \brief Create a version of this configuration that corresponds to a window with no preference for high DPI display. The SDL flag equivalent is `~SDL_WINDOW_ALLOW_HIGHDPI`.
         constexpr Flags withoutHighDPI() const noexcept {
           return Flags(data_ & ~static_cast<uint32_t>(SDL_WINDOW_ALLOW_HIGHDPI));
         }
@@ -178,6 +173,7 @@ namespace rolmodl {
         constexpr uint32_t raw() const noexcept {
           return data_;
         }
+        // fixme: missing unsafeFromRaw
       private:
         explicit constexpr Flags(const uint32_t data) noexcept :
           data_(data)
@@ -221,12 +217,16 @@ namespace rolmodl {
   class Win_Base {
     public:
       /// \brief Initialize a window with title `title`, at the screen position `p`, of size `s`, with configuration `flags`.
+      /// \sa https://wiki.libsdl.org/SDL_CreateWindow
       Win_Base(const char* title, const geom::Pos p, const geom::Size s, const win::Flags flags);
       /// \brief Initialize a window with title `title`, at the center of the screen, of size `s`, with configuration `flags`.
+      /// \sa https://wiki.libsdl.org/SDL_CreateWindow
       Win_Base(const char* title,                    const geom::Size s, const win::Flags flags);
       /// \brief Initialize a window with title `title`, at the screen position `p`, of size `s`, with the default configuration.
+      /// \sa https://wiki.libsdl.org/SDL_CreateWindow
       Win_Base(const char* title, const geom::Pos p, const geom::Size s);
       /// \brief Initialize a window with title `title`, at the center of the screen, of size `s`, with the default configuration.
+      /// \sa https://wiki.libsdl.org/SDL_CreateWindow
       Win_Base(const char* title,                    const geom::Size s);
       /// \brief Free the underlying `SDL_Window`.
       /// \sa https://wiki.libsdl.org/SDL_DestroyWindow
@@ -338,6 +338,7 @@ namespace rolmodl {
       SDL_Window* h_;
   };
 
+  /// \brief Window class for use with accelerated rendering (\link rolmodl::Ren \endlink).
   class Win : public Win_Base {
     public:
       using Win_Base::Win_Base;

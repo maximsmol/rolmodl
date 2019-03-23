@@ -11,10 +11,10 @@ var searchData=
   ['hassse3',['hasSSE3',['../_base_8hpp.html#a8c1b85a95b0e010ed12e98385e66daa4',1,'rolmodl::sys::cpu']]],
   ['hassse41',['hasSSE41',['../_base_8hpp.html#a4ff9c70551b00e25009df29293b1a730',1,'rolmodl::sys::cpu']]],
   ['hassse42',['hasSSE42',['../_base_8hpp.html#a65d1da04b578f34d55ec5470d315bce3',1,'rolmodl::sys::cpu']]],
-  ['hat',['Hat',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1joystick_1_1_hat.html',1,'rolmodl::button_state::hatState::event::joystick']]],
-  ['hatstate',['HatState',['../structrolmodl_1_1button__state_1_1_hat_state.html',1,'rolmodl::button_state']]],
-  ['hdpi',['hdpi',['../structrolmodl_1_1sys_1_1display_1_1_display.html#af1a4c7b5dbffe44b6d2c00af2146247f',1,'rolmodl::sys::display::Display']]],
-  ['hidden',['Hidden',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_hidden.html',1,'rolmodl::button_state::hatState::event::window']]],
+  ['hat',['Hat',['../structrolmodl_1_1event_1_1joystick_1_1_hat.html',1,'rolmodl::event::joystick']]],
+  ['hatstate',['HatState',['../structrolmodl_1_1_hat_state.html',1,'rolmodl']]],
+  ['hdpi',['hdpi',['../structrolmodl_1_1sys_1_1_display.html#abf0834967be6b483a4367953fa493c96',1,'rolmodl::sys::Display']]],
+  ['hidden',['Hidden',['../structrolmodl_1_1event_1_1window_1_1_hidden.html',1,'rolmodl::event::window']]],
   ['hide',['hide',['../classrolmodl_1_1_win___base.html#a65c3f53e955261a2d7a864e9295b2375',1,'rolmodl::Win_Base']]],
-  ['hittest',['HitTest',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1_hit_test.html',1,'rolmodl::button_state::hatState::event::window']]]
+  ['hittest',['HitTest',['../structrolmodl_1_1event_1_1window_1_1_hit_test.html',1,'rolmodl::event::window']]]
 ];

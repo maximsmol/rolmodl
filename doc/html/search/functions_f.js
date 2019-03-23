@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['unsafedisplayindex',['unsafeDisplayIndex',['../classrolmodl_1_1_win___base.html#ac58ea3d9b32a0ead9aad7bfc380b0619',1,'rolmodl::Win_Base']]],
-  ['unsafeid',['unsafeId',['../classrolmodl_1_1_win___base.html#a0efef417d9cc3d838a84c70a8179d5b6',1,'rolmodl::Win_Base']]],
-  ['unsaferaw',['unsafeRaw',['../classrolmodl_1_1_win___base.html#a7d7b3e6689b52c6bc2d641bc11a6cf1d',1,'rolmodl::Win_Base::unsafeRaw() noexcept'],['../classrolmodl_1_1_win___base.html#a23d4edcbd20b8dd22fb4b8b1cc0a6327',1,'rolmodl::Win_Base::unsafeRaw() const noexcept']]],
-  ['usablebounds',['usableBounds',['../structrolmodl_1_1sys_1_1display_1_1_display.html#a7f10fa135b1550c6d2c2c29a017a1b62',1,'rolmodl::sys::display::Display::usableBounds()'],['../_base_8hpp.html#ad298fc79a292b5f66a81a818a38d2766',1,'rolmodl::sys::display::unsafe::usableBounds()']]]
+  ['texren',['TexRen',['../classrolmodl_1_1_tex_ren.html#a17c0f7831845918014ea8f7071b735ce',1,'rolmodl::TexRen::TexRen(Win &amp;win, int i, ren::Flags flags)'],['../classrolmodl_1_1_tex_ren.html#a50e1fc6e6139d566d025b3ac21bfb44d',1,'rolmodl::TexRen::TexRen(Win &amp;win, ren::Flags flags)'],['../classrolmodl_1_1_tex_ren.html#ae5a62b99c807460e40fb566d356006db',1,'rolmodl::TexRen::TexRen(Win &amp;win, int i)'],['../classrolmodl_1_1_tex_ren.html#a746d935c7e9a40a4e17ab6fd43fe7c8b',1,'rolmodl::TexRen::TexRen(Win &amp;win)']]],
+  ['throwonerr',['throwOnErr',['../_base_8hpp.html#a53099c89cc48f439defa581cc114fb97',1,'rolmodl::detail']]],
+  ['time',['time',['../structrolmodl_1_1sys_1_1pwr_1_1_status.html#a3f02c11f976ea322c2497bf70dcba7a8',1,'rolmodl::sys::pwr::Status']]],
+  ['title',['title',['../classrolmodl_1_1_win___base.html#a3f028f390ada8846e267b044a5d07f8a',1,'rolmodl::Win_Base']]],
+  ['top',['top',['../structrolmodl_1_1_border_sizes.html#ad2daee506a395cd8e423242ba9c418f1',1,'rolmodl::BorderSizes']]],
+  ['tosdlenum',['toSDLEnum',['../structrolmodl_1_1_flip.html#a1df7b43ea8421691046b5445fef9b32b',1,'rolmodl::Flip::toSDLEnum()'],['../_ren_8hpp.html#a5d76c1a5d06e0e7088a9fcfe4eeea59e',1,'rolmodl::blendMode::unsafe::toSDLEnum()']]]
 ];

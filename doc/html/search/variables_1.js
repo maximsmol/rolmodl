@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['refreshrate',['refreshRate',['../structrolmodl_1_1sys_1_1display_1_1display_1_1mode_1_1_display_mode.html#a627d32b64165d8264767e9a7e7f9dcc7',1,'rolmodl::sys::display::display::mode::DisplayMode']]]
+  ['maxtexsize',['maxTexSize',['../structrolmodl_1_1ren_1_1_info.html#a3ce6d76d0cf566f758a9ec77af033512',1,'rolmodl::ren::Info']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['wheel',['Wheel',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1mouse_1_1wheel__direction_1_1_wheel.html',1,'rolmodl::button_state::hatState::event::mouse::wheel_direction']]],
+  ['wheel',['Wheel',['../structrolmodl_1_1event_1_1mouse_1_1_wheel.html',1,'rolmodl::event::mouse']]],
   ['win',['Win',['../classrolmodl_1_1_win.html',1,'rolmodl']]],
   ['win_5fbase',['Win_Base',['../classrolmodl_1_1_win___base.html',1,'rolmodl']]],
   ['win_5fsw',['Win_SW',['../classrolmodl_1_1_win___s_w.html',1,'rolmodl']]],
-  ['windowspecific',['WindowSpecific',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1_window_specific.html',1,'rolmodl::button_state::hatState::event']]]
+  ['windowspecific',['WindowSpecific',['../structrolmodl_1_1event_1_1_window_specific.html',1,'rolmodl::event']]]
 ];

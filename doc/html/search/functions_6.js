@@ -1,14 +1,16 @@
 var searchData=
 [
-  ['id',['id',['../_base_8hpp.html#ace55dea56d71ff5082e051ccbd370971',1,'rolmodl::sys']]],
-  ['isborderless',['isBorderless',['../structrolmodl_1_1win_1_1_flags.html#a2d0ae92e299bbd6245c714f774de7632',1,'rolmodl::win::Flags']]],
-  ['isfullscreen',['isFullscreen',['../structrolmodl_1_1win_1_1_flags.html#a84748982773d30642d956746289d9d9e',1,'rolmodl::win::Flags']]],
-  ['isfullscreendesktop',['isFullscreenDesktop',['../structrolmodl_1_1win_1_1_flags.html#a583810151b94e30166cd476de7c5574a',1,'rolmodl::win::Flags']]],
-  ['ishidden',['isHidden',['../structrolmodl_1_1win_1_1_flags.html#a2a8ab288e5dcebcbf4d224236b4820db',1,'rolmodl::win::Flags']]],
-  ['ishighdpi',['isHighDPI',['../structrolmodl_1_1win_1_1_flags.html#a11e8e848df5120fb07b1088b53103021',1,'rolmodl::win::Flags']]],
-  ['isinputgrabbed',['isInputGrabbed',['../structrolmodl_1_1win_1_1_flags.html#a877f7e2a27418e74c2123e192cc3c8e9',1,'rolmodl::win::Flags']]],
-  ['ismaximized',['isMaximized',['../structrolmodl_1_1win_1_1_flags.html#adc44df6fb0405dbc6b1607c74c308176',1,'rolmodl::win::Flags']]],
-  ['isminimized',['isMinimized',['../structrolmodl_1_1win_1_1_flags.html#a07a1f5140f642a20af1d591bdd8fbde6',1,'rolmodl::win::Flags']]],
-  ['isopengl',['isOpengl',['../structrolmodl_1_1win_1_1_flags.html#a58ad4049cd9baf3340cab0d84d1397a9',1,'rolmodl::win::Flags']]],
-  ['isresizable',['isResizable',['../structrolmodl_1_1win_1_1_flags.html#a84d7a900fc3170f2605d7d49c2e5e79e',1,'rolmodl::win::Flags']]]
+  ['has3dnow',['has3DNow',['../_base_8hpp.html#aff7e256df3cbeae474e4c64893544afb',1,'rolmodl::sys::cpu']]],
+  ['hasaltivec',['hasAltiVec',['../_base_8hpp.html#a314ab3cc20eb23538ccb57c4d0589beb',1,'rolmodl::sys::cpu']]],
+  ['hasavx',['hasAVX',['../_base_8hpp.html#a872c2351d54168bee9e7fbd649915546',1,'rolmodl::sys::cpu']]],
+  ['hasavx2',['hasAVX2',['../_base_8hpp.html#a1eabddb9c18dd8feff43773589cf4fcb',1,'rolmodl::sys::cpu']]],
+  ['hasmmx',['hasMMX',['../_base_8hpp.html#a3dab852b21f17995c8e1c3f9b5a56dfa',1,'rolmodl::sys::cpu']]],
+  ['hasrdtsc',['hasRDTSC',['../_base_8hpp.html#a87cea05fb8dec9396eee8147e1cd239b',1,'rolmodl::sys::cpu']]],
+  ['hassse',['hasSSE',['../_base_8hpp.html#a4486fdd3d0f3e4a8e7be04a630bcb244',1,'rolmodl::sys::cpu']]],
+  ['hassse2',['hasSSE2',['../_base_8hpp.html#a9924bd370ff28059cce71ae90ac116fd',1,'rolmodl::sys::cpu']]],
+  ['hassse3',['hasSSE3',['../_base_8hpp.html#a8c1b85a95b0e010ed12e98385e66daa4',1,'rolmodl::sys::cpu']]],
+  ['hassse41',['hasSSE41',['../_base_8hpp.html#a4ff9c70551b00e25009df29293b1a730',1,'rolmodl::sys::cpu']]],
+  ['hassse42',['hasSSE42',['../_base_8hpp.html#a65d1da04b578f34d55ec5470d315bce3',1,'rolmodl::sys::cpu']]],
+  ['hdpi',['hdpi',['../structrolmodl_1_1sys_1_1_display.html#abf0834967be6b483a4367953fa493c96',1,'rolmodl::sys::Display']]],
+  ['hide',['hide',['../classrolmodl_1_1_win___base.html#a65c3f53e955261a2d7a864e9295b2375',1,'rolmodl::Win_Base']]]
 ];
