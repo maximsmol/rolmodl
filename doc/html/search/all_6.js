@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['gained',['Gained',['../structrolmodl_1_1button__state_1_1hat_state_1_1event_1_1window_1_1focus_1_1_gained.html',1,'rolmodl::button_state::hatState::event::window::focus']]],
+  ['gained',['Gained',['../structrolmodl_1_1event_1_1window_1_1focus_1_1_gained.html',1,'rolmodl::event::window::focus']]],
   ['geom_2ehpp',['Geom.hpp',['../_geom_8hpp.html',1,'']]],
-  ['globalstate',['GlobalState',['../classrolmodl_1_1rolmodl_1_1mouse_1_1btn_1_1_global_state.html',1,'rolmodl::rolmodl::mouse::btn']]]
+  ['getblendmode',['getBlendMode',['../classrolmodl_1_1_ren.html#ad94e8ee4286a027a7cc3d7d1bca405a3',1,'rolmodl::Ren']]],
+  ['getrealsize',['getRealSize',['../classrolmodl_1_1_ren.html#ab347d9250d3bf87a3e82cd169c0983af',1,'rolmodl::Ren']]],
+  ['globalstate',['GlobalState',['../classrolmodl_1_1mouse_1_1_global_state.html',1,'rolmodl::mouse']]]
 ];

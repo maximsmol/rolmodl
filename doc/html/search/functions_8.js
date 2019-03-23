@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['maximize',['maximize',['../classrolmodl_1_1_win___base.html#a03bf213c7451e5c16fd903a9f498a46d',1,'rolmodl::Win_Base']]],
-  ['maxsize',['maxSize',['../classrolmodl_1_1_win___base.html#a58bff9f425da4b15e829f65214a6b993',1,'rolmodl::Win_Base']]],
-  ['minimize',['minimize',['../classrolmodl_1_1_win___base.html#ac7fa1c8c4dd67b4fb5a14f80aeb494d7',1,'rolmodl::Win_Base']]],
-  ['minsize',['minSize',['../classrolmodl_1_1_win___base.html#a661e48095b9161730e671de838e1f18a',1,'rolmodl::Win_Base']]],
-  ['movemousein',['moveMouseIn',['../classrolmodl_1_1_win___base.html#a78a1ebd530b3a7a54eb355e77df2377f',1,'rolmodl::Win_Base']]]
+  ['l',['l',['../structrolmodl_1_1_border_sizes.html#a4906a70ed9d5c1e8a231682a16bea323',1,'rolmodl::BorderSizes']]],
+  ['l1size',['l1Size',['../_base_8hpp.html#ad98e620f999f2f80c6eda9f191d3453e',1,'rolmodl::sys::cpu']]],
+  ['logicalcores',['logicalCores',['../_base_8hpp.html#ad5852b03388e82203ee1637aec25d6ad',1,'rolmodl::sys']]],
+  ['logicalsize',['logicalSize',['../classrolmodl_1_1_ren.html#a25b139a4f131d49bdf1e16479cb3fff2',1,'rolmodl::Ren']]]
 ];
