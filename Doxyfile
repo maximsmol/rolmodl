@@ -3,7 +3,7 @@ PROJECT_NAME = "rolmodl"
 PROJECT_NUMBER =
 PROJECT_BRIEF = "C++ API for the Simple Directmedia Library 2 (SDL2)"
 PROJECT_LOGO =
-OUTPUT_DIRECTORY = doc
+OUTPUT_DIRECTORY = docs
 CREATE_SUBDIRS = NO # support for legacy filesystem issues that could not handle a lot of files
 ALLOW_UNICODE_NAMES = NO # escape unicode in output file paths just in case somebody uses IE6 or something equally antiquated
 OUTPUT_LANGUAGE = English
@@ -912,7 +912,7 @@ GENERATE_HTML          = YES
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = html
+HTML_OUTPUT = .
 
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
 # generated HTML page (for example: .htm, .php, .asp).
