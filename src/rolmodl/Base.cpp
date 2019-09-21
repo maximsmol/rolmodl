@@ -157,6 +157,22 @@ namespace rolmodl {
       }
     }
 
+    namespace clipboard {
+      bool hasText() noexcept {
+        return SDL_HasClipboardText() == SDL_TRUE;
+      }
+      SDLString getText() {
+        char* x = SDL_GetClipboardText();
+        if (x == nullptr)
+          throw sdlexception();
+
+        return SDLString(x);
+      }
+      void setText(const char* x) {
+        detail::throwOnErr(SDL_SetClipboardText(x));
+      }
+    }
+
     namespace screensaver {
       void enable() noexcept {
         SDL_EnableScreenSaver();
@@ -355,5 +371,49 @@ namespace rolmodl {
     if (code < 0)
       throw sdlexception(code);
     return code;
+  }
+
+
+  SDLString::SDLString() noexcept :
+    raw_(nullptr)
+  {}
+
+  /*explicit*/ SDLString::SDLString(char* x) noexcept :
+    raw_(x)
+  {
+    assert(raw_ != nullptr);
+  }
+
+  SDLString::~SDLString() noexcept {
+    if (raw_ != nullptr)
+      SDL_free(raw_);
+    raw_ = nullptr;
+  }
+
+  // SDLString::SDLString(const SDLString& that) = delete;
+  SDLString::SDLString(SDLString&& that) noexcept :
+    SDLString()
+  {
+    std::swap(*this, that);
+  }
+
+  // SDLString& SDLString::operator=(const SDLString& that) = delete;
+  SDLString& SDLString::operator=(SDLString&& that) noexcept {
+    std::swap(*this, that);
+    return *this;
+  }
+
+  void swap(SDLString& a, SDLString& b) noexcept {
+    using std::swap;
+    swap(a.raw_, b.raw_);
+  }
+
+  char* SDLString::unsafeRaw() noexcept {
+    assert(raw_ != nullptr);
+    return raw_;
+  }
+  const char* SDLString::unsafeRaw() const noexcept {
+    assert(raw_ != nullptr);
+    return raw_;
   }
 }

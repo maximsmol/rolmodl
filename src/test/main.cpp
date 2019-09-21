@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <optional>
+#include <string>
 #include <variant>
 #include <functional>
 
@@ -96,6 +97,12 @@ void printDisplayMode(const sys::DisplayMode m) {
 
 int main() {
   SDL_Init(SDL_INIT_EVERYTHING);
+
+  if (sys::clipboard::hasText()) {
+    SDLString s = sys::clipboard::getText();
+    printf("Clipboard text: %s\n", s.unsafeRaw());
+  }
+  // sys::clipboard::setText("test");
 
   mouse::Cursor hand1 = mouse::cursor::system::hand();
   hand = &hand1;

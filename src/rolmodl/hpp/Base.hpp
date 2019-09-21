@@ -7,6 +7,7 @@
 /// \sa https://wiki.libsdl.org/CategoryPlatform
 /// \sa https://wiki.libsdl.org/CategoryCPU
 /// \sa https://wiki.libsdl.org/CategoryVideo
+/// \sa https://wiki.libsdl.org/CategoryClipboard
 
 #include <exception>
 #include <optional>
@@ -18,6 +19,7 @@ namespace rolmodl {
     namespace pwr {
       struct Status;
     }
+    namespace clipboard {}
     struct Display;
     struct DisplayMode;
   }
@@ -26,6 +28,7 @@ namespace rolmodl {
   struct RGBA;
 
   struct sdlexception;
+  class SDLString;
 }
 
 #include "Geom.hpp"
@@ -177,6 +180,18 @@ namespace rolmodl {
       };
       /// \brief Get a system power status snapshot.
       Status status() noexcept;
+    }
+
+    namespace clipboard {
+      /// \brief Query whether thhe clipboard has text contents.
+      /// \sa https://wiki.libsdl.org/SDL_HasClipboardText
+      bool hasText() noexcept;
+      /// \brief Get clipboard text contents.
+      /// \sa https://wiki.libsdl.org/SDL_GetClipboardText
+      SDLString getText();
+      /// \brief Set clipboard text contents.
+      /// \sa https://wiki.libsdl.org/SDL_SetClipboardText
+      void setText(const char* x);
     }
 
     namespace screensaver {
@@ -398,4 +413,27 @@ namespace rolmodl {
     /// \brief Throw a \link rolmodl::sdlexception \endlink if `code < 0`.
     int throwOnErr(const int code);
   }
+
+  class SDLString {
+    public:
+      ~SDLString() noexcept;
+
+      SDLString(const SDLString& that) = delete;
+      SDLString(SDLString&& that) noexcept;
+
+      SDLString& operator=(const SDLString& that) = delete;
+      SDLString& operator=(SDLString&& that) noexcept;
+
+      friend SDLString sys::clipboard::getText();
+      friend void swap(SDLString& a, SDLString& b) noexcept;
+
+      char* unsafeRaw() noexcept;
+      const char* unsafeRaw() const noexcept;
+
+    private:
+      SDLString() noexcept;
+      explicit SDLString(char* x) noexcept;
+
+      char* raw_;
+  };
 }
