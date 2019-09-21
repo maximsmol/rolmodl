@@ -11,6 +11,7 @@ var searchData=
   ['hassse3',['hasSSE3',['../_base_8hpp.html#a8c1b85a95b0e010ed12e98385e66daa4',1,'rolmodl::sys::cpu']]],
   ['hassse41',['hasSSE41',['../_base_8hpp.html#a4ff9c70551b00e25009df29293b1a730',1,'rolmodl::sys::cpu']]],
   ['hassse42',['hasSSE42',['../_base_8hpp.html#a65d1da04b578f34d55ec5470d315bce3',1,'rolmodl::sys::cpu']]],
+  ['hastext',['hasText',['../_base_8hpp.html#a5183e0a7a4db55cfeb233b0a2e96a257',1,'rolmodl::sys::clipboard']]],
   ['hat',['Hat',['../structrolmodl_1_1event_1_1joystick_1_1_hat.html',1,'rolmodl::event::joystick']]],
   ['hatstate',['HatState',['../structrolmodl_1_1_hat_state.html',1,'rolmodl']]],
   ['hdpi',['hdpi',['../structrolmodl_1_1sys_1_1_display.html#abf0834967be6b483a4367953fa493c96',1,'rolmodl::sys::Display']]],
