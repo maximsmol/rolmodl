@@ -412,7 +412,7 @@ namespace rolmodl {
     assert(raw_ != nullptr);
     return raw_;
   }
-  const char* SDLString::unsafeRaw() const noexcept {
+  const char* SDLString::raw() const noexcept {
     assert(raw_ != nullptr);
     return raw_;
   }
