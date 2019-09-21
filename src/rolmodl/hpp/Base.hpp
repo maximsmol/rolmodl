@@ -437,8 +437,8 @@ namespace rolmodl {
 
       /// \brief Get the underlying `char*`. Unsafe because it allows invalidating the pointer by freeing it.
       char* unsafeRaw() noexcept;
-      /// \brief Get the underlying `char*` in a `const` context.
-      const char* raw() const noexcept;
+      /// \brief Get the underlying `char*` in a `const` context. Unsafe because it allows saving a pointer and using it after it has been freed.
+      const char* unsafeRaw() const noexcept;
 
     private:
       SDLString() noexcept;
