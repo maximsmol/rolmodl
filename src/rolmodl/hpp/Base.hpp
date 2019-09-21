@@ -414,20 +414,30 @@ namespace rolmodl {
     int throwOnErr(const int code);
   }
 
+  /// \brief Container for SDL-owned strings that must be freed with `SDL_free`.
   class SDLString {
     public:
+      /// \brief `SDL_free` the underlying `char*`.
       ~SDLString() noexcept;
 
+      /// \brief Copying SDLStrings is not allowed as SDL does not provide a way to allocate a new string. We can only free existing strings.
       SDLString(const SDLString& that) = delete;
+      /// \brief Take over the underlying `char*` of `that`.
       SDLString(SDLString&& that) noexcept;
 
+      /// \brief Copying SDLStrings is not allowed as SDL does not provide a way to allocate a new string. We can only free existing strings.
       SDLString& operator=(const SDLString& that) = delete;
+      /// \brief Take over the underlying `char*` of `that`.
       SDLString& operator=(SDLString&& that) noexcept;
 
+      /// \brief The clipboard text is an SDL-owned string.
       friend SDLString sys::clipboard::getText();
+      /// \brief Exchange the underlying `char*` with `that`.
       friend void swap(SDLString& a, SDLString& b) noexcept;
 
+      /// \brief Get the underlying `char*`. Unsafe because it allows invalidating the pointer by freeing it.
       char* unsafeRaw() noexcept;
+      /// \brief Get the underlying `char*` in a `const` context.
       const char* unsafeRaw() const noexcept;
 
     private:

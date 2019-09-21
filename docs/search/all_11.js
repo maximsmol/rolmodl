@@ -1,9 +1,10 @@
 var searchData=
 [
+  ['gettext',['getText',['../classrolmodl_1_1_s_d_l_string.html#a8faae47558aefa4f9b15061c9a7cc915',1,'rolmodl::SDLString']]],
   ['scale',['scale',['../classrolmodl_1_1_ren.html#a875caad1fc3af13ef79846ae6f7bec9e',1,'rolmodl::Ren']]],
   ['sdl',['sdl',['../structrolmodl_1_1geom_1_1_rect_w_h.html#a9bd269b0d7d081baf77de37b80c0c59a',1,'rolmodl::geom::RectWH::sdl()'],['../structrolmodl_1_1geom_1_1_rect_x_y.html#aa535506f0b726013a819099528bfdf86',1,'rolmodl::geom::RectXY::sdl()']]],
   ['sdlexception',['sdlexception',['../structrolmodl_1_1sdlexception.html',1,'rolmodl::sdlexception'],['../structrolmodl_1_1sdlexception.html#a9709d0cd85bc197058deeb3e720ca6f1',1,'rolmodl::sdlexception::sdlexception(const int code) noexcept'],['../structrolmodl_1_1sdlexception.html#a8c25ca2298c2d8becc22c6f67f1b63e9',1,'rolmodl::sdlexception::sdlexception() noexcept']]],
-  ['sdlstring',['SDLString',['../classrolmodl_1_1_s_d_l_string.html',1,'rolmodl']]],
+  ['sdlstring',['SDLString',['../classrolmodl_1_1_s_d_l_string.html',1,'rolmodl::SDLString'],['../classrolmodl_1_1_s_d_l_string.html#ad34508ed06d24f6478e3d45bd66b0ed8',1,'rolmodl::SDLString::SDLString(const SDLString &amp;that)=delete'],['../classrolmodl_1_1_s_d_l_string.html#a2e0836031e66c1dfbf21e1eb4263138e',1,'rolmodl::SDLString::SDLString(SDLString &amp;&amp;that) noexcept']]],
   ['setblendmode',['setBlendMode',['../classrolmodl_1_1_ren.html#ac15304b9c3d9b22306cca71f7d0798e3',1,'rolmodl::Ren']]],
   ['setcliprect',['setClipRect',['../classrolmodl_1_1_ren.html#a4f628d5e5eaae1107a6bd3dd9726fe37',1,'rolmodl::Ren::setClipRect(const geom::RectWH r)'],['../classrolmodl_1_1_ren.html#afdddf98c73220da557b3046e0c603a1f',1,'rolmodl::Ren::setClipRect(const geom::RectXY r)']]],
   ['setcolor',['setColor',['../classrolmodl_1_1_ren.html#ab080af947151241b6c333d544428a489',1,'rolmodl::Ren']]],
@@ -28,7 +29,7 @@ var searchData=
   ['state',['State',['../classrolmodl_1_1kb_1_1_state.html',1,'rolmodl::kb::State'],['../classrolmodl_1_1mouse_1_1_state.html',1,'rolmodl::mouse::State'],['../structrolmodl_1_1sys_1_1pwr_1_1_status.html#a5ff0627375a1689b2860572f677f3ab5',1,'rolmodl::sys::pwr::Status::state()'],['../_base_8hpp.html#ae84fe28ac28fdac077ff5363a4fc0dfb',1,'rolmodl::sys::pwr::State()']]],
   ['statictex',['StaticTex',['../classrolmodl_1_1_static_tex.html',1,'rolmodl']]],
   ['status',['Status',['../structrolmodl_1_1sys_1_1pwr_1_1_status.html',1,'rolmodl::sys::pwr::Status'],['../structrolmodl_1_1sys_1_1pwr_1_1_status.html#adf2d0b8dc14e2b4ca8769384e6441b56',1,'rolmodl::sys::pwr::Status::Status()'],['../_base_8hpp.html#a5ba7d55c19eebf0f8c3deb904d814249',1,'rolmodl::sys::pwr::status()']]],
-  ['swap',['swap',['../classrolmodl_1_1_ren.html#ae62e12d00441a413d77930be0628f821',1,'rolmodl::Ren::swap()'],['../classrolmodl_1_1_win___base.html#a4f8fa1bc42c64d1dddf12ffc78041465',1,'rolmodl::Win_Base::swap()']]],
+  ['swap',['swap',['../classrolmodl_1_1_s_d_l_string.html#a0ade2db4db896929135d37fbbe57007f',1,'rolmodl::SDLString::swap()'],['../classrolmodl_1_1_ren.html#ae62e12d00441a413d77930be0628f821',1,'rolmodl::Ren::swap()'],['../classrolmodl_1_1_win___base.html#a4f8fa1bc42c64d1dddf12ffc78041465',1,'rolmodl::Win_Base::swap()']]],
   ['swtex',['SWTex',['../classrolmodl_1_1_s_w_tex.html',1,'rolmodl']]],
   ['swtex_5fbase',['SWTex_Base',['../classrolmodl_1_1_s_w_tex___base.html',1,'rolmodl']]],
   ['swtex_5frle',['SWTex_RLE',['../classrolmodl_1_1_s_w_tex___r_l_e.html',1,'rolmodl']]],
