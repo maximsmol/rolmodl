@@ -74,40 +74,58 @@ $(function() {
 <div class="title">rolmodl::SDLString Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Container for SDL-owned strings that must be freed with <code>SDL_free</code>.  
+ <a href="classrolmodl_1_1_s_d_l_string.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_base_8hpp_source.html">Base.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a54a1fbdc689fe8fc9284fb2787914442"><td class="memItemLeft" align="right" valign="top"><a id="a54a1fbdc689fe8fc9284fb2787914442"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a54a1fbdc689fe8fc9284fb2787914442">~SDLString</a> () noexcept</td></tr>
+<tr class="memdesc:a54a1fbdc689fe8fc9284fb2787914442"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>SDL_free</code> the underlying <code>char*</code>. <br /></td></tr>
+<tr class="separator:a54a1fbdc689fe8fc9284fb2787914442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad34508ed06d24f6478e3d45bd66b0ed8"><td class="memItemLeft" align="right" valign="top"><a id="ad34508ed06d24f6478e3d45bd66b0ed8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SDLString</b> (const <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;that)=delete</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#ad34508ed06d24f6478e3d45bd66b0ed8">SDLString</a> (const <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;that)=delete</td></tr>
+<tr class="memdesc:ad34508ed06d24f6478e3d45bd66b0ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copying SDLStrings is not allowed as SDL does not provide a way to allocate a new string. We can only free existing strings. <br /></td></tr>
 <tr class="separator:ad34508ed06d24f6478e3d45bd66b0ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e0836031e66c1dfbf21e1eb4263138e"><td class="memItemLeft" align="right" valign="top"><a id="a2e0836031e66c1dfbf21e1eb4263138e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SDLString</b> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&amp;that) noexcept</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a2e0836031e66c1dfbf21e1eb4263138e">SDLString</a> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&amp;that) noexcept</td></tr>
+<tr class="memdesc:a2e0836031e66c1dfbf21e1eb4263138e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>char*</code> of <code>that</code>. <br /></td></tr>
 <tr class="separator:a2e0836031e66c1dfbf21e1eb4263138e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c612f47d23743c88d978fd9f338054"><td class="memItemLeft" align="right" valign="top"><a id="af3c612f47d23743c88d978fd9f338054"></a>
-<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;that)=delete</td></tr>
+<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#af3c612f47d23743c88d978fd9f338054">operator=</a> (const <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;that)=delete</td></tr>
+<tr class="memdesc:af3c612f47d23743c88d978fd9f338054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copying SDLStrings is not allowed as SDL does not provide a way to allocate a new string. We can only free existing strings. <br /></td></tr>
 <tr class="separator:af3c612f47d23743c88d978fd9f338054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff533e3034de2e92cd42ef3791bf02b4"><td class="memItemLeft" align="right" valign="top"><a id="aff533e3034de2e92cd42ef3791bf02b4"></a>
-<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&amp;that) noexcept</td></tr>
+<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#aff533e3034de2e92cd42ef3791bf02b4">operator=</a> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&amp;that) noexcept</td></tr>
+<tr class="memdesc:aff533e3034de2e92cd42ef3791bf02b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>char*</code> of <code>that</code>. <br /></td></tr>
 <tr class="separator:aff533e3034de2e92cd42ef3791bf02b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a723534dfb82ceb8ad0a5cdfcbb2e8860"><td class="memItemLeft" align="right" valign="top"><a id="a723534dfb82ceb8ad0a5cdfcbb2e8860"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>unsafeRaw</b> () noexcept</td></tr>
+char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a723534dfb82ceb8ad0a5cdfcbb2e8860">unsafeRaw</a> () noexcept</td></tr>
+<tr class="memdesc:a723534dfb82ceb8ad0a5cdfcbb2e8860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>char*</code>. Unsafe because it allows invalidating the pointer by freeing it. <br /></td></tr>
 <tr class="separator:a723534dfb82ceb8ad0a5cdfcbb2e8860"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10ce5ce6a14b7463f1f16b15b7d44a9b"><td class="memItemLeft" align="right" valign="top"><a id="a10ce5ce6a14b7463f1f16b15b7d44a9b"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>unsafeRaw</b> () const noexcept</td></tr>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a10ce5ce6a14b7463f1f16b15b7d44a9b">unsafeRaw</a> () const noexcept</td></tr>
+<tr class="memdesc:a10ce5ce6a14b7463f1f16b15b7d44a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>char*</code> in a <code>const</code> context. <br /></td></tr>
 <tr class="separator:a10ce5ce6a14b7463f1f16b15b7d44a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a8faae47558aefa4f9b15061c9a7cc915"><td class="memItemLeft" align="right" valign="top"><a id="a8faae47558aefa4f9b15061c9a7cc915"></a>
-<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sys::clipboard::getText</b> ()</td></tr>
+<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a8faae47558aefa4f9b15061c9a7cc915">sys::clipboard::getText</a> ()</td></tr>
+<tr class="memdesc:a8faae47558aefa4f9b15061c9a7cc915"><td class="mdescLeft">&#160;</td><td class="mdescRight">The clipboard text is an SDL-owned string. <br /></td></tr>
 <tr class="separator:a8faae47558aefa4f9b15061c9a7cc915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ade2db4db896929135d37fbbe57007f"><td class="memItemLeft" align="right" valign="top"><a id="a0ade2db4db896929135d37fbbe57007f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>swap</b> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;a, <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;b) noexcept</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a0ade2db4db896929135d37fbbe57007f">swap</a> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;a, <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;b) noexcept</td></tr>
+<tr class="memdesc:a0ade2db4db896929135d37fbbe57007f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange the underlying <code>char*</code> with <code>that</code>. <br /></td></tr>
 <tr class="separator:a0ade2db4db896929135d37fbbe57007f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00417">417</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
+<div class="textblock"><p>Container for SDL-owned strings that must be freed with <code>SDL_free</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00418">418</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/rolmodl/hpp/<a class="el" href="_base_8hpp_source.html">Base.hpp</a></li>
 </ul>
