@@ -102,6 +102,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html">rolmodl::sdlexception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception type containing an error code and the last SDL error at the moment of creation.  <a href="structrolmodl_1_1sdlexception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html">rolmodl::SDLString</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -210,6 +212,15 @@ Id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_
 Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a5ba7d55c19eebf0f8c3deb904d814249">rolmodl::sys::pwr::status</a> () noexcept</td></tr>
 <tr class="memdesc:a5ba7d55c19eebf0f8c3deb904d814249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a system power status snapshot. <br /></td></tr>
 <tr class="separator:a5ba7d55c19eebf0f8c3deb904d814249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5183e0a7a4db55cfeb233b0a2e96a257"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a5183e0a7a4db55cfeb233b0a2e96a257">rolmodl::sys::clipboard::hasText</a> () noexcept</td></tr>
+<tr class="memdesc:a5183e0a7a4db55cfeb233b0a2e96a257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether thhe clipboard has text contents.  <a href="_base_8hpp.html#a5183e0a7a4db55cfeb233b0a2e96a257">More...</a><br /></td></tr>
+<tr class="separator:a5183e0a7a4db55cfeb233b0a2e96a257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccafa9eda61136b0a88ad02043abb59"><td class="memItemLeft" align="right" valign="top">SDLString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#abccafa9eda61136b0a88ad02043abb59">rolmodl::sys::clipboard::getText</a> ()</td></tr>
+<tr class="memdesc:abccafa9eda61136b0a88ad02043abb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get clipboard text contents.  <a href="_base_8hpp.html#abccafa9eda61136b0a88ad02043abb59">More...</a><br /></td></tr>
+<tr class="separator:abccafa9eda61136b0a88ad02043abb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa41aa27c65b47bc0ec70511db81d5b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#aaa41aa27c65b47bc0ec70511db81d5b3">rolmodl::sys::clipboard::setText</a> (const char *x)</td></tr>
+<tr class="memdesc:aaa41aa27c65b47bc0ec70511db81d5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set clipboard text contents.  <a href="_base_8hpp.html#aaa41aa27c65b47bc0ec70511db81d5b3">More...</a><br /></td></tr>
+<tr class="separator:aaa41aa27c65b47bc0ec70511db81d5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad15aee532dd048bea8a49642e6b36834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#ad15aee532dd048bea8a49642e6b36834">rolmodl::sys::screensaver::enable</a> () noexcept</td></tr>
 <tr class="memdesc:ad15aee532dd048bea8a49642e6b36834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable system screensaver.  <a href="_base_8hpp.html#ad15aee532dd048bea8a49642e6b36834">More...</a><br /></td></tr>
 <tr class="separator:ad15aee532dd048bea8a49642e6b36834"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,7 +282,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base
 <dd>
 <a href="https://wiki.libsdl.org/CategoryCPU">https://wiki.libsdl.org/CategoryCPU</a> </dd>
 <dd>
-<a href="https://wiki.libsdl.org/CategoryVideo">https://wiki.libsdl.org/CategoryVideo</a> </dd></dl>
+<a href="https://wiki.libsdl.org/CategoryVideo">https://wiki.libsdl.org/CategoryVideo</a> </dd>
+<dd>
+<a href="https://wiki.libsdl.org/CategoryClipboard">https://wiki.libsdl.org/CategoryClipboard</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -299,7 +312,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base
 <p>Values taken from <code>SDL.c</code>.</p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://github.com/spurious/SDL-mirror/blob/master/src/SDL.c">https://github.com/spurious/SDL-mirror/blob/master/src/SDL.c</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00041">41</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00044">44</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
 
 </div>
 </div>
@@ -326,7 +339,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base
 <p>Indicates battery status a.k.a. the system power state. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_PowerState">https://wiki.libsdl.org/SDL_PowerState</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00149">149</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00152">152</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
 
 </div>
 </div>
@@ -770,6 +783,75 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_HasSSE42">https://wiki.libsdl.org/SDL_HasSSE42</a> </dd>
 <dd>
 <a href="https://en.wikipedia.org/wiki/SSE4#SSE4.2">https://en.wikipedia.org/wiki/SSE4#SSE4.2</a> </dd></dl>
+
+</div>
+</div>
+<a id="file_a5183e0a7a4db55cfeb233b0a2e96a257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#file_a5183e0a7a4db55cfeb233b0a2e96a257">&#9670;&nbsp;</a></span>hasText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rolmodl::sys::clipboard::hasText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Query whether thhe clipboard has text contents. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_HasClipboardText">https://wiki.libsdl.org/SDL_HasClipboardText</a> </dd></dl>
+
+</div>
+</div>
+<a id="file_abccafa9eda61136b0a88ad02043abb59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#file_abccafa9eda61136b0a88ad02043abb59">&#9670;&nbsp;</a></span>getText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDLString rolmodl::sys::clipboard::getText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get clipboard text contents. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetClipboardText">https://wiki.libsdl.org/SDL_GetClipboardText</a> </dd></dl>
+
+</div>
+</div>
+<a id="file_aaa41aa27c65b47bc0ec70511db81d5b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#file_aaa41aa27c65b47bc0ec70511db81d5b3">&#9670;&nbsp;</a></span>setText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rolmodl::sys::clipboard::setText </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set clipboard text contents. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_SetClipboardText">https://wiki.libsdl.org/SDL_SetClipboardText</a> </dd></dl>
 
 </div>
 </div>

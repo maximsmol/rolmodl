@@ -1,6 +1,7 @@
 var searchData=
 [
   ['sdlexception',['sdlexception',['../structrolmodl_1_1sdlexception.html',1,'rolmodl']]],
+  ['sdlstring',['SDLString',['../classrolmodl_1_1_s_d_l_string.html',1,'rolmodl']]],
   ['shown',['Shown',['../structrolmodl_1_1event_1_1window_1_1_shown.html',1,'rolmodl::event::window']]],
   ['size',['Size',['../structrolmodl_1_1geom_1_1_size.html',1,'rolmodl::geom']]],
   ['sizechanged',['SizeChanged',['../structrolmodl_1_1event_1_1window_1_1_size_changed.html',1,'rolmodl::event::window']]],

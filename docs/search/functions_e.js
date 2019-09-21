@@ -15,6 +15,7 @@ var searchData=
   ['setscale',['setScale',['../classrolmodl_1_1_ren.html#a2d62b87cca12235be5f09e781b9237d1',1,'rolmodl::Ren']]],
   ['setsize',['setSize',['../classrolmodl_1_1_win___base.html#ad492295ad89ac5f8eef7f9e70b3b3afd',1,'rolmodl::Win_Base']]],
   ['settarget',['setTarget',['../classrolmodl_1_1_tex_ren.html#a22d3cb4a5c5d64492e094828dd298ec6',1,'rolmodl::TexRen']]],
+  ['settext',['setText',['../_base_8hpp.html#aaa41aa27c65b47bc0ec70511db81d5b3',1,'rolmodl::sys::clipboard']]],
   ['settitle',['setTitle',['../classrolmodl_1_1_win___base.html#a2df336b4c6994db0a40fd96629e0f3af',1,'rolmodl::Win_Base']]],
   ['setviewport',['setViewport',['../classrolmodl_1_1_ren.html#a6fd05b0f1334b697908794f4031703c1',1,'rolmodl::Ren']]],
   ['show',['show',['../classrolmodl_1_1_win___base.html#a5592cfca6b80670f2a3517cc77852b8f',1,'rolmodl::Win_Base']]],
