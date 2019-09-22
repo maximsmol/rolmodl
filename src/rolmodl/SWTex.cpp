@@ -25,10 +25,10 @@ namespace rolmodl {
   SWTex_Base::SWTex_Base(SWTex_Base&& that) noexcept :
     SWTex_Base()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
   SWTex_Base& SWTex_Base::operator=(SWTex_Base&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 
@@ -138,7 +138,7 @@ namespace rolmodl {
   /*explicit*/ SWTex::SWTex(SWTex_RLE&& rle) noexcept :
     SWTex_Base()
   {
-    std::swap(h_, rle.h_);
+    std::swap(h_, rle.h_); // note that this is not a move-constructor
     throwOnErr(SDL_SetSurfaceRLE(unsafeRaw(), false));
   }
 
@@ -161,7 +161,7 @@ namespace rolmodl {
   /*explicit*/ SWTex_RLE::SWTex_RLE(SWTex&& nonRle) noexcept :
     SWTex_Base()
   {
-    std::swap(h_, nonRle.h_);
+    std::swap(h_, nonRle.h_); // note that this is not a move-constructor
     throwOnErr(SDL_SetSurfaceRLE(unsafeRaw(), true));
   }
 
@@ -184,10 +184,10 @@ namespace rolmodl {
   SWTex_RLELock::SWTex_RLELock(SWTex_RLELock&& that) noexcept :
     SWTex_RLELock()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
   SWTex_RLELock& SWTex_RLELock::operator=(SWTex_RLELock&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 

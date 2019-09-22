@@ -59,12 +59,12 @@ namespace rolmodl {
   Win_Base::Win_Base(Win_Base&& that) noexcept :
     Win_Base()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
 
   // Win_Base& Win_Base::operator=(const Win_Base& that) = delete;
   Win_Base& Win_Base::operator=(Win_Base&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 

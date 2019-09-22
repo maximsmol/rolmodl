@@ -25,10 +25,10 @@ namespace rolmodl {
   Tex::Tex(Tex&& that) noexcept :
     Tex()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
   Tex& Tex::operator=(Tex&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 
@@ -151,10 +151,10 @@ namespace rolmodl {
   TexLock::TexLock(TexLock&& that) noexcept :
     TexLock()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
   TexLock& TexLock::operator=(TexLock&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 
