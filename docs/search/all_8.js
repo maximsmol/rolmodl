@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['id',['id',['../_base_8hpp.html#ace55dea56d71ff5082e051ccbd370971',1,'rolmodl::sys::id() noexcept'],['../_base_8hpp.html#ae00db9e1ee9231659b4d1bce9b1de5ae',1,'rolmodl::sys::Id()']]],
-  ['info',['Info',['../structrolmodl_1_1ren_1_1_info.html',1,'rolmodl::ren::Info'],['../_ren_8hpp.html#aa51e77f4478a9f134a63770286b3c6e5',1,'rolmodl::ren::driver::info()']]],
+  ['info',['Info',['../structrolmodl_1_1ren_1_1_info.html',1,'rolmodl::ren']]],
   ['isaccelerated',['isAccelerated',['../structrolmodl_1_1ren_1_1_flags.html#a8f0e04d6721ff43454ba4790952d5cb2',1,'rolmodl::ren::Flags']]],
   ['isborderless',['isBorderless',['../structrolmodl_1_1win_1_1_flags.html#a2d0ae92e299bbd6245c714f774de7632',1,'rolmodl::win::Flags']]],
   ['isclipon',['isClipOn',['../classrolmodl_1_1_ren.html#a70bb7b365f0407eb5ca26f9738b97916',1,'rolmodl::Ren']]],

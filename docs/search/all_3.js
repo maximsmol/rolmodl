@@ -2,9 +2,7 @@ var searchData=
 [
   ['byindex',['byIndex',['../structrolmodl_1_1sys_1_1_display.html#aa210082510dd7ae5227ff2cf1b0fcd77',1,'rolmodl::sys::Display']]],
   ['ddpi',['ddpi',['../structrolmodl_1_1sys_1_1_display.html#a8dd0f2b5c5c22c4759ca49696a713b31',1,'rolmodl::sys::Display']]],
-  ['desktopfordisplayn',['desktopForDisplayN',['../_base_8hpp.html#ae25477c95abc009a9f522e89ee031c1a',1,'rolmodl::sys::display::mode::unsafe']]],
   ['detected',['Detected',['../structrolmodl_1_1event_1_1gesture_1_1custom_1_1_detected.html',1,'rolmodl::event::gesture::custom']]],
-  ['disable',['disable',['../_base_8hpp.html#a477fb240aa93290ce1b0fd9bdceac0fd',1,'rolmodl::sys::screensaver']]],
   ['disableclip',['disableClip',['../classrolmodl_1_1_ren.html#a736d77094ef64eb5da293217de9f2d02',1,'rolmodl::Ren']]],
   ['display',['Display',['../structrolmodl_1_1sys_1_1_display.html',1,'rolmodl::sys::Display'],['../classrolmodl_1_1_win___base.html#ad93474759ca3be7601135a7159b6c533',1,'rolmodl::Win_Base::display()']]],
   ['displaymode',['DisplayMode',['../structrolmodl_1_1sys_1_1_display_mode.html',1,'rolmodl::sys']]],
