@@ -31,6 +31,7 @@ namespace rolmodl {
   class SDLString;
 }
 
+#include "forwarddecl/Event.hpp"
 #include "Geom.hpp"
 #include "PixelFmt.hpp"
 
@@ -421,17 +422,19 @@ namespace rolmodl {
       ~SDLString() noexcept;
 
       /// \brief Copying SDLStrings is not allowed as SDL does not provide a way to allocate a new string. We can only free existing strings.
-      SDLString(const SDLString& that) = delete;
+      SDLString(const SDLString& that);
       /// \brief Take over the underlying `char*` of `that`.
       SDLString(SDLString&& that) noexcept;
 
       /// \brief Copying SDLStrings is not allowed as SDL does not provide a way to allocate a new string. We can only free existing strings.
-      SDLString& operator=(const SDLString& that) = delete;
+      SDLString& operator=(const SDLString& that);
       /// \brief Take over the underlying `char*` of `that`.
       SDLString& operator=(SDLString&& that) noexcept;
 
       /// \brief The clipboard text is an SDL-owned string.
       friend SDLString sys::clipboard::getText();
+      /// \brief The drag-n-drop text and file paths are SDL-owned strings.
+      friend std::optional<Event> event::poll() noexcept;
       /// \brief Exchange the underlying `char*` with `that`.
       friend void swap(SDLString& a, SDLString& b) noexcept;
 

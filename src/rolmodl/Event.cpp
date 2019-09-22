@@ -2,6 +2,7 @@
 
 #include "hpp/Geom.hpp"
 
+#include <cstdio>
 #include <cassert>
 #include <algorithm>
 #include <iterator>
@@ -321,13 +322,13 @@ namespace rolmodl::event {
       return drag_n_drop::File{
         {e.drop.timestamp},
         {e.drop.windowID},
-        .path = e.drop.file
+        .path = SDLString(e.drop.file)
       };
     if (e.type == SDL_DROPTEXT)
       return drag_n_drop::Text{
         {e.drop.timestamp},
         {e.drop.windowID},
-        .x = e.drop.file
+        .x = SDLString(e.drop.file)
       };
     if (e.type == SDL_DROPBEGIN)
       return drag_n_drop::Begin{{e.drop.timestamp}, {e.drop.windowID}};

@@ -11,7 +11,7 @@ using namespace rolmodl;
 using namespace geom;
 
 template<class T, class... Types>
-void varact(function<void(T)> f, variant<Types...> v) {
+void varact(function<void(T&)> f, variant<Types...>& v) {
   if (!holds_alternative<T>(v))
     return;
 
@@ -19,7 +19,7 @@ void varact(function<void(T)> f, variant<Types...> v) {
 }
 
 template<class R, class T, class... Types>
-optional<R> varact(function<R(T)> f, variant<Types...> v) {
+optional<R> varact(function<R(T&)> f, variant<Types...>& v) {
   if (!holds_alternative<T>(v))
     return nullopt;
 
@@ -244,175 +244,175 @@ int main() {
       if (!polled)
         break;
 
-      Event e = polled.value();
-      varact<event::Quit>([&](event::Quit x) {
+      Event& e = polled.value();
+      varact<event::Quit>([&](event::Quit& x) {
         printf("%6d: Quit\n", x.timestamp);
         running = false;
       }, e);
 
-      varact<event::Edit>([&](event::Edit x) {
+      varact<event::Edit>([&](event::Edit& x) {
         printf("%6d: Edit\n\tunsafe_winId: %d\n\ttext: %s\n\tstart: %d len: %d\n", x.timestamp, x.unsafe_winId, x.text, x.start, x.len);
       }, e);
-      varact<event::Text>([&](event::Text x) {
+      varact<event::Text>([&](event::Text& x) {
         printf("%6d: Text\n\tunsafe_winId: %d\n\ttext: %s\n", x.timestamp, x.unsafe_winId, x.text);
       }, e);
 
-      varact<event::touch::Motion>([&](event::touch::Motion /*x*/) {
+      varact<event::touch::Motion>([&](event::touch::Motion& /*x*/) {
         // printf("%6d: Touch.motion\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tdx: %f dy: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.x), static_cast<double>(x.y), static_cast<double>(x.dx), static_cast<double>(x.dy), static_cast<double>(x.pressure));
       }, e);
-      varact<event::touch::Up>([&](event::touch::Up x) {
+      varact<event::touch::Up>([&](event::touch::Up& x) {
         printf("%6d: Touch.up\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.pos.x), static_cast<double>(x.pos.y), static_cast<double>(x.pressure));
       }, e);
-      varact<event::touch::Down>([&](event::touch::Down x) {
+      varact<event::touch::Down>([&](event::touch::Down& x) {
         printf("%6d: Touch.down\n\ttouchId: %lld\n\tfingerId: %lld\n\n\tx: %f y: %f\n\tpressure: %f\n", x.timestamp, x.touchId, x.fingerId, static_cast<double>(x.pos.x), static_cast<double>(x.pos.y), static_cast<double>(x.pressure));
       }, e);
 
-      varact<event::key::Up>([&](event::key::Up x) {
+      varact<event::key::Up>([&](event::key::Up& x) {
         kb::key::Name::query(x.sym.key);
         printf("%6d: Key.up\n\tunsafe_winId: %d\n\tstate: %d repeat: %s\n\tsym: %s\n", x.timestamp, x.unsafe_winId, x.state, x.repeat ? "true" : "false", kb::key::Name::lastQueryRes());
       }, e);
-      varact<event::key::Down>([&](event::key::Down x) {
+      varact<event::key::Down>([&](event::key::Down& x) {
         kb::key::Name::query(x.sym.key);
         printf("%6d: Key.down\n\tunsafe_winId: %d\n\tstate: %d repeat: %s\n\tsym: %s\n", x.timestamp, x.unsafe_winId, x.state, x.repeat ? "true" : "false", kb::key::Name::lastQueryRes());
       }, e);
 
-      varact<event::mouse::button::Up>([&](event::mouse::button::Up x) {
+      varact<event::mouse::button::Up>([&](event::mouse::button::Up& x) {
         printf("%6d: Mouse.button.up\n\tunsafe_winId: %d\n\tmouseId: %d\n\tbutton: %d state: %d clicks: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.button, x.state, x.clicks, x.pos.x, x.pos.y);
       }, e);
-      varact<event::mouse::button::Down>([&](event::mouse::button::Down x) {
+      varact<event::mouse::button::Down>([&](event::mouse::button::Down& x) {
         printf("%6d: Mouse.button.down\n\tunsafe_winId: %d\n\tmouseId: %d\n\tbutton: %d state: %d clicks: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.button, x.state, x.clicks, x.pos.x, x.pos.y);
       }, e);
-      varact<event::mouse::Motion>([&](event::mouse::Motion /*x*/) {
+      varact<event::mouse::Motion>([&](event::mouse::Motion& /*x*/) {
         // printf("%6d: Mouse.motion\n\tunsafe_winId: %d\n\tmouseId: %d\n\tstate: %d\n\tx: %d y: %d\n\tdx: %d dy: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.state, x.pos.x, x.pos.y, x.dpos.x, x.dpos.y);
       }, e);
-      varact<event::mouse::Wheel>([&](event::mouse::Wheel x) {
+      varact<event::mouse::Wheel>([&](event::mouse::Wheel& x) {
         printf("%6d: Mouse.wheel\n\tunsafe_winId: %d\n\tmouseId: %d\n\tdx: %d dy: %d\n\tdirection: %d\n", x.timestamp, x.unsafe_winId, x.mouseId, x.dpos.x, x.dpos.y, x.direction);
       }, e);
 
-      varact<event::joystick::Axis>([&](event::joystick::Axis /*x*/) {
+      varact<event::joystick::Axis>([&](event::joystick::Axis& /*x*/) {
         // printf("%6d: Joystick.axis\n\tjoystickId: %d\n\taxisN: %d x: %d\n", x.timestamp, x.joystickId, x.axisN, x.x);
       }, e);
-      varact<event::joystick::Ball>([&](event::joystick::Ball x) {
+      varact<event::joystick::Ball>([&](event::joystick::Ball& x) {
         printf("%6d: Joystick.ball\n\tjoystickId: %d\n\tballN: %d\n\tdx: %d dy: %d\n", x.timestamp, x.joystickId, x.ballN, x.dx, x.dy);
       }, e);
-      varact<event::joystick::Hat>([&](event::joystick::Hat x) {
+      varact<event::joystick::Hat>([&](event::joystick::Hat& x) {
         printf("%6d: Joystick.hat\n\tjoystickId: %d\n\thatN: %d x: %s\n", x.timestamp, x.joystickId, x.hatN, hatState::position::toString(x.x.pos()));
       }, e);
-      varact<event::joystick::button::Up>([&](event::joystick::button::Up x) {
+      varact<event::joystick::button::Up>([&](event::joystick::button::Up& x) {
         printf("%6d: Joystick.button.up\n\tjoystickId: %d\n\tbuttonN: %d state: %d\n", x.timestamp, x.joystickId, x.buttonN, x.state);
       }, e);
-      varact<event::joystick::button::Down>([&](event::joystick::button::Down x) {
+      varact<event::joystick::button::Down>([&](event::joystick::button::Down& x) {
         printf("%6d: Joystick.button.down\n\tjoystickId: %d\n\tbuttonN: %d state: %d\n", x.timestamp, x.joystickId, x.buttonN, x.state);
       }, e);
-      varact<event::joystick::device::Added>([&](event::joystick::device::Added x) {
+      varact<event::joystick::device::Added>([&](event::joystick::device::Added& x) {
         SDL_JoystickOpen(x.joystickId);
         printf("%6d: Joystick.device.added\n\tjoystickId: %d\n", x.timestamp, x.joystickId);
       }, e);
-      varact<event::joystick::device::Removed>([&](event::joystick::device::Removed x) {
+      varact<event::joystick::device::Removed>([&](event::joystick::device::Removed& x) {
         printf("%6d: Joystick.device.removed\n\tjoystickId: %d\n", x.timestamp, x.joystickId);
       }, e);
 
-      varact<event::controller::Axis>([&](event::controller::Axis /*x*/) {
+      varact<event::controller::Axis>([&](event::controller::Axis& /*x*/) {
         // printf("%6d: Controller.axis\n\tcontrollerId: %d\n\taxisN: %d x: %d\n", x.timestamp, x.controllerId, x.axisN, x.x);
       }, e);
-      varact<event::controller::button::Up>([&](event::controller::button::Up x) {
+      varact<event::controller::button::Up>([&](event::controller::button::Up& x) {
         printf("%6d: Controller.button.up\n\tcontrollerId: %d\n\tbuttonN: %d state: %d\n", x.timestamp, x.controllerId, x.buttonN, x.state);
       }, e);
-      varact<event::controller::button::Down>([&](event::controller::button::Down x) {
+      varact<event::controller::button::Down>([&](event::controller::button::Down& x) {
         printf("%6d: Controller.button.down\n\tcontrollerId: %d\n\tbuttonN: %d state: %d\n", x.timestamp, x.controllerId, x.buttonN, x.state);
       }, e);
-      varact<event::controller::device::Added>([&](event::controller::device::Added x) {
+      varact<event::controller::device::Added>([&](event::controller::device::Added& x) {
         SDL_GameControllerOpen(x.controllerId);
         printf("%6d: Controller.device.added\n\tcontrollerId: %d\n", x.timestamp, x.controllerId);
       }, e);
-      varact<event::controller::device::Removed>([&](event::controller::device::Removed x) {
+      varact<event::controller::device::Removed>([&](event::controller::device::Removed& x) {
         printf("%6d: Controller.device.removed\n\tcontrollerId: %d\n", x.timestamp, x.controllerId);
       }, e);
-      varact<event::controller::device::Remapped>([&](event::controller::device::Remapped x) {
+      varact<event::controller::device::Remapped>([&](event::controller::device::Remapped& x) {
         printf("%6d: Controller.device.remapped\n\tcontrollerId: %d\n", x.timestamp, x.controllerId);
       }, e);
 
-      varact<event::gesture::Builtin>([&](event::gesture::Builtin x) {
+      varact<event::gesture::Builtin>([&](event::gesture::Builtin& x) {
         printf("%6d: Gesture.builtin\n\ttouchId: %lld\n\tnFingers: %d dRotation: %f dPinch: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.nFingers, static_cast<double>(x.dRotation), static_cast<double>(x.dPinch), static_cast<double>(x.pos.x), static_cast<double>(x.pos.y));
       }, e);
-      varact<event::gesture::custom::Recorded>([&](event::gesture::custom::Recorded x) {
+      varact<event::gesture::custom::Recorded>([&](event::gesture::custom::Recorded& x) {
         printf("%6d: Gesture.custom.recorded\n\ttouchId: %lld gestureId: %lld\n\tnFingers: %d error: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.gestureId, x.nFingers, static_cast<double>(x.error), static_cast<double>(x.pos.x), static_cast<double>(x.pos.y));
       }, e);
-      varact<event::gesture::custom::Detected>([&](event::gesture::custom::Detected x) {
+      varact<event::gesture::custom::Detected>([&](event::gesture::custom::Detected& x) {
         printf("%6d: Gesture.custom.detected\n\ttouchId: %lld gestureId: %lld\n\tnFingers: %d error: %f\n\tx: %f y: %f\n", x.timestamp, x.touchId, x.gestureId, x.nFingers, static_cast<double>(x.error), static_cast<double>(x.pos.x), static_cast<double>(x.pos.y));
       }, e);
 
-      varact<event::window::Close>([&](event::window::Close x) {
+      varact<event::window::Close>([&](event::window::Close& x) {
         printf("%6d: Window.close\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::HitTest>([&](event::window::HitTest x) {
+      varact<event::window::HitTest>([&](event::window::HitTest& x) {
         printf("%6d: Window.hittest\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
 
-      varact<event::window::Shown>([&](event::window::Shown x) {
+      varact<event::window::Shown>([&](event::window::Shown& x) {
         printf("%6d: Window.shown\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::Hidden>([&](event::window::Hidden x) {
+      varact<event::window::Hidden>([&](event::window::Hidden& x) {
         printf("%6d: Window.hidden\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::Exposed>([&](event::window::Exposed x) {
+      varact<event::window::Exposed>([&](event::window::Exposed& x) {
         printf("%6d: Window.exposed\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
 
-      varact<event::window::Moved>([&](event::window::Moved x) {
+      varact<event::window::Moved>([&](event::window::Moved& x) {
         printf("%6d: Window.moved\n\tunsafe_winId: %d\n\tx: %d y: %d\n", x.timestamp, x.unsafe_winId, x.loc.x, x.loc.y);
       }, e);
-      varact<event::window::Resized>([&](event::window::Resized x) {
+      varact<event::window::Resized>([&](event::window::Resized& x) {
         printf("%6d: Window.resized\n\tunsafe_winId: %d\n\tw: %d h: %d\n", x.timestamp, x.unsafe_winId, x.size.w, x.size.h);
       }, e);
-      varact<event::window::SizeChanged>([&](event::window::SizeChanged x) {
+      varact<event::window::SizeChanged>([&](event::window::SizeChanged& x) {
         printf("%6d: Window.sizechanged\n\tunsafe_winId: %d\n\tw: %d h: %d\n", x.timestamp, x.unsafe_winId, x.size.w, x.size.h);
       }, e);
 
-      varact<event::window::Minimized>([&](event::window::Minimized x) {
+      varact<event::window::Minimized>([&](event::window::Minimized& x) {
         printf("%6d: Window.minimized\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::Maximized>([&](event::window::Maximized x) {
+      varact<event::window::Maximized>([&](event::window::Maximized& x) {
         printf("%6d: Window.maximized\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::Restored>([&](event::window::Restored x) {
+      varact<event::window::Restored>([&](event::window::Restored& x) {
         printf("%6d: Window.restored\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
 
-      varact<event::window::mouse::Entered>([&](event::window::mouse::Entered x) {
+      varact<event::window::mouse::Entered>([&](event::window::mouse::Entered& x) {
         printf("%6d: Window.mouse.entered\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::mouse::Left>([&](event::window::mouse::Left x) {
+      varact<event::window::mouse::Left>([&](event::window::mouse::Left& x) {
         printf("%6d: Window.mouse.left\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
 
-      varact<event::window::focus::Gained>([&](event::window::focus::Gained x) {
+      varact<event::window::focus::Gained>([&](event::window::focus::Gained& x) {
         printf("%6d: Window.focus.gained\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::focus::Lost>([&](event::window::focus::Lost x) {
+      varact<event::window::focus::Lost>([&](event::window::focus::Lost& x) {
         printf("%6d: Window.focus.lost\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::window::focus::Offered>([&](event::window::focus::Offered x) {
+      varact<event::window::focus::Offered>([&](event::window::focus::Offered& x) {
         printf("%6d: Window.focus.offered\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
 
-      varact<event::drag_n_drop::File>([&](event::drag_n_drop::File x) {
-        printf("%6d: Dragndrop.file\n\tunsafe_winId: %d\n\tpath: %s\n", x.timestamp, x.unsafe_winId, x.path);
+      varact<event::drag_n_drop::File>([&](event::drag_n_drop::File& x) {
+        printf("%6d: Dragndrop.file\n\tunsafe_winId: %d\n\tpath: %s\n", x.timestamp, x.unsafe_winId, x.path.unsafeRaw());
       }, e);
-      varact<event::drag_n_drop::Text>([&](event::drag_n_drop::Text x) {
-        printf("%6d: Dragndrop.text\n\tunsafe_winId: %d\n\tstr: %s\n", x.timestamp, x.unsafe_winId, x.x);
+      varact<event::drag_n_drop::Text>([&](event::drag_n_drop::Text& x) {
+        printf("%6d: Dragndrop.text\n\tunsafe_winId: %d\n\tstr: %s\n", x.timestamp, x.unsafe_winId, x.x.unsafeRaw());
       }, e);
-      varact<event::drag_n_drop::Begin>([&](event::drag_n_drop::Begin x) {
+      varact<event::drag_n_drop::Begin>([&](event::drag_n_drop::Begin& x) {
         printf("%6d: Dragndrop.begin\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
-      varact<event::drag_n_drop::Complete>([&](event::drag_n_drop::Complete x) {
+      varact<event::drag_n_drop::Complete>([&](event::drag_n_drop::Complete& x) {
         printf("%6d: Dragndrop.complete\n\tunsafe_winId: %d\n", x.timestamp, x.unsafe_winId);
       }, e);
 
-      varact<event::audio_device::Added>([&](event::audio_device::Added x) {
+      varact<event::audio_device::Added>([&](event::audio_device::Added& x) {
         printf("%6d: Audiodevice.added\n\tindex: %d isCapture: %s\n", x.timestamp, x.index, x.isCapture ? "true" : "false");
       }, e);
-      varact<event::audio_device::Removed>([&](event::audio_device::Removed x) {
+      varact<event::audio_device::Removed>([&](event::audio_device::Removed& x) {
         printf("%6d: Audiodevice.removed\n\tid: %d isCapture: %s\n", x.timestamp, x.id, x.isCapture ? "true" : "false");
       }, e);
     }
