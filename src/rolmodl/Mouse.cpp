@@ -81,7 +81,7 @@ namespace rolmodl::mouse {
   Cursor::Cursor(Cursor&& that) noexcept :
     Cursor()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
   Cursor::~Cursor() {
     if (cursor::detail::active_cursor == this) {
@@ -93,7 +93,7 @@ namespace rolmodl::mouse {
   }
 
   Cursor& Cursor::operator=(Cursor&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 

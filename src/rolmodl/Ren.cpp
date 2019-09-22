@@ -60,12 +60,12 @@ namespace rolmodl {
   Ren::Ren(Ren&& that) noexcept :
     Ren()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
 
   // Ren& Ren::operator=(const Ren& that) = delete;
   Ren& Ren::operator=(Ren&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 
