@@ -10,7 +10,7 @@ using namespace rolmodl;
 using namespace geom;
 
 template<class T, class... Types>
-void varact(function<void(T)> f, variant<Types...> v) {
+void varact(function<void(T&)> f, variant<Types...>& v) {
   if (!holds_alternative<T>(v))
     return;
 
@@ -18,7 +18,7 @@ void varact(function<void(T)> f, variant<Types...> v) {
 }
 
 template<class R, class T, class... Types>
-optional<R> varact(function<R(T)> f, variant<Types...> v) {
+optional<R> varact(function<R(T&)> f, variant<Types...>& v) {
   if (!holds_alternative<T>(v))
     return nullopt;
 
@@ -39,7 +39,7 @@ int main() {
       if (!polled)
         break;
 
-      Event e = polled.value();
+      Event& e = polled.value();
       varact<event::Quit>([&](event::Quit x) {
         printf("%6d: Quit\n", x.timestamp);
         running = false;
