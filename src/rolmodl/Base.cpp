@@ -394,12 +394,12 @@ namespace rolmodl {
   SDLString::SDLString(SDLString&& that) noexcept :
     SDLString()
   {
-    std::swap(*this, that);
+    swap(*this, that);
   }
 
   // SDLString& SDLString::operator=(const SDLString& that) = delete;
   SDLString& SDLString::operator=(SDLString&& that) noexcept {
-    std::swap(*this, that);
+    swap(*this, that);
     return *this;
   }
 
