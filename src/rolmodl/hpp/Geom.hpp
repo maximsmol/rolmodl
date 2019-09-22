@@ -5,18 +5,7 @@
 ///
 /// \sa https://wiki.libsdl.org/CategoryRect
 
-#include <cstdint>
-
-#include <SDL.h>
-
-namespace rolmodl::geom {
-  struct Pos;
-  struct Size;
-  struct XYFloat;
-  struct XYInt32;
-  struct RectXY;
-  struct RectWH;
-}
+#include "forwarddecl/Geom.hpp"
 
 namespace rolmodl::geom {
   /// \brief `int` point data type. The value is in pixels. Semantically different from \link rolmodl::geom::Size \endlink.

@@ -16,9 +16,9 @@ namespace rolmodl {
   struct Keysym;
 
   struct HatState;
-  // namespace hatState::position { // todo?
-  //   constexpr const char* toString(const HatState::Position p);
-  // }
+  namespace hatState::position {
+  //   constexpr const char* toString(const HatState::Position p); // todo?
+  }
 
   namespace event {
     struct Timestamped;

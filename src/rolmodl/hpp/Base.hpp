@@ -9,29 +9,10 @@
 /// \sa https://wiki.libsdl.org/CategoryVideo
 /// \sa https://wiki.libsdl.org/CategoryClipboard
 
-#include <exception>
-#include <optional>
-
-#include <SDL.h>
-
-namespace rolmodl {
-  namespace sys {
-    namespace pwr {
-      struct Status;
-    }
-    namespace clipboard {}
-    struct Display;
-    struct DisplayMode;
-  }
-
-  struct RGB;
-  struct RGBA;
-
-  struct sdlexception;
-  class SDLString;
-}
+#include "forwarddecl/Base.hpp"
 
 #include "forwarddecl/Event.hpp"
+
 #include "Geom.hpp"
 #include "PixelFmt.hpp"
 

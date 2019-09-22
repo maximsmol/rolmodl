@@ -1,20 +1,11 @@
 #pragma once
-#include <cstdint>
 
-#include <SDL.h>
+#include "forwarddecl/SWTex.hpp"
 
-namespace rolmodl {
-  class SWTex_Base;
-  class SWTex;
-  class SWTex_RLE;
-  class SWTex_RLELock;
-  class Win_SW;
-}
-
-#include "Base.hpp"
-#include "PixelFmt.hpp"
-#include "Geom.hpp"
-#include "Ren.hpp"
+#include "forwarddecl/Geom.hpp"
+#include "forwarddecl/PixelFmt.hpp"
+#include "forwarddecl/Base.hpp"
+#include "Win.hpp"
 
 namespace rolmodl {
   class SWTex_Base {

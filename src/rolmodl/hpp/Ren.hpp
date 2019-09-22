@@ -5,47 +5,13 @@
 ///
 /// \sa https://wiki.libsdl.org/CategoryRender
 
-#include <cstdint>
-#include <optional>
-#include <iterator>
-#include <vector>
+#include "forwarddecl/Ren.hpp"
 
-#include <SDL.h>
-
-namespace rolmodl {
-  class Ren;
-  struct RenScale;
-
-  namespace ren {
-    struct Flags;
-    struct Info;
-
-    namespace driver {
-      unsigned int count();
-      Info info(const unsigned int i);
-    }
-  }
-
-  enum class BlendMode;
-  namespace blendMode::unsafe {
-    constexpr BlendMode fromSDLEnum(const SDL_BlendMode m) noexcept;
-    constexpr SDL_BlendMode toSDLEnum(const BlendMode m) noexcept;
-  }
-
-  struct SrcRectWH;
-  struct SrcRectXY;
-
-  struct DstRectWH;
-  struct DstRectXY;
-
-  struct Flip;
-}
-
-#include "Base.hpp"
+#include "forwarddecl/Win.hpp"
+#include "forwarddecl/Tex.hpp"
+#include "forwarddecl/Base.hpp"
 #include "Geom.hpp"
-#include "Win.hpp"
 #include "PixelFmt.hpp"
-#include "Tex.hpp"
 
 namespace rolmodl {
   /// \brief Describes how colors are combined when rendering twice to the same place.

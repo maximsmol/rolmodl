@@ -5,19 +5,11 @@
 ///
 /// \sa https://wiki.libsdl.org/CategoryVideo
 
-#include <cstdint>
+#include "forwarddecl/Win.hpp"
 
-#include <SDL.h>
-
-namespace rolmodl {
-  class Win_Base;
-  class Win;
-  class Win_SW;
-}
-
-#include "Base.hpp"
-#include "Geom.hpp"
-#include "PixelFmt.hpp"
+#include "forwarddecl/Geom.hpp"
+#include "forwarddecl/PixelFmt.hpp"
+#include "forwarddecl/Base.hpp"
 
 namespace rolmodl {
   namespace win {

@@ -3,6 +3,8 @@
 #include <utility>
 #include <cassert>
 
+#include "hpp/Ren.hpp"
+
 namespace rolmodl {
   using detail::throwOnErr;
 
