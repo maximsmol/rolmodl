@@ -4,6 +4,10 @@
 #include <utility>
 #include <cassert>
 
+#include "hpp/Base.hpp"
+#include "hpp/Win.hpp"
+#include "hpp/Tex.hpp"
+
 namespace rolmodl {
   using detail::throwOnErr;
 

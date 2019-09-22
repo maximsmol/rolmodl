@@ -3,6 +3,9 @@
 #include <utility>
 #include <cassert>
 
+#include "hpp/Geom.hpp"
+#include "hpp/Base.hpp"
+
 namespace rolmodl {
   using detail::throwOnErr;
 

@@ -1,8 +1,6 @@
 #pragma once
 
-#include <cstdint>
-
-#include <SDL.h>
+#include "forwarddecl/PixelFmt.hpp"
 
 namespace rolmodl::pixelfmt {
   enum class Id {
