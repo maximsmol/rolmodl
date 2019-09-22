@@ -304,10 +304,10 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <tr class="memitem:a6fd05b0f1334b697908794f4031703c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a6fd05b0f1334b697908794f4031703c1">setViewport</a> (const <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> r)</td></tr>
 <tr class="memdesc:a6fd05b0f1334b697908794f4031703c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the subarea of the target used for drawing to the rectangle <code>r</code>.  <a href="#a6fd05b0f1334b697908794f4031703c1">More...</a><br /></td></tr>
 <tr class="separator:a6fd05b0f1334b697908794f4031703c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad94e8ee4286a027a7cc3d7d1bca405a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ad94e8ee4286a027a7cc3d7d1bca405a3">getBlendMode</a> ()</td></tr>
+<tr class="memitem:ad94e8ee4286a027a7cc3d7d1bca405a3"><td class="memItemLeft" align="right" valign="top">BlendMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ad94e8ee4286a027a7cc3d7d1bca405a3">getBlendMode</a> ()</td></tr>
 <tr class="memdesc:ad94e8ee4286a027a7cc3d7d1bca405a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the blending mode used for <code>draw</code> operations. Textures have their own separate belnding mode.  <a href="#ad94e8ee4286a027a7cc3d7d1bca405a3">More...</a><br /></td></tr>
 <tr class="separator:ad94e8ee4286a027a7cc3d7d1bca405a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac15304b9c3d9b22306cca71f7d0798e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ac15304b9c3d9b22306cca71f7d0798e3">setBlendMode</a> (const <a class="el" href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a> m)</td></tr>
+<tr class="memitem:ac15304b9c3d9b22306cca71f7d0798e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ac15304b9c3d9b22306cca71f7d0798e3">setBlendMode</a> (const BlendMode m)</td></tr>
 <tr class="memdesc:ac15304b9c3d9b22306cca71f7d0798e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the blending mode used for <code>draw</code> operations to <code>m</code>. Does not effect how textures are blended.  <a href="#ac15304b9c3d9b22306cca71f7d0798e3">More...</a><br /></td></tr>
 <tr class="separator:ac15304b9c3d9b22306cca71f7d0798e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcff91a11c65937bbcadf7412628f13b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrolmodl_1_1_r_g_b_a.html">RGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#abcff91a11c65937bbcadf7412628f13b">color</a> ()</td></tr>
@@ -330,7 +330,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>The renderer managed by this class may actually support rendering to texture, based on the configuration with which it is created. However, it does not provide any methods to use this ability because no effort is made to ensure that the support was actually enabled.</p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_Renderer">https://wiki.libsdl.org/SDL_Renderer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ren_8hpp_source.html#l00333">333</a> of file <a class="el" href="_ren_8hpp_source.html">Ren.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ren_8hpp_source.html#l00299">299</a> of file <a class="el" href="_ren_8hpp_source.html">Ren.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a94c8adb6da087f831273ba46f62ddcbf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94c8adb6da087f831273ba46f62ddcbf">&#9670;&nbsp;</a></span>Ren() <span class="overload">[1/4]</span></h2>
@@ -2555,7 +2555,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a> rolmodl::Ren::getBlendMode </td>
+          <td class="memname">BlendMode rolmodl::Ren::getBlendMode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2578,7 +2578,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">void rolmodl::Ren::setBlendMode </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a>&#160;</td>
+          <td class="paramtype">const BlendMode&#160;</td>
           <td class="paramname"><em>m</em></td><td>)</td>
           <td></td>
         </tr>

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['xy',['xy',['../structrolmodl_1_1geom_1_1_rect_w_h.html#aa4f1d9f3ff2d3f082f0c53ddf193f502',1,'rolmodl::geom::RectWH::xy()'],['../structrolmodl_1_1_src_rect_w_h.html#a0c4470549655dc80c8e57c89090da3fb',1,'rolmodl::SrcRectWH::xy()'],['../structrolmodl_1_1_dst_rect_w_h.html#a30c0d3784b2333851160c400251d01ae',1,'rolmodl::DstRectWH::xy()']]]
+  ['_7eren',['~Ren',['../classrolmodl_1_1_ren.html#a1d4f0ca1a8c36db2b2b1f43b29370e9c',1,'rolmodl::Ren']]],
+  ['_7esdlstring',['~SDLString',['../classrolmodl_1_1_s_d_l_string.html#a54a1fbdc689fe8fc9284fb2787914442',1,'rolmodl::SDLString']]],
+  ['_7ewin_5fbase',['~Win_Base',['../classrolmodl_1_1_win___base.html#a42f630fc07be4c39c9fb424bfbf5d398',1,'rolmodl::Win_Base']]]
 ];

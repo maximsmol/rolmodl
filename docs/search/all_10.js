@@ -2,7 +2,6 @@ var searchData=
 [
   ['r',['r',['../structrolmodl_1_1_border_sizes.html#a3ae3799a0ae840b26b76b966b71c0552',1,'rolmodl::BorderSizes']]],
   ['raise',['raise',['../classrolmodl_1_1_win___base.html#aecd20d7aa4e49e52052c2db0ecde2dd8',1,'rolmodl::Win_Base']]],
-  ['ram',['ram',['../_base_8hpp.html#a70ff276777bab09843e24810c773e7cf',1,'rolmodl::sys']]],
   ['raw',['raw',['../structrolmodl_1_1_flip.html#adb72dce7da7e3057424a596f09478395',1,'rolmodl::Flip::raw()'],['../structrolmodl_1_1ren_1_1_flags.html#ab8d1ce57f22a214f382c9a2385e42202',1,'rolmodl::ren::Flags::raw()'],['../structrolmodl_1_1win_1_1_flags.html#a6e3024e05b08cb7c2659e43e730431ac',1,'rolmodl::win::Flags::raw()']]],
   ['recorded',['Recorded',['../structrolmodl_1_1event_1_1gesture_1_1custom_1_1_recorded.html',1,'rolmodl::event::gesture::custom']]],
   ['rectwh',['RectWH',['../structrolmodl_1_1geom_1_1_rect_w_h.html',1,'rolmodl::geom::RectWH'],['../structrolmodl_1_1geom_1_1_rect_w_h.html#a1caf46da21836b3a091eb404f89f17b3',1,'rolmodl::geom::RectWH::RectWH(const int argX, const int argY, const int argW, const int argH) noexcept'],['../structrolmodl_1_1geom_1_1_rect_w_h.html#aa54ac63c91765fa089da14ff41346d0d',1,'rolmodl::geom::RectWH::RectWH(const SDL_Rect r) noexcept']]],
@@ -11,7 +10,6 @@ var searchData=
   ['remapped',['Remapped',['../structrolmodl_1_1event_1_1controller_1_1device_1_1_remapped.html',1,'rolmodl::event::controller::device']]],
   ['removed',['Removed',['../structrolmodl_1_1event_1_1controller_1_1device_1_1_removed.html',1,'rolmodl::event::controller::device::Removed'],['../structrolmodl_1_1event_1_1joystick_1_1device_1_1_removed.html',1,'rolmodl::event::joystick::device::Removed'],['../structrolmodl_1_1event_1_1audio__device_1_1_removed.html',1,'rolmodl::event::audio_device::Removed']]],
   ['ren',['Ren',['../classrolmodl_1_1_ren.html',1,'rolmodl::Ren'],['../classrolmodl_1_1_ren.html#a94c8adb6da087f831273ba46f62ddcbf',1,'rolmodl::Ren::Ren(Win &amp;win, int i, ren::Flags flags)'],['../classrolmodl_1_1_ren.html#a8d363eb4e75ddc647d01b89e91116a97',1,'rolmodl::Ren::Ren(Win &amp;win, ren::Flags flags)'],['../classrolmodl_1_1_ren.html#a7ba12e8312bb57444ed47e132493a96b',1,'rolmodl::Ren::Ren(Win &amp;win, int i)'],['../classrolmodl_1_1_ren.html#ac3687756fae32d98b8248d7748124555',1,'rolmodl::Ren::Ren(Win &amp;win)'],['../classrolmodl_1_1_ren.html#a1ce4b1ae4f51b5337f704ea85162ddc7',1,'rolmodl::Ren::Ren(const Ren &amp;that)=delete'],['../classrolmodl_1_1_ren.html#aa4f178127a5a2f6a9c0393c288142742',1,'rolmodl::Ren::Ren(Ren &amp;&amp;that) noexcept']]],
-  ['ren_2ehpp',['Ren.hpp',['../_ren_8hpp.html',1,'']]],
   ['renscale',['RenScale',['../structrolmodl_1_1_ren_scale.html',1,'rolmodl']]],
   ['rentex',['RenTex',['../classrolmodl_1_1_ren_tex.html',1,'rolmodl']]],
   ['resized',['Resized',['../structrolmodl_1_1event_1_1window_1_1_resized.html',1,'rolmodl::event::window']]],
