@@ -1,0 +1,46 @@
+https://wiki.libsdl.org/APIByCategory
+  NO https://wiki.libsdl.org/CategoryInit
+  NO https://wiki.libsdl.org/CategoryHints
+  PARTIAL https://wiki.libsdl.org/CategoryError
+    sdlexception
+    MAKE TODO
+  NO https://wiki.libsdl.org/CategoryLog
+  NO https://wiki.libsdl.org/CategoryAssertions
+  NO https://wiki.libsdl.org/CategoryVersion
+  PARTIAL https://wiki.libsdl.org/CategoryVideo
+    src/rolmodl/hpp/todo/Win.txt
+  PARTIAL https://wiki.libsdl.org/CategoryRender
+    src/rolmodl/hpp/todo/Ren.txt
+  PARTIAL https://wiki.libsdl.org/CategoryPixels
+    MAKE TODO
+  NO https://wiki.libsdl.org/CategoryRect
+  PARTIAL https://wiki.libsdl.org/CategorySurface
+    src/rolmodl/hpp/todo/SWTex.txt
+  NO https://wiki.libsdl.org/CategorySWM
+  YES https://wiki.libsdl.org/CategoryClipboard
+  NO https://wiki.libsdl.org/CategoryVulkan
+  PARTIAL https://wiki.libsdl.org/CategoryEvents
+    src/rolmodl/hpp/todo/Event.txt
+    MAKE TODO
+  PARTIAL https://wiki.libsdl.org/CategoryKeyboard
+    src/rolmodl/hpp/todo/Kb.txt
+  PARTIAL https://wiki.libsdl.org/CategoryMouse
+    src/rolmodl/hpp/todo/Mouse.txt
+  NO https://wiki.libsdl.org/CategoryJoystick
+  NO https://wiki.libsdl.org/CategoryGameController
+  NO https://wiki.libsdl.org/CategoryForceFeedback
+  NO https://wiki.libsdl.org/CategoryAudio
+  NO https://wiki.libsdl.org/CategoryThread
+  NO https://wiki.libsdl.org/CategoryMutex
+  NO https://wiki.libsdl.org/CategoryAtomic
+  NO https://wiki.libsdl.org/CategoryTimer
+  NO https://wiki.libsdl.org/CategoryFilesystem
+  NO https://wiki.libsdl.org/CategoryIO
+  NO https://wiki.libsdl.org/CategorySharedObject
+  YES https://wiki.libsdl.org/CategoryPlatform
+  YES https://wiki.libsdl.org/CategoryCPU
+  NO https://wiki.libsdl.org/CategoryEndian
+  NO https://wiki.libsdl.org/CategoryBits
+  YES https://wiki.libsdl.org/CategoryPower
+  NO https://wiki.libsdl.org/CategorySystem
+  NO https://wiki.libsdl.org/CategoryStandard
