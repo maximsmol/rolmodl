@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pixelfmts_509',['pixelFmts',['../structrolmodl_1_1ren_1_1_info.html#ad9234e5b04601035bef7c4f779d7041e',1,'rolmodl::ren::Info']]]
+  ['extent_5fv_5053',['extent_v',['http://en.cppreference.com/w/cpp/types/extent.html',1,'std::extent_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::extent_v()']]]
 ];

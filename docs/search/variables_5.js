@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['size_511',['size',['../structrolmodl_1_1sys_1_1_display_mode.html#a57aaf7f5d3de52107068ce5a8f1aa123',1,'rolmodl::sys::DisplayMode']]]
+  ['has_5funique_5fobject_5frepresentations_5fv_5058',['has_unique_object_representations_v',['http://en.cppreference.com/w/cpp/types/has_unique_object_representations.html',1,'std']]],
+  ['has_5fvirtual_5fdestructor_5fv_5059',['has_virtual_destructor_v',['http://en.cppreference.com/w/cpp/types/has_virtual_destructor.html',1,'std::has_virtual_destructor_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::has_virtual_destructor_v()']]]
 ];

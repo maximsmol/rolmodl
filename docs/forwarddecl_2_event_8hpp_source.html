@@ -72,13 +72,13 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;variant&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/cstdint.html">cstdint</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/variant.html">variant</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/optional.html">optional</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>rolmodl {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerolmodl.html">rolmodl</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">enum class</span> ButtonState;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">namespace </span>button_state::unsafe {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    constexpr ButtonState fromSDLEnum(<span class="keyword">const</span> uint8_t s) noexcept;</div>
@@ -205,7 +205,7 @@ $(function() {
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">using</span> Event = std::variant&lt;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">using</span> Event = <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/variant.html">std::variant</a>&lt;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    event::Quit,</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    event::User,</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
@@ -277,10 +277,14 @@ $(function() {
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    event::audio_device::Added,</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    event::audio_device::Removed&gt;;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keyword">namespace </span>event {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    std::optional&lt;Event&gt; poll() noexcept;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional&lt;Event&gt;</a> poll() noexcept;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acstdint_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/cstdint.html">cstdint</a></div></div>
+<div class="ttc" id="anamespacerolmodl_html"><div class="ttname"><a href="namespacerolmodl.html">rolmodl</a></div><div class="ttdoc">Main namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_base_8hpp_source.html#l00020">Base.hpp:20</a></div></div>
+<div class="ttc" id="aoptional_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/optional.html">optional</a></div></div>
+<div class="ttc" id="avariant_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/variant.html">variant</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,6 +1,6 @@
 #pragma once
 
-/// \file Win.hpp
+/// \file
 /// Support for SDL windows.
 ///
 /// \sa https://wiki.libsdl.org/CategoryVideo
@@ -11,7 +11,9 @@
 #include "forwarddecl/PixelFmt.hpp"
 #include "forwarddecl/Base.hpp"
 
+/// Main namespace
 namespace rolmodl {
+  /// \link rolmodl::Win \endlink -related members
   namespace win {
     /// \brief Window configuration (flags) container.
     ///
@@ -174,6 +176,7 @@ namespace rolmodl {
         uint32_t data_;
     };
 
+    ///
     namespace unsafe {
       // Win_Base fromId();
     }
