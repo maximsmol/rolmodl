@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['unsafedriverdata',['unsafeDriverData',['../structrolmodl_1_1sys_1_1_display_mode.html#a0bc3775312c43e0e3e251ed3f9338f1e',1,'rolmodl::sys::DisplayMode']]]
+  ['max_5fblocks_5fper_5fchunk_5146',['max_blocks_per_chunk',['http://en.cppreference.com/w/cpp/memory/pool_options.html',1,'std::pmr::pool_options']]],
+  ['maxtexsize_5147',['maxTexSize',['../structrolmodl_1_1ren_1_1_info.html#a3ce6d76d0cf566f758a9ec77af033512',1,'rolmodl::ren::Info']]]
 ];

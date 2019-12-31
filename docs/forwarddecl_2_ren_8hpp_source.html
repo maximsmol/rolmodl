@@ -72,46 +72,62 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/cstdint.html">cstdint</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/optional.html">optional</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/iterator.html">iterator</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/vector.html">vector</a>&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>rolmodl {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">enum class</span> <a class="code" href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">namespace </span>blendMode::unsafe {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    constexpr <a class="code" href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a> fromSDLEnum(<span class="keyword">const</span> SDL_BlendMode m) noexcept;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    constexpr SDL_BlendMode toSDLEnum(<span class="keyword">const</span> BlendMode m) noexcept;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerolmodl.html">rolmodl</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">enum class</span> <a class="code" href="namespacerolmodl.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacerolmodl_1_1blend_mode.html">   12</a></span>&#160;  <span class="keyword">namespace </span>blendMode::unsafe {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    constexpr <a class="code" href="namespacerolmodl.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a> fromSDLEnum(<span class="keyword">const</span> SDL_BlendMode m) noexcept;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    constexpr SDL_BlendMode toSDLEnum(<span class="keyword">const</span> <a class="code" href="namespacerolmodl.html#a642c095a75ddf840ce3484384ee5c822">BlendMode</a> m) noexcept;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">struct </span>Flip;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1_flip.html">Flip</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">namespace </span>ren {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">struct </span>Flags;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">struct </span>Info;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacerolmodl_1_1ren.html">   19</a></span>&#160;  <span class="keyword">namespace </span>ren {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1ren_1_1_flags.html">Flags</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1ren_1_1_info.html">Info</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">namespace </span>driver {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_base_8hpp.html#a865ed7f0572917341f90cb9c02a13e2f">count</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      Info info(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacerolmodl_1_1ren_1_1driver.html">   23</a></span>&#160;    <span class="keyword">namespace </span>driver {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="namespacerolmodl_1_1ren_1_1driver.html#a22bd22bcde2f3a25868fb61df840e36c">count</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <a class="code" href="structrolmodl_1_1ren_1_1_info.html">Info</a> <a class="code" href="namespacerolmodl_1_1ren_1_1driver.html#aa51e77f4478a9f134a63770286b3c6e5">info</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">struct </span>RenScale;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1_ren_scale.html">RenScale</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">struct </span>SrcRectWH;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">struct </span>SrcRectXY;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1_src_rect_w_h.html">SrcRectWH</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1_src_rect_x_y.html">SrcRectXY</a>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">struct </span>DstRectWH;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">struct </span>DstRectXY;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1_dst_rect_w_h.html">DstRectWH</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">struct </span><a class="code" href="structrolmodl_1_1_dst_rect_x_y.html">DstRectXY</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">class </span>Ren;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">class </span>TexRen;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">class </span><a class="code" href="classrolmodl_1_1_ren.html">Ren</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">class </span><a class="code" href="classrolmodl_1_1_tex_ren.html">TexRen</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="a_ren_8hpp_html_a642c095a75ddf840ce3484384ee5c822"><div class="ttname"><a href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">rolmodl::BlendMode</a></div><div class="ttdeci">BlendMode</div><div class="ttdoc">Describes how colors are combined when rendering twice to the same place.</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00022">Ren.hpp:22</a></div></div>
-<div class="ttc" id="a_base_8hpp_html_a865ed7f0572917341f90cb9c02a13e2f"><div class="ttname"><a href="_base_8hpp.html#a865ed7f0572917341f90cb9c02a13e2f">rolmodl::sys::driver::count</a></div><div class="ttdeci">unsigned int count()</div><div class="ttdoc">Query the amount of available video drivers.</div></div>
+<div class="ttc" id="astructrolmodl_1_1_ren_scale_html"><div class="ttname"><a href="structrolmodl_1_1_ren_scale.html">rolmodl::RenScale</a></div><div class="ttdoc">Rendering scaling factors.</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00244">Ren.hpp:244</a></div></div>
+<div class="ttc" id="astructrolmodl_1_1_src_rect_w_h_html"><div class="ttname"><a href="structrolmodl_1_1_src_rect_w_h.html">rolmodl::SrcRectWH</a></div><div class="ttdoc">Rectangle specifying the source rectangle for a rendering operation by its top left corner coordinate...</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00252">Ren.hpp:252</a></div></div>
+<div class="ttc" id="aclassrolmodl_1_1_ren_html"><div class="ttname"><a href="classrolmodl_1_1_ren.html">rolmodl::Ren</a></div><div class="ttdoc">Renderer class that does not support rendering to texture. Use rolmodl::TexRen for rendering to textu...</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00301">Ren.hpp:301</a></div></div>
+<div class="ttc" id="aclassrolmodl_1_1_tex_ren_html"><div class="ttname"><a href="classrolmodl_1_1_tex_ren.html">rolmodl::TexRen</a></div><div class="ttdoc">Renderer class that supports rendering to texture. Use rolmodl::Ren if you do not need support for re...</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00597">Ren.hpp:597</a></div></div>
+<div class="ttc" id="avector_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/vector.html">vector</a></div></div>
+<div class="ttc" id="aiterator_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/iterator.html">iterator</a></div></div>
+<div class="ttc" id="astructrolmodl_1_1_dst_rect_w_h_html"><div class="ttname"><a href="structrolmodl_1_1_dst_rect_w_h.html">rolmodl::DstRectWH</a></div><div class="ttdoc">Rectangle specifying the destination rectangle for a rendering operation by its top left corner coord...</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00273">Ren.hpp:273</a></div></div>
+<div class="ttc" id="anamespacerolmodl_1_1ren_1_1driver_html_a22bd22bcde2f3a25868fb61df840e36c"><div class="ttname"><a href="namespacerolmodl_1_1ren_1_1driver.html#a22bd22bcde2f3a25868fb61df840e36c">rolmodl::ren::driver::count</a></div><div class="ttdeci">unsigned int count()</div><div class="ttdoc">Query the amount of available rendering drivers.</div></div>
+<div class="ttc" id="astructrolmodl_1_1ren_1_1_info_html"><div class="ttname"><a href="structrolmodl_1_1ren_1_1_info.html">rolmodl::ren::Info</a></div><div class="ttdoc">Information about a rendering driver.</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00211">Ren.hpp:211</a></div></div>
+<div class="ttc" id="astructrolmodl_1_1_flip_html"><div class="ttname"><a href="structrolmodl_1_1_flip.html">rolmodl::Flip</a></div><div class="ttdoc">Rendering flip configuration container.</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00070">Ren.hpp:70</a></div></div>
+<div class="ttc" id="acstdint_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/cstdint.html">cstdint</a></div></div>
+<div class="ttc" id="astructrolmodl_1_1_dst_rect_x_y_html"><div class="ttname"><a href="structrolmodl_1_1_dst_rect_x_y.html">rolmodl::DstRectXY</a></div><div class="ttdoc">Rectangle specifying the destination rectangle for a rendering operation by its top left and bottom r...</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00278">Ren.hpp:278</a></div></div>
+<div class="ttc" id="anamespacerolmodl_html"><div class="ttname"><a href="namespacerolmodl.html">rolmodl</a></div><div class="ttdoc">Main namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_base_8hpp_source.html#l00020">Base.hpp:20</a></div></div>
+<div class="ttc" id="astructrolmodl_1_1ren_1_1_flags_html"><div class="ttname"><a href="structrolmodl_1_1ren_1_1_flags.html">rolmodl::ren::Flags</a></div><div class="ttdoc">Renderer configuration (flags) container.</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00132">Ren.hpp:132</a></div></div>
+<div class="ttc" id="anamespacerolmodl_html_a642c095a75ddf840ce3484384ee5c822"><div class="ttname"><a href="namespacerolmodl.html#a642c095a75ddf840ce3484384ee5c822">rolmodl::BlendMode</a></div><div class="ttdeci">BlendMode</div><div class="ttdoc">Describes how colors are combined when rendering twice to the same place.</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00021">Ren.hpp:21</a></div></div>
+<div class="ttc" id="aoptional_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/optional.html">optional</a></div></div>
+<div class="ttc" id="anamespacerolmodl_1_1ren_1_1driver_html_aa51e77f4478a9f134a63770286b3c6e5"><div class="ttname"><a href="namespacerolmodl_1_1ren_1_1driver.html#aa51e77f4478a9f134a63770286b3c6e5">rolmodl::ren::driver::info</a></div><div class="ttdeci">Info info(const unsigned int i)</div><div class="ttdoc">Query the driver info for the ith rendering driver.</div></div>
+<div class="ttc" id="astructrolmodl_1_1_src_rect_x_y_html"><div class="ttname"><a href="structrolmodl_1_1_src_rect_x_y.html">rolmodl::SrcRectXY</a></div><div class="ttdoc">Rectangle specifying the source rectangle for a rendering operation by its top left and bottom right ...</div><div class="ttdef"><b>Definition:</b> <a href="_ren_8hpp_source.html#l00257">Ren.hpp:257</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

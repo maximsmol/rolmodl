@@ -1,6 +1,6 @@
 #pragma once
 
-/// \file Ren.hpp
+/// \file
 /// Common SDL rendering structs and support for SDL accelerated rendering.
 ///
 /// \sa https://wiki.libsdl.org/CategoryRender
@@ -13,10 +13,9 @@
 #include "Geom.hpp"
 #include "PixelFmt.hpp"
 
+/// Main namespace
 namespace rolmodl {
   /// \brief Describes how colors are combined when rendering twice to the same place.
-  ///
-  /// \todo Guess what, there are docs for each of the values, but doxygen won't show them to you
   ///
   /// \sa https://wiki.libsdl.org/SDL_BlendMode
   enum class BlendMode {
@@ -40,6 +39,7 @@ namespace rolmodl {
     /// `output A = output A`
     mod
   };
+  /// Unsafe \link rolmodl::BlendMode \endlink methods
   namespace blendMode::unsafe {
     /// \brief Convert an <a href="https://wiki.libsdl.org/SDL_BlendMode">`SDL_BlendMode`</a> value to a \link rolmodl::BlendMode \endlink value.
     constexpr BlendMode fromSDLEnum(const SDL_BlendMode m) noexcept {
@@ -120,6 +120,7 @@ namespace rolmodl {
       uint32_t data_;
   };
 
+  /// \link rolmodl::Ren \endlink -related members
   namespace ren {
     /// \brief Renderer configuration (flags) container.
     ///
@@ -218,6 +219,7 @@ namespace rolmodl {
       geom::Size maxTexSize;
     };
 
+    /// Renderer driver information functions
     namespace driver {
       // fixme: there is something off with this and exception guarantees, not sure if its good design
 

@@ -1,12 +1,13 @@
 #pragma once
 
-/// \file Geom.hpp
+/// \file
 /// `rolmodl` geometric primitives.
 ///
 /// \sa https://wiki.libsdl.org/CategoryRect
 
 #include "forwarddecl/Geom.hpp"
 
+/// Geometry structures
 namespace rolmodl::geom {
   /// \brief `int` point data type. The value is in pixels. Semantically different from \link rolmodl::geom::Size \endlink.
   /// \sa https://wiki.libsdl.org/SDL_Point

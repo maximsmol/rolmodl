@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size',['size',['../structrolmodl_1_1sys_1_1_display_mode.html#a57aaf7f5d3de52107068ce5a8f1aa123',1,'rolmodl::sys::DisplayMode']]]
+  ['largest_5frequired_5fpool_5fblock_5145',['largest_required_pool_block',['http://en.cppreference.com/w/cpp/memory/pool_options.html',1,'std::pmr::pool_options']]]
 ];

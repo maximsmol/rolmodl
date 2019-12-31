@@ -1,6 +1,6 @@
 #pragma once
 
-/// \file Base.hpp
+/// \file
 /// Support for base SDL features. rolmodl utilities.
 ///
 /// \sa https://wiki.libsdl.org/CategoryPower
@@ -16,7 +16,9 @@
 #include "Geom.hpp"
 #include "PixelFmt.hpp"
 
+/// Main namespace
 namespace rolmodl {
+  /// System information functions and enums
   namespace sys {
     /// \brief OS type enum.
     ///
@@ -53,7 +55,7 @@ namespace rolmodl {
       unknown
     };
 
-    /// \brief Human-readable OS name. Use \link rolmodl::sys::id \endlink for OS identification purposes instead of this method.
+    /// \brief Human-readable OS name. Use \link rolmodl::sys::id() \endlink for OS identification purposes instead of this method.
     /// \sa https://wiki.libsdl.org/SDL_GetPlatform
     const char* name() noexcept;
     /// \brief Get id of the OS on which the code is running. May differ from whatever operating system the code was compiled on.
@@ -65,6 +67,7 @@ namespace rolmodl {
     /// \brief Get the number of available logical CPU cores.
     /// \sa https://wiki.libsdl.org/SDL_GetCPUCount
     unsigned int logicalCores() noexcept;
+    /// CPU information functions
     namespace cpu {
       /// \brief Get the CPU L1 cache line size in bytes.
       /// \sa https://wiki.libsdl.org/SDL_GetCPUCacheLineSize
@@ -128,6 +131,7 @@ namespace rolmodl {
       bool hasSSE42() noexcept;
     }
 
+    /// Power state functions and enums
     namespace pwr {
       /// \brief Indicates battery status a.k.a. the system power state.
       /// \sa https://wiki.libsdl.org/SDL_PowerState
@@ -164,6 +168,7 @@ namespace rolmodl {
       Status status() noexcept;
     }
 
+    /// Clipboard functions
     namespace clipboard {
       /// \brief Query whether thhe clipboard has text contents.
       /// \sa https://wiki.libsdl.org/SDL_HasClipboardText
@@ -176,6 +181,7 @@ namespace rolmodl {
       void setText(const char* x);
     }
 
+    /// Screensaver functions
     namespace screensaver {
       /// \brief Enable system screensaver.
       /// \sa https://wiki.libsdl.org/SDL_EnableScreenSaver
@@ -188,6 +194,7 @@ namespace rolmodl {
       bool enabled() noexcept;
     }
 
+    /// Video driver functions
     namespace driver {
       /// \brief Query the amount of available video drivers.
       /// \sa https://wiki.libsdl.org/SDL_GetNumVideoDrivers
@@ -203,10 +210,9 @@ namespace rolmodl {
       std::optional<const char*> current() noexcept;
     }
 
+    /// Unsafe video driver functions
     namespace display::unsafe {
       /// \brief Get display information for the `i`th display. Unsafe because there is no bounds checking on the index.
-      ///
-      /// Equivalent to \link rolmodl::sys::Display::Display \endlink.
       Display byIndex(unsigned int i);
 
       /// \brief Get the number of displays. Unsafe because the return value is unreliable and may lead to out-of-bounds errors if its cached and used for loop iteration.
@@ -275,10 +281,11 @@ namespace rolmodl {
 
         float ddpi_, hdpi_, vdpi_;
 
-        /// \link rolmodl::sys::display::unsafe::byIndex \endlink
+        /// \link rolmodl::sys::display::unsafe::byIndex() \endlink
         friend Display display::unsafe::byIndex(unsigned int i);
     };
 
+    /// Unsafe display information functions
     namespace display::mode::unsafe {
       /// \brief Get the amount of display modes available for the `n`th display.
       ///
@@ -391,6 +398,7 @@ namespace rolmodl {
       const char* msg_;
   };
 
+  /// Implementation details
   namespace detail {
     /// \brief Throw a \link rolmodl::sdlexception \endlink if `code < 0`.
     int throwOnErr(const int code);

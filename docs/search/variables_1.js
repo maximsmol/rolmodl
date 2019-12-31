@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['maxtexsize_507',['maxTexSize',['../structrolmodl_1_1ren_1_1_info.html#a3ce6d76d0cf566f758a9ec77af033512',1,'rolmodl::ren::Info']]]
+  ['capacity_5050',['capacity',['http://en.cppreference.com/w/cpp/experimental/fs/space_info.html',1,'std::experimental::filesystem::space_info::capacity()'],['http://en.cppreference.com/w/cpp/filesystem/space_info.html',1,'std::filesystem::space_info::capacity()']]],
+  ['conjunction_5fv_5051',['conjunction_v',['http://en.cppreference.com/w/cpp/types/conjunction.html',1,'std']]]
 ];

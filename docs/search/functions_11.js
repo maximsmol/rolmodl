@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['vdpi_464',['vdpi',['../structrolmodl_1_1sys_1_1_display.html#a8e36f3a5d672c3dc919d2e35b4469368',1,'rolmodl::sys::Display']]],
-  ['viewport_465',['viewport',['../classrolmodl_1_1_ren.html#aa53a634ab78eec203afa489365e5a467',1,'rolmodl::Ren']]]
+  ['qsort_4357',['qsort',['http://en.cppreference.com/w/cpp/algorithm/qsort.html',1,'std']]],
+  ['queue_4358',['queue',['http://en.cppreference.com/w/cpp/container/queue/queue.html',1,'std::queue']]],
+  ['quick_5fexit_4359',['quick_exit',['http://en.cppreference.com/w/cpp/utility/program/quick_exit.html',1,'std']]],
+  ['quiet_5fnan_4360',['quiet_NaN',['http://en.cppreference.com/w/cpp/types/numeric_limits/quiet_NaN.html',1,'std::numeric_limits']]],
+  ['quoted_4361',['quoted',['http://en.cppreference.com/w/cpp/io/manip/quoted.html',1,'std']]]
 ];

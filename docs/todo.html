@@ -67,8 +67,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt>Member <a class="el" href="_ren_8hpp.html#a642c095a75ddf840ce3484384ee5c822">rolmodl::BlendMode</a>  </dt>
-<dd><a class="anchor" id="_todo000008"></a>Guess what, there are docs for each of the values, but doxygen won't show them to you </dd>
 <dt>Member <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html#a1caf46da21836b3a091eb404f89f17b3">rolmodl::geom::RectWH::RectWH</a>  (const int argX, const int argY, const int argW, const int argH) noexcept</dt>
 <dd><a class="anchor" id="_todo000006"></a>Replace <code>int</code>s with <a class="el" href="structrolmodl_1_1geom_1_1_pos.html">rolmodl::geom::Pos</a> and <a class="el" href="structrolmodl_1_1geom_1_1_size.html">rolmodl::geom::Size</a>? It's less convenient to initialize.  </dd>
 <dt>Member <a class="el" href="structrolmodl_1_1geom_1_1_rect_x_y.html#a9ff683b479b94f3636c5b806db04295f">rolmodl::geom::RectXY::RectXY</a>  (const int argX, const int argY, const int argX1, const int argY1) noexcept</dt>
@@ -80,41 +78,41 @@ $(function() {
 <dt>Class <a class="el" href="structrolmodl_1_1geom_1_1_x_y_int32.html">rolmodl::geom::XYInt32</a>  </dt>
 <dd><a class="anchor" id="_todo000005"></a>any other uses?  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#afc64806c91af8a4fc68772b48f74a0c0">rolmodl::Ren::clipRect</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000015"></a>What is the difference between clipping being disabled and the rectangle not being set yet.  </dd>
+<dd><a class="anchor" id="_todo000014"></a>What is the difference between clipping being disabled and the rectangle not being set yet.  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a14cf8776aaeda4093c4ec7f2d18d8ff1">rolmodl::Ren::drawLine</a>  (const geom::Pos a, const geom::Pos b)</dt>
-<dd><a class="anchor" id="_todo000012"></a> needs ContigousIterators, for which no check can be done at compile-time also needs SDL_Point structs, or byte-equivalent reinterpret_cast geom::Point? </dd>
+<dd><a class="anchor" id="_todo000011"></a> needs ContigousIterators, for which no check can be done at compile-time also needs SDL_Point structs, or byte-equivalent reinterpret_cast geom::Point? </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a3e3c98980fbb72637414de2ae9e399d9">rolmodl::Ren::fillScreen</a>  ()</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000014"></a>Rename to fillTarget </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000013"></a>Rename to fillTarget </p>
 <p class="enddd">How is this functionally different from clear()?  </p>
 </dd>
 <dt>Class <a class="el" href="structrolmodl_1_1ren_1_1_flags.html">rolmodl::ren::Flags</a>  </dt>
-<dd><a class="anchor" id="_todo000009"></a> todo: some flags might be mutually exclusive fixme: how does CreateSoftwareRenderer relate </dd>
+<dd><a class="anchor" id="_todo000008"></a> todo: some flags might be mutually exclusive fixme: how does CreateSoftwareRenderer relate </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#ad94e8ee4286a027a7cc3d7d1bca405a3">rolmodl::Ren::getBlendMode</a>  ()</dt>
-<dd><a class="anchor" id="_todo000023"></a>Verify that textures indeed ignore this.  </dd>
+<dd><a class="anchor" id="_todo000022"></a>Verify that textures indeed ignore this.  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#ab347d9250d3bf87a3e82cd169c0983af">rolmodl::Ren::getRealSize</a>  ()</dt>
-<dd><a class="anchor" id="_todo000019"></a>Explain how to use this with resolution-independent rendering.  </dd>
+<dd><a class="anchor" id="_todo000018"></a>Explain how to use this with resolution-independent rendering.  </dd>
 <dt>Member <a class="el" href="structrolmodl_1_1ren_1_1_info.html#aa46a4487559b79d861db53eb8646386c">rolmodl::ren::Info::name</a>  </dt>
-<dd><a class="anchor" id="_todo000010"></a>add examples  </dd>
+<dd><a class="anchor" id="_todo000009"></a>add examples  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a70bb7b365f0407eb5ca26f9738b97916">rolmodl::Ren::isClipOn</a>  () noexcept</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000016"></a>What is the difference between clipping being disabled and the rectangle not being set yet. </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000015"></a>What is the difference between clipping being disabled and the rectangle not being set yet. </p>
 <p class="enddd">not clear if false is an error state because the docs suggest "call `SDL_GetError()` for more information." if <code>SDL_FALSE</code> is returned.  </p>
 </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a25b139a4f131d49bdf1e16479cb3fff2">rolmodl::Ren::logicalSize</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000017"></a>Explain how to use this with resolution-independent rendering.  </dd>
+<dd><a class="anchor" id="_todo000016"></a>Explain how to use this with resolution-independent rendering.  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a95875b2363a214857c4e13f7d279c7d9">rolmodl::Ren::outlineScreen</a>  ()</dt>
-<dd><a class="anchor" id="_todo000013"></a>Rename to outlineTarget  </dd>
+<dd><a class="anchor" id="_todo000012"></a>Rename to outlineTarget  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a98755677dbf34659c4cb4907d47fc8ec">rolmodl::Ren::present</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000011"></a>How does this work with non-window rendering targets? </dd>
+<dd><a class="anchor" id="_todo000010"></a>How does this work with non-window rendering targets? </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a875caad1fc3af13ef79846ae6f7bec9e">rolmodl::Ren::scale</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000020"></a>Explain how to use this, including with resolution-independent rendering.  </dd>
+<dd><a class="anchor" id="_todo000019"></a>Explain how to use this, including with resolution-independent rendering.  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#ac15304b9c3d9b22306cca71f7d0798e3">rolmodl::Ren::setBlendMode</a>  (const BlendMode m)</dt>
-<dd><a class="anchor" id="_todo000024"></a>Verify that textures indeed ignore this.  </dd>
+<dd><a class="anchor" id="_todo000023"></a>Verify that textures indeed ignore this.  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#aebf35626b54367f3e9756350324e357d">rolmodl::Ren::setLogicalSize</a>  (const geom::Size s)</dt>
-<dd><a class="anchor" id="_todo000018"></a>Explain how to use this with resolution-independent rendering.  </dd>
+<dd><a class="anchor" id="_todo000017"></a>Explain how to use this with resolution-independent rendering.  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#a2d62b87cca12235be5f09e781b9237d1">rolmodl::Ren::setScale</a>  (const RenScale s)</dt>
-<dd><a class="anchor" id="_todo000021"></a>Explain how to use this, including with resolution-independent rendering.  </dd>
+<dd><a class="anchor" id="_todo000020"></a>Explain how to use this, including with resolution-independent rendering.  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_ren.html#aa53a634ab78eec203afa489365e5a467">rolmodl::Ren::viewport</a>  () noexcept</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000022"></a>How does this work? Does it scale? Clip? </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000021"></a>How does this work? Does it scale? Clip? </p>
 <p class="enddd">Explain how to use this, including with resolution-independent rendering.  </p>
 </dd>
 <dt>Class <a class="el" href="structrolmodl_1_1sys_1_1_display.html">rolmodl::sys::Display</a>  </dt>
@@ -124,15 +122,15 @@ $(function() {
 <dt>Class <a class="el" href="structrolmodl_1_1sys_1_1pwr_1_1_status.html">rolmodl::sys::pwr::Status</a>  </dt>
 <dd><a class="anchor" id="_todo000002"></a>: explain why a snapshot is used instead of separate functions </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_tex_ren.html#a8aaf3d0f0b308a5bccc3b8bfa4b0bea8">rolmodl::TexRen::setDefaultTarget</a>  ()</dt>
-<dd><a class="anchor" id="_todo000025"></a>What specifically is the default rendering target?  </dd>
+<dd><a class="anchor" id="_todo000024"></a>What specifically is the default rendering target?  </dd>
 <dt>Member <a class="el" href="classrolmodl_1_1_tex_ren.html#a600f4d1ffb29a73838f4b40106e8fe03">rolmodl::TexRen::unsafeGetTarget</a>  () noexcept</dt>
-<dd><a class="anchor" id="_todo000026"></a>Implement a class that does this safely?  </dd>
+<dd><a class="anchor" id="_todo000025"></a>Implement a class that does this safely?  </dd>
 <dt>Class <a class="el" href="structrolmodl_1_1win_1_1_flags.html">rolmodl::win::Flags</a>  </dt>
-<dd><a class="anchor" id="_todo000027"></a> fixme: no support for some window flags i dont understand todo: some flags are mutually exclusive </dd>
+<dd><a class="anchor" id="_todo000026"></a> fixme: no support for some window flags i dont understand todo: some flags are mutually exclusive </dd>
 <dt>Member <a class="el" href="structrolmodl_1_1win_1_1_flags.html#a58ad4049cd9baf3340cab0d84d1397a9">rolmodl::win::Flags::isOpengl</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000028"></a>add a "see also" on something about OpenGL.  </dd>
+<dd><a class="anchor" id="_todo000027"></a>add a "see also" on something about OpenGL.  </dd>
 <dt>Member <a class="el" href="structrolmodl_1_1win_1_1_flags.html#aa8fa7a9010a4cf3d1bf67a2199371312">rolmodl::win::Flags::withOpengl</a>  () const noexcept</dt>
-<dd><a class="anchor" id="_todo000029"></a>add a "see also" on something about OpenGL. </dd>
+<dd><a class="anchor" id="_todo000028"></a>add a "see also" on something about OpenGL. </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
