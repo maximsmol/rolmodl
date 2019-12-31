@@ -98,18 +98,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a234342f966d7e8e5973cf62e6eb7a268">operator=</a> (const <a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;that)</td></tr>
 <tr class="memdesc:a234342f966d7e8e5973cf62e6eb7a268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copying SDLStrings is not allowed as SDL does not provide a way to allocate a new string. We can only free existing strings. <br /></td></tr>
 <tr class="separator:a234342f966d7e8e5973cf62e6eb7a268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff533e3034de2e92cd42ef3791bf02b4"><td class="memItemLeft" align="right" valign="top"><a id="aff533e3034de2e92cd42ef3791bf02b4"></a>
-<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#aff533e3034de2e92cd42ef3791bf02b4">operator=</a> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&amp;that) noexcept</td></tr>
-<tr class="memdesc:aff533e3034de2e92cd42ef3791bf02b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>char*</code> of <code>that</code>. <br /></td></tr>
-<tr class="separator:aff533e3034de2e92cd42ef3791bf02b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a723534dfb82ceb8ad0a5cdfcbb2e8860"><td class="memItemLeft" align="right" valign="top"><a id="a723534dfb82ceb8ad0a5cdfcbb2e8860"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a723534dfb82ceb8ad0a5cdfcbb2e8860">unsafeRaw</a> () noexcept</td></tr>
-<tr class="memdesc:a723534dfb82ceb8ad0a5cdfcbb2e8860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>char*</code>. Unsafe because it allows invalidating the pointer by freeing it. <br /></td></tr>
-<tr class="separator:a723534dfb82ceb8ad0a5cdfcbb2e8860"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10ce5ce6a14b7463f1f16b15b7d44a9b"><td class="memItemLeft" align="right" valign="top"><a id="a10ce5ce6a14b7463f1f16b15b7d44a9b"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a10ce5ce6a14b7463f1f16b15b7d44a9b">unsafeRaw</a> () const noexcept</td></tr>
-<tr class="memdesc:a10ce5ce6a14b7463f1f16b15b7d44a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>char*</code> in a <code>const</code> context. Unsafe because it allows saving a pointer and using it after it has been freed. <br /></td></tr>
-<tr class="separator:a10ce5ce6a14b7463f1f16b15b7d44a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5ea348995c7d52cc620b8b9f2887bd"><td class="memItemLeft" align="right" valign="top"><a id="a5f5ea348995c7d52cc620b8b9f2887bd"></a>
+<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a5f5ea348995c7d52cc620b8b9f2887bd">operator=</a> (<a class="el" href="classrolmodl_1_1_s_d_l_string.html">SDLString</a> &amp;&amp;that) noexcept</td></tr>
+<tr class="memdesc:a5f5ea348995c7d52cc620b8b9f2887bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>char*</code> of <code>that</code>. <br /></td></tr>
+<tr class="separator:a5f5ea348995c7d52cc620b8b9f2887bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c8ab8a2a925e30f3c8ed803b5b5290"><td class="memItemLeft" align="right" valign="top"><a id="af9c8ab8a2a925e30f3c8ed803b5b5290"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#af9c8ab8a2a925e30f3c8ed803b5b5290">unsafeRaw</a> () noexcept</td></tr>
+<tr class="memdesc:af9c8ab8a2a925e30f3c8ed803b5b5290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>char*</code>. Unsafe because it allows invalidating the pointer by freeing it. <br /></td></tr>
+<tr class="separator:af9c8ab8a2a925e30f3c8ed803b5b5290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107ba22ccb0c64bb76faf7c8fc226ed5"><td class="memItemLeft" align="right" valign="top"><a id="a107ba22ccb0c64bb76faf7c8fc226ed5"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_s_d_l_string.html#a107ba22ccb0c64bb76faf7c8fc226ed5">unsafeRaw</a> () const noexcept</td></tr>
+<tr class="memdesc:a107ba22ccb0c64bb76faf7c8fc226ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>char*</code> in a <code>const</code> context. Unsafe because it allows saving a pointer and using it after it has been freed. <br /></td></tr>
+<tr class="separator:a107ba22ccb0c64bb76faf7c8fc226ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -129,9 +129,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container for SDL-owned strings that must be freed with <code>SDL_free</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00408">408</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00425">425</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/rolmodl/hpp/<a class="el" href="_base_8hpp_source.html">Base.hpp</a></li>
+<li>src/rolmodl/<a class="el" href="_base_8cpp_source.html">Base.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

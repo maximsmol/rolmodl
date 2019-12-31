@@ -78,7 +78,7 @@ $(function() {
 <div class="textblock"><code>#include &quot;forwarddecl/Base.hpp&quot;</code><br />
 <code>#include &quot;forwarddecl/Event.hpp&quot;</code><br />
 <code>#include &quot;<a class="el" href="_geom_8hpp_source.html">Geom.hpp</a>&quot;</code><br />
-<code>#include &quot;PixelFmt.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="_pixel_fmt_8hpp_source.html">PixelFmt.hpp</a>&quot;</code><br />
 </div>
 <p><a href="_base_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -130,7 +130,14 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacerolmodl_1_1sys_1_1driver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Video driver functions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacerolmodl_1_1sys_1_1display"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display.html">rolmodl::sys::display</a></td></tr>
-<tr class="memdesc:namespacerolmodl_1_1sys_1_1display"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsafe video driver functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacerolmodl_1_1sys_1_1display_1_1unsafe"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html">rolmodl::sys::display::unsafe</a></td></tr>
+<tr class="memdesc:namespacerolmodl_1_1sys_1_1display_1_1unsafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsafe display information functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacerolmodl_1_1sys_1_1display_1_1mode"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1mode.html">rolmodl::sys::display::mode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html">rolmodl::sys::display::mode::unsafe</a></td></tr>
+<tr class="memdesc:namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsafe display mode information functions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacerolmodl_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1detail.html">rolmodl::detail</a></td></tr>
 <tr class="memdesc:namespacerolmodl_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation details. <br /></td></tr>
@@ -271,35 +278,35 @@ Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="na
 <tr class="memdesc:a23be225fc51a690fe8d72b86afef5fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the current video driver name.  <a href="namespacerolmodl_1_1sys_1_1driver.html#a23be225fc51a690fe8d72b86afef5fc8">More...</a><br /></td></tr>
 <tr class="separator:a23be225fc51a690fe8d72b86afef5fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6821da893c862b8a0f3ac7e8a5a19010"><td class="memItemLeft" align="right" valign="top"><a id="a6821da893c862b8a0f3ac7e8a5a19010"></a>
-Display&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a6821da893c862b8a0f3ac7e8a5a19010">rolmodl::sys::display::unsafe::byIndex</a> (unsigned int i)</td></tr>
+Display&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#a6821da893c862b8a0f3ac7e8a5a19010">rolmodl::sys::display::unsafe::byIndex</a> (unsigned int i)</td></tr>
 <tr class="memdesc:a6821da893c862b8a0f3ac7e8a5a19010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get display information for the <code>i</code>th display. Unsafe because there is no bounds checking on the index. <br /></td></tr>
 <tr class="separator:a6821da893c862b8a0f3ac7e8a5a19010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f4b025c26e8e10d6e8256b40c69d173"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a9f4b025c26e8e10d6e8256b40c69d173">rolmodl::sys::display::unsafe::count</a> ()</td></tr>
-<tr class="memdesc:a9f4b025c26e8e10d6e8256b40c69d173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of displays. Unsafe because the return value is unreliable and may lead to out-of-bounds errors if its cached and used for loop iteration.  <a href="_base_8hpp.html#a9f4b025c26e8e10d6e8256b40c69d173">More...</a><br /></td></tr>
+<tr class="memitem:a9f4b025c26e8e10d6e8256b40c69d173"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#a9f4b025c26e8e10d6e8256b40c69d173">rolmodl::sys::display::unsafe::count</a> ()</td></tr>
+<tr class="memdesc:a9f4b025c26e8e10d6e8256b40c69d173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of displays. Unsafe because the return value is unreliable and may lead to out-of-bounds errors if its cached and used for loop iteration.  <a href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#a9f4b025c26e8e10d6e8256b40c69d173">More...</a><br /></td></tr>
 <tr class="separator:a9f4b025c26e8e10d6e8256b40c69d173"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed743db5c17811ec45e1212f729a4405"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#aed743db5c17811ec45e1212f729a4405">rolmodl::sys::display::unsafe::name</a> (const unsigned int i)</td></tr>
-<tr class="memdesc:aed743db5c17811ec45e1212f729a4405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the <code>i</code>th display. Sample output: <code>XF250Q</code> for my Acer XF250Q. Unsafe because there is no bounds checking on the index.  <a href="_base_8hpp.html#aed743db5c17811ec45e1212f729a4405">More...</a><br /></td></tr>
+<tr class="memitem:aed743db5c17811ec45e1212f729a4405"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#aed743db5c17811ec45e1212f729a4405">rolmodl::sys::display::unsafe::name</a> (const unsigned int i)</td></tr>
+<tr class="memdesc:aed743db5c17811ec45e1212f729a4405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the <code>i</code>th display. Sample output: <code>XF250Q</code> for my Acer XF250Q. Unsafe because there is no bounds checking on the index.  <a href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#aed743db5c17811ec45e1212f729a4405">More...</a><br /></td></tr>
 <tr class="separator:aed743db5c17811ec45e1212f729a4405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a18b557573bfa7924e8c11122d0301f"><td class="memItemLeft" align="right" valign="top">geom::RectWH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a4a18b557573bfa7924e8c11122d0301f">rolmodl::sys::display::unsafe::bounds</a> (const unsigned int i)</td></tr>
-<tr class="memdesc:a4a18b557573bfa7924e8c11122d0301f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the resolution of the <code>i</code>th display. Unsafe because there is no bounds checking on the index.  <a href="_base_8hpp.html#a4a18b557573bfa7924e8c11122d0301f">More...</a><br /></td></tr>
+<tr class="memitem:a4a18b557573bfa7924e8c11122d0301f"><td class="memItemLeft" align="right" valign="top">geom::RectWH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#a4a18b557573bfa7924e8c11122d0301f">rolmodl::sys::display::unsafe::bounds</a> (const unsigned int i)</td></tr>
+<tr class="memdesc:a4a18b557573bfa7924e8c11122d0301f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the resolution of the <code>i</code>th display. Unsafe because there is no bounds checking on the index.  <a href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#a4a18b557573bfa7924e8c11122d0301f">More...</a><br /></td></tr>
 <tr class="separator:a4a18b557573bfa7924e8c11122d0301f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad298fc79a292b5f66a81a818a38d2766"><td class="memItemLeft" align="right" valign="top">geom::RectWH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#ad298fc79a292b5f66a81a818a38d2766">rolmodl::sys::display::unsafe::usableBounds</a> (const unsigned int i)</td></tr>
-<tr class="memdesc:ad298fc79a292b5f66a81a818a38d2766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bounds of the usable space of the <code>i</code>th display. Excludes system decorations such as the menu bar and the dock. Unsafe because there is no bounds checking on the index.  <a href="_base_8hpp.html#ad298fc79a292b5f66a81a818a38d2766">More...</a><br /></td></tr>
+<tr class="memitem:ad298fc79a292b5f66a81a818a38d2766"><td class="memItemLeft" align="right" valign="top">geom::RectWH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#ad298fc79a292b5f66a81a818a38d2766">rolmodl::sys::display::unsafe::usableBounds</a> (const unsigned int i)</td></tr>
+<tr class="memdesc:ad298fc79a292b5f66a81a818a38d2766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bounds of the usable space of the <code>i</code>th display. Excludes system decorations such as the menu bar and the dock. Unsafe because there is no bounds checking on the index.  <a href="namespacerolmodl_1_1sys_1_1display_1_1unsafe.html#ad298fc79a292b5f66a81a818a38d2766">More...</a><br /></td></tr>
 <tr class="separator:ad298fc79a292b5f66a81a818a38d2766"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ac7c9890d89b1a8db41108c7de564cd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a2ac7c9890d89b1a8db41108c7de564cd">rolmodl::sys::display::mode::unsafe::countForDisplayN</a> (unsigned int n)</td></tr>
-<tr class="memdesc:a2ac7c9890d89b1a8db41108c7de564cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of display modes available for the <code>n</code>th display.  <a href="_base_8hpp.html#a2ac7c9890d89b1a8db41108c7de564cd">More...</a><br /></td></tr>
+<tr class="memitem:a2ac7c9890d89b1a8db41108c7de564cd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#a2ac7c9890d89b1a8db41108c7de564cd">rolmodl::sys::display::mode::unsafe::countForDisplayN</a> (unsigned int n)</td></tr>
+<tr class="memdesc:a2ac7c9890d89b1a8db41108c7de564cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of display modes available for the <code>n</code>th display.  <a href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#a2ac7c9890d89b1a8db41108c7de564cd">More...</a><br /></td></tr>
 <tr class="separator:a2ac7c9890d89b1a8db41108c7de564cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae25477c95abc009a9f522e89ee031c1a"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#ae25477c95abc009a9f522e89ee031c1a">rolmodl::sys::display::mode::unsafe::desktopForDisplayN</a> (unsigned int n)</td></tr>
-<tr class="memdesc:ae25477c95abc009a9f522e89ee031c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display mode used by the system desktop for the <code>n</code>th display. Unsafe because there is no bounds checking on the index.  <a href="_base_8hpp.html#ae25477c95abc009a9f522e89ee031c1a">More...</a><br /></td></tr>
+<tr class="memitem:ae25477c95abc009a9f522e89ee031c1a"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#ae25477c95abc009a9f522e89ee031c1a">rolmodl::sys::display::mode::unsafe::desktopForDisplayN</a> (unsigned int n)</td></tr>
+<tr class="memdesc:ae25477c95abc009a9f522e89ee031c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display mode used by the system desktop for the <code>n</code>th display. Unsafe because there is no bounds checking on the index.  <a href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#ae25477c95abc009a9f522e89ee031c1a">More...</a><br /></td></tr>
 <tr class="separator:ae25477c95abc009a9f522e89ee031c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8796e31f9045462c29421f3194639963"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a8796e31f9045462c29421f3194639963">rolmodl::sys::display::mode::unsafe::currentForDisplayN</a> (unsigned int n)</td></tr>
-<tr class="memdesc:a8796e31f9045462c29421f3194639963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current display mode for the <code>n</code>th display. Unsafe because there is no bounds checking on the index.  <a href="_base_8hpp.html#a8796e31f9045462c29421f3194639963">More...</a><br /></td></tr>
+<tr class="memitem:a8796e31f9045462c29421f3194639963"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#a8796e31f9045462c29421f3194639963">rolmodl::sys::display::mode::unsafe::currentForDisplayN</a> (unsigned int n)</td></tr>
+<tr class="memdesc:a8796e31f9045462c29421f3194639963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current display mode for the <code>n</code>th display. Unsafe because there is no bounds checking on the index.  <a href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#a8796e31f9045462c29421f3194639963">More...</a><br /></td></tr>
 <tr class="separator:a8796e31f9045462c29421f3194639963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad27df6e194638876934a411d073e408b"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#ad27df6e194638876934a411d073e408b">rolmodl::sys::display::mode::unsafe::forDisplayNByIndexI</a> (unsigned int n, unsigned int i)</td></tr>
-<tr class="memdesc:ad27df6e194638876934a411d073e408b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <code>i</code>th display mode for the <code>n</code>th display. Unsafe because there is no bounds checking on either index.  <a href="_base_8hpp.html#ad27df6e194638876934a411d073e408b">More...</a><br /></td></tr>
+<tr class="memitem:ad27df6e194638876934a411d073e408b"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#ad27df6e194638876934a411d073e408b">rolmodl::sys::display::mode::unsafe::forDisplayNByIndexI</a> (unsigned int n, unsigned int i)</td></tr>
+<tr class="memdesc:ad27df6e194638876934a411d073e408b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <code>i</code>th display mode for the <code>n</code>th display. Unsafe because there is no bounds checking on either index.  <a href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#ad27df6e194638876934a411d073e408b">More...</a><br /></td></tr>
 <tr class="separator:ad27df6e194638876934a411d073e408b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7992fe3b46cb4535d1d67fd078d64af6"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_base_8hpp.html#a7992fe3b46cb4535d1d67fd078d64af6">rolmodl::sys::display::mode::unsafe::closestForDisplayN</a> (unsigned int n, const DisplayMode ideal)</td></tr>
-<tr class="memdesc:a7992fe3b46cb4535d1d67fd078d64af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display mode closest to the one specified for the <code>n</code>th display. Unsafe because there is no bounds checking on the index and because it will throw if no display is found.  <a href="_base_8hpp.html#a7992fe3b46cb4535d1d67fd078d64af6">More...</a><br /></td></tr>
+<tr class="memitem:a7992fe3b46cb4535d1d67fd078d64af6"><td class="memItemLeft" align="right" valign="top">DisplayMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#a7992fe3b46cb4535d1d67fd078d64af6">rolmodl::sys::display::mode::unsafe::closestForDisplayN</a> (unsigned int n, const DisplayMode ideal)</td></tr>
+<tr class="memdesc:a7992fe3b46cb4535d1d67fd078d64af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display mode closest to the one specified for the <code>n</code>th display. Unsafe because there is no bounds checking on the index and because it will throw if no display is found.  <a href="namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html#a7992fe3b46cb4535d1d67fd078d64af6">More...</a><br /></td></tr>
 <tr class="separator:a7992fe3b46cb4535d1d67fd078d64af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53099c89cc48f439defa581cc114fb97"><td class="memItemLeft" align="right" valign="top"><a id="a53099c89cc48f439defa581cc114fb97"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerolmodl_1_1detail.html#a53099c89cc48f439defa581cc114fb97">rolmodl::detail::throwOnErr</a> (const int code)</td></tr>
@@ -319,222 +326,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="names
 <a href="https://wiki.libsdl.org/CategoryClipboard">https://wiki.libsdl.org/CategoryClipboard</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="file_a9f4b025c26e8e10d6e8256b40c69d173"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_a9f4b025c26e8e10d6e8256b40c69d173">&#9670;&nbsp;</a></span>count()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int rolmodl::sys::display::unsafe::count </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the number of displays. Unsafe because the return value is unreliable and may lead to out-of-bounds errors if its cached and used for loop iteration. </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetNumVideoDisplays">https://wiki.libsdl.org/SDL_GetNumVideoDisplays</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_aed743db5c17811ec45e1212f729a4405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_aed743db5c17811ec45e1212f729a4405">&#9670;&nbsp;</a></span>name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * rolmodl::sys::display::unsafe::name </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the name of the <code>i</code>th display. Sample output: <code>XF250Q</code> for my Acer XF250Q. Unsafe because there is no bounds checking on the index. </p>
-<p>In addition to being marked unsafe, the use of this function is further discouraged. Display information should only be acquired all together as a snapshot as done by <a class="el" href="structrolmodl_1_1sys_1_1_display.html">rolmodl::sys::Display</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetDisplayName">https://wiki.libsdl.org/SDL_GetDisplayName</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_a4a18b557573bfa7924e8c11122d0301f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_a4a18b557573bfa7924e8c11122d0301f">&#9670;&nbsp;</a></span>bounds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">geom::RectWH rolmodl::sys::display::unsafe::bounds </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the resolution of the <code>i</code>th display. Unsafe because there is no bounds checking on the index. </p>
-<p>In addition to being marked unsafe, the use of this function is further discouraged. Display information should only be acquired all together as a snapshot as done by <a class="el" href="structrolmodl_1_1sys_1_1_display.html">rolmodl::sys::Display</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetDisplayBounds">https://wiki.libsdl.org/SDL_GetDisplayBounds</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_ad298fc79a292b5f66a81a818a38d2766"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_ad298fc79a292b5f66a81a818a38d2766">&#9670;&nbsp;</a></span>usableBounds()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">geom::RectWH rolmodl::sys::display::unsafe::usableBounds </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the bounds of the usable space of the <code>i</code>th display. Excludes system decorations such as the menu bar and the dock. Unsafe because there is no bounds checking on the index. </p>
-<p>In addition to being marked unsafe, the use of this function is further discouraged. Display information should only be acquired all together as a snapshot as done by <a class="el" href="structrolmodl_1_1sys_1_1_display.html">rolmodl::sys::Display</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetDisplayUsableBounds">https://wiki.libsdl.org/SDL_GetDisplayUsableBounds</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_a2ac7c9890d89b1a8db41108c7de564cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_a2ac7c9890d89b1a8db41108c7de564cd">&#9670;&nbsp;</a></span>countForDisplayN()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int rolmodl::sys::display::mode::unsafe::countForDisplayN </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the amount of display modes available for the <code>n</code>th display. </p>
-<p>Unsafe because there is no bounds checking on the index and because the return value is unreliable and may lead to out-of-bounds errors if its cached and used for loop iteration.</p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetNumDisplayModes">https://wiki.libsdl.org/SDL_GetNumDisplayModes</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_ae25477c95abc009a9f522e89ee031c1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_ae25477c95abc009a9f522e89ee031c1a">&#9670;&nbsp;</a></span>desktopForDisplayN()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DisplayMode rolmodl::sys::display::mode::unsafe::desktopForDisplayN </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the display mode used by the system desktop for the <code>n</code>th display. Unsafe because there is no bounds checking on the index. </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetDesktopDisplayMode">https://wiki.libsdl.org/SDL_GetDesktopDisplayMode</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_a8796e31f9045462c29421f3194639963"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_a8796e31f9045462c29421f3194639963">&#9670;&nbsp;</a></span>currentForDisplayN()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DisplayMode rolmodl::sys::display::mode::unsafe::currentForDisplayN </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the current display mode for the <code>n</code>th display. Unsafe because there is no bounds checking on the index. </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetCurrentDisplayMode">https://wiki.libsdl.org/SDL_GetCurrentDisplayMode</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_ad27df6e194638876934a411d073e408b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_ad27df6e194638876934a411d073e408b">&#9670;&nbsp;</a></span>forDisplayNByIndexI()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DisplayMode rolmodl::sys::display::mode::unsafe::forDisplayNByIndexI </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>i</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the <code>i</code>th display mode for the <code>n</code>th display. Unsafe because there is no bounds checking on either index. </p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetDisplayMode">https://wiki.libsdl.org/SDL_GetDisplayMode</a> </dd></dl>
-
-</div>
-</div>
-<a id="file_a7992fe3b46cb4535d1d67fd078d64af6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_a7992fe3b46cb4535d1d67fd078d64af6">&#9670;&nbsp;</a></span>closestForDisplayN()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DisplayMode rolmodl::sys::display::mode::unsafe::closestForDisplayN </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structrolmodl_1_1sys_1_1_display_mode.html">DisplayMode</a>&#160;</td>
-          <td class="paramname"><em>ideal</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the display mode closest to the one specified for the <code>n</code>th display. Unsafe because there is no bounds checking on the index and because it will throw if no display is found. </p>
-<p>Pixel format and refresh rate default to the system desktop's display mode's if they are not set. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>: what does that equal in terms of pixelfmt::Id, the doc said it needs to be 0</dd></dl>
-<p>Parameter priority for what is considered "closest": size, pixel format, refresh rate. If all available display modes are too small, returns nullptr</p>
-<dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetClosestDisplayMode">https://wiki.libsdl.org/SDL_GetClosestDisplayMode</a> </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -118,18 +118,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#adde55b1f9faa5f29b24295d223cc8fc8">operator=</a> (const <a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;that)=delete</td></tr>
 <tr class="memdesc:adde55b1f9faa5f29b24295d223cc8fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copying rolmodl renderers is not allowed because their lifetime is tied to the underlying <code>SDL_Renderer</code>'s. Use references or some other pointer type instead. <br /></td></tr>
 <tr class="separator:adde55b1f9faa5f29b24295d223cc8fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab811c91c6dd513568b956f18e9c03ae6"><td class="memItemLeft" align="right" valign="top"><a id="ab811c91c6dd513568b956f18e9c03ae6"></a>
-<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ab811c91c6dd513568b956f18e9c03ae6">operator=</a> (<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&amp;that) noexcept</td></tr>
-<tr class="memdesc:ab811c91c6dd513568b956f18e9c03ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>SDL_Renderer</code> of <code>that</code>. <br /></td></tr>
-<tr class="separator:ab811c91c6dd513568b956f18e9c03ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17b01e749901f26f4184e602f59d7bdd"><td class="memItemLeft" align="right" valign="top"><a id="a17b01e749901f26f4184e602f59d7bdd"></a>
-SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a17b01e749901f26f4184e602f59d7bdd">unsafeRaw</a> () noexcept</td></tr>
-<tr class="memdesc:a17b01e749901f26f4184e602f59d7bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code>. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
-<tr class="separator:a17b01e749901f26f4184e602f59d7bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40c075f384095fd8eda5bd6921c67d7b"><td class="memItemLeft" align="right" valign="top"><a id="a40c075f384095fd8eda5bd6921c67d7b"></a>
-const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a40c075f384095fd8eda5bd6921c67d7b">unsafeRaw</a> () const noexcept</td></tr>
-<tr class="memdesc:a40c075f384095fd8eda5bd6921c67d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code> in a <code>const</code> context. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
-<tr class="separator:a40c075f384095fd8eda5bd6921c67d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab286f3f63bb48da4a4d7cb38e3558f2f"><td class="memItemLeft" align="right" valign="top"><a id="ab286f3f63bb48da4a4d7cb38e3558f2f"></a>
+<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ab286f3f63bb48da4a4d7cb38e3558f2f">operator=</a> (<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&amp;that) noexcept</td></tr>
+<tr class="memdesc:ab286f3f63bb48da4a4d7cb38e3558f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>SDL_Renderer</code> of <code>that</code>. <br /></td></tr>
+<tr class="separator:ab286f3f63bb48da4a4d7cb38e3558f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431319ce3748415655ff0448cf5d0204"><td class="memItemLeft" align="right" valign="top"><a id="a431319ce3748415655ff0448cf5d0204"></a>
+SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a431319ce3748415655ff0448cf5d0204">unsafeRaw</a> () noexcept</td></tr>
+<tr class="memdesc:a431319ce3748415655ff0448cf5d0204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code>. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
+<tr class="separator:a431319ce3748415655ff0448cf5d0204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968b795cf18a9e434990cf8b4e31014e"><td class="memItemLeft" align="right" valign="top"><a id="a968b795cf18a9e434990cf8b4e31014e"></a>
+const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a968b795cf18a9e434990cf8b4e31014e">unsafeRaw</a> () const noexcept</td></tr>
+<tr class="memdesc:a968b795cf18a9e434990cf8b4e31014e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code> in a <code>const</code> context. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
+<tr class="separator:a968b795cf18a9e434990cf8b4e31014e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fb17ba7f0f34a98747d4b7ae0c0a969"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a3fb17ba7f0f34a98747d4b7ae0c0a969">clear</a> ()</td></tr>
 <tr class="memdesc:a3fb17ba7f0f34a98747d4b7ae0c0a969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paint over the entire rendering target with the current color.  <a href="classrolmodl_1_1_ren.html#a3fb17ba7f0f34a98747d4b7ae0c0a969">More...</a><br /></td></tr>
 <tr class="separator:a3fb17ba7f0f34a98747d4b7ae0c0a969"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -268,9 +268,9 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <tr class="memitem:a3e3c98980fbb72637414de2ae9e399d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a3e3c98980fbb72637414de2ae9e399d9">fillScreen</a> ()</td></tr>
 <tr class="memdesc:a3e3c98980fbb72637414de2ae9e399d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the rendering target with the drawing color.  <a href="classrolmodl_1_1_ren.html#a3e3c98980fbb72637414de2ae9e399d9">More...</a><br /></td></tr>
 <tr class="separator:a3e3c98980fbb72637414de2ae9e399d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc64806c91af8a4fc68772b48f74a0c0"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#afc64806c91af8a4fc68772b48f74a0c0">clipRect</a> () noexcept</td></tr>
-<tr class="memdesc:afc64806c91af8a4fc68772b48f74a0c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clipping rectangle. <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt.html">std::nullopt</a> is returned if the clipping rectangle has not been set.  <a href="classrolmodl_1_1_ren.html#afc64806c91af8a4fc68772b48f74a0c0">More...</a><br /></td></tr>
-<tr class="separator:afc64806c91af8a4fc68772b48f74a0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac815f71ee9fe32b4a7d0fd3a05e14129"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ac815f71ee9fe32b4a7d0fd3a05e14129">clipRect</a> () noexcept</td></tr>
+<tr class="memdesc:ac815f71ee9fe32b4a7d0fd3a05e14129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clipping rectangle. <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt.html">std::nullopt</a> is returned if the clipping rectangle has not been set.  <a href="classrolmodl_1_1_ren.html#ac815f71ee9fe32b4a7d0fd3a05e14129">More...</a><br /></td></tr>
+<tr class="separator:ac815f71ee9fe32b4a7d0fd3a05e14129"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f628d5e5eaae1107a6bd3dd9726fe37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a4f628d5e5eaae1107a6bd3dd9726fe37">setClipRect</a> (const <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> r)</td></tr>
 <tr class="memdesc:a4f628d5e5eaae1107a6bd3dd9726fe37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the clipping rectangle to <code>r</code>.  <a href="classrolmodl_1_1_ren.html#a4f628d5e5eaae1107a6bd3dd9726fe37">More...</a><br /></td></tr>
 <tr class="separator:a4f628d5e5eaae1107a6bd3dd9726fe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,9 +283,9 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <tr class="memitem:a70bb7b365f0407eb5ca26f9738b97916"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a70bb7b365f0407eb5ca26f9738b97916">isClipOn</a> () noexcept</td></tr>
 <tr class="memdesc:a70bb7b365f0407eb5ca26f9738b97916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether the clipping rectangle has been set.  <a href="classrolmodl_1_1_ren.html#a70bb7b365f0407eb5ca26f9738b97916">More...</a><br /></td></tr>
 <tr class="separator:a70bb7b365f0407eb5ca26f9738b97916"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b139a4f131d49bdf1e16479cb3fff2"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a25b139a4f131d49bdf1e16479cb3fff2">logicalSize</a> () noexcept</td></tr>
-<tr class="memdesc:a25b139a4f131d49bdf1e16479cb3fff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the device-independent resolution.  <a href="classrolmodl_1_1_ren.html#a25b139a4f131d49bdf1e16479cb3fff2">More...</a><br /></td></tr>
-<tr class="separator:a25b139a4f131d49bdf1e16479cb3fff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcd2d2a05ffdad1c02827750a79ec062"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#afcd2d2a05ffdad1c02827750a79ec062">logicalSize</a> () noexcept</td></tr>
+<tr class="memdesc:afcd2d2a05ffdad1c02827750a79ec062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the device-independent resolution.  <a href="classrolmodl_1_1_ren.html#afcd2d2a05ffdad1c02827750a79ec062">More...</a><br /></td></tr>
+<tr class="separator:afcd2d2a05ffdad1c02827750a79ec062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf35626b54367f3e9756350324e357d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#aebf35626b54367f3e9756350324e357d">setLogicalSize</a> (const <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> s)</td></tr>
 <tr class="memdesc:aebf35626b54367f3e9756350324e357d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the device-independent resolution to <code>s</code>.  <a href="classrolmodl_1_1_ren.html#aebf35626b54367f3e9756350324e357d">More...</a><br /></td></tr>
 <tr class="separator:aebf35626b54367f3e9756350324e357d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -330,7 +330,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>The renderer managed by this class may actually support rendering to texture, based on the configuration with which it is created. However, it does not provide any methods to use this ability because no effort is made to ensure that the support was actually enabled.</p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_Renderer">https://wiki.libsdl.org/SDL_Renderer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ren_8hpp_source.html#l00301">301</a> of file <a class="el" href="_ren_8hpp_source.html">Ren.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ren_8hpp_source.html#l00305">305</a> of file <a class="el" href="_ren_8hpp_source.html">Ren.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a94c8adb6da087f831273ba46f62ddcbf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94c8adb6da087f831273ba46f62ddcbf">&#9670;&nbsp;</a></span>Ren() <span class="overload">[1/4]</span></h2>
@@ -373,6 +373,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00044">44</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a8d363eb4e75ddc647d01b89e91116a97"></a>
@@ -409,6 +411,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00050">50</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,6 +451,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00052">52</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ac3687756fae32d98b8248d7748124555"></a>
@@ -482,6 +488,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00054">54</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a1d4f0ca1a8c36db2b2b1f43b29370e9c"></a>
@@ -510,6 +518,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Free the underlying <code>SDL_Renderer</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_DestroyRenderer">https://wiki.libsdl.org/SDL_DestroyRenderer</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00057">57</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -530,6 +540,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Paint over the entire rendering target with the current color. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderClear">https://wiki.libsdl.org/SDL_RenderClear</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00096">96</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -560,6 +574,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>How does this work with non-window rendering targets?</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderPresent">https://wiki.libsdl.org/SDL_RenderPresent</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00099">99</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="ab399456fcda185b1e8ef273de45783d9"></a>
@@ -580,6 +598,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the entire texture <code>tex</code> to fill the entire rendering target. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00104">104</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_ren_8cpp_source.html#l00112">drawTex()</a>.</p>
 
 </div>
 </div>
@@ -612,6 +636,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00108">108</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="ae582e15ab60da21b8c1ac3067690e880"></a>
@@ -642,6 +670,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00112">112</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -674,6 +706,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00116">116</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="add8d1f5c97726f6cd9fe24a349b6b091"></a>
@@ -704,6 +740,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00120">120</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -742,6 +782,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00124">124</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a16fb3bdaf6a481d0efa7621e1b7e2bab"></a>
@@ -778,6 +822,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00129">129</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -816,6 +864,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00132">132</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="abd12e29bd21495c341f82973728a32ae"></a>
@@ -853,6 +905,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopy">https://wiki.libsdl.org/SDL_RenderCopy</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00135">135</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="a30ccbe622feb15402f22778058acdaf8"></a>
@@ -883,6 +939,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the entire texture <code>tex</code> to fill the entire rendering target, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00140">140</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>.</p>
 
 </div>
 </div>
@@ -920,6 +980,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the entire texture <code>tex</code> to fill the entire rendering target, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00143">143</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -964,6 +1028,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the entire texture <code>tex</code> to fill the entire rendering target, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00146">146</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a6eff7e9c03546e8ef2e776604b23dde3"></a>
@@ -1001,6 +1069,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00151">151</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>.</p>
+
 </div>
 </div>
 <a id="a74cca689b19b97304452345cfb5d7d62"></a>
@@ -1037,6 +1109,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00154">154</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -1081,6 +1157,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00157">157</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a0effbf0e6ffb8dd61208a1f2642e6eae"></a>
@@ -1123,6 +1203,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00161">161</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -1173,6 +1257,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00164">164</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a3c477322404fa2466ade1de40eb6c8d1"></a>
@@ -1222,6 +1310,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the entire rendering target, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00169">169</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="aec377ec267e4d45607a0a4fd0ce13ce4"></a>
@@ -1259,6 +1351,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00173">173</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>.</p>
+
 </div>
 </div>
 <a id="abef24cbc990d80e0e7175ca113803932"></a>
@@ -1295,6 +1391,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00176">176</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -1339,6 +1439,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00179">179</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a8d420d6877e6a12e12f4a165aa8149cf"></a>
@@ -1381,6 +1485,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00183">183</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -1431,6 +1539,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00186">186</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a7e2725c4f7e156365d5cb7bea8fc3cc3"></a>
@@ -1480,6 +1592,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the entire texture <code>tex</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00191">191</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="a1eff6f1fe41f6d3941513651f390df10"></a>
@@ -1522,6 +1638,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00195">195</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>.</p>
 
 </div>
 </div>
@@ -1566,6 +1686,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00198">198</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="abb53d5819cbe16c12a07ebcc23503652"></a>
@@ -1609,6 +1733,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00201">201</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="a563eeb694c70d603448d1fda4a227dbb"></a>
@@ -1651,6 +1779,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00204">204</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -1701,6 +1833,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00207">207</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a0aca23b89088d1e9b798706f9a63a601"></a>
@@ -1749,6 +1885,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00212">212</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -1799,6 +1939,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00215">215</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="a96c4ffd735bbb9fbf87d49d3be8cf380"></a>
@@ -1847,6 +1991,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around its center, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00218">218</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -1903,6 +2051,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00221">221</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_geom_8hpp_source.html#l00076">rolmodl::geom::RectWH::sdl()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00112">rolmodl::Flip::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="ade12b4fcb1e719891271cf01900443c7"></a>
@@ -1957,6 +2109,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00227">227</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
 
 </div>
 </div>
@@ -2013,6 +2169,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00230">230</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, and <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="ad4c7f03f61ff46583393d9d46759f288"></a>
@@ -2068,6 +2228,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Copy the part of texture <code>tex</code> specified by the source rectangle <code>src</code> to fill the part of the rendering target specified by the destination rectangle <code>dst</code>, rotating it by <code>rot</code> radian around <code>rotCenter</code>, respecting the flipping configuration <code>flip</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderCopyEx">https://wiki.libsdl.org/SDL_RenderCopyEx</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00233">233</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00104">drawTex()</a>, <a class="el" href="_ren_8hpp_source.html#l00271">rolmodl::SrcRectXY::wh()</a>, and <a class="el" href="_ren_8hpp_source.html#l00292">rolmodl::DstRectXY::wh()</a>.</p>
+
 </div>
 </div>
 <a id="a14cf8776aaeda4093c4ec7f2d18d8ff1"></a>
@@ -2100,6 +2264,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>needs ContigousIterators, for which no check can be done at compile-time also needs SDL_Point structs, or byte-equivalent reinterpret_cast geom::Point?</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderDrawLine">https://wiki.libsdl.org/SDL_RenderDrawLine</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00237">237</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a609f0030dab4454ad94f432bb44fb1bd"></a>
@@ -2120,6 +2288,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Set the pixel at point <code>p</code> to the drawing color. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderDrawPoint">https://wiki.libsdl.org/SDL_RenderDrawPoint</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00242">242</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2142,6 +2314,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Draw the outline of the width-height rect <code>r</code> with the drawing color. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderDrawRect">https://wiki.libsdl.org/SDL_RenderDrawRect</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00247">247</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_ren_8cpp_source.html#l00251">drawRect()</a>.</p>
+
 </div>
 </div>
 <a id="ad7e0e8bd869dda5869912b1c26d7e888"></a>
@@ -2162,6 +2340,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Draw the outline of the xy-rect rect <code>r</code> with the drawing color. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderDrawRect">https://wiki.libsdl.org/SDL_RenderDrawRect</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00251">251</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00247">drawRect()</a>.</p>
 
 </div>
 </div>
@@ -2184,6 +2366,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Fill the width-height rect <code>r</code> with the drawing color. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderFillRect">https://wiki.libsdl.org/SDL_RenderFillRect</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00256">256</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_ren_8cpp_source.html#l00260">fillRect()</a>.</p>
+
 </div>
 </div>
 <a id="a69a9b0568a9dc057e6aab11fbdacb0cd"></a>
@@ -2205,6 +2393,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Fill the xy-rect rect <code>r</code> with the drawing color. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderFillRect">https://wiki.libsdl.org/SDL_RenderFillRect</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00260">260</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00256">fillRect()</a>.</p>
+
 </div>
 </div>
 <a id="a95875b2363a214857c4e13f7d279c7d9"></a>
@@ -2225,6 +2417,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Draw an outline around the rendering target with the drawing color. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>Rename to outlineTarget </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderDrawRect">https://wiki.libsdl.org/SDL_RenderDrawRect</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00265">265</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2249,10 +2445,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderFillRect">https://wiki.libsdl.org/SDL_RenderFillRect</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00268">268</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
-<a id="afc64806c91af8a4fc68772b48f74a0c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc64806c91af8a4fc68772b48f74a0c0">&#9670;&nbsp;</a></span>clipRect()</h2>
+<a id="ac815f71ee9fe32b4a7d0fd3a05e14129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac815f71ee9fe32b4a7d0fd3a05e14129">&#9670;&nbsp;</a></span>clipRect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2261,7 +2461,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;<a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a>&gt; rolmodl::Ren::clipRect </td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> &gt; rolmodl::Ren::clipRect </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2277,6 +2477,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Get the clipping rectangle. <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt.html">std::nullopt</a> is returned if the clipping rectangle has not been set. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Todo:</a></b></dt><dd>What is the difference between clipping being disabled and the rectangle not being set yet. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderGetClipRect">https://wiki.libsdl.org/SDL_RenderGetClipRect</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00272">272</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt.html">std::nullopt</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2299,6 +2503,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Set the clipping rectangle to <code>r</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderSetClipRect">https://wiki.libsdl.org/SDL_RenderSetClipRect</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00279">279</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_ren_8cpp_source.html#l00283">setClipRect()</a>.</p>
+
 </div>
 </div>
 <a id="afdddf98c73220da557b3046e0c603a1f"></a>
@@ -2320,6 +2530,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Set the clipping rectangle to <code>r</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderSetClipRect">https://wiki.libsdl.org/SDL_RenderSetClipRect</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00283">283</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00279">setClipRect()</a>.</p>
+
 </div>
 </div>
 <a id="a736d77094ef64eb5da293217de9f2d02"></a>
@@ -2339,6 +2553,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Unset the clipping rectangle. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderSetClipRect">https://wiki.libsdl.org/SDL_RenderSetClipRect</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00286">286</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2371,10 +2589,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderIsClipEnabled">https://wiki.libsdl.org/SDL_RenderIsClipEnabled</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00289">289</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
-<a id="a25b139a4f131d49bdf1e16479cb3fff2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25b139a4f131d49bdf1e16479cb3fff2">&#9670;&nbsp;</a></span>logicalSize()</h2>
+<a id="afcd2d2a05ffdad1c02827750a79ec062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcd2d2a05ffdad1c02827750a79ec062">&#9670;&nbsp;</a></span>logicalSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2383,7 +2605,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;<a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a>&gt; rolmodl::Ren::logicalSize </td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> &gt; rolmodl::Ren::logicalSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2399,6 +2621,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Query the device-independent resolution. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Todo:</a></b></dt><dd>Explain how to use this with resolution-independent rendering. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderGetLogicalSize">https://wiki.libsdl.org/SDL_RenderGetLogicalSize</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00293">293</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt.html">std::nullopt</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2422,6 +2648,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Todo:</a></b></dt><dd>Explain how to use this with resolution-independent rendering. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderGetLogicalSize">https://wiki.libsdl.org/SDL_RenderGetLogicalSize</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00300">300</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="ab347d9250d3bf87a3e82cd169c0983af"></a>
@@ -2442,6 +2672,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Query the target resolution in device pixels. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Todo:</a></b></dt><dd>Explain how to use this with resolution-independent rendering. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetRendererOutputSize">https://wiki.libsdl.org/SDL_GetRendererOutputSize</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00304">304</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2472,6 +2706,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>Explain how to use this, including with resolution-independent rendering. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderGetScale">https://wiki.libsdl.org/SDL_RenderGetScale</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00310">310</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a2d62b87cca12235be5f09e781b9237d1"></a>
@@ -2493,6 +2731,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Set the rendering scaling factors to <code>s</code>. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>Explain how to use this, including with resolution-independent rendering. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderSetScale">https://wiki.libsdl.org/SDL_RenderSetScale</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00315">315</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2525,6 +2767,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderGetViewport">https://wiki.libsdl.org/SDL_RenderGetViewport</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00319">319</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a6fd05b0f1334b697908794f4031703c1"></a>
@@ -2546,6 +2792,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Set the subarea of the target used for drawing to the rectangle <code>r</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_RenderSetViewport">https://wiki.libsdl.org/SDL_RenderSetViewport</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00324">324</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="ad94e8ee4286a027a7cc3d7d1bca405a3"></a>
@@ -2566,6 +2816,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Get the blending mode used for <code>draw</code> operations. Textures have their own separate belnding mode. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>Verify that textures indeed ignore this. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_SetRenderDrawBlendMode">https://wiki.libsdl.org/SDL_SetRenderDrawBlendMode</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00329">329</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8hpp_source.html#l00049">rolmodl::blendMode::unsafe::fromSDLEnum()</a>, <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2589,6 +2843,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>Verify that textures indeed ignore this. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetRenderDrawBlendMode">https://wiki.libsdl.org/SDL_GetRenderDrawBlendMode</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00334">334</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, <a class="el" href="_ren_8hpp_source.html#l00060">rolmodl::blendMode::unsafe::toSDLEnum()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="abcff91a11c65937bbcadf7412628f13b"></a>
@@ -2608,6 +2866,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Query the current drawing color. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetRenderDrawColor">https://wiki.libsdl.org/SDL_GetRenderDrawColor</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00339">339</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
 
 </div>
 </div>
@@ -2630,10 +2892,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Set the drawing color to <code>c</code>. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_SetRenderDrawColor">https://wiki.libsdl.org/SDL_SetRenderDrawColor</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00345">345</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">unsafeRaw()</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/rolmodl/hpp/<a class="el" href="_ren_8hpp_source.html">Ren.hpp</a></li>
+<li>src/rolmodl/<a class="el" href="_ren_8cpp_source.html">Ren.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
