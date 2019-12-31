@@ -13,7 +13,7 @@
 #include "Geom.hpp"
 #include "PixelFmt.hpp"
 
-/// Main namespace
+/// Main namespace.
 namespace rolmodl {
   /// \brief Describes how colors are combined when rendering twice to the same place.
   ///
@@ -39,7 +39,11 @@ namespace rolmodl {
     /// `output A = output A`
     mod
   };
-  /// Unsafe \link rolmodl::BlendMode \endlink methods
+  /// \link rolmodl::BlendMode \endlink methods.
+  namespace blendMode {
+    /// Unsafe \link rolmodl::BlendMode \endlink methods.
+    namespace unsafe {}
+  }
   namespace blendMode::unsafe {
     /// \brief Convert an <a href="https://wiki.libsdl.org/SDL_BlendMode">`SDL_BlendMode`</a> value to a \link rolmodl::BlendMode \endlink value.
     constexpr BlendMode fromSDLEnum(const SDL_BlendMode m) noexcept {
@@ -120,7 +124,7 @@ namespace rolmodl {
       uint32_t data_;
   };
 
-  /// \link rolmodl::Ren \endlink -related members
+  /// \link rolmodl::Ren \endlink -related members.
   namespace ren {
     /// \brief Renderer configuration (flags) container.
     ///
@@ -219,7 +223,7 @@ namespace rolmodl {
       geom::Size maxTexSize;
     };
 
-    /// Renderer driver information functions
+    /// Renderer driver information functions.
     namespace driver {
       // fixme: there is something off with this and exception guarantees, not sure if its good design
 

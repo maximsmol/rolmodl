@@ -1,15 +1,19 @@
 var searchData=
 [
-  ['blendmode_3178',['blendMode',['../namespacerolmodl_1_1blend_mode.html',1,'rolmodl']]],
-  ['clipboard_3179',['clipboard',['../namespacerolmodl_1_1sys_1_1clipboard.html',1,'rolmodl::sys']]],
-  ['cpu_3180',['cpu',['../namespacerolmodl_1_1sys_1_1cpu.html',1,'rolmodl::sys']]],
-  ['detail_3181',['detail',['../namespacerolmodl_1_1detail.html',1,'rolmodl']]],
-  ['display_3182',['display',['../namespacerolmodl_1_1sys_1_1display.html',1,'rolmodl::sys']]],
-  ['driver_3183',['driver',['../namespacerolmodl_1_1ren_1_1driver.html',1,'rolmodl::ren::driver'],['../namespacerolmodl_1_1sys_1_1driver.html',1,'rolmodl::sys::driver']]],
-  ['pwr_3184',['pwr',['../namespacerolmodl_1_1sys_1_1pwr.html',1,'rolmodl::sys']]],
-  ['ren_3185',['ren',['../namespacerolmodl_1_1ren.html',1,'rolmodl']]],
-  ['rolmodl_3186',['rolmodl',['../namespacerolmodl.html',1,'']]],
-  ['screensaver_3187',['screensaver',['../namespacerolmodl_1_1sys_1_1screensaver.html',1,'rolmodl::sys']]],
-  ['sys_3188',['sys',['../namespacerolmodl_1_1sys.html',1,'rolmodl']]],
-  ['win_3189',['win',['../namespacerolmodl_1_1win.html',1,'rolmodl']]]
+  ['blendmode_3184',['blendMode',['../namespacerolmodl_1_1blend_mode.html',1,'rolmodl']]],
+  ['clipboard_3185',['clipboard',['../namespacerolmodl_1_1sys_1_1clipboard.html',1,'rolmodl::sys']]],
+  ['cpu_3186',['cpu',['../namespacerolmodl_1_1sys_1_1cpu.html',1,'rolmodl::sys']]],
+  ['detail_3187',['detail',['../namespacerolmodl_1_1detail.html',1,'rolmodl']]],
+  ['display_3188',['display',['../namespacerolmodl_1_1sys_1_1display.html',1,'rolmodl::sys']]],
+  ['driver_3189',['driver',['../namespacerolmodl_1_1ren_1_1driver.html',1,'rolmodl::ren::driver'],['../namespacerolmodl_1_1sys_1_1driver.html',1,'rolmodl::sys::driver']]],
+  ['geom_3190',['geom',['../namespacerolmodl_1_1geom.html',1,'rolmodl']]],
+  ['mode_3191',['mode',['../namespacerolmodl_1_1sys_1_1display_1_1mode.html',1,'rolmodl::sys::display']]],
+  ['pixelfmt_3192',['pixelfmt',['../namespacerolmodl_1_1pixelfmt.html',1,'rolmodl']]],
+  ['pwr_3193',['pwr',['../namespacerolmodl_1_1sys_1_1pwr.html',1,'rolmodl::sys']]],
+  ['ren_3194',['ren',['../namespacerolmodl_1_1ren.html',1,'rolmodl']]],
+  ['rolmodl_3195',['rolmodl',['../namespacerolmodl.html',1,'']]],
+  ['screensaver_3196',['screensaver',['../namespacerolmodl_1_1sys_1_1screensaver.html',1,'rolmodl::sys']]],
+  ['sys_3197',['sys',['../namespacerolmodl_1_1sys.html',1,'rolmodl']]],
+  ['unsafe_3198',['unsafe',['../namespacerolmodl_1_1blend_mode_1_1unsafe.html',1,'rolmodl::blendMode::unsafe'],['../namespacerolmodl_1_1sys_1_1display_1_1mode_1_1unsafe.html',1,'rolmodl::sys::display::mode::unsafe'],['../namespacerolmodl_1_1sys_1_1display_1_1unsafe.html',1,'rolmodl::sys::display::unsafe']]],
+  ['win_3199',['win',['../namespacerolmodl_1_1win.html',1,'rolmodl']]]
 ];

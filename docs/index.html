@@ -61,11 +61,78 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">rolmodl Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p>rolmodl is a C++ API for the <a href="https://www.libsdl.org/">Simple Directmedia Library 2 (SDL2)</a>. The overhead is minimized, as long as this does not compromise other design goals. In general, the abstraction layer varies in depth quite a lot.</p>
+<h3>Design goals</h3>
+<ol type="1">
+<li>rolmodl exposes risks to the consumer and makes it non-trivial to make mistakes Type safety Compile-time checks</li>
+</ol>
+<ol type="1">
+<li>rolmodl does not add new features</li>
+</ol>
+<ol type="1">
+<li>rolmodl implements all features of SDL2</li>
+</ol>
+<h2>Status</h2>
+<p>An <a href="src/tst/main.cpp">example program</a> is available that showcases some of the features and their inteded use.</p>
+<p>The <a href="src/rolmodl/hpp/todo">todo files</a> list the features that were left unimplemented in the meantime. The <a href="todo.txt">project todo</a> is a developer reference of porject goals and shorcomings</p>
+<h3>Features:</h3>
+<ul>
+<li><a class="el" href="classrolmodl_1_1_win.html">Window</a> class</li>
+<li><a class="el" href="classrolmodl_1_1_ren.html">Renderer</a> class</li>
+<li><a class="el" href="classrolmodl_1_1_tex.html">Texture</a> class</li>
+<li>Semantic <a class="el" href="namespacerolmodl_1_1geom.html">geometric classes</a></li>
+<li>C++ class enums in place of C enums and defines</li>
+<li><a class="el" href="classrolmodl_1_1pixelfmt_1_1_pixel_fmt_storage.html">Pixel format factory</a></li>
+<li>Mouse state polling</li>
+<li>Keyboard state polling</li>
+<li>Event polling</li>
+<li>Mouse cursor control</li>
+<li><a class="el" href="namespacerolmodl_1_1sys.html">System information polling</a></li>
+<li>Exception-based error handling</li>
+<li><a class="el" href="namespacerolmodl_1_1sys_1_1clipboard.html">Clipboard</a> support</li>
+</ul>
+<h3>Planned Features:</h3>
+<ul>
+<li>OpenGL support</li>
+<li>Surface class</li>
+<li>Vulkan support</li>
+<li>SDL initialization and finalization support</li>
+<li>Hint support</li>
+<li>Log support</li>
+<li>SDL assertion support</li>
+<li>Version query support</li>
+<li>$ gestures support</li>
+<li>Text input support</li>
+<li>toString for enums</li>
+<li>Joystick support</li>
+<li>Game controller support</li>
+<li>Haptic support</li>
+<li>Audio support</li>
+<li>SDL thread support</li>
+<li>SDL synchronization support</li>
+<li>SDL atomics support</li>
+<li>SDL timers support</li>
+<li>SDL filesystem abstraction support</li>
+<li>SDL file I/O support</li>
+<li>SDL shared object tools support</li>
+<li>SDL byte tools support</li>
+<li>SDL bit order tools support</li>
+<li>Platform-specific functions support</li>
+<li>SDL stdlib aliases</li>
+<li>See the <a href="src/rolmodl/hpp/todo">todo files</a></li>
+</ul>
+<h2>Building</h2>
+<p>rolmodl uses <a href="https://shakebuild.com/">Shake</a>. It depends on <a href="https://www.libsdl.org/">SDL2</a>.</p>
+<p>After installing the dependencies, simply run <code>./build.sh</code> from the project folder.</p>
+<h2>Manual</h2>
+<p>Include the rolmodl header: <a href="src/rolmodl/hpp/Rolmodl.hpp"><code>./src/rolmodl/hpp/Rolmodl.hpp</code></a>. Link with the rolmodl shared library <code>./dist/dbg/librolmodl.dylib</code> (or your OS equivalent).</p>
+<p>Use <code>./run.sh</code> to run the test application. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

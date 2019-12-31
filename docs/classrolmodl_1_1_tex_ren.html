@@ -108,9 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8aaf3d0f0b308a5bccc3b8bfa4b0bea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_tex_ren.html#a8aaf3d0f0b308a5bccc3b8bfa4b0bea8">setDefaultTarget</a> ()</td></tr>
 <tr class="memdesc:a8aaf3d0f0b308a5bccc3b8bfa4b0bea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the rendering target to the default one. Usually it is the window for which the renderer was created.  <a href="classrolmodl_1_1_tex_ren.html#a8aaf3d0f0b308a5bccc3b8bfa4b0bea8">More...</a><br /></td></tr>
 <tr class="separator:a8aaf3d0f0b308a5bccc3b8bfa4b0bea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a600f4d1ffb29a73838f4b40106e8fe03"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_tex_ren.html#a600f4d1ffb29a73838f4b40106e8fe03">unsafeGetTarget</a> () noexcept</td></tr>
-<tr class="memdesc:a600f4d1ffb29a73838f4b40106e8fe03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the current rendering target. Unsafe because it returns a raw non-owning pointer to the texture.  <a href="classrolmodl_1_1_tex_ren.html#a600f4d1ffb29a73838f4b40106e8fe03">More...</a><br /></td></tr>
-<tr class="separator:a600f4d1ffb29a73838f4b40106e8fe03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd9f7439dcd2b3aa5be139d8bc5e722b"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_tex_ren.html#abd9f7439dcd2b3aa5be139d8bc5e722b">unsafeGetTarget</a> () noexcept</td></tr>
+<tr class="memdesc:abd9f7439dcd2b3aa5be139d8bc5e722b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the current rendering target. Unsafe because it returns a raw non-owning pointer to the texture.  <a href="classrolmodl_1_1_tex_ren.html#abd9f7439dcd2b3aa5be139d8bc5e722b">More...</a><br /></td></tr>
+<tr class="separator:abd9f7439dcd2b3aa5be139d8bc5e722b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrolmodl_1_1_ren"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrolmodl_1_1_ren')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classrolmodl_1_1_ren.html">rolmodl::Ren</a></td></tr>
 <tr class="memitem:a94c8adb6da087f831273ba46f62ddcbf inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a94c8adb6da087f831273ba46f62ddcbf">Ren</a> (<a class="el" href="classrolmodl_1_1_win.html">Win</a> &amp;win, int i, <a class="el" href="structrolmodl_1_1ren_1_1_flags.html">ren::Flags</a> flags)</td></tr>
 <tr class="memdesc:a94c8adb6da087f831273ba46f62ddcbf inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a renderer for window <code>win</code>, using the <code>i</code>th rendering driver, with configuration <code>flags</code>.  <a href="classrolmodl_1_1_ren.html#a94c8adb6da087f831273ba46f62ddcbf">More...</a><br /></td></tr>
@@ -139,18 +139,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#adde55b1f9faa5f29b24295d223cc8fc8">operator=</a> (const <a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;that)=delete</td></tr>
 <tr class="memdesc:adde55b1f9faa5f29b24295d223cc8fc8 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copying rolmodl renderers is not allowed because their lifetime is tied to the underlying <code>SDL_Renderer</code>'s. Use references or some other pointer type instead. <br /></td></tr>
 <tr class="separator:adde55b1f9faa5f29b24295d223cc8fc8 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab811c91c6dd513568b956f18e9c03ae6 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a id="ab811c91c6dd513568b956f18e9c03ae6"></a>
-<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ab811c91c6dd513568b956f18e9c03ae6">operator=</a> (<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&amp;that) noexcept</td></tr>
-<tr class="memdesc:ab811c91c6dd513568b956f18e9c03ae6 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>SDL_Renderer</code> of <code>that</code>. <br /></td></tr>
-<tr class="separator:ab811c91c6dd513568b956f18e9c03ae6 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17b01e749901f26f4184e602f59d7bdd inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a id="a17b01e749901f26f4184e602f59d7bdd"></a>
-SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a17b01e749901f26f4184e602f59d7bdd">unsafeRaw</a> () noexcept</td></tr>
-<tr class="memdesc:a17b01e749901f26f4184e602f59d7bdd inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code>. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
-<tr class="separator:a17b01e749901f26f4184e602f59d7bdd inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40c075f384095fd8eda5bd6921c67d7b inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a id="a40c075f384095fd8eda5bd6921c67d7b"></a>
-const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a40c075f384095fd8eda5bd6921c67d7b">unsafeRaw</a> () const noexcept</td></tr>
-<tr class="memdesc:a40c075f384095fd8eda5bd6921c67d7b inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code> in a <code>const</code> context. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
-<tr class="separator:a40c075f384095fd8eda5bd6921c67d7b inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab286f3f63bb48da4a4d7cb38e3558f2f inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a id="ab286f3f63bb48da4a4d7cb38e3558f2f"></a>
+<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ab286f3f63bb48da4a4d7cb38e3558f2f">operator=</a> (<a class="el" href="classrolmodl_1_1_ren.html">Ren</a> &amp;&amp;that) noexcept</td></tr>
+<tr class="memdesc:ab286f3f63bb48da4a4d7cb38e3558f2f inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take over the underlying <code>SDL_Renderer</code> of <code>that</code>. <br /></td></tr>
+<tr class="separator:ab286f3f63bb48da4a4d7cb38e3558f2f inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431319ce3748415655ff0448cf5d0204 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a id="a431319ce3748415655ff0448cf5d0204"></a>
+SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a431319ce3748415655ff0448cf5d0204">unsafeRaw</a> () noexcept</td></tr>
+<tr class="memdesc:a431319ce3748415655ff0448cf5d0204 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code>. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
+<tr class="separator:a431319ce3748415655ff0448cf5d0204 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968b795cf18a9e434990cf8b4e31014e inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a id="a968b795cf18a9e434990cf8b4e31014e"></a>
+const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a968b795cf18a9e434990cf8b4e31014e">unsafeRaw</a> () const noexcept</td></tr>
+<tr class="memdesc:a968b795cf18a9e434990cf8b4e31014e inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying <code>SDL_Renderer*</code> in a <code>const</code> context. Unsafe because this value might be nullptr and using it with some SDL functions can lead to rolmodl invariant violation. <br /></td></tr>
+<tr class="separator:a968b795cf18a9e434990cf8b4e31014e inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fb17ba7f0f34a98747d4b7ae0c0a969 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a3fb17ba7f0f34a98747d4b7ae0c0a969">clear</a> ()</td></tr>
 <tr class="memdesc:a3fb17ba7f0f34a98747d4b7ae0c0a969 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paint over the entire rendering target with the current color.  <a href="classrolmodl_1_1_ren.html#a3fb17ba7f0f34a98747d4b7ae0c0a969">More...</a><br /></td></tr>
 <tr class="separator:a3fb17ba7f0f34a98747d4b7ae0c0a969 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -289,9 +289,9 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <tr class="memitem:a3e3c98980fbb72637414de2ae9e399d9 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a3e3c98980fbb72637414de2ae9e399d9">fillScreen</a> ()</td></tr>
 <tr class="memdesc:a3e3c98980fbb72637414de2ae9e399d9 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the rendering target with the drawing color.  <a href="classrolmodl_1_1_ren.html#a3e3c98980fbb72637414de2ae9e399d9">More...</a><br /></td></tr>
 <tr class="separator:a3e3c98980fbb72637414de2ae9e399d9 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc64806c91af8a4fc68772b48f74a0c0 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#afc64806c91af8a4fc68772b48f74a0c0">clipRect</a> () noexcept</td></tr>
-<tr class="memdesc:afc64806c91af8a4fc68772b48f74a0c0 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clipping rectangle. <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt.html">std::nullopt</a> is returned if the clipping rectangle has not been set.  <a href="classrolmodl_1_1_ren.html#afc64806c91af8a4fc68772b48f74a0c0">More...</a><br /></td></tr>
-<tr class="separator:afc64806c91af8a4fc68772b48f74a0c0 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac815f71ee9fe32b4a7d0fd3a05e14129 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#ac815f71ee9fe32b4a7d0fd3a05e14129">clipRect</a> () noexcept</td></tr>
+<tr class="memdesc:ac815f71ee9fe32b4a7d0fd3a05e14129 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clipping rectangle. <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional/nullopt.html">std::nullopt</a> is returned if the clipping rectangle has not been set.  <a href="classrolmodl_1_1_ren.html#ac815f71ee9fe32b4a7d0fd3a05e14129">More...</a><br /></td></tr>
+<tr class="separator:ac815f71ee9fe32b4a7d0fd3a05e14129 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f628d5e5eaae1107a6bd3dd9726fe37 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a4f628d5e5eaae1107a6bd3dd9726fe37">setClipRect</a> (const <a class="el" href="structrolmodl_1_1geom_1_1_rect_w_h.html">geom::RectWH</a> r)</td></tr>
 <tr class="memdesc:a4f628d5e5eaae1107a6bd3dd9726fe37 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the clipping rectangle to <code>r</code>.  <a href="classrolmodl_1_1_ren.html#a4f628d5e5eaae1107a6bd3dd9726fe37">More...</a><br /></td></tr>
 <tr class="separator:a4f628d5e5eaae1107a6bd3dd9726fe37 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,9 +304,9 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <tr class="memitem:a70bb7b365f0407eb5ca26f9738b97916 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a70bb7b365f0407eb5ca26f9738b97916">isClipOn</a> () noexcept</td></tr>
 <tr class="memdesc:a70bb7b365f0407eb5ca26f9738b97916 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether the clipping rectangle has been set.  <a href="classrolmodl_1_1_ren.html#a70bb7b365f0407eb5ca26f9738b97916">More...</a><br /></td></tr>
 <tr class="separator:a70bb7b365f0407eb5ca26f9738b97916 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b139a4f131d49bdf1e16479cb3fff2 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#a25b139a4f131d49bdf1e16479cb3fff2">logicalSize</a> () noexcept</td></tr>
-<tr class="memdesc:a25b139a4f131d49bdf1e16479cb3fff2 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the device-independent resolution.  <a href="classrolmodl_1_1_ren.html#a25b139a4f131d49bdf1e16479cb3fff2">More...</a><br /></td></tr>
-<tr class="separator:a25b139a4f131d49bdf1e16479cb3fff2 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcd2d2a05ffdad1c02827750a79ec062 inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#afcd2d2a05ffdad1c02827750a79ec062">logicalSize</a> () noexcept</td></tr>
+<tr class="memdesc:afcd2d2a05ffdad1c02827750a79ec062 inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the device-independent resolution.  <a href="classrolmodl_1_1_ren.html#afcd2d2a05ffdad1c02827750a79ec062">More...</a><br /></td></tr>
+<tr class="separator:afcd2d2a05ffdad1c02827750a79ec062 inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf35626b54367f3e9756350324e357d inherit pub_methods_classrolmodl_1_1_ren"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrolmodl_1_1_ren.html#aebf35626b54367f3e9756350324e357d">setLogicalSize</a> (const <a class="el" href="structrolmodl_1_1geom_1_1_size.html">geom::Size</a> s)</td></tr>
 <tr class="memdesc:aebf35626b54367f3e9756350324e357d inherit pub_methods_classrolmodl_1_1_ren"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the device-independent resolution to <code>s</code>.  <a href="classrolmodl_1_1_ren.html#aebf35626b54367f3e9756350324e357d">More...</a><br /></td></tr>
 <tr class="separator:aebf35626b54367f3e9756350324e357d inherit pub_methods_classrolmodl_1_1_ren"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -344,7 +344,7 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <p>The renderer managed by this class always supports rendering to texture, or the constructor will throw an <a class="el" href="structrolmodl_1_1sdlexception.html">rolmodl::sdlexception</a>.</p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_Renderer">https://wiki.libsdl.org/SDL_Renderer</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_ren_8hpp_source.html#l00597">597</a> of file <a class="el" href="_ren_8hpp_source.html">Ren.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ren_8hpp_source.html#l00601">601</a> of file <a class="el" href="_ren_8hpp_source.html">Ren.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a17c0f7831845918014ea8f7071b735ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17c0f7831845918014ea8f7071b735ce">&#9670;&nbsp;</a></span>TexRen() <span class="overload">[1/4]</span></h2>
@@ -387,6 +387,8 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00351">351</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a50e1fc6e6139d566d025b3ac21bfb44d"></a>
@@ -423,6 +425,8 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00353">353</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
 
 </div>
 </div>
@@ -461,6 +465,8 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00355">355</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a746d935c7e9a40a4e17ab6fd43fe7c8b"></a>
@@ -496,6 +502,8 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_CreateRenderer">https://wiki.libsdl.org/SDL_CreateRenderer</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00357">357</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -518,6 +526,10 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <p>Set the rendering target. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_SetRenderTarget">https://wiki.libsdl.org/SDL_SetRenderTarget</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00360">360</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">rolmodl::Ren::unsafeRaw()</a>.</p>
+
 </div>
 </div>
 <a id="a8aaf3d0f0b308a5bccc3b8bfa4b0bea8"></a>
@@ -539,10 +551,14 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>What specifically is the default rendering target? </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_SetRenderTarget">https://wiki.libsdl.org/SDL_SetRenderTarget</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00363">363</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_base_8cpp_source.html#l00370">rolmodl::detail::throwOnErr()</a>, and <a class="el" href="_ren_8cpp_source.html#l00086">rolmodl::Ren::unsafeRaw()</a>.</p>
+
 </div>
 </div>
-<a id="a600f4d1ffb29a73838f4b40106e8fe03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a600f4d1ffb29a73838f4b40106e8fe03">&#9670;&nbsp;</a></span>unsafeGetTarget()</h2>
+<a id="abd9f7439dcd2b3aa5be139d8bc5e722b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd9f7439dcd2b3aa5be139d8bc5e722b">&#9670;&nbsp;</a></span>unsafeGetTarget()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -551,7 +567,7 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SDL_Texture* rolmodl::TexRen::unsafeGetTarget </td>
+          <td class="memname">SDL_Texture * rolmodl::TexRen::unsafeGetTarget </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -568,10 +584,15 @@ const SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>Implement a class that does this safely? </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetRenderTarget">https://wiki.libsdl.org/SDL_GetRenderTarget</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_ren_8cpp_source.html#l00367">367</a> of file <a class="el" href="_ren_8cpp_source.html">Ren.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="_ren_8cpp_source.html#l00086">rolmodl::Ren::unsafeRaw()</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/rolmodl/hpp/<a class="el" href="_ren_8hpp_source.html">Ren.hpp</a></li>
+<li>src/rolmodl/<a class="el" href="_ren_8cpp_source.html">Ren.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

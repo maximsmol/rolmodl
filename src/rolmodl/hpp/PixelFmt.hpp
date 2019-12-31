@@ -1,7 +1,14 @@
 #pragma once
 
+/// \file
+
 #include "forwarddecl/PixelFmt.hpp"
 
+/// Main namespace.
+namespace rolmodl {
+  /// Pixel format management members
+  namespace pixelfmt {}
+}
 namespace rolmodl::pixelfmt {
   enum class Id {
     unknown,
@@ -207,6 +214,7 @@ namespace rolmodl::pixelfmt {
     return layout::unsafe::fromSDLEnum(SDL_PIXELLAYOUT(id::unsafe::toSDLEnum(id)));
   }
 
+  /// \brief PixelFormat storage to avoid allocating a new instance for every use.
   class PixelFmtStorage {
     public:
       PixelFmtStorage(const PixelFmtStorage& that) = delete;

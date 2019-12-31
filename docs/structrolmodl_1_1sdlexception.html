@@ -100,9 +100,9 @@ Public Member Functions</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a930d081c76f0d191ea13b86755416db1">code</a> () const noexcept</td></tr>
 <tr class="memdesc:a930d081c76f0d191ea13b86755416db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recorded error code. <br /></td></tr>
 <tr class="separator:a930d081c76f0d191ea13b86755416db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec0c26839e56cf24159f2b9c4f8d1176"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#aec0c26839e56cf24159f2b9c4f8d1176">what</a> () const noexcept override</td></tr>
-<tr class="memdesc:aec0c26839e56cf24159f2b9c4f8d1176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recorded error message.  <a href="structrolmodl_1_1sdlexception.html#aec0c26839e56cf24159f2b9c4f8d1176">More...</a><br /></td></tr>
-<tr class="separator:aec0c26839e56cf24159f2b9c4f8d1176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c2efc9d1fefa9e8829688063641541c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrolmodl_1_1sdlexception.html#a5c2efc9d1fefa9e8829688063641541c">what</a> () const noexcept override</td></tr>
+<tr class="memdesc:a5c2efc9d1fefa9e8829688063641541c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recorded error message.  <a href="structrolmodl_1_1sdlexception.html#a5c2efc9d1fefa9e8829688063641541c">More...</a><br /></td></tr>
+<tr class="separator:a5c2efc9d1fefa9e8829688063641541c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_exception"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_exception')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el"  href="http://en.cppreference.com/w/cpp/error/exception.html">std::exception</a></td></tr>
 <tr class="memitem: inherit pub_methods_exception"><td class="memItemLeft" align="right" valign="top"><a id=""></a>
 T&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" href="http://en.cppreference.com/w/cpp/error/exception/exception.html">exception</a> (T... args)</td></tr>
@@ -121,7 +121,7 @@ T&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" href="http
 <div class="textblock"><p>Exception type containing an error code and the last SDL error at the moment of creation. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00382">382</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_base_8hpp_source.html#l00399">399</a> of file <a class="el" href="_base_8hpp_source.html">Base.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9709d0cd85bc197058deeb3e720ca6f1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9709d0cd85bc197058deeb3e720ca6f1">&#9670;&nbsp;</a></span>sdlexception() <span class="overload">[1/2]</span></h2>
@@ -149,6 +149,8 @@ T&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" href="http
 
 <p>Initialize with the given error code and the last SDL error message. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_base_8cpp_source.html#l00355">355</a> of file <a class="el" href="_base_8cpp_source.html">Base.cpp</a>.</p>
 
 </div>
 </div>
@@ -178,11 +180,13 @@ T&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" href="http
 <p>Initialize with the error code arbitrarily set to <code>0</code> if one isn't available and the last SDL error message. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_base_8cpp_source.html#l00359">359</a> of file <a class="el" href="_base_8cpp_source.html">Base.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aec0c26839e56cf24159f2b9c4f8d1176"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec0c26839e56cf24159f2b9c4f8d1176">&#9670;&nbsp;</a></span>what()</h2>
+<a id="a5c2efc9d1fefa9e8829688063641541c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c2efc9d1fefa9e8829688063641541c">&#9670;&nbsp;</a></span>what()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,7 +195,7 @@ T&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" href="http
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* rolmodl::sdlexception::what </td>
+          <td class="memname">const char * rolmodl::sdlexception::what </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -207,10 +211,13 @@ T&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" href="http
 <p>Get the recorded error message. </p>
 <dl class="section see"><dt>See also</dt><dd><a href="https://wiki.libsdl.org/SDL_GetError">https://wiki.libsdl.org/SDL_GetError</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_base_8cpp_source.html#l00366">366</a> of file <a class="el" href="_base_8cpp_source.html">Base.cpp</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/rolmodl/hpp/<a class="el" href="_base_8hpp_source.html">Base.hpp</a></li>
+<li>src/rolmodl/<a class="el" href="_base_8cpp_source.html">Base.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -11,9 +11,9 @@
 #include "forwarddecl/PixelFmt.hpp"
 #include "forwarddecl/Base.hpp"
 
-/// Main namespace
+/// Main namespace.
 namespace rolmodl {
-  /// \link rolmodl::Win \endlink -related members
+  /// \link rolmodl::Win \endlink -related members.
   namespace win {
     /// \brief Window configuration (flags) container.
     ///

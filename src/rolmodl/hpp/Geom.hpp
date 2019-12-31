@@ -7,7 +7,11 @@
 
 #include "forwarddecl/Geom.hpp"
 
-/// Geometry structures
+/// Main namespace.
+namespace rolmodl {
+  /// Geometry structures
+  namespace geom {}
+}
 namespace rolmodl::geom {
   /// \brief `int` point data type. The value is in pixels. Semantically different from \link rolmodl::geom::Size \endlink.
   /// \sa https://wiki.libsdl.org/SDL_Point

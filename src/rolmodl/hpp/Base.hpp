@@ -16,9 +16,9 @@
 #include "Geom.hpp"
 #include "PixelFmt.hpp"
 
-/// Main namespace
+/// Main namespace.
 namespace rolmodl {
-  /// System information functions and enums
+  /// System information functions and enums.
   namespace sys {
     /// \brief OS type enum.
     ///
@@ -131,7 +131,7 @@ namespace rolmodl {
       bool hasSSE42() noexcept;
     }
 
-    /// Power state functions and enums
+    /// Power state functions and enums.
     namespace pwr {
       /// \brief Indicates battery status a.k.a. the system power state.
       /// \sa https://wiki.libsdl.org/SDL_PowerState
@@ -168,7 +168,7 @@ namespace rolmodl {
       Status status() noexcept;
     }
 
-    /// Clipboard functions
+    /// Clipboard functions.
     namespace clipboard {
       /// \brief Query whether thhe clipboard has text contents.
       /// \sa https://wiki.libsdl.org/SDL_HasClipboardText
@@ -181,7 +181,7 @@ namespace rolmodl {
       void setText(const char* x);
     }
 
-    /// Screensaver functions
+    /// Screensaver functions.
     namespace screensaver {
       /// \brief Enable system screensaver.
       /// \sa https://wiki.libsdl.org/SDL_EnableScreenSaver
@@ -194,7 +194,7 @@ namespace rolmodl {
       bool enabled() noexcept;
     }
 
-    /// Video driver functions
+    /// Video driver functions.
     namespace driver {
       /// \brief Query the amount of available video drivers.
       /// \sa https://wiki.libsdl.org/SDL_GetNumVideoDrivers
@@ -210,7 +210,13 @@ namespace rolmodl {
       std::optional<const char*> current() noexcept;
     }
 
-    /// Unsafe video driver functions
+    /// Display information functions.
+    ///
+    /// \sa rolmodl::sys::Display
+    namespace display {
+      /// Unsafe display information functions.
+      namespace unsafe {}
+    }
     namespace display::unsafe {
       /// \brief Get display information for the `i`th display. Unsafe because there is no bounds checking on the index.
       Display byIndex(unsigned int i);
@@ -285,7 +291,18 @@ namespace rolmodl {
         friend Display display::unsafe::byIndex(unsigned int i);
     };
 
-    /// Unsafe display information functions
+    /// Display information functions.
+    ///
+    /// \sa rolmodl::sys::Display
+    namespace display {
+      /// Display mode information functions.
+      ///
+      /// \sa rolmodl::sys::DisplayMode
+      namespace mode {
+        /// Unsafe display mode information functions.
+        namespace unsafe {}
+      }
+    }
     namespace display::mode::unsafe {
       /// \brief Get the amount of display modes available for the `n`th display.
       ///
